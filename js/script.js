@@ -765,13 +765,13 @@ function showDownloadNotification() {
 
 // Add click handlers to all CV download buttons
 document.addEventListener('DOMContentLoaded', function() {
-    const cvButtons = document.querySelectorAll('.btn-download, a[href*="resume.pdf"], a[href*="cv"]');
+    const cvButtons = document.querySelectorAll('.btn-download, a[href*="cv.html"], a[href*="cv.html"]');
     
     cvButtons.forEach(button => {
         if (button.hasAttribute('download') || button.classList.contains('btn-download')) {
             button.addEventListener('click', downloadCV);
             button.removeAttribute('download');
-            button.setAttribute('href', '#');
+            button.setAttribute('href', 'cv.html');
         }
     });
     
