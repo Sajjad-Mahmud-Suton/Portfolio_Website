@@ -1064,6 +1064,37 @@ a:hover {
 }
 
 /* ==========================================
+   SEMESTER TABS STYLES
+   ========================================== */
+.semester-tab {
+    padding: 10px 20px;
+    background: var(--bg-card);
+    color: var(--text-secondary);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.9rem;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    transition: var(--transition-normal);
+    white-space: nowrap;
+}
+
+.semester-tab:hover {
+    background: rgba(20, 184, 166, 0.15);
+    color: var(--gradient-teal);
+    border-color: rgba(20, 184, 166, 0.3);
+}
+
+.semester-tab.active {
+    background: var(--gradient-primary);
+    color: var(--text-primary);
+    border-color: transparent;
+    box-shadow: 0 8px 20px rgba(20, 184, 166, 0.3);
+}
+
+/* ==========================================
    11. ABOUT PAGE STYLES
    ========================================== */
 .about-content {

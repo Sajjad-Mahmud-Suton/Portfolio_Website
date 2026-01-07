@@ -921,3 +921,246 @@ function initDateTimeWidget() {
     // Update time every second
     setInterval(updateDateTime, 1000);
 }
+
+// ==========================================
+// 10. SEMESTER AND COURSE DATA MANAGEMENT
+// ==========================================
+
+/**
+ * Semester and course data structure
+ */
+const semesterData = {
+    1: {
+        title: '1st Semester',
+        description: 'Foundation courses and basic concepts',
+        duration: 'Jan - May 2021',
+        courses: [
+            { code: 'PHY-101', name: 'Physics', description: 'Engineering Physics I', credits: 3, labs: 5, notes: 8, ppts: 3 },
+            { code: 'MAT-101', name: 'Mathematics', description: 'Calculus & Linear Algebra', credits: 4, labs: 4, notes: 10, ppts: 4 },
+            { code: 'ENG-101', name: 'English', description: 'Academic Communication', credits: 2, labs: 0, notes: 5, ppts: 2 },
+            { code: 'CHM-101', name: 'Chemistry', description: 'General Chemistry', credits: 3, labs: 6, notes: 7, ppts: 3 },
+            { code: 'CS-101', name: 'Programming', description: 'Introduction to Programming', credits: 3, labs: 8, notes: 9, ppts: 5 },
+            { code: 'EMS-101', name: 'Engineering Mechanics', description: 'Statics & Dynamics', credits: 3, labs: 3, notes: 6, ppts: 2 }
+        ]
+    },
+    2: {
+        title: '2nd Semester',
+        description: 'Programming fundamentals and mathematics',
+        duration: 'Jun - Nov 2021',
+        courses: [
+            { code: 'CS-102', name: 'Object-Oriented Programming', description: 'OOP Concepts', credits: 4, labs: 10, notes: 12, ppts: 6 },
+            { code: 'CS-103', name: 'Data Structures', description: 'DS & Algorithms', credits: 4, labs: 8, notes: 10, ppts: 5 },
+            { code: 'MAT-102', name: 'Discrete Mathematics', description: 'Set Theory & Logic', credits: 3, labs: 2, notes: 8, ppts: 3 },
+            { code: 'PHY-102', name: 'Waves & Oscillations', description: 'Wave Theory', credits: 3, labs: 5, notes: 7, ppts: 3 },
+            { code: 'ECO-101', name: 'Economics', description: 'Microeconomics', credits: 2, labs: 0, notes: 4, ppts: 2 },
+            { code: 'ENG-102', name: 'Technical Writing', description: 'Report Writing', credits: 2, labs: 1, notes: 4, ppts: 1 },
+            { code: 'WEB-101', name: 'Web Fundamentals', description: 'HTML & CSS', credits: 3, labs: 7, notes: 6, ppts: 4 }
+        ]
+    },
+    3: {
+        title: '3rd Semester',
+        description: 'Data structures and algorithms',
+        duration: 'Dec 2021 - Apr 2022',
+        courses: [
+            { code: 'CS-201', name: 'Advanced Algorithms', description: 'Algorithm Design', credits: 4, labs: 9, notes: 11, ppts: 6 },
+            { code: 'CS-202', name: 'Database Systems', description: 'SQL & DBMS', credits: 4, labs: 8, notes: 10, ppts: 5 },
+            { code: 'CS-203', name: 'Compiler Design', description: 'Parsing & Compilation', credits: 3, labs: 6, notes: 8, ppts: 4 },
+            { code: 'MAT-201', name: 'Numerical Methods', description: 'Numerical Analysis', credits: 3, labs: 7, notes: 9, ppts: 4 },
+            { code: 'SYS-101', name: 'Operating Systems', description: 'OS Concepts', credits: 3, labs: 5, notes: 8, ppts: 3 },
+            { code: 'WEB-201', name: 'JavaScript & DOM', description: 'Dynamic Web', credits: 3, labs: 8, notes: 7, ppts: 4 }
+        ]
+    },
+    4: {
+        title: '4th Semester',
+        description: 'Operating systems and networking',
+        duration: 'May - Sep 2022',
+        courses: [
+            { code: 'NET-101', name: 'Computer Networks', description: 'Networking Basics', credits: 4, labs: 7, notes: 10, ppts: 5 },
+            { code: 'NET-102', name: 'Network Security', description: 'Cybersecurity', credits: 3, labs: 6, notes: 8, ppts: 4 },
+            { code: 'SYS-102', name: 'System Programming', description: 'Low-level Programming', credits: 4, labs: 8, notes: 9, ppts: 5 },
+            { code: 'CS-204', name: 'Microprocessors', description: 'Processor Architecture', credits: 3, labs: 6, notes: 7, ppts: 3 },
+            { code: 'WEB-301', name: 'Backend Development', description: 'Server-side Programming', credits: 3, labs: 9, notes: 8, ppts: 4 },
+            { code: 'PRO-101', name: 'Software Engineering', description: 'SDLC & Methodologies', credits: 2, labs: 2, notes: 5, ppts: 3 },
+            { code: 'MAT-202', name: 'Statistics', description: 'Probability & Statistics', credits: 3, labs: 4, notes: 7, ppts: 3 }
+        ]
+    },
+    5: {
+        title: '5th Semester',
+        description: 'Microcontrollers and embedded systems',
+        duration: 'Oct 2022 - Feb 2023',
+        courses: [
+            { code: 'EMB-101', name: 'Microcontrollers', description: 'Arduino & Embedded Systems', credits: 4, labs: 10, notes: 12, ppts: 6 },
+            { code: 'EMB-102', name: 'VLSI Design', description: 'Digital Circuit Design', credits: 3, labs: 7, notes: 9, ppts: 4 },
+            { code: 'CS-301', name: 'AI & Machine Learning', description: 'ML Algorithms', credits: 4, labs: 8, notes: 10, ppts: 5 },
+            { code: 'MOB-101', name: 'Mobile Development', description: 'Android Development', credits: 3, labs: 9, notes: 8, ppts: 4 },
+            { code: 'WEB-302', name: 'React & Frontend', description: 'Modern Frontend', credits: 3, labs: 10, notes: 9, ppts: 5 },
+            { code: 'PRO-102', name: 'Project Management', description: 'Project Planning', credits: 2, labs: 1, notes: 4, ppts: 2 }
+        ]
+    },
+    6: {
+        title: '6th Semester',
+        description: 'Web development and cloud computing',
+        duration: 'Mar - Jul 2023',
+        courses: [
+            { code: 'CLOUD-101', name: 'Cloud Computing', description: 'AWS & Azure', credits: 3, labs: 7, notes: 8, ppts: 4 },
+            { code: 'WEB-303', name: 'DevOps & Docker', description: 'Containerization', credits: 3, labs: 8, notes: 9, ppts: 4 },
+            { code: 'MOB-102', name: 'iOS Development', description: 'Swift & iOS', credits: 3, labs: 8, notes: 8, ppts: 4 },
+            { code: 'DB-201', name: 'NoSQL Databases', description: 'MongoDB & Firebase', credits: 3, labs: 7, notes: 8, ppts: 3 },
+            { code: 'CS-302', name: 'Computer Vision', description: 'Image Processing', credits: 3, labs: 8, notes: 9, ppts: 4 },
+            { code: 'PRO-103', name: 'Final Project', description: 'Capstone Project', credits: 4, labs: 0, notes: 3, ppts: 2 }
+        ]
+    },
+    7: {
+        title: '7th Semester',
+        description: 'Advanced topics and specialization',
+        duration: 'Aug - Dec 2023',
+        courses: [
+            { code: 'ADV-101', name: 'Quantum Computing', description: 'Quantum Algorithms', credits: 3, labs: 5, notes: 7, ppts: 3 },
+            { code: 'ADV-102', name: 'Blockchain Technology', description: 'Crypto & Smart Contracts', credits: 3, labs: 6, notes: 8, ppts: 4 },
+            { code: 'SEC-101', name: 'Cryptography', description: 'Encryption & Security', credits: 3, labs: 6, notes: 8, ppts: 3 },
+            { code: 'NLP-101', name: 'Natural Language Processing', description: 'NLP & Text Mining', credits: 3, labs: 7, notes: 9, ppts: 4 },
+            { code: 'IOT-101', name: 'Internet of Things', description: 'IoT Systems', credits: 3, labs: 7, notes: 8, ppts: 4 },
+            { code: 'THESIS-101', name: 'Research Methodology', description: 'Research & Writing', credits: 2, labs: 0, notes: 4, ppts: 2 }
+        ]
+    },
+    8: {
+        title: '8th Semester',
+        description: 'Thesis, internship, and final project',
+        duration: 'Jan - May 2024',
+        courses: [
+            { code: 'THESIS-201', name: 'Thesis Part 1', description: 'Research Phase', credits: 6, labs: 0, notes: 5, ppts: 3 },
+            { code: 'THESIS-202', name: 'Thesis Part 2', description: 'Implementation Phase', credits: 6, labs: 0, notes: 4, ppts: 2 },
+            { code: 'INTERNSHIP-101', name: 'Industrial Internship', description: 'Practical Experience', credits: 6, labs: 0, notes: 3, ppts: 1 },
+            { code: 'SEMINAR-101', name: 'Seminar & Presentation', description: 'Final Presentation', credits: 2, labs: 0, notes: 2, ppts: 1 }
+        ]
+    }
+};
+
+/**
+ * Initialize semester page - load courses based on URL parameter
+ */
+function initSemesterPage() {
+    // Get semester number from URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const semesterNum = parseInt(urlParams.get('sem')) || 1;
+
+    // Validate semester number
+    if (semesterNum < 1 || semesterNum > 8) {
+        window.location.href = 'semester.html?sem=1';
+        return;
+    }
+
+    const semester = semesterData[semesterNum];
+    if (!semester) return;
+
+    // Update breadcrumb
+    const breadcrumbSem = document.getElementById('breadcrumb-semester');
+    if (breadcrumbSem) {
+        breadcrumbSem.textContent = semester.title;
+    }
+
+    // Update semester header
+    const semesterTitle = document.getElementById('semester-title');
+    if (semesterTitle) {
+        semesterTitle.innerHTML = `<span class="gradient-text">${semester.title}</span>`;
+    }
+
+    const semesterDesc = document.getElementById('semester-description');
+    if (semesterDesc) {
+        semesterDesc.textContent = semester.description;
+    }
+
+    const courseCount = document.getElementById('course-count');
+    if (courseCount) {
+        courseCount.textContent = `${semester.courses.length} Courses`;
+    }
+
+    const semesterDuration = document.getElementById('semester-duration');
+    if (semesterDuration) {
+        semesterDuration.textContent = semester.duration;
+    }
+
+    // Update active semester tab
+    document.querySelectorAll('.semester-tab').forEach(tab => {
+        tab.classList.remove('active');
+        if (tab.getAttribute('data-sem') === String(semesterNum)) {
+            tab.classList.add('active');
+        }
+    });
+
+    // Load courses
+    loadSemesterCourses(semester);
+}
+
+/**
+ * Load and render courses for a semester
+ */
+function loadSemesterCourses(semester) {
+    const coursesContainer = document.getElementById('courses-container');
+    if (!coursesContainer) return;
+
+    coursesContainer.innerHTML = '';
+
+    semester.courses.forEach((course, index) => {
+        const courseCard = document.createElement('a');
+        courseCard.href = `course.html?course=${course.code.toLowerCase()}`;
+        courseCard.className = `course-card card fade-in ${index > 0 ? `fade-in-delay-${index % 3}` : ''}`;
+        courseCard.style.textDecoration = 'none';
+        courseCard.style.position = 'relative';
+        courseCard.style.overflow = 'hidden';
+        courseCard.style.padding = '0';
+
+        const colors = [
+            { bg: 'linear-gradient(135deg, #14b8a6, #0d9488)', teal: '#14b8a6' },
+            { bg: 'linear-gradient(135deg, #a855f7, #9333ea)', teal: '#a855f7' },
+            { bg: 'linear-gradient(135deg, #38bdf8, #0ea5e9)', teal: '#38bdf8' },
+            { bg: 'linear-gradient(135deg, #f472b6, #ec4899)', teal: '#f472b6' },
+            { bg: 'linear-gradient(135deg, #fb923c, #f97316)', teal: '#fb923c' },
+            { bg: 'linear-gradient(135deg, #fbbf24, #f59e0b)', teal: '#fbbf24' }
+        ];
+
+        const color = colors[index % colors.length];
+
+        courseCard.innerHTML = `
+            <div class="course-header" style="background: ${color.bg}; padding: 25px; position: relative;">
+                <div class="course-code" style="position: absolute; top: 15px; right: 15px; background: rgba(255,255,255,0.2); padding: 5px 12px; border-radius: 20px; font-size: 0.8rem; font-weight: 600;">
+                    ${course.code}
+                </div>
+                <div class="course-icon" style="width: 60px; height: 60px; background: rgba(255,255,255,0.2); border-radius: 15px; display: flex; align-items: center; justify-content: center; font-size: 1.8rem; margin-bottom: 15px;">
+                    <i class="fas fa-book"></i>
+                </div>
+                <h3 style="color: white; margin-bottom: 5px; font-size: 1.2rem;">${course.name}</h3>
+                <p style="color: rgba(255,255,255,0.8); margin: 0; font-size: 0.9rem;">${course.description}</p>
+            </div>
+            
+            <div class="course-content" style="padding: 20px;">
+                <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 15px;">
+                    ${course.labs > 0 ? `<span class="resource-tag" style="font-size: 0.75rem; padding: 4px 10px; background: rgba(20, 184, 166, 0.15); color: #14b8a6; border-radius: 15px;"><i class="fas fa-flask"></i> ${course.labs} Lab Reports</span>` : ''}
+                    ${course.notes > 0 ? `<span class="resource-tag" style="font-size: 0.75rem; padding: 4px 10px; background: rgba(168, 85, 247, 0.15); color: #a855f7; border-radius: 15px;"><i class="fas fa-sticky-note"></i> ${course.notes} Notes</span>` : ''}
+                    ${course.ppts > 0 ? `<span class="resource-tag" style="font-size: 0.75rem; padding: 4px 10px; background: rgba(56, 189, 248, 0.15); color: #38bdf8; border-radius: 15px;"><i class="fas fa-file-powerpoint"></i> ${course.ppts} PPT</span>` : ''}
+                </div>
+                
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <span style="font-size: 0.85rem; color: var(--text-secondary);">
+                        <i class="fas fa-credit-card"></i> ${course.credits} Credits
+                    </span>
+                    <span style="display: flex; align-items: center; gap: 5px; color: ${color.teal}; font-size: 0.9rem; font-weight: 500;">
+                        View Resources <i class="fas fa-arrow-right"></i>
+                    </span>
+                </div>
+            </div>
+        `;
+
+        coursesContainer.appendChild(courseCard);
+    });
+
+    // Re-initialize scroll animations for new content
+    initScrollAnimations();
+}
+
+// Initialize semester page when DOM is loaded
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initSemesterPage);
+} else {
+    initSemesterPage();
+}
