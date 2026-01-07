@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- ============================================
+         EDUCATION PAGE - Academic Journey
+         School, College, University Timeline
+         ============================================ -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="My educational journey - School, College, and University academic achievements and experiences.">
+    <meta name="keywords" content="education, academic, school, college, university, student">
+    <meta name="author" content="Md. Sajjad Mahmud Suton">
+    
+    <title>Education | Md. Sajjad Mahmud Suton</title>
+    
+    <!-- Google Fonts - Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+    
+    <!-- Education Page Specific Styles -->
+    <style>
+        /* Education Hero Section */
+        .education-hero {
+            padding-top: 120px;
+            padding-bottom: 60px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .education-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(20, 184, 166, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(168, 85, 247, 0.1) 0%, transparent 50%);
+            z-index: -1;
+        }
+        
+        .education-stats {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            margin-top: 40px;
+            flex-wrap: wrap;
+        }
+        
+        .edu-stat-item {
+            text-align: center;
+        }
+        
+        .edu-stat-icon {
+            width: 70px;
+            height: 70px;
+            background: var(--gradient-primary);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            color: white;
+            margin: 0 auto 15px;
+            box-shadow: 0 10px 30px rgba(20, 184, 166, 0.3);
+        }
+        
+        .edu-stat-item h3 {
+            font-size: 2rem;
+            margin-bottom: 5px;
+        }
+        
+        .edu-stat-item p {
+            margin: 0;
+            font-size: 0.95rem;
+        }
+        
+        /* Timeline Section */
+        .timeline-section {
+            padding: 80px 0;
+        }
+        
+        .timeline {
+            position: relative;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px 0;
+        }
+        
+        /* Main timeline line */
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(to bottom, var(--gradient-teal), var(--gradient-purple), var(--gradient-teal));
+            border-radius: 2px;
+        }
+        
+        .timeline-item {
+            position: relative;
+            width: 50%;
+            padding: 20px 50px;
+            box-sizing: border-box;
+        }
+        
+        .timeline-item:nth-child(odd) {
+            left: 0;
+            text-align: right;
+        }
+        
+        .timeline-item:nth-child(even) {
+            left: 50%;
+            text-align: left;
+        }
+        
+        /* Timeline dot */
+        .timeline-dot {
+            position: absolute;
+            width: 24px;
+            height: 24px;
+            background: var(--gradient-primary);
+            border-radius: 50%;
+            top: 30px;
+            z-index: 1;
+            box-shadow: 0 0 0 6px var(--bg-primary), 0 0 20px rgba(20, 184, 166, 0.5);
+        }
+        
+        .timeline-item:nth-child(odd) .timeline-dot {
+            right: -12px;
+        }
+        
+        .timeline-item:nth-child(even) .timeline-dot {
+            left: -12px;
+        }
+        
+        /* Timeline icon inside dot */
+        .timeline-dot i {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-size: 0.7rem;
+        }
+        
+        /* Timeline card */
+        .timeline-card {
+            background: var(--bg-card);
+            border-radius: 20px;
+            padding: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        
+        .timeline-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+            border-color: rgba(20, 184, 166, 0.3);
+        }
+        
+        /* Arrow for timeline cards */
+        .timeline-item:nth-child(odd) .timeline-card::after {
+            content: '';
+            position: absolute;
+            right: -15px;
+            top: 25px;
+            border: 8px solid transparent;
+            border-left-color: var(--bg-card);
+        }
+        
+        .timeline-item:nth-child(even) .timeline-card::before {
+            content: '';
+            position: absolute;
+            left: -15px;
+            top: 25px;
+            border: 8px solid transparent;
+            border-right-color: var(--bg-card);
+        }
+        
+        .timeline-year {
+            display: inline-block;
+            background: var(--gradient-primary);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+        
+        .timeline-institution {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+        
+        .timeline-item:nth-child(odd) .timeline-institution {
+            justify-content: flex-end;
+        }
+        
+        .institution-logo {
+            width: 60px;
+            height: 60px;
+            background: var(--bg-secondary);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: var(--gradient-teal);
+            flex-shrink: 0;
+        }
+        
+        .institution-info h3 {
+            font-size: 1.3rem;
+            margin-bottom: 5px;
+            color: var(--text-primary);
+        }
+        
+        .institution-info p {
+            margin: 0;
+            font-size: 0.95rem;
+            color: var(--text-accent);
+        }
+        
+        .timeline-degree {
+            font-size: 1.1rem;
+            color: var(--text-primary);
+            margin-bottom: 10px;
+            font-weight: 500;
+        }
+        
+        .timeline-details {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+        
+        .timeline-achievements {
+            margin-top: 15px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        .timeline-item:nth-child(odd) .timeline-achievements {
+            justify-content: flex-end;
+        }
+        
+        .achievement-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(20, 184, 166, 0.1);
+            border: 1px solid rgba(20, 184, 166, 0.3);
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            color: var(--text-accent);
+        }
+        
+        .achievement-badge i {
+            font-size: 0.8rem;
+        }
+        
+        /* Current indicator */
+        .current-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: linear-gradient(135deg, rgba(34, 197, 94, 0.2), rgba(34, 197, 94, 0.1));
+            border: 1px solid rgba(34, 197, 94, 0.4);
+            color: #22c55e;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin-bottom: 15px;
+        }
+        
+        .current-badge::before {
+            content: '';
+            width: 8px;
+            height: 8px;
+            background: #22c55e;
+            border-radius: 50%;
+            animation: pulse-green 2s ease-in-out infinite;
+        }
+        
+        @keyframes pulse-green {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.5; transform: scale(1.2); }
+        }
+        
+        /* Skills/Subjects section in timeline */
+        /* Timeline Image */
+        .timeline-image {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 15px;
+            margin-bottom: 20px;
+            transition: transform 0.4s ease;
+        }
+        
+        .timeline-card:hover .timeline-image {
+            transform: scale(1.03);
+        }
+        
+        /* Staggered Animation */
+        .timeline-item {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .timeline-item.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Responsive Timeline */
+        @media (max-width: 768px) {
+            .timeline::before {
+                left: 20px;
+            }
+            
+            .timeline-item {
+                width: 100%;
+                padding: 20px 20px 20px 60px;
+                left: 0 !important;
+                text-align: left !important;
+            }
+            
+            .timeline-dot {
+                left: 8px !important;
+                right: auto !important;
+            }
+            
+            .timeline-item .timeline-card::after,
+            .timeline-item .timeline-card::before {
+                display: none;
+            }
+            
+            .timeline-institution,
+            .timeline-achievements,
+            .subject-tags {
+                justify-content: flex-start !important;
+            }
+            
+            .education-stats {
+                gap: 30px;
+            }
+        }
+        
+        /* Decorative floating elements */
+        .edu-floating {
+            position: absolute;
+            opacity: 0.1;
+            font-size: 8rem;
+            color: var(--gradient-teal);
+            z-index: -1;
+        }
+        
+        .edu-floating.float-1 {
+            top: 20%;
+            left: 5%;
+            animation: float-slow 8s ease-in-out infinite;
+        }
+        
+        .edu-floating.float-2 {
+            bottom: 30%;
+            right: 5%;
+            animation: float-slow 10s ease-in-out infinite reverse;
+        }
+        
+        @keyframes float-slow {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(10deg); }
+        }
+    </style>
+</head>
+<body>
+    <!-- ==========================================
+         FIXED SOCIAL SIDEBAR - Left Side
+         ========================================== -->
+    <div class="social-sidebar">
+        <a href="https://github.com/sajjadmahmud" target="_blank" class="social-sidebar-link" data-tooltip="GitHub">
+            <i class="fab fa-github"></i>
+        </a>
+        <a href="https://linkedin.com/in/sajjadmahmud" target="_blank" class="social-sidebar-link" data-tooltip="LinkedIn">
+            <i class="fab fa-linkedin-in"></i>
+        </a>
+        <a href="mailto:sajjadmahmudsuton@gmail.com" class="social-sidebar-link" data-tooltip="Email">
+            <i class="fas fa-envelope"></i>
+        </a>
+        <a href="https://facebook.com/sajjadmahmud" target="_blank" class="social-sidebar-link" data-tooltip="Facebook">
+            <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="https://twitter.com/sajjadmahmud" target="_blank" class="social-sidebar-link" data-tooltip="Twitter">
+            <i class="fab fa-twitter"></i>
+        </a>
+    </div>
+
+    <!-- ==========================================
+         NAVIGATION BAR
+         ========================================== -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="nav-logo">Portfolio</a>
+            
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="education.html" class="nav-link active">Education</a></li>
+                <li><a href="projects.html" class="nav-link">Projects</a></li>
+                <li><a href="blog.html" class="nav-link">Blog</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+                <li>
+                    <a href="assets/cv/cv.html" class="btn btn-download" target="_blank">
+                        <i class="fas fa-download"></i> Download CV
+                    </a>
+                </li>
+            </ul>
+            
+            <!-- Theme Toggle Button -->
+            <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+                <i class="fas fa-moon"></i>
+            </button>
+            
+            <div class="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ==========================================
+         EDUCATION HERO SECTION
+         ========================================== -->
+    <section class="education-hero">
+        <!-- Floating Decorative Elements -->
+        <i class="fas fa-graduation-cap edu-floating float-1"></i>
+        <i class="fas fa-book-open edu-floating float-2"></i>
+        
+        <div class="container">
+            <div class="section-header fade-in">
+                <span class="hero-subtitle" style="margin-bottom: 15px;">
+                    <i class="fas fa-user-graduate"></i> Academic Journey
+                </span>
+                <h2>My <span class="gradient-text">Education</span></h2>
+                <p>A timeline of my educational journey, achievements, and the knowledge I've gained along the way.</p>
+            </div>
+            
+            <!-- Education Stats -->
+            <div class="education-stats fade-in">
+                <div class="edu-stat-item">
+                    <div class="edu-stat-icon">
+                        <i class="fas fa-university"></i>
+                    </div>
+                    <h3 class="gradient-text">3</h3>
+                    <p>Institutions</p>
+                </div>
+                <div class="edu-stat-item">
+                    <div class="edu-stat-icon">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <h3 class="gradient-text">5.00</h3>
+                    <p>HSC GPA</p>
+                </div>
+                <div class="edu-stat-item">
+                    <div class="edu-stat-icon">
+                        <i class="fas fa-medal"></i>
+                    </div>
+                    <h3 class="gradient-text">5.00</h3>
+                    <p>SSC GPA</p>
+                </div>
+                <div class="edu-stat-item">
+                    <div class="edu-stat-icon">
+                        <i class="fas fa-book-reader"></i>
+                    </div>
+                    <h3 class="gradient-text">12+</h3>
+                    <p>Years of Study</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         EDUCATION TIMELINE
+         ========================================== -->
+    <section class="timeline-section">
+        <div class="container">
+            <div class="timeline">
+                
+                <!-- ========== UNIVERSITY ========== -->
+                <div class="timeline-item" data-delay="0">
+                    <div class="timeline-dot">
+                        <i class="fas fa-university"></i>
+                    </div>
+                    <div class="timeline-card">
+                        <img src="https://images.unsplash.com/photo-1562774053-701939374585?w=600&h=300&fit=crop" 
+                             alt="University Campus" class="timeline-image">
+                        <span class="timeline-year">2022 - Present</span>
+                        <div class="current-badge">
+                            <span>Currently Studying</span>
+                        </div>
+                        <div class="timeline-institution">
+                            <div class="institution-logo">
+                                <i class="fas fa-university"></i>
+                            </div>
+                            <div class="institution-info">
+                                <h3>University Name</h3>
+                                <p>Dhaka, Bangladesh</p>
+                            </div>
+                        </div>
+                        <p class="timeline-degree">
+                            <i class="fas fa-graduation-cap" style="color: var(--gradient-teal); margin-right: 8px;"></i>
+                            B.Sc. in Computer Science & Engineering
+                        </p>
+                        <div class="timeline-achievements">
+                            <span class="achievement-badge"><i class="fas fa-star"></i> 5th Semester</span>
+                            <span class="achievement-badge"><i class="fas fa-code"></i> Programming</span>
+                            <span class="achievement-badge"><i class="fas fa-laptop-code"></i> Web Dev</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- ========== COLLEGE (HSC) ========== -->
+                <div class="timeline-item" data-delay="300">
+                    <div class="timeline-dot">
+                        <i class="fas fa-school"></i>
+                    </div>
+                    <div class="timeline-card">
+                        <img src="https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=600&h=300&fit=crop" 
+                             alt="College Campus" class="timeline-image">
+                        <span class="timeline-year">2020 - 2022</span>
+                        <div class="timeline-institution">
+                            <div class="institution-info">
+                                <h3>College Name</h3>
+                                <p>City, Bangladesh</p>
+                            </div>
+                            <div class="institution-logo">
+                                <i class="fas fa-school"></i>
+                            </div>
+                        </div>
+                        <p class="timeline-degree">
+                            <i class="fas fa-certificate" style="color: var(--gradient-purple); margin-right: 8px;"></i>
+                            Higher Secondary Certificate (HSC)
+                        </p>
+                        <div class="timeline-achievements">
+                            <span class="achievement-badge"><i class="fas fa-trophy"></i> GPA: 5.00</span>
+                            <span class="achievement-badge"><i class="fas fa-flask"></i> Science</span>
+                            <span class="achievement-badge"><i class="fas fa-medal"></i> Board Exam</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- ========== SCHOOL (SSC) ========== -->
+                <div class="timeline-item" data-delay="600">
+                    <div class="timeline-dot">
+                        <i class="fas fa-book"></i>
+                    </div>
+                    <div class="timeline-card">
+                        <img src="https://images.unsplash.com/photo-1588072432836-e10032774350?w=600&h=300&fit=crop" 
+                             alt="School Campus" class="timeline-image">
+                        <span class="timeline-year">2018 - 2020</span>
+                        <div class="timeline-institution">
+                            <div class="institution-logo">
+                                <i class="fas fa-book-open"></i>
+                            </div>
+                            <div class="institution-info">
+                                <h3>School Name</h3>
+                                <p>City, Bangladesh</p>
+                            </div>
+                        </div>
+                        <p class="timeline-degree">
+                            <i class="fas fa-certificate" style="color: var(--gradient-teal); margin-right: 8px;"></i>
+                            Secondary School Certificate (SSC)
+                        </p>
+                        <div class="timeline-achievements">
+                            <span class="achievement-badge"><i class="fas fa-trophy"></i> GPA: 5.00</span>
+                            <span class="achievement-badge"><i class="fas fa-flask"></i> Science</span>
+                            <span class="achievement-badge"><i class="fas fa-star"></i> Golden A+</span>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         FOOTER
+         ========================================== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 class="gradient-text">Sajjad Mahmud</h3>
+                    <p>CSE Student & Web Developer passionate about creating beautiful digital experiences.</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="education.html">Education</a></li>
+                        <li><a href="projects.html">Projects</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Connect</h4>
+                    <div class="footer-social">
+                        <a href="https://github.com/sajjadmahmud" target="_blank"><i class="fab fa-github"></i></a>
+                        <a href="https://linkedin.com/in/sajjadmahmud" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://facebook.com/sajjadmahmud" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                        <a href="mailto:sajjadmahmudsuton@gmail.com"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 Md. Sajjad Mahmud Suton. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Main JavaScript -->
+    <script src="js/script.js"></script>
+    
+    <!-- Staggered Scroll Animation -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const timelineItems = document.querySelectorAll('.timeline-item');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const delay = entry.target.getAttribute('data-delay') || 0;
+                        setTimeout(() => {
+                            entry.target.classList.add('visible');
+                        }, delay);
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: 0.2
+            });
+            
+            timelineItems.forEach(item => observer.observe(item));
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- ============================================
+         UNIVERSITY PAGE - Academic Resources Hub
+         Semesters with courses, notes, lab reports, etc.
+         ============================================ -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="University academic resources - Lab reports, notes, projects, presentations and more organized by semester.">
+    <meta name="keywords" content="university, academic, lab reports, notes, projects, semester">
+    <meta name="author" content="Your Name">
+    
+    <title>University | Academic Resources</title>
+    
+    <!-- Google Fonts - Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- ==========================================
+         NAVIGATION BAR
+         ========================================== -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="nav-logo">Portfolio</a>
+            
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="education.html" class="nav-link">Education</a></li>
+                <li><a href="projects.html" class="nav-link">Projects</a></li>
+                <li><a href="blog.html" class="nav-link">Blog</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+                <li>
+                    <a href="assets/cv/cv.html" class="btn btn-download" target="_blank">
+                        <i class="fas fa-download"></i> Download CV
+                    </a>
+                </li>
+            </ul>
+            
+            <!-- Theme Toggle Button -->
+            <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+                <i class="fas fa-moon"></i>
+            </button>
+            
+            <div class="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ==========================================
+         PAGE HEADER WITH DECORATIVE BACKGROUND
+         ========================================== -->
+    <section class="section university-hero" style="padding-top: 150px; padding-bottom: 60px; position: relative; overflow: hidden;">
+        <!-- Decorative Background Elements -->
+        <div class="hero-background">
+            <div class="hero-gradient gradient-1"></div>
+            <div class="hero-gradient gradient-2"></div>
+        </div>
+        
+        <div class="container" style="position: relative; z-index: 1;">
+            <div class="section-header fade-in">
+                <span class="hero-subtitle" style="margin-bottom: 15px;">
+                    <i class="fas fa-graduation-cap"></i> Academic Journey
+                </span>
+                <h2>University <span class="gradient-text">Resources</span></h2>
+                <p>All my academic materials organized by semester - Lab Reports, Notes, Projects, Presentations & more.</p>
+            </div>
+            
+            <!-- Quick Stats -->
+            <div class="university-stats fade-in" style="display: flex; justify-content: center; gap: 40px; margin-top: 40px; flex-wrap: wrap;">
+                <div class="stat-item text-center">
+                    <div class="stat-icon" style="width: 60px; height: 60px; background: var(--gradient-primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 10px; font-size: 1.5rem;">
+                        <i class="fas fa-book"></i>
+                    </div>
+                    <h3 class="gradient-text" style="margin-bottom: 5px;">8</h3>
+                    <p style="margin: 0; font-size: 0.9rem;">Semesters</p>
+                </div>
+                <div class="stat-item text-center">
+                    <div class="stat-icon" style="width: 60px; height: 60px; background: var(--gradient-primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 10px; font-size: 1.5rem;">
+                        <i class="fas fa-flask"></i>
+                    </div>
+                    <h3 class="gradient-text" style="margin-bottom: 5px;">50+</h3>
+                    <p style="margin: 0; font-size: 0.9rem;">Lab Reports</p>
+                </div>
+                <div class="stat-item text-center">
+                    <div class="stat-icon" style="width: 60px; height: 60px; background: var(--gradient-primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 10px; font-size: 1.5rem;">
+                        <i class="fas fa-file-alt"></i>
+                    </div>
+                    <h3 class="gradient-text" style="margin-bottom: 5px;">100+</h3>
+                    <p style="margin: 0; font-size: 0.9rem;">Notes</p>
+                </div>
+                <div class="stat-item text-center">
+                    <div class="stat-icon" style="width: 60px; height: 60px; background: var(--gradient-primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 10px; font-size: 1.5rem;">
+                        <i class="fas fa-project-diagram"></i>
+                    </div>
+                    <h3 class="gradient-text" style="margin-bottom: 5px;">20+</h3>
+                    <p style="margin: 0; font-size: 0.9rem;">Projects</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         SEMESTER GRID
+         ========================================== -->
+    <section class="section" style="padding-top: 40px;">
+        <div class="container">
+            <div class="section-header fade-in" style="margin-bottom: 50px;">
+                <h3>Select a <span class="gradient-text">Semester</span></h3>
+                <p>Click on any semester to view all courses and resources</p>
+            </div>
+            
+            <div class="semester-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 30px;">
+                
+                <!-- ========== SEMESTER 1 ========== -->
+                <a href="semester.html?sem=1" class="semester-card card fade-in" style="text-decoration: none; position: relative; overflow: hidden;">
+                    <div class="semester-number" style="position: absolute; top: -20px; right: -20px; font-size: 6rem; font-weight: 800; opacity: 0.1; color: var(--gradient-teal);">1</div>
+                    <div class="semester-icon" style="width: 70px; height: 70px; background: linear-gradient(135deg, #14b8a6, #0d9488); border-radius: 16px; display: flex; align-items: center; justify-content: center; font-size: 1.8rem; margin-bottom: 20px; box-shadow: 0 10px 30px rgba(20, 184, 166, 0.3);">
+                        <i class="fas fa-seedling"></i>
+                    </div>
+                    <h3 style="color: var(--text-primary); margin-bottom: 10px;">1st Semester</h3>
+                    <p style="margin-bottom: 15px; font-size: 0.95rem;">Foundation courses and basic concepts</p>
+                    <div class="semester-meta" style="display: flex; gap: 15px; flex-wrap: wrap;">
+                        <span style="font-size: 0.85rem; color: var(--gradient-teal);"><i class="fas fa-book-open"></i> 6 Courses</span>
+                        <span style="font-size: 0.85rem; color: var(--text-secondary);"><i class="fas fa-file"></i> 25 Files</span>
+                    </div>
+                    <div class="semester-arrow" style="position: absolute; bottom: 25px; right: 25px; width: 40px; height: 40px; background: var(--bg-secondary); border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: all 0.3s ease;">
+                        <i class="fas fa-arrow-right" style="color: var(--gradient-teal);"></i>
+                    </div>
+                </a>
+                
+                <!-- ========== SEMESTER 2 ========== -->
+                <a href="semester.html?sem=2" class="semester-card card fade-in fade-in-delay-1" style="text-decoration: none; position: relative; overflow: hidden;">
+                    <div class="semester-number" style="position: absolute; top: -20px; right: -20px; font-size: 6rem; font-weight: 800; opacity: 0.1; color: var(--gradient-purple);">2</div>
+                    <div class="semester-icon" style="width: 70px; height: 70px; background: linear-gradient(135deg, #a855f7, #9333ea); border-radius: 16px; display: flex; align-items: center; justify-content: center; font-size: 1.8rem; margin-bottom: 20px; box-shadow: 0 10px 30px rgba(168, 85, 247, 0.3);">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3 style="color: var(--text-primary); margin-bottom: 10px;">2nd Semester</h3>
+                    <p style="margin-bottom: 15px; font-size: 0.95rem;">Programming fundamentals and mathematics</p>
+                    <div class="semester-meta" style="display: flex; gap: 15px; flex-wrap: wrap;">
+                        <span style="font-size: 0.85rem; color: var(--gradient-purple);"><i class="fas fa-book-open"></i> 7 Courses</span>
+                        <span style="font-size: 0.85rem; color: var(--text-secondary);"><i class="fas fa-file"></i> 32 Files</span>
+                    </div>
+                    <div class="semester-arrow" style="position: absolute; bottom: 25px; right: 25px; width: 40px; height: 40px; background: var(--bg-secondary); border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: all 0.3s ease;">
+                        <i class="fas fa-arrow-right" style="color: var(--gradient-purple);"></i>
+                    </div>
+                </a>
+                
+                <!-- ========== SEMESTER 3 ========== -->
+                <a href="semester.html?sem=3" class="semester-card card fade-in fade-in-delay-2" style="text-decoration: none; position: relative; overflow: hidden;">
+                    <div class="semester-number" style="position: absolute; top: -20px; right: -20px; font-size: 6rem; font-weight: 800; opacity: 0.1; color: var(--text-accent);">3</div>
+                    <div class="semester-icon" style="width: 70px; height: 70px; background: linear-gradient(135deg, #38bdf8, #0ea5e9); border-radius: 16px; display: flex; align-items: center; justify-content: center; font-size: 1.8rem; margin-bottom: 20px; box-shadow: 0 10px 30px rgba(56, 189, 248, 0.3);">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <h3 style="color: var(--text-primary); margin-bottom: 10px;">3rd Semester</h3>
+                    <p style="margin-bottom: 15px; font-size: 0.95rem;">Data structures and algorithms</p>
+                    <div class="semester-meta" style="display: flex; gap: 15px; flex-wrap: wrap;">
+                        <span style="font-size: 0.85rem; color: var(--text-accent);"><i class="fas fa-book-open"></i> 6 Courses</span>
+                        <span style="font-size: 0.85rem; color: var(--text-secondary);"><i class="fas fa-file"></i> 28 Files</span>
+                    </div>
+                    <div class="semester-arrow" style="position: absolute; bottom: 25px; right: 25px; width: 40px; height: 40px; background: var(--bg-secondary); border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: all 0.3s ease;">
+                        <i class="fas fa-arrow-right" style="color: var(--text-accent);"></i>
+                    </div>
+                </a>
+                
+                <!-- ========== SEMESTER 4 ========== -->
+                <a href="semester.html?sem=4" class="semester-card card fade-in" style="text-decoration: none; position: relative; overflow: hidden;">
+                    <div class="semester-number" style="position: absolute; top: -20px; right: -20px; font-size: 6rem; font-weight: 800; opacity: 0.1; color: #f472b6;">4</div>
+                    <div class="semester-icon" style="width: 70px; height: 70px; background: linear-gradient(135deg, #f472b6, #ec4899); border-radius: 16px; display: flex; align-items: center; justify-content: center; font-size: 1.8rem; margin-bottom: 20px; box-shadow: 0 10px 30px rgba(244, 114, 182, 0.3);">
+                        <i class="fas fa-network-wired"></i>
+                    </div>
+                    <h3 style="color: var(--text-primary); margin-bottom: 10px;">4th Semester</h3>
+                    <p style="margin-bottom: 15px; font-size: 0.95rem;">Operating systems and networking</p>
+                    <div class="semester-meta" style="display: flex; gap: 15px; flex-wrap: wrap;">
+                        <span style="font-size: 0.85rem; color: #f472b6;"><i class="fas fa-book-open"></i> 7 Courses</span>
+                        <span style="font-size: 0.85rem; color: var(--text-secondary);"><i class="fas fa-file"></i> 35 Files</span>
+                    </div>
+                    <div class="semester-arrow" style="position: absolute; bottom: 25px; right: 25px; width: 40px; height: 40px; background: var(--bg-secondary); border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: all 0.3s ease;">
+                        <i class="fas fa-arrow-right" style="color: #f472b6;"></i>
+                    </div>
+                </a>
+                
+                <!-- ========== SEMESTER 5 ========== -->
+                <a href="semester.html?sem=5" class="semester-card card fade-in fade-in-delay-1" style="text-decoration: none; position: relative; overflow: hidden;">
+                    <div class="semester-number" style="position: absolute; top: -20px; right: -20px; font-size: 6rem; font-weight: 800; opacity: 0.1; color: #fb923c;">5</div>
+                    <div class="semester-icon" style="width: 70px; height: 70px; background: linear-gradient(135deg, #fb923c, #f97316); border-radius: 16px; display: flex; align-items: center; justify-content: center; font-size: 1.8rem; margin-bottom: 20px; box-shadow: 0 10px 30px rgba(251, 146, 60, 0.3);">
+                        <i class="fas fa-microchip"></i>
+                    </div>
+                    <h3 style="color: var(--text-primary); margin-bottom: 10px;">5th Semester</h3>
+                    <p style="margin-bottom: 15px; font-size: 0.95rem;">Software engineering and databases</p>
+                    <div class="semester-meta" style="display: flex; gap: 15px; flex-wrap: wrap;">
+                        <span style="font-size: 0.85rem; color: #fb923c;"><i class="fas fa-book-open"></i> 6 Courses</span>
+                        <span style="font-size: 0.85rem; color: var(--text-secondary);"><i class="fas fa-file"></i> 30 Files</span>
+                    </div>
+                    <div class="semester-arrow" style="position: absolute; bottom: 25px; right: 25px; width: 40px; height: 40px; background: var(--bg-secondary); border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: all 0.3s ease;">
+                        <i class="fas fa-arrow-right" style="color: #fb923c;"></i>
+                    </div>
+                </a>
+                
+                <!-- ========== SEMESTER 6 ========== -->
+                <a href="semester.html?sem=6" class="semester-card card fade-in fade-in-delay-2" style="text-decoration: none; position: relative; overflow: hidden;">
+                    <div class="semester-number" style="position: absolute; top: -20px; right: -20px; font-size: 6rem; font-weight: 800; opacity: 0.1; color: #4ade80;">6</div>
+                    <div class="semester-icon" style="width: 70px; height: 70px; background: linear-gradient(135deg, #4ade80, #22c55e); border-radius: 16px; display: flex; align-items: center; justify-content: center; font-size: 1.8rem; margin-bottom: 20px; box-shadow: 0 10px 30px rgba(74, 222, 128, 0.3);">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3 style="color: var(--text-primary); margin-bottom: 10px;">6th Semester</h3>
+                    <p style="margin-bottom: 15px; font-size: 0.95rem;">AI, Machine Learning & Web Development</p>
+                    <div class="semester-meta" style="display: flex; gap: 15px; flex-wrap: wrap;">
+                        <span style="font-size: 0.85rem; color: #4ade80;"><i class="fas fa-book-open"></i> 7 Courses</span>
+                        <span style="font-size: 0.85rem; color: var(--text-secondary);"><i class="fas fa-file"></i> 40 Files</span>
+                    </div>
+                    <div class="semester-arrow" style="position: absolute; bottom: 25px; right: 25px; width: 40px; height: 40px; background: var(--bg-secondary); border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: all 0.3s ease;">
+                        <i class="fas fa-arrow-right" style="color: #4ade80;"></i>
+                    </div>
+                </a>
+                
+                <!-- ========== SEMESTER 7 ========== -->
+                <a href="semester.html?sem=7" class="semester-card card fade-in" style="text-decoration: none; position: relative; overflow: hidden;">
+                    <div class="semester-number" style="position: absolute; top: -20px; right: -20px; font-size: 6rem; font-weight: 800; opacity: 0.1; color: #facc15;">7</div>
+                    <div class="semester-icon" style="width: 70px; height: 70px; background: linear-gradient(135deg, #facc15, #eab308); border-radius: 16px; display: flex; align-items: center; justify-content: center; font-size: 1.8rem; margin-bottom: 20px; box-shadow: 0 10px 30px rgba(250, 204, 21, 0.3);">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3 style="color: var(--text-primary); margin-bottom: 10px;">7th Semester</h3>
+                    <p style="margin-bottom: 15px; font-size: 0.95rem;">Security, Cloud & Advanced Topics</p>
+                    <div class="semester-meta" style="display: flex; gap: 15px; flex-wrap: wrap;">
+                        <span style="font-size: 0.85rem; color: #facc15;"><i class="fas fa-book-open"></i> 5 Courses</span>
+                        <span style="font-size: 0.85rem; color: var(--text-secondary);"><i class="fas fa-file"></i> 22 Files</span>
+                    </div>
+                    <div class="semester-arrow" style="position: absolute; bottom: 25px; right: 25px; width: 40px; height: 40px; background: var(--bg-secondary); border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: all 0.3s ease;">
+                        <i class="fas fa-arrow-right" style="color: #facc15;"></i>
+                    </div>
+                </a>
+                
+                <!-- ========== SEMESTER 8 ========== -->
+                <a href="semester.html?sem=8" class="semester-card card fade-in fade-in-delay-1" style="text-decoration: none; position: relative; overflow: hidden;">
+                    <div class="semester-number" style="position: absolute; top: -20px; right: -20px; font-size: 6rem; font-weight: 800; opacity: 0.1; color: #e879f9;">8</div>
+                    <div class="semester-icon" style="width: 70px; height: 70px; background: linear-gradient(135deg, #e879f9, #d946ef); border-radius: 16px; display: flex; align-items: center; justify-content: center; font-size: 1.8rem; margin-bottom: 20px; box-shadow: 0 10px 30px rgba(232, 121, 249, 0.3);">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <h3 style="color: var(--text-primary); margin-bottom: 10px;">8th Semester</h3>
+                    <p style="margin-bottom: 15px; font-size: 0.95rem;">Final Year Project & Internship</p>
+                    <div class="semester-meta" style="display: flex; gap: 15px; flex-wrap: wrap;">
+                        <span style="font-size: 0.85rem; color: #e879f9;"><i class="fas fa-book-open"></i> 3 Courses</span>
+                        <span style="font-size: 0.85rem; color: var(--text-secondary);"><i class="fas fa-file"></i> 15 Files</span>
+                    </div>
+                    <div class="semester-arrow" style="position: absolute; bottom: 25px; right: 25px; width: 40px; height: 40px; background: var(--bg-secondary); border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: all 0.3s ease;">
+                        <i class="fas fa-arrow-right" style="color: #e879f9;"></i>
+                    </div>
+                </a>
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         RESOURCE TYPES OVERVIEW
+         ========================================== -->
+    <section class="section" style="background: var(--bg-secondary);">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h3>Available <span class="gradient-text">Resources</span></h3>
+                <p>What you'll find in each course</p>
+            </div>
+            
+            <div class="projects-grid" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));">
+                <!-- Lab Reports -->
+                <div class="card text-center fade-in" style="padding: 30px 20px;">
+                    <div style="width: 60px; height: 60px; background: linear-gradient(135deg, #14b8a6, #0d9488); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin: 0 auto 15px; font-size: 1.5rem;">
+                        <i class="fas fa-flask"></i>
+                    </div>
+                    <h4 style="font-size: 1.1rem; margin-bottom: 10px;">Lab Reports</h4>
+                    <p style="font-size: 0.9rem; margin: 0;">Detailed experimental reports with code</p>
+                </div>
+                
+                <!-- Notes -->
+                <div class="card text-center fade-in fade-in-delay-1" style="padding: 30px 20px;">
+                    <div style="width: 60px; height: 60px; background: linear-gradient(135deg, #a855f7, #9333ea); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin: 0 auto 15px; font-size: 1.5rem;">
+                        <i class="fas fa-sticky-note"></i>
+                    </div>
+                    <h4 style="font-size: 1.1rem; margin-bottom: 10px;">Class Notes</h4>
+                    <p style="font-size: 0.9rem; margin: 0;">Comprehensive lecture notes</p>
+                </div>
+                
+                <!-- Projects -->
+                <div class="card text-center fade-in fade-in-delay-2" style="padding: 30px 20px;">
+                    <div style="width: 60px; height: 60px; background: linear-gradient(135deg, #38bdf8, #0ea5e9); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin: 0 auto 15px; font-size: 1.5rem;">
+                        <i class="fas fa-project-diagram"></i>
+                    </div>
+                    <h4 style="font-size: 1.1rem; margin-bottom: 10px;">Projects</h4>
+                    <p style="font-size: 0.9rem; margin: 0;">Complete project implementations</p>
+                </div>
+                
+                <!-- Project Reports -->
+                <div class="card text-center fade-in" style="padding: 30px 20px;">
+                    <div style="width: 60px; height: 60px; background: linear-gradient(135deg, #f472b6, #ec4899); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin: 0 auto 15px; font-size: 1.5rem;">
+                        <i class="fas fa-file-contract"></i>
+                    </div>
+                    <h4 style="font-size: 1.1rem; margin-bottom: 10px;">Project Reports</h4>
+                    <p style="font-size: 0.9rem; margin: 0;">Formal project documentation</p>
+                </div>
+                
+                <!-- PPT -->
+                <div class="card text-center fade-in fade-in-delay-1" style="padding: 30px 20px;">
+                    <div style="width: 60px; height: 60px; background: linear-gradient(135deg, #fb923c, #f97316); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin: 0 auto 15px; font-size: 1.5rem;">
+                        <i class="fas fa-file-powerpoint"></i>
+                    </div>
+                    <h4 style="font-size: 1.1rem; margin-bottom: 10px;">Presentations</h4>
+                    <p style="font-size: 0.9rem; margin: 0;">PowerPoint slides & presentations</p>
+                </div>
+                
+                <!-- Assignments -->
+                <div class="card text-center fade-in fade-in-delay-2" style="padding: 30px 20px;">
+                    <div style="width: 60px; height: 60px; background: linear-gradient(135deg, #4ade80, #22c55e); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin: 0 auto 15px; font-size: 1.5rem;">
+                        <i class="fas fa-tasks"></i>
+                    </div>
+                    <h4 style="font-size: 1.1rem; margin-bottom: 10px;">Assignments</h4>
+                    <p style="font-size: 0.9rem; margin: 0;">Solved assignment problems</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         BACK TO PROJECTS LINK
+         ========================================== -->
+    <section class="section">
+        <div class="container">
+            <div class="text-center fade-in">
+                <a href="projects.html" class="btn btn-secondary">
+                    <i class="fas fa-arrow-left"></i> Back to Projects
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         FOOTER
+         ========================================== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>Portfolio</h3>
+                    <p>
+                        Building digital experiences that make a difference. 
+                        Let's create something amazing together.
+                    </p>
+                    <div class="social-links">
+                        <a href="#" class="social-link" aria-label="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="#" class="social-link" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Dribbble">
+                            <i class="fab fa-dribbble"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Me</a></li>
+                        <li><a href="projects.html">Projects</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="university.html">University</a></li>
+                        <li><a href="#">Lab Reports</a></li>
+                        <li><a href="#">Projects</a></li>
+                        <li><a href="#">Notes</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><a href="mailto:your@email.com">your@email.com</a></li>
+                        <li><a href="tel:+1234567890">+1 234 567 890</a></li>
+                        <li><a href="#">Your City, Country</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 Your Name. All rights reserved.</p>
+                <div class="footer-social">
+                    <a href="#" class="social-link" aria-label="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="#" class="social-link" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Main JavaScript -->
+    <script src="js/script.js"></script>
+    
+    <!-- Semester Card Hover Effect -->
+    <style>
+        .semester-card:hover {
+            transform: translateY(-10px) !important;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4) !important;
+        }
+        
+        .semester-card:hover .semester-arrow {
+            background: var(--gradient-primary) !important;
+        }
+        
+        .semester-card:hover .semester-arrow i {
+            color: white !important;
+            transform: translateX(3px);
+        }
+        
+        .semester-arrow i {
+            transition: all 0.3s ease;
+        }
+    </style>
+</body>
+</html>

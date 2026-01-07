@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- ============================================
+         ABOUT PAGE - Personal Portfolio Website
+         About me, skills, and experience sections
+         ============================================ -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Learn more about me, my skills, experience, and what drives my passion for web development.">
+    <meta name="keywords" content="about, developer, skills, experience, background">
+    <meta name="author" content="Sajjad Mahmud">
+    
+    <title>About Me | Sajjad  - Web Developer</title>
+    
+    <!-- Google Fonts - Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- ==========================================
+         NAVIGATION BAR
+         ========================================== -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="nav-logo">Sajjad Mahmud</a>
+            
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link active">About</a></li>
+                <li><a href="education.html" class="nav-link">Education</a></li>
+                <li><a href="projects.html" class="nav-link">Projects</a></li>
+                <li><a href="blog.html" class="nav-link">Blog</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+                <li>
+                    <a href="assets/cv/cv.html" class="btn btn-download" target="_blank">
+                        <i class="fas fa-download"></i> Download CV
+                    </a>
+                </li>
+            </ul>
+            
+            <!-- Theme Toggle Button -->
+            <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+                <i class="fas fa-moon"></i>
+            </button>
+            
+            <div class="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ==========================================
+         PAGE HEADER
+         ========================================== -->
+    <section class="section" style="padding-top: 150px; padding-bottom: 60px;">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2>About <span class="gradient-text">Me</span></h2>
+                <p>Get to know my background, skills, and what drives my passion for creating digital experiences.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         ABOUT CONTENT - Bio and Image
+         ========================================== -->
+    <section class="section" style="padding-top: 0;">
+        <div class="container">
+            <div class="about-content">
+                <!-- Profile Image -->
+                <div class="about-image slide-in-left">
+                    <!-- Replace with your photo -->
+                    <img src="sajjad.jpg" alt="Sajjad Mahmud">
+                </div>
+                
+                <!-- About Text -->
+                <div class="about-text slide-in-right">
+                    <h2>Hi there! I'm <span class="gradient-text">Sajjad Mahmud Suton</span></h2>
+                    
+                    <p>
+                        I'm a passionate web developer and designer based in <strong>Your City</strong>. 
+                        With over <strong>5 years of experience</strong>, I specialize in creating 
+                        beautiful, functional, and user-centered digital experiences.
+                    </p>
+                    
+                    <p>
+                        My journey in web development started when I built my first website at 15. 
+                        Since then, I've worked with startups, agencies, and established companies 
+                        to bring their digital visions to life. I believe that great design is not 
+                        just about aesthetics—it's about solving problems and creating meaningful 
+                        connections between brands and their audiences.
+                    </p>
+                    
+                    <p>
+                        When I'm not coding, you can find me exploring new technologies, contributing 
+                        to open-source projects, or enjoying a good cup of coffee while reading about 
+                        the latest industry trends.
+                    </p>
+                    
+                    <!-- Personal Info -->
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-top: 30px;">
+                        <p style="margin: 0;"><strong>Name:</strong> Md. Sajjad Mahmud Suton</p>
+                        <p style="margin: 0;"><strong>Email:</strong><a href="mailto:sajjadmahmudsuton@gmail.com">sajjadmahmudsuton@gmail.com</a></p>
+                        <p style="margin: 0;"><strong>Location:</strong> Dhaka, Bangladesh</p>
+                        <p style="margin: 0;"><strong>Availability:</strong> Open to work</p>
+                    </div>
+                    
+                    <!-- Buttons -->
+                    <div class="hero-buttons" style="margin-top: 30px;">
+                        <a href="assets/cv/cv.html" class="btn btn-primary" target="_blank">
+                            <i class="fas fa-download"></i> Download CV
+                        </a>
+                        <a href="contact.html" class="btn btn-secondary">
+                            <i class="fas fa-envelope"></i> Contact Me
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         SKILLS SECTION
+         ========================================== -->
+    <section class="section" style="background: var(--bg-secondary);">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2>My <span class="gradient-text">Skills</span></h2>
+                <p>Technologies and tools I use to bring ideas to life.</p>
+            </div>
+            
+            <div class="skills-grid">
+                <!-- Skill Card 1 - Frontend -->
+                <div class="card skill-card fade-in">
+                    <div class="skill-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h4>Frontend Development</h4>
+                    <p>HTML5, CSS3, JavaScript, React, Vue.js, TypeScript, Tailwind CSS, SASS</p>
+                </div>
+                
+                <!-- Skill Card 2 - Backend -->
+                <div class="card skill-card fade-in fade-in-delay-1">
+                    <div class="skill-icon">
+                        <i class="fas fa-server"></i>
+                    </div>
+                    <h4>Backend Development</h4>
+                    <p>Node.js, Express, Python, Django, PHP, Laravel, RESTful APIs, GraphQL</p>
+                </div>
+                
+                <!-- Skill Card 3 - Database -->
+                <div class="card skill-card fade-in fade-in-delay-2">
+                    <div class="skill-icon">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <h4>Database Management</h4>
+                    <p>MySQL, PostgreSQL, MongoDB, Firebase, Redis, Prisma ORM</p>
+                </div>
+                
+                <!-- Skill Card 4 - Design -->
+                <div class="card skill-card fade-in fade-in-delay-3">
+                    <div class="skill-icon">
+                        <i class="fas fa-paint-brush"></i>
+                    </div>
+                    <h4>UI/UX Design</h4>
+                    <p>Figma, Adobe XD, Photoshop, Illustrator, Prototyping, Wireframing</p>
+                </div>
+                
+                <!-- Skill Card 5 - DevOps -->
+                <div class="card skill-card fade-in">
+                    <div class="skill-icon">
+                        <i class="fas fa-cloud"></i>
+                    </div>
+                    <h4>DevOps & Cloud</h4>
+                    <p>Git, Docker, AWS, Vercel, Netlify, CI/CD, Linux</p>
+                </div>
+                
+                <!-- Skill Card 6 - Mobile -->
+                <div class="card skill-card fade-in fade-in-delay-1">
+                    <div class="skill-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h4>Mobile Development</h4>
+                    <p>React Native, Flutter, Progressive Web Apps (PWA)</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         EXPERIENCE & EDUCATION TIMELINE
+         ========================================== -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2>Experience & <span class="gradient-text">Education</span></h2>
+                <p>My professional journey and educational background.</p>
+            </div>
+            
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 60px;">
+                <!-- Work Experience -->
+                <div class="fade-in">
+                    <h3 style="margin-bottom: 30px;">
+                        <i class="fas fa-briefcase" style="color: var(--gradient-teal);"></i> Work Experience
+                    </h3>
+                    
+                    <div class="timeline">
+                        <!-- Experience 1 -->
+                        <div class="timeline-item">
+                            <span class="timeline-date">2022 - Present</span>
+                            <h4>Senior Frontend Developer</h4>
+                            <h5>Tech Company Inc.</h5>
+                            <p>Leading frontend development for enterprise applications. Mentoring junior developers and implementing best practices.</p>
+                        </div>
+                        
+                        <!-- Experience 2 -->
+                        <div class="timeline-item">
+                            <span class="timeline-date">2020 - 2022</span>
+                            <h4>Full Stack Developer</h4>
+                            <h5>Digital Agency Co.</h5>
+                            <p>Developed custom web applications for clients across various industries. Worked with React, Node.js, and MongoDB.</p>
+                        </div>
+                        
+                        <!-- Experience 3 -->
+                        <div class="timeline-item">
+                            <span class="timeline-date">2018 - 2020</span>
+                            <h4>Junior Web Developer</h4>
+                            <h5>Startup Hub</h5>
+                            <p>Built responsive websites and learned modern development practices. Collaborated with designers on UI/UX projects.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Education -->
+                <div class="fade-in fade-in-delay-2">
+                    <h3 style="margin-bottom: 30px;">
+                        <i class="fas fa-graduation-cap" style="color: var(--gradient-purple);"></i> Education
+                    </h3>
+                    
+                    <div class="timeline">
+                        <!-- Education 1 -->
+                        <div class="timeline-item">
+                            <span class="timeline-date">2014 - 2018</span>
+                            <h4>Bachelor's in Computer Science</h4>
+                            <h5>University Name</h5>
+                            <p>Graduated with honors. Focused on software engineering and web technologies. Completed thesis on modern frontend frameworks.</p>
+                        </div>
+                        
+                        <!-- Education 2 -->
+                        <div class="timeline-item">
+                            <span class="timeline-date">2021</span>
+                            <h4>AWS Certified Developer</h4>
+                            <h5>Amazon Web Services</h5>
+                            <p>Earned professional certification in cloud development and deployment on AWS infrastructure.</p>
+                        </div>
+                        
+                        <!-- Education 3 -->
+                        <div class="timeline-item">
+                            <span class="timeline-date">2020</span>
+                            <h4>Full Stack Web Development</h4>
+                            <h5>Online Bootcamp</h5>
+                            <p>Intensive program covering modern web development stack including React, Node.js, and database management.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         FUN FACTS / INTERESTS
+         ========================================== -->
+    <section class="section" style="background: var(--bg-secondary);">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2>Fun <span class="gradient-text">Facts</span></h2>
+                <p>A few things about me beyond the code.</p>
+            </div>
+            
+            <div class="projects-grid" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));">
+                <!-- Fact 1 -->
+                <div class="card text-center fade-in">
+                    <div class="skill-icon" style="margin-bottom: 20px;">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <h4>Countries Visited</h4>
+                    <p class="gradient-text" style="font-size: 2rem; font-weight: 700;">12+</p>
+                </div>
+                
+                <!-- Fact 2 -->
+                <div class="card text-center fade-in fade-in-delay-1">
+                    <div class="skill-icon" style="margin-bottom: 20px;">
+                        <i class="fas fa-book"></i>
+                    </div>
+                    <h4>Books Read Yearly</h4>
+                    <p class="gradient-text" style="font-size: 2rem; font-weight: 700;">20+</p>
+                </div>
+                
+                <!-- Fact 3 -->
+                <div class="card text-center fade-in fade-in-delay-2">
+                    <div class="skill-icon" style="margin-bottom: 20px;">
+                        <i class="fas fa-music"></i>
+                    </div>
+                    <h4>Favorite Genre</h4>
+                    <p class="gradient-text" style="font-size: 1.5rem; font-weight: 700;">Lo-Fi Beats</p>
+                </div>
+                
+                <!-- Fact 4 -->
+                <div class="card text-center fade-in fade-in-delay-3">
+                    <div class="skill-icon" style="margin-bottom: 20px;">
+                        <i class="fas fa-gamepad"></i>
+                    </div>
+                    <h4>Hobby</h4>
+                    <p class="gradient-text" style="font-size: 1.5rem; font-weight: 700;">Gaming</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         CALL TO ACTION
+         ========================================== -->
+    <section class="section">
+        <div class="container">
+            <div class="text-center fade-in">
+                <h2>Let's Work <span class="gradient-text">Together</span></h2>
+                <p style="max-width: 600px; margin: 20px auto 30px;">
+                    I'm always excited to take on new challenges and collaborate on interesting projects.
+                </p>
+                <a href="contact.html" class="btn btn-primary">
+                    <i class="fas fa-paper-plane"></i> Get In Touch
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         FOOTER
+         ========================================== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>Sajjad</h3>
+                    <p>
+                        Building digital experiences that make a difference. 
+                        Let's create something amazing together.
+                    </p>
+                    <div class="social-links">
+                        <a href="#" class="social-link" aria-label="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="#" class="social-link" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Dribbble">
+                            <i class="fab fa-dribbble"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Me</a></li>
+                        <li><a href="projects.html">Projects</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="#">Web Development</a></li>
+                        <li><a href="#">UI/UX Design</a></li>
+                        <li><a href="#">Mobile Apps</a></li>
+                        <li><a href="#">Consulting</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><a href="mailto:sajjadmahmudsuton@gmail.com">sajjadmahmudsuton@gmail.com</a></li>
+                        <li><a href="tel:+8801968161494">+880 1968 161 494</a></li>
+                        <li><a href="#">Dhaka, Bangladesh</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Sajjad Mahmud. All rights reserved.</p>
+                <div class="footer-social">
+                    <a href="#" class="social-link" aria-label="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="#" class="social-link" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Main JavaScript -->
+    <script src="js/script.js"></script>
+</body>
+</html>

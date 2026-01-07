@@ -1,0 +1,1353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- ============================================
+         COURSE RESOURCES PAGE
+         Lab Reports, Notes, Projects, PPT & more
+         Beautiful decorated modern design
+         ============================================ -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Course resources - Lab reports, notes, projects, presentations and more.">
+    <meta name="keywords" content="course, lab reports, notes, projects, ppt, academic">
+    <meta name="author" content="Your Name">
+    
+    <title>Course Resources | University</title>
+    
+    <!-- Google Fonts - Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+    
+    <!-- Course Page Specific Styles -->
+    <style>
+        /* ==========================================
+           COURSE PAGE CUSTOM STYLES
+           ========================================== */
+        
+        /* Hero Banner */
+        .course-hero {
+            position: relative;
+            padding: 140px 0 60px;
+            overflow: hidden;
+        }
+        
+        .course-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(20, 184, 166, 0.1), rgba(168, 85, 247, 0.1));
+            z-index: -1;
+        }
+        
+        .course-hero-pattern {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: radial-gradient(circle at 20% 50%, rgba(20, 184, 166, 0.08) 0%, transparent 50%),
+                              radial-gradient(circle at 80% 20%, rgba(168, 85, 247, 0.08) 0%, transparent 50%),
+                              radial-gradient(circle at 40% 80%, rgba(56, 189, 248, 0.08) 0%, transparent 50%);
+            z-index: -1;
+        }
+        
+        /* Resource Category Tabs */
+        .resource-tabs {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-bottom: 40px;
+            padding: 15px;
+            background: var(--bg-card);
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        
+        .resource-tab {
+            padding: 12px 24px;
+            background: transparent;
+            color: var(--text-secondary);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 30px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .resource-tab:hover {
+            background: rgba(20, 184, 166, 0.1);
+            color: var(--text-primary);
+            border-color: var(--gradient-teal);
+        }
+        
+        .resource-tab.active {
+            background: var(--gradient-primary);
+            color: white;
+            border-color: transparent;
+            box-shadow: 0 5px 20px rgba(20, 184, 166, 0.3);
+        }
+        
+        .resource-tab .tab-count {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 2px 8px;
+            border-radius: 10px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+        
+        /* Resource Cards Grid */
+        .resources-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 25px;
+        }
+        
+        /* Individual Resource Card */
+        .resource-card {
+            background: var(--bg-card);
+            border-radius: 20px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.4s ease;
+            position: relative;
+        }
+        
+        .resource-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gradient-primary);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .resource-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
+            border-color: rgba(20, 184, 166, 0.3);
+        }
+        
+        .resource-card:hover::before {
+            opacity: 1;
+        }
+        
+        /* Resource Card Header */
+        .resource-card-header {
+            padding: 25px;
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+        }
+        
+        .resource-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+        
+        .resource-icon.lab-report {
+            background: linear-gradient(135deg, #14b8a6, #0d9488);
+            box-shadow: 0 8px 25px rgba(20, 184, 166, 0.3);
+        }
+        
+        .resource-icon.notes {
+            background: linear-gradient(135deg, #a855f7, #9333ea);
+            box-shadow: 0 8px 25px rgba(168, 85, 247, 0.3);
+        }
+        
+        .resource-icon.project {
+            background: linear-gradient(135deg, #38bdf8, #0ea5e9);
+            box-shadow: 0 8px 25px rgba(56, 189, 248, 0.3);
+        }
+        
+        .resource-icon.project-report {
+            background: linear-gradient(135deg, #f472b6, #ec4899);
+            box-shadow: 0 8px 25px rgba(244, 114, 182, 0.3);
+        }
+        
+        .resource-icon.ppt {
+            background: linear-gradient(135deg, #fb923c, #f97316);
+            box-shadow: 0 8px 25px rgba(251, 146, 60, 0.3);
+        }
+        
+        .resource-icon.assignment {
+            background: linear-gradient(135deg, #4ade80, #22c55e);
+            box-shadow: 0 8px 25px rgba(74, 222, 128, 0.3);
+        }
+        
+        .resource-icon.book {
+            background: linear-gradient(135deg, #facc15, #eab308);
+            box-shadow: 0 8px 25px rgba(250, 204, 21, 0.3);
+        }
+        
+        .resource-icon.video {
+            background: linear-gradient(135deg, #ef4444, #dc2626);
+            box-shadow: 0 8px 25px rgba(239, 68, 68, 0.3);
+        }
+        
+        .resource-info {
+            flex: 1;
+        }
+        
+        .resource-info h4 {
+            margin-bottom: 8px;
+            font-size: 1.1rem;
+            color: var(--text-primary);
+            line-height: 1.4;
+        }
+        
+        .resource-info p {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin: 0;
+            line-height: 1.5;
+        }
+        
+        /* Resource Card Meta */
+        .resource-meta {
+            padding: 0 25px;
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+        
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+        
+        .meta-item i {
+            color: var(--gradient-teal);
+        }
+        
+        /* Resource Card Footer */
+        .resource-card-footer {
+            padding: 20px 25px;
+            display: flex;
+            gap: 10px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            margin-top: 15px;
+        }
+        
+        .resource-btn {
+            flex: 1;
+            padding: 12px 20px;
+            border-radius: 12px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 0.9rem;
+            font-weight: 500;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            transition: all 0.3s ease;
+        }
+        
+        .resource-btn.primary {
+            background: var(--gradient-primary);
+            color: white;
+        }
+        
+        .resource-btn.primary:hover {
+            box-shadow: 0 5px 20px rgba(20, 184, 166, 0.4);
+            transform: translateY(-2px);
+        }
+        
+        .resource-btn.secondary {
+            background: var(--bg-secondary);
+            color: var(--text-secondary);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .resource-btn.secondary:hover {
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            border-color: var(--gradient-teal);
+        }
+        
+        /* Resource Type Badge */
+        .resource-type-badge {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .resource-type-badge.lab-report {
+            background: rgba(20, 184, 166, 0.2);
+            color: #14b8a6;
+        }
+        
+        .resource-type-badge.notes {
+            background: rgba(168, 85, 247, 0.2);
+            color: #a855f7;
+        }
+        
+        .resource-type-badge.project {
+            background: rgba(56, 189, 248, 0.2);
+            color: #38bdf8;
+        }
+        
+        .resource-type-badge.ppt {
+            background: rgba(251, 146, 60, 0.2);
+            color: #fb923c;
+        }
+        
+        /* Stats Cards */
+        .course-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+            margin-top: 40px;
+        }
+        
+        .stat-card {
+            background: var(--bg-card);
+            border-radius: 16px;
+            padding: 25px;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.3s ease;
+        }
+        
+        .stat-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(20, 184, 166, 0.3);
+        }
+        
+        .stat-card i {
+            font-size: 2rem;
+            margin-bottom: 15px;
+            display: block;
+        }
+        
+        .stat-card h3 {
+            font-size: 2rem;
+            margin-bottom: 5px;
+        }
+        
+        .stat-card p {
+            margin: 0;
+            font-size: 0.9rem;
+        }
+        
+        /* Empty State */
+        .empty-state {
+            text-align: center;
+            padding: 60px 20px;
+            background: var(--bg-card);
+            border-radius: 20px;
+            border: 2px dashed rgba(255, 255, 255, 0.1);
+        }
+        
+        .empty-state i {
+            font-size: 4rem;
+            color: var(--text-secondary);
+            margin-bottom: 20px;
+        }
+        
+        .empty-state h3 {
+            margin-bottom: 10px;
+        }
+        
+        /* Search Box */
+        .search-box {
+            position: relative;
+            max-width: 400px;
+            margin: 0 auto 30px;
+        }
+        
+        .search-box input {
+            width: 100%;
+            padding: 15px 20px 15px 50px;
+            background: var(--bg-card);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 30px;
+            color: var(--text-primary);
+            font-family: 'Poppins', sans-serif;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+        
+        .search-box input:focus {
+            outline: none;
+            border-color: var(--gradient-teal);
+            box-shadow: 0 0 0 3px rgba(20, 184, 166, 0.2);
+        }
+        
+        .search-box i {
+            position: absolute;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-secondary);
+        }
+        
+        /* Floating Decorations */
+        .floating-shape {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(60px);
+            opacity: 0.5;
+            pointer-events: none;
+        }
+        
+        .floating-shape-1 {
+            width: 300px;
+            height: 300px;
+            background: rgba(20, 184, 166, 0.2);
+            top: 10%;
+            right: -100px;
+        }
+        
+        .floating-shape-2 {
+            width: 200px;
+            height: 200px;
+            background: rgba(168, 85, 247, 0.2);
+            bottom: 20%;
+            left: -50px;
+        }
+        
+        /* Resource List View */
+        .resources-list {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        
+        .resource-list-item {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            padding: 20px 25px;
+            background: var(--bg-card);
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+        
+        .resource-list-item:hover {
+            transform: translateX(10px);
+            border-color: rgba(20, 184, 166, 0.3);
+            background: var(--bg-secondary);
+        }
+        
+        .resource-list-item .resource-icon {
+            width: 50px;
+            height: 50px;
+            font-size: 1.2rem;
+        }
+        
+        .resource-list-item .resource-info {
+            flex: 1;
+        }
+        
+        .resource-list-item .resource-info h4 {
+            font-size: 1rem;
+            margin-bottom: 5px;
+        }
+        
+        .resource-list-item .download-btn {
+            padding: 10px 20px;
+            background: var(--bg-secondary);
+            color: var(--text-accent);
+            border-radius: 10px;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+        
+        .resource-list-item:hover .download-btn {
+            background: var(--gradient-primary);
+            color: white;
+        }
+        
+        /* View Toggle */
+        .view-toggle {
+            display: flex;
+            gap: 5px;
+            background: var(--bg-card);
+            padding: 5px;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        
+        .view-toggle button {
+            padding: 10px 15px;
+            background: transparent;
+            border: none;
+            color: var(--text-secondary);
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .view-toggle button.active {
+            background: var(--gradient-primary);
+            color: white;
+        }
+        
+        .view-toggle button:hover:not(.active) {
+            color: var(--text-primary);
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .resource-tabs {
+                padding: 10px;
+            }
+            
+            .resource-tab {
+                padding: 10px 16px;
+                font-size: 0.85rem;
+            }
+            
+            .resources-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .course-stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- ==========================================
+         NAVIGATION BAR
+         ========================================== -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="nav-logo">Portfolio</a>
+            
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="education.html" class="nav-link">Education</a></li>
+                <li><a href="projects.html" class="nav-link">Projects</a></li>
+                <li><a href="blog.html" class="nav-link">Blog</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+                <li>
+                    <a href="assets/cv/cv.html" class="btn btn-download" target="_blank">
+                        <i class="fas fa-download"></i> Download CV
+                    </a>
+                </li>
+            </ul>
+            
+            <!-- Theme Toggle Button -->
+            <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+                <i class="fas fa-moon"></i>
+            </button>
+            
+            <div class="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ==========================================
+         COURSE HERO SECTION
+         ========================================== -->
+    <section class="course-hero">
+        <div class="course-hero-pattern"></div>
+        <div class="floating-shape floating-shape-1"></div>
+        <div class="floating-shape floating-shape-2"></div>
+        
+        <div class="container" style="position: relative; z-index: 1;">
+            <!-- Breadcrumb -->
+            <nav class="breadcrumb fade-in" style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin-bottom: 30px;">
+                <a href="index.html" style="color: var(--text-secondary); font-size: 0.9rem;">
+                    <i class="fas fa-home"></i> Home
+                </a>
+                <span style="color: var(--text-secondary);">/</span>
+                <a href="university.html" style="color: var(--text-secondary); font-size: 0.9rem;">University</a>
+                <span style="color: var(--text-secondary);">/</span>
+                <a href="semester.html?sem=1" style="color: var(--text-secondary); font-size: 0.9rem;" id="breadcrumb-semester">1st Semester</a>
+                <span style="color: var(--text-secondary);">/</span>
+                <span style="color: var(--text-accent); font-size: 0.9rem;" id="breadcrumb-course">Programming Fundamentals</span>
+            </nav>
+            
+            <!-- Course Header -->
+            <div class="course-header fade-in" style="display: flex; align-items: center; gap: 30px; flex-wrap: wrap;">
+                <!-- Course Icon -->
+                <div id="course-icon" style="width: 120px; height: 120px; background: linear-gradient(135deg, #38bdf8, #0ea5e9); border-radius: 28px; display: flex; align-items: center; justify-content: center; font-size: 3rem; box-shadow: 0 20px 50px rgba(56, 189, 248, 0.4);">
+                    <i class="fas fa-code"></i>
+                </div>
+                
+                <!-- Course Info -->
+                <div style="flex: 1;">
+                    <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 10px; flex-wrap: wrap;">
+                        <span style="background: rgba(56, 189, 248, 0.2); color: #38bdf8; padding: 6px 16px; border-radius: 20px; font-size: 0.85rem; font-weight: 600;" id="course-code">
+                            CSE-101
+                        </span>
+                        <span style="color: var(--text-secondary); font-size: 0.9rem;">
+                            <i class="fas fa-credit-card"></i> 4 Credits
+                        </span>
+                    </div>
+                    <h1 style="margin-bottom: 10px; font-size: 2.2rem;" id="course-title">
+                        <span class="gradient-text">Programming Fundamentals</span>
+                    </h1>
+                    <p style="font-size: 1.1rem; margin-bottom: 0; color: var(--text-secondary);" id="course-description">
+                        Introduction to C Programming - Learn the basics of programming, algorithms, and problem-solving.
+                    </p>
+                </div>
+            </div>
+            
+            <!-- Course Stats -->
+            <div class="course-stats fade-in">
+                <div class="stat-card">
+                    <i class="fas fa-flask" style="color: #14b8a6;"></i>
+                    <h3 class="gradient-text" id="stat-lab">10</h3>
+                    <p>Lab Reports</p>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-sticky-note" style="color: #a855f7;"></i>
+                    <h3 class="gradient-text" id="stat-notes">8</h3>
+                    <p>Notes</p>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-project-diagram" style="color: #38bdf8;"></i>
+                    <h3 class="gradient-text" id="stat-project">3</h3>
+                    <p>Projects</p>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-file-powerpoint" style="color: #fb923c;"></i>
+                    <h3 class="gradient-text" id="stat-ppt">5</h3>
+                    <p>Presentations</p>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-tasks" style="color: #4ade80;"></i>
+                    <h3 class="gradient-text" id="stat-assignment">6</h3>
+                    <p>Assignments</p>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-file-alt" style="color: #f472b6;"></i>
+                    <h3 class="gradient-text" id="stat-total">32</h3>
+                    <p>Total Files</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         RESOURCES SECTION
+         ========================================== -->
+    <section class="section" style="padding-top: 40px;">
+        <div class="container">
+            
+            <!-- Search and View Toggle -->
+            <div class="fade-in" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; margin-bottom: 30px;">
+                <div class="search-box" style="flex: 1; max-width: 400px;">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Search resources..." id="search-input">
+                </div>
+                
+                <div class="view-toggle">
+                    <button class="active" data-view="grid" title="Grid View">
+                        <i class="fas fa-th-large"></i>
+                    </button>
+                    <button data-view="list" title="List View">
+                        <i class="fas fa-list"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Resource Category Tabs -->
+            <div class="resource-tabs fade-in">
+                <button class="resource-tab active" data-category="all">
+                    <i class="fas fa-layer-group"></i> All
+                    <span class="tab-count">32</span>
+                </button>
+                <button class="resource-tab" data-category="lab-report">
+                    <i class="fas fa-flask"></i> Lab Reports
+                    <span class="tab-count">10</span>
+                </button>
+                <button class="resource-tab" data-category="notes">
+                    <i class="fas fa-sticky-note"></i> Notes
+                    <span class="tab-count">8</span>
+                </button>
+                <button class="resource-tab" data-category="project">
+                    <i class="fas fa-project-diagram"></i> Projects
+                    <span class="tab-count">3</span>
+                </button>
+                <button class="resource-tab" data-category="project-report">
+                    <i class="fas fa-file-contract"></i> Project Reports
+                    <span class="tab-count">2</span>
+                </button>
+                <button class="resource-tab" data-category="ppt">
+                    <i class="fas fa-file-powerpoint"></i> PPT
+                    <span class="tab-count">5</span>
+                </button>
+                <button class="resource-tab" data-category="assignment">
+                    <i class="fas fa-tasks"></i> Assignments
+                    <span class="tab-count">6</span>
+                </button>
+                <button class="resource-tab" data-category="book">
+                    <i class="fas fa-book"></i> Books/PDF
+                    <span class="tab-count">4</span>
+                </button>
+            </div>
+            
+            <!-- Resources Grid -->
+            <div class="resources-grid fade-in" id="resources-container">
+                
+                <!-- ========== LAB REPORT 1 ========== -->
+                <div class="resource-card" data-category="lab-report">
+                    <span class="resource-type-badge lab-report">Lab Report</span>
+                    <div class="resource-card-header">
+                        <div class="resource-icon lab-report">
+                            <i class="fas fa-flask"></i>
+                        </div>
+                        <div class="resource-info">
+                            <h4>Lab 01: Introduction to C Programming</h4>
+                            <p>Basic input/output operations, printf & scanf functions, Hello World program.</p>
+                        </div>
+                    </div>
+                    <div class="resource-meta">
+                        <span class="meta-item"><i class="fas fa-file-pdf"></i> PDF</span>
+                        <span class="meta-item"><i class="fas fa-download"></i> 156 Downloads</span>
+                        <span class="meta-item"><i class="fas fa-calendar"></i> Jan 15, 2024</span>
+                    </div>
+                    <div class="resource-card-footer">
+                        <a href="#" class="resource-btn secondary" target="_blank">
+                            <i class="fas fa-eye"></i> Preview
+                        </a>
+                        <a href="#" class="resource-btn primary" download>
+                            <i class="fas fa-download"></i> Download
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- ========== LAB REPORT 2 ========== -->
+                <div class="resource-card" data-category="lab-report">
+                    <span class="resource-type-badge lab-report">Lab Report</span>
+                    <div class="resource-card-header">
+                        <div class="resource-icon lab-report">
+                            <i class="fas fa-flask"></i>
+                        </div>
+                        <div class="resource-info">
+                            <h4>Lab 02: Variables & Data Types</h4>
+                            <p>Understanding int, float, char, double data types and variable declarations.</p>
+                        </div>
+                    </div>
+                    <div class="resource-meta">
+                        <span class="meta-item"><i class="fas fa-file-pdf"></i> PDF</span>
+                        <span class="meta-item"><i class="fas fa-download"></i> 142 Downloads</span>
+                        <span class="meta-item"><i class="fas fa-calendar"></i> Jan 22, 2024</span>
+                    </div>
+                    <div class="resource-card-footer">
+                        <a href="#" class="resource-btn secondary" target="_blank">
+                            <i class="fas fa-eye"></i> Preview
+                        </a>
+                        <a href="#" class="resource-btn primary" download>
+                            <i class="fas fa-download"></i> Download
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- ========== LAB REPORT 3 ========== -->
+                <div class="resource-card" data-category="lab-report">
+                    <span class="resource-type-badge lab-report">Lab Report</span>
+                    <div class="resource-card-header">
+                        <div class="resource-icon lab-report">
+                            <i class="fas fa-flask"></i>
+                        </div>
+                        <div class="resource-info">
+                            <h4>Lab 03: Conditional Statements</h4>
+                            <p>If-else, nested if, switch-case statements with practical examples.</p>
+                        </div>
+                    </div>
+                    <div class="resource-meta">
+                        <span class="meta-item"><i class="fas fa-file-pdf"></i> PDF</span>
+                        <span class="meta-item"><i class="fas fa-download"></i> 128 Downloads</span>
+                        <span class="meta-item"><i class="fas fa-calendar"></i> Jan 29, 2024</span>
+                    </div>
+                    <div class="resource-card-footer">
+                        <a href="#" class="resource-btn secondary" target="_blank">
+                            <i class="fas fa-eye"></i> Preview
+                        </a>
+                        <a href="#" class="resource-btn primary" download>
+                            <i class="fas fa-download"></i> Download
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- ========== NOTES 1 ========== -->
+                <div class="resource-card" data-category="notes">
+                    <span class="resource-type-badge notes">Notes</span>
+                    <div class="resource-card-header">
+                        <div class="resource-icon notes">
+                            <i class="fas fa-sticky-note"></i>
+                        </div>
+                        <div class="resource-info">
+                            <h4>Chapter 1: Introduction to Programming</h4>
+                            <p>Complete lecture notes covering programming basics, history, and fundamentals.</p>
+                        </div>
+                    </div>
+                    <div class="resource-meta">
+                        <span class="meta-item"><i class="fas fa-file-pdf"></i> PDF</span>
+                        <span class="meta-item"><i class="fas fa-download"></i> 234 Downloads</span>
+                        <span class="meta-item"><i class="fas fa-calendar"></i> Jan 10, 2024</span>
+                    </div>
+                    <div class="resource-card-footer">
+                        <a href="#" class="resource-btn secondary" target="_blank">
+                            <i class="fas fa-eye"></i> Preview
+                        </a>
+                        <a href="#" class="resource-btn primary" download>
+                            <i class="fas fa-download"></i> Download
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- ========== NOTES 2 ========== -->
+                <div class="resource-card" data-category="notes">
+                    <span class="resource-type-badge notes">Notes</span>
+                    <div class="resource-card-header">
+                        <div class="resource-icon notes">
+                            <i class="fas fa-sticky-note"></i>
+                        </div>
+                        <div class="resource-info">
+                            <h4>Chapter 2: Operators & Expressions</h4>
+                            <p>Arithmetic, logical, relational, and bitwise operators explained with examples.</p>
+                        </div>
+                    </div>
+                    <div class="resource-meta">
+                        <span class="meta-item"><i class="fas fa-file-pdf"></i> PDF</span>
+                        <span class="meta-item"><i class="fas fa-download"></i> 198 Downloads</span>
+                        <span class="meta-item"><i class="fas fa-calendar"></i> Jan 17, 2024</span>
+                    </div>
+                    <div class="resource-card-footer">
+                        <a href="#" class="resource-btn secondary" target="_blank">
+                            <i class="fas fa-eye"></i> Preview
+                        </a>
+                        <a href="#" class="resource-btn primary" download>
+                            <i class="fas fa-download"></i> Download
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- ========== PROJECT 1 ========== -->
+                <div class="resource-card" data-category="project">
+                    <span class="resource-type-badge project">Project</span>
+                    <div class="resource-card-header">
+                        <div class="resource-icon project">
+                            <i class="fas fa-project-diagram"></i>
+                        </div>
+                        <div class="resource-info">
+                            <h4>Student Management System</h4>
+                            <p>Complete C project with CRUD operations, file handling, and menu-driven interface.</p>
+                        </div>
+                    </div>
+                    <div class="resource-meta">
+                        <span class="meta-item"><i class="fas fa-file-code"></i> C Source</span>
+                        <span class="meta-item"><i class="fas fa-download"></i> 312 Downloads</span>
+                        <span class="meta-item"><i class="fas fa-star" style="color: #facc15;"></i> Featured</span>
+                    </div>
+                    <div class="resource-card-footer">
+                        <a href="#" class="resource-btn secondary" target="_blank">
+                            <i class="fab fa-github"></i> GitHub
+                        </a>
+                        <a href="#" class="resource-btn primary" download>
+                            <i class="fas fa-download"></i> Download
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- ========== PROJECT REPORT ========== -->
+                <div class="resource-card" data-category="project-report">
+                    <span class="resource-type-badge" style="background: rgba(244, 114, 182, 0.2); color: #f472b6;">Report</span>
+                    <div class="resource-card-header">
+                        <div class="resource-icon project-report">
+                            <i class="fas fa-file-contract"></i>
+                        </div>
+                        <div class="resource-info">
+                            <h4>Student Management System - Project Report</h4>
+                            <p>Detailed documentation including SRS, flowcharts, and implementation details.</p>
+                        </div>
+                    </div>
+                    <div class="resource-meta">
+                        <span class="meta-item"><i class="fas fa-file-word"></i> DOCX</span>
+                        <span class="meta-item"><i class="fas fa-file-alt"></i> 25 Pages</span>
+                        <span class="meta-item"><i class="fas fa-download"></i> 189 Downloads</span>
+                    </div>
+                    <div class="resource-card-footer">
+                        <a href="#" class="resource-btn secondary" target="_blank">
+                            <i class="fas fa-eye"></i> Preview
+                        </a>
+                        <a href="#" class="resource-btn primary" download>
+                            <i class="fas fa-download"></i> Download
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- ========== PPT 1 ========== -->
+                <div class="resource-card" data-category="ppt">
+                    <span class="resource-type-badge ppt">PPT</span>
+                    <div class="resource-card-header">
+                        <div class="resource-icon ppt">
+                            <i class="fas fa-file-powerpoint"></i>
+                        </div>
+                        <div class="resource-info">
+                            <h4>Loops in C Programming</h4>
+                            <p>Presentation covering for, while, do-while loops with animations and examples.</p>
+                        </div>
+                    </div>
+                    <div class="resource-meta">
+                        <span class="meta-item"><i class="fas fa-file-powerpoint"></i> PPTX</span>
+                        <span class="meta-item"><i class="fas fa-clone"></i> 28 Slides</span>
+                        <span class="meta-item"><i class="fas fa-download"></i> 167 Downloads</span>
+                    </div>
+                    <div class="resource-card-footer">
+                        <a href="#" class="resource-btn secondary" target="_blank">
+                            <i class="fas fa-eye"></i> Preview
+                        </a>
+                        <a href="#" class="resource-btn primary" download>
+                            <i class="fas fa-download"></i> Download
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- ========== PPT 2 ========== -->
+                <div class="resource-card" data-category="ppt">
+                    <span class="resource-type-badge ppt">PPT</span>
+                    <div class="resource-card-header">
+                        <div class="resource-icon ppt">
+                            <i class="fas fa-file-powerpoint"></i>
+                        </div>
+                        <div class="resource-info">
+                            <h4>Arrays & Strings</h4>
+                            <p>Comprehensive presentation on array operations, string handling, and memory.</p>
+                        </div>
+                    </div>
+                    <div class="resource-meta">
+                        <span class="meta-item"><i class="fas fa-file-powerpoint"></i> PPTX</span>
+                        <span class="meta-item"><i class="fas fa-clone"></i> 35 Slides</span>
+                        <span class="meta-item"><i class="fas fa-download"></i> 145 Downloads</span>
+                    </div>
+                    <div class="resource-card-footer">
+                        <a href="#" class="resource-btn secondary" target="_blank">
+                            <i class="fas fa-eye"></i> Preview
+                        </a>
+                        <a href="#" class="resource-btn primary" download>
+                            <i class="fas fa-download"></i> Download
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- ========== ASSIGNMENT 1 ========== -->
+                <div class="resource-card" data-category="assignment">
+                    <span class="resource-type-badge" style="background: rgba(74, 222, 128, 0.2); color: #4ade80;">Assignment</span>
+                    <div class="resource-card-header">
+                        <div class="resource-icon assignment">
+                            <i class="fas fa-tasks"></i>
+                        </div>
+                        <div class="resource-info">
+                            <h4>Assignment 1: Pattern Printing</h4>
+                            <p>Solutions for 15 different pattern printing problems using nested loops.</p>
+                        </div>
+                    </div>
+                    <div class="resource-meta">
+                        <span class="meta-item"><i class="fas fa-file-pdf"></i> PDF</span>
+                        <span class="meta-item"><i class="fas fa-check-circle" style="color: #4ade80;"></i> Solved</span>
+                        <span class="meta-item"><i class="fas fa-download"></i> 234 Downloads</span>
+                    </div>
+                    <div class="resource-card-footer">
+                        <a href="#" class="resource-btn secondary" target="_blank">
+                            <i class="fas fa-eye"></i> Preview
+                        </a>
+                        <a href="#" class="resource-btn primary" download>
+                            <i class="fas fa-download"></i> Download
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- ========== BOOK/PDF ========== -->
+                <div class="resource-card" data-category="book">
+                    <span class="resource-type-badge" style="background: rgba(250, 204, 21, 0.2); color: #facc15;">Book</span>
+                    <div class="resource-card-header">
+                        <div class="resource-icon book">
+                            <i class="fas fa-book"></i>
+                        </div>
+                        <div class="resource-info">
+                            <h4>Let Us C - Yashavant Kanetkar</h4>
+                            <p>The most popular C programming book for beginners. Complete PDF version.</p>
+                        </div>
+                    </div>
+                    <div class="resource-meta">
+                        <span class="meta-item"><i class="fas fa-file-pdf"></i> PDF</span>
+                        <span class="meta-item"><i class="fas fa-file-alt"></i> 486 Pages</span>
+                        <span class="meta-item"><i class="fas fa-star" style="color: #facc15;"></i> Recommended</span>
+                    </div>
+                    <div class="resource-card-footer">
+                        <a href="#" class="resource-btn secondary" target="_blank">
+                            <i class="fas fa-eye"></i> Preview
+                        </a>
+                        <a href="#" class="resource-btn primary" download>
+                            <i class="fas fa-download"></i> Download
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- ========== MORE LAB REPORTS ========== -->
+                <div class="resource-card" data-category="lab-report">
+                    <span class="resource-type-badge lab-report">Lab Report</span>
+                    <div class="resource-card-header">
+                        <div class="resource-icon lab-report">
+                            <i class="fas fa-flask"></i>
+                        </div>
+                        <div class="resource-info">
+                            <h4>Lab 04: Loop Structures</h4>
+                            <p>For loop, while loop, do-while loop implementations with practical problems.</p>
+                        </div>
+                    </div>
+                    <div class="resource-meta">
+                        <span class="meta-item"><i class="fas fa-file-pdf"></i> PDF</span>
+                        <span class="meta-item"><i class="fas fa-download"></i> 118 Downloads</span>
+                        <span class="meta-item"><i class="fas fa-calendar"></i> Feb 5, 2024</span>
+                    </div>
+                    <div class="resource-card-footer">
+                        <a href="#" class="resource-btn secondary" target="_blank">
+                            <i class="fas fa-eye"></i> Preview
+                        </a>
+                        <a href="#" class="resource-btn primary" download>
+                            <i class="fas fa-download"></i> Download
+                        </a>
+                    </div>
+                </div>
+                
+            </div>
+            
+            <!-- Empty State (hidden by default) -->
+            <div class="empty-state fade-in" id="empty-state" style="display: none;">
+                <i class="fas fa-folder-open"></i>
+                <h3>No Resources Found</h3>
+                <p style="color: var(--text-secondary);">Try selecting a different category or adjusting your search.</p>
+            </div>
+            
+        </div>
+    </section>
+
+    <!-- ==========================================
+         BACK NAVIGATION
+         ========================================== -->
+    <section class="section" style="padding-top: 20px;">
+        <div class="container">
+            <div class="text-center fade-in" style="display: flex; justify-content: center; gap: 15px; flex-wrap: wrap;">
+                <a href="semester.html?sem=1" class="btn btn-secondary">
+                    <i class="fas fa-arrow-left"></i> Back to Courses
+                </a>
+                <a href="university.html" class="btn btn-secondary">
+                    <i class="fas fa-graduation-cap"></i> All Semesters
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         FOOTER
+         ========================================== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>Portfolio</h3>
+                    <p>
+                        Building digital experiences that make a difference. 
+                        Let's create something amazing together.
+                    </p>
+                    <div class="social-links">
+                        <a href="#" class="social-link" aria-label="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="#" class="social-link" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Dribbble">
+                            <i class="fab fa-dribbble"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Me</a></li>
+                        <li><a href="projects.html">Projects</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="university.html">University</a></li>
+                        <li><a href="#">Lab Reports</a></li>
+                        <li><a href="#">Projects</a></li>
+                        <li><a href="#">Notes</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><a href="mailto:your@email.com">your@email.com</a></li>
+                        <li><a href="tel:+1234567890">+1 234 567 890</a></li>
+                        <li><a href="#">Your City, Country</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 Your Name. All rights reserved.</p>
+                <div class="footer-social">
+                    <a href="#" class="social-link" aria-label="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="#" class="social-link" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Main JavaScript -->
+    <script src="js/script.js"></script>
+    
+    <!-- Course Page JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // ==========================================
+            // RESOURCE FILTERING
+            // ==========================================
+            const tabs = document.querySelectorAll('.resource-tab');
+            const cards = document.querySelectorAll('.resource-card');
+            const emptyState = document.getElementById('empty-state');
+            const container = document.getElementById('resources-container');
+            
+            tabs.forEach(tab => {
+                tab.addEventListener('click', function() {
+                    // Update active tab
+                    tabs.forEach(t => t.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    const category = this.dataset.category;
+                    let visibleCount = 0;
+                    
+                    // Filter cards
+                    cards.forEach(card => {
+                        if (category === 'all' || card.dataset.category === category) {
+                            card.style.display = 'block';
+                            card.style.animation = 'fadeInUp 0.5s ease forwards';
+                            visibleCount++;
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
+                    
+                    // Show/hide empty state
+                    if (visibleCount === 0) {
+                        emptyState.style.display = 'block';
+                        container.style.display = 'none';
+                    } else {
+                        emptyState.style.display = 'none';
+                        container.style.display = 'grid';
+                    }
+                });
+            });
+            
+            // ==========================================
+            // SEARCH FUNCTIONALITY
+            // ==========================================
+            const searchInput = document.getElementById('search-input');
+            
+            searchInput.addEventListener('input', function() {
+                const searchTerm = this.value.toLowerCase();
+                let visibleCount = 0;
+                
+                cards.forEach(card => {
+                    const title = card.querySelector('h4').textContent.toLowerCase();
+                    const description = card.querySelector('.resource-info p').textContent.toLowerCase();
+                    
+                    if (title.includes(searchTerm) || description.includes(searchTerm)) {
+                        card.style.display = 'block';
+                        visibleCount++;
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+                
+                // Show/hide empty state
+                if (visibleCount === 0) {
+                    emptyState.style.display = 'block';
+                    container.style.display = 'none';
+                } else {
+                    emptyState.style.display = 'none';
+                    container.style.display = 'grid';
+                }
+            });
+            
+            // ==========================================
+            // VIEW TOGGLE (Grid/List)
+            // ==========================================
+            const viewButtons = document.querySelectorAll('.view-toggle button');
+            
+            viewButtons.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    viewButtons.forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    const view = this.dataset.view;
+                    
+                    if (view === 'list') {
+                        container.style.gridTemplateColumns = '1fr';
+                        cards.forEach(card => {
+                            card.style.display = 'flex';
+                            card.style.flexDirection = 'row';
+                            card.style.alignItems = 'center';
+                        });
+                    } else {
+                        container.style.gridTemplateColumns = 'repeat(auto-fill, minmax(320px, 1fr))';
+                        cards.forEach(card => {
+                            card.style.display = 'block';
+                        });
+                    }
+                });
+            });
+            
+            // ==========================================
+            // URL PARAMETERS
+            // ==========================================
+            const urlParams = new URLSearchParams(window.location.search);
+            const sem = urlParams.get('sem') || '1';
+            const course = urlParams.get('course') || 'programming';
+            
+            // Update breadcrumb semester link
+            document.querySelector('#breadcrumb-semester').href = `semester.html?sem=${sem}`;
+            
+            // Course data (customize as needed)
+            const courseData = {
+                programming: {
+                    title: 'Programming Fundamentals',
+                    code: 'CSE-101',
+                    description: 'Introduction to C Programming - Learn the basics of programming, algorithms, and problem-solving.',
+                    icon: 'fas fa-code',
+                    color: '#38bdf8'
+                },
+                physics: {
+                    title: 'Engineering Physics',
+                    code: 'PHY-101',
+                    description: 'Fundamental physics concepts including mechanics, thermodynamics, and waves.',
+                    icon: 'fas fa-atom',
+                    color: '#14b8a6'
+                },
+                math: {
+                    title: 'Mathematics',
+                    code: 'MAT-101',
+                    description: 'Calculus, Linear Algebra, and Mathematical foundations for engineering.',
+                    icon: 'fas fa-square-root-alt',
+                    color: '#a855f7'
+                },
+                chemistry: {
+                    title: 'Engineering Chemistry',
+                    code: 'CHM-101',
+                    description: 'Chemistry fundamentals including organic, inorganic, and physical chemistry.',
+                    icon: 'fas fa-vial',
+                    color: '#f472b6'
+                },
+                english: {
+                    title: 'Technical English',
+                    code: 'ENG-101',
+                    description: 'Technical writing, communication skills, and professional English.',
+                    icon: 'fas fa-language',
+                    color: '#fb923c'
+                },
+                electrical: {
+                    title: 'Basic Electrical Engineering',
+                    code: 'EEE-101',
+                    description: 'Electrical circuits, electronics basics, and electrical systems.',
+                    icon: 'fas fa-bolt',
+                    color: '#4ade80'
+                }
+            };
+            
+            // Update page content based on course
+            const data = courseData[course];
+            if (data) {
+                document.getElementById('course-title').innerHTML = `<span class="gradient-text">${data.title}</span>`;
+                document.getElementById('course-code').textContent = data.code;
+                document.getElementById('course-description').textContent = data.description;
+                document.getElementById('course-icon').innerHTML = `<i class="${data.icon}"></i>`;
+                document.getElementById('course-icon').style.background = `linear-gradient(135deg, ${data.color}, ${adjustColor(data.color, -20)})`;
+                document.getElementById('breadcrumb-course').textContent = data.title;
+                document.title = `${data.title} | University Resources`;
+            }
+            
+            // Helper function to darken color
+            function adjustColor(color, amount) {
+                const hex = color.replace('#', '');
+                const num = parseInt(hex, 16);
+                const r = Math.max(0, Math.min(255, (num >> 16) + amount));
+                const g = Math.max(0, Math.min(255, ((num >> 8) & 0x00FF) + amount));
+                const b = Math.max(0, Math.min(255, (num & 0x0000FF) + amount));
+                return `#${(1 << 24 | r << 16 | g << 8 | b).toString(16).slice(1)}`;
+            }
+        });
+        
+        // Fade in animation keyframes
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes fadeInUp {
+                from {
+                    opacity: 0;
+                    transform: translateY(20px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>

@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- ============================================
+         CONTACT PAGE - Personal Portfolio Website
+         Contact form with validation and map
+         ============================================ -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Get in touch with me for project inquiries, collaborations, or just to say hello.">
+    <meta name="keywords" content="contact, hire, freelance, web developer, email">
+    <meta name="author" content="Your Name">
+    
+    <title>Contact | Your Name - Web Developer</title>
+    
+    <!-- Google Fonts - Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- ==========================================
+         NAVIGATION BAR
+         ========================================== -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="nav-logo">Portfolio</a>
+            
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="education.html" class="nav-link">Education</a></li>
+                <li><a href="projects.html" class="nav-link">Projects</a></li>
+                <li><a href="blog.html" class="nav-link">Blog</a></li>
+                <li><a href="contact.html" class="nav-link active">Contact</a></li>
+                <li>
+                    <a href="assets/cv/cv.html" class="btn btn-download" target="_blank">
+                        <i class="fas fa-download"></i> Download CV
+                    </a>
+                </li>
+            </ul>
+            
+            <!-- Theme Toggle Button -->
+            <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+                <i class="fas fa-moon"></i>
+            </button>
+            
+            <div class="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ==========================================
+         PAGE HEADER
+         ========================================== -->
+    <section class="section" style="padding-top: 150px; padding-bottom: 40px;">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2>Get In <span class="gradient-text">Touch</span></h2>
+                <p>Have a project in mind or just want to say hello? I'd love to hear from you!</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         CONTACT SECTION
+         ========================================== -->
+    <section class="section" style="padding-top: 0;">
+        <div class="container">
+            <div class="contact-wrapper">
+                
+                <!-- ========== CONTACT INFO ========== -->
+                <div class="contact-info slide-in-left">
+                    <h3>Let's Talk</h3>
+                    <p style="margin-bottom: 30px;">
+                        Feel free to reach out through any of the following methods. 
+                        I typically respond within 24-48 hours.
+                    </p>
+                    
+                    <!-- Email -->
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Email</h4>
+                            <a href="mailto:sajjadmahmudsuton@gmail.com">sajjadmahmudsuton@gmail.com</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Phone -->
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Phone</h4>
+                            <a href="tel:+8801968161494">+8801968161494</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Location -->
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Location</h4>
+                            <p>Dhaka, Bangladesh</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Availability -->
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Availability</h4>
+                            <p>Mon - Fri: 9:00 AM - 6:00 PM</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Social Links -->
+                    <h4 style="margin-top: 20px; margin-bottom: 15px;">Follow Me</h4>
+                    <div class="social-links">
+                        <a href="https://github.com/Sajjad-Mahmud-Suton" class="social-link" aria-label="GitHub" title="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="#" class="social-link" aria-label="LinkedIn" title="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Twitter" title="Twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Dribbble" title="Dribbble">
+                            <i class="fab fa-dribbble"></i>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Instagram" title="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- ========== CONTACT FORM ========== -->
+                <div class="contact-form slide-in-right">
+                    <h3>Send a Message</h3>
+                    
+                    <!-- Success Message (shown after form submission) -->
+                    <div class="form-success">
+                        <i class="fas fa-check-circle" style="font-size: 2rem; margin-bottom: 10px;"></i>
+                        <h4>Message Sent Successfully!</h4>
+                        <p>Thank you for reaching out. I'll get back to you soon.</p>
+                    </div>
+                    
+                    <!-- Contact Form with Validation -->
+                    <form id="contact-form">
+                        <!-- Name Field -->
+                        <div class="form-group">
+                            <label for="name">
+                                <i class="fas fa-user"></i> Your Name *
+                            </label>
+                            <input type="text" 
+                                   id="name" 
+                                   name="name" 
+                                   placeholder="your full name" 
+                                   required>
+                            <span class="error-message">Please enter your name</span>
+                        </div>
+                        
+                        <!-- Email Field -->
+                        <div class="form-group">
+                            <label for="email">
+                                <i class="fas fa-envelope"></i> Email Address *
+                            </label>
+                            <input type="email" 
+                                   id="email" 
+                                   name="email" 
+                                   placeholder="your email address" 
+                                   required>
+                            <span class="error-message">Please enter a valid email</span>
+                        </div>
+                        
+                        <!-- Subject Field -->
+                        <div class="form-group">
+                            <label for="subject">
+                                <i class="fas fa-tag"></i> Subject *
+                            </label>
+                            <input type="text" 
+                                   id="subject" 
+                                   name="subject" 
+                                   placeholder="Project Inquiry" 
+                                   required>
+                            <span class="error-message">Please enter a subject</span>
+                        </div>
+                        
+                        <!-- Message Field -->
+                        <div class="form-group">
+                            <label for="message">
+                                <i class="fas fa-comment-dots"></i> Message *
+                            </label>
+                            <textarea id="message" 
+                                      name="message" 
+                                      rows="6" 
+                                      placeholder="Tell me about your project..."
+                                      required></textarea>
+                            <span class="error-message">Please enter your message (at least 10 characters)</span>
+                        </div>
+                        
+                        <!-- Submit Button -->
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">
+                            <i class="fas fa-paper-plane"></i> Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+            
+            <!-- ========== MAP SECTION ========== -->
+            <div class="map-container fade-in">
+                <!-- 
+                    Replace this iframe with your actual Google Maps embed code.
+                    To get your embed code:
+                    1. Go to Google Maps
+                    2. Search for your location
+                    3. Click "Share" > "Embed a map"
+                    4. Copy the iframe code and paste it here
+                -->
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d387193.305935303!2d-74.25986548248684!3d40.69714941932609!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY%2C%20USA!5e0!3m2!1sen!2s!4v1640000000000!5m2!1sen!2s" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade"
+                    title="Location Map">
+                </iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         FAQ SECTION (Optional)
+         ========================================== -->
+    <section class="section" style="background: var(--bg-secondary);">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2>Frequently Asked <span class="gradient-text">Questions</span></h2>
+                <p>Quick answers to questions you might have.</p>
+            </div>
+            
+            <div class="projects-grid" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));">
+                <!-- FAQ 1 -->
+                <div class="card fade-in">
+                    <h4 style="margin-bottom: 15px;">
+                        <i class="fas fa-question-circle" style="color: var(--gradient-teal);"></i> 
+                        What services do you offer?
+                    </h4>
+                    <p style="margin: 0;">
+                        I offer web development, UI/UX design, mobile app development, 
+                        and technical consulting services. Each project is tailored to 
+                        meet your specific needs.
+                    </p>
+                </div>
+                
+                <!-- FAQ 2 -->
+                <div class="card fade-in fade-in-delay-1">
+                    <h4 style="margin-bottom: 15px;">
+                        <i class="fas fa-question-circle" style="color: var(--gradient-teal);"></i> 
+                        What is your typical project timeline?
+                    </h4>
+                    <p style="margin: 0;">
+                        Timelines vary based on project scope. A simple website takes 
+                        2-4 weeks, while complex web applications may take 2-3 months. 
+                        I'll provide an estimate after our initial discussion.
+                    </p>
+                </div>
+                
+                <!-- FAQ 3 -->
+                <div class="card fade-in fade-in-delay-2">
+                    <h4 style="margin-bottom: 15px;">
+                        <i class="fas fa-question-circle" style="color: var(--gradient-teal);"></i> 
+                        Do you offer ongoing maintenance?
+                    </h4>
+                    <p style="margin: 0;">
+                        Yes! I offer maintenance packages that include updates, security 
+                        patches, performance optimization, and content updates to keep 
+                        your site running smoothly.
+                    </p>
+                </div>
+                
+                <!-- FAQ 4 -->
+                <div class="card fade-in">
+                    <h4 style="margin-bottom: 15px;">
+                        <i class="fas fa-question-circle" style="color: var(--gradient-teal);"></i> 
+                        What is your payment structure?
+                    </h4>
+                    <p style="margin: 0;">
+                        I typically work with a 50% upfront deposit and 50% upon completion. 
+                        For larger projects, we can arrange milestone-based payments. 
+                        I accept bank transfers and PayPal.
+                    </p>
+                </div>
+                
+                <!-- FAQ 5 -->
+                <div class="card fade-in fade-in-delay-1">
+                    <h4 style="margin-bottom: 15px;">
+                        <i class="fas fa-question-circle" style="color: var(--gradient-teal);"></i> 
+                        Can you work with my existing team?
+                    </h4>
+                    <p style="margin: 0;">
+                        Absolutely! I'm experienced in collaborating with in-house teams, 
+                        other freelancers, and agencies. I'm flexible and can adapt to 
+                        your workflow and communication preferences.
+                    </p>
+                </div>
+                
+                <!-- FAQ 6 -->
+                <div class="card fade-in fade-in-delay-2">
+                    <h4 style="margin-bottom: 15px;">
+                        <i class="fas fa-question-circle" style="color: var(--gradient-teal);"></i> 
+                        Are you available for freelance work?
+                    </h4>
+                    <p style="margin: 0;">
+                        Yes, I'm currently accepting new projects! Feel free to reach out 
+                        with your project details, and I'll get back to you within 24-48 
+                        hours to discuss further.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         FOOTER
+         ========================================== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>Portfolio</h3>
+                    <p>
+                        Building digital experiences that make a difference. 
+                        Let's create something amazing together.
+                    </p>
+                    <div class="social-links">
+                        <a href="#" class="social-link" aria-label="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="#" class="social-link" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Dribbble">
+                            <i class="fab fa-dribbble"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Me</a></li>
+                        <li><a href="projects.html">Projects</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="#">Web Development</a></li>
+                        <li><a href="#">UI/UX Design</a></li>
+                        <li><a href="#">Mobile Apps</a></li>
+                        <li><a href="#">Consulting</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><a href="mailto:sajjadmahmudsuton@gmail.com">sajjadmahmudsuton@gmail.com</a></li>
+                        <li><a href="tel:+8801968161494">+8801968161494</a></li>
+                        <li><a href="#">Dhaka, Bangladesh</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 Sajjad Mahmud. All rights reserved.</p>
+                <div class="footer-social">
+                    <a href="#" class="social-link" aria-label="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="#" class="social-link" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Main JavaScript -->
+    <script src="js/script.js"></script>
+</body>
+</html>

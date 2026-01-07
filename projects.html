@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- ============================================
+         PROJECTS PAGE - Personal Portfolio Website
+         Filterable project grid with categories
+         ============================================ -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore my portfolio of web development and design projects across various technologies and industries.">
+    <meta name="keywords" content="projects, portfolio, web development, design, work">
+    <meta name="author" content="Your Name">
+    
+    <title>Projects | Your Name - Web Developer</title>
+    
+    <!-- Google Fonts - Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- ==========================================
+         NAVIGATION BAR
+         ========================================== -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="nav-logo">Portfolio</a>
+            
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="education.html" class="nav-link">Education</a></li>
+                <li><a href="projects.html" class="nav-link active">Projects</a></li>
+                <li><a href="blog.html" class="nav-link">Blog</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+                <li>
+                    <a href="assets/cv/cv.html" class="btn btn-download" target="_blank">
+                        <i class="fas fa-download"></i> Download CV
+                    </a>
+                </li>
+            </ul>
+            
+            <!-- Theme Toggle Button -->
+            <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+                <i class="fas fa-moon"></i>
+            </button>
+            
+            <div class="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ==========================================
+         PAGE HEADER
+         ========================================== -->
+    <section class="section" style="padding-top: 150px; padding-bottom: 40px;">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2>My <span class="gradient-text">Projects</span></h2>
+                <p>A collection of my work across web development, design, and more. Filter by category to explore.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         FILTER BUTTONS
+         ========================================== -->
+    <section style="padding-bottom: 30px;">
+        <div class="container">
+            <div class="filter-buttons fade-in">
+                <!-- Filter: All -->
+                <button class="filter-btn active" data-filter="all">
+                    <i class="fas fa-th"></i> All Projects
+                </button>
+                
+                <!-- Filter: Web Apps -->
+                <button class="filter-btn" data-filter="web">
+                    <i class="fas fa-globe"></i> Web Apps
+                </button>
+                
+                <!-- Filter: Mobile -->
+                <button class="filter-btn" data-filter="mobile">
+                    <i class="fas fa-mobile-alt"></i> Mobile
+                </button>
+                
+                <!-- Filter: UI/UX -->
+                <button class="filter-btn" data-filter="design">
+                    <i class="fas fa-paint-brush"></i> UI/UX
+                </button>
+                
+                <!-- Filter: Open Source -->
+                <button class="filter-btn" data-filter="opensource">
+                    <i class="fab fa-github"></i> Open Source
+                </button>
+                
+                <!-- Filter: University - Links to separate page -->
+                <a href="university.html" class="filter-btn" style="text-decoration: none;">
+                    <i class="fas fa-university"></i> University
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         PROJECTS GRID
+         ========================================== -->
+    <section class="section" style="padding-top: 0;">
+        <div class="container">
+            <div class="projects-grid">
+                
+                <!-- ========== PROJECT 1 - E-Commerce ========== -->
+                <div class="card project-card fade-in" data-category="web">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&h=400&fit=crop" alt="E-Commerce Platform">
+                    </div>
+                    <div class="project-content">
+                        <div class="project-tags">
+                            <span class="project-tag">React</span>
+                            <span class="project-tag">Node.js</span>
+                            <span class="project-tag">MongoDB</span>
+                        </div>
+                        <h3 class="project-title">E-Commerce Platform</h3>
+                        <p class="project-description">
+                            A full-featured online store with product catalog, shopping cart, 
+                            user authentication, and Stripe payment integration.
+                        </p>
+                        <div class="project-links">
+                            <a href="#" class="project-link">
+                                <i class="fas fa-external-link-alt"></i> Live Demo
+                            </a>
+                            <a href="#" class="project-link">
+                                <i class="fab fa-github"></i> Source Code
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- ========== PROJECT 2 - Task Manager ========== -->
+                <div class="card project-card fade-in" data-category="web">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=600&h=400&fit=crop" alt="Task Management App">
+                    </div>
+                    <div class="project-content">
+                        <div class="project-tags">
+                            <span class="project-tag">Vue.js</span>
+                            <span class="project-tag">Firebase</span>
+                            <span class="project-tag">Vuetify</span>
+                        </div>
+                        <h3 class="project-title">Task Management App</h3>
+                        <p class="project-description">
+                            A collaborative task manager with real-time updates, team workspaces, 
+                            drag-and-drop functionality, and deadline notifications.
+                        </p>
+                        <div class="project-links">
+                            <a href="#" class="project-link">
+                                <i class="fas fa-external-link-alt"></i> Live Demo
+                            </a>
+                            <a href="#" class="project-link">
+                                <i class="fab fa-github"></i> Source Code
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- ========== PROJECT 3 - Fitness App ========== -->
+                <div class="card project-card fade-in" data-category="mobile">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?w=600&h=400&fit=crop" alt="Fitness Tracking App">
+                    </div>
+                    <div class="project-content">
+                        <div class="project-tags">
+                            <span class="project-tag">React Native</span>
+                            <span class="project-tag">Redux</span>
+                            <span class="project-tag">Node.js</span>
+                        </div>
+                        <h3 class="project-title">Fitness Tracking App</h3>
+                        <p class="project-description">
+                            A cross-platform mobile app for tracking workouts, calories, 
+                            progress photos, and setting personalized fitness goals.
+                        </p>
+                        <div class="project-links">
+                            <a href="#" class="project-link">
+                                <i class="fas fa-external-link-alt"></i> App Store
+                            </a>
+                            <a href="#" class="project-link">
+                                <i class="fab fa-github"></i> Source Code
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- ========== PROJECT 4 - Dashboard UI ========== -->
+                <div class="card project-card fade-in" data-category="design">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop" alt="Analytics Dashboard">
+                    </div>
+                    <div class="project-content">
+                        <div class="project-tags">
+                            <span class="project-tag">Figma</span>
+                            <span class="project-tag">UI/UX</span>
+                            <span class="project-tag">Design System</span>
+                        </div>
+                        <h3 class="project-title">Analytics Dashboard</h3>
+                        <p class="project-description">
+                            A comprehensive UI design for a SaaS analytics platform with 
+                            data visualizations, dark mode, and responsive layouts.
+                        </p>
+                        <div class="project-links">
+                            <a href="#" class="project-link">
+                                <i class="fab fa-figma"></i> View Design
+                            </a>
+                            <a href="#" class="project-link">
+                                <i class="fas fa-file-alt"></i> Case Study
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- ========== PROJECT 5 - Open Source Library ========== -->
+                <div class="card project-card fade-in" data-category="opensource">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=600&h=400&fit=crop" alt="React UI Library">
+                    </div>
+                    <div class="project-content">
+                        <div class="project-tags">
+                            <span class="project-tag">TypeScript</span>
+                            <span class="project-tag">React</span>
+                            <span class="project-tag">NPM</span>
+                        </div>
+                        <h3 class="project-title">React UI Component Library</h3>
+                        <p class="project-description">
+                            An open-source UI component library with 30+ customizable components, 
+                            full TypeScript support, and comprehensive documentation.
+                        </p>
+                        <div class="project-links">
+                            <a href="#" class="project-link">
+                                <i class="fas fa-book"></i> Documentation
+                            </a>
+                            <a href="#" class="project-link">
+                                <i class="fab fa-github"></i> GitHub
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- ========== PROJECT 6 - Portfolio ========== -->
+                <div class="card project-card fade-in" data-category="web">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop" alt="Portfolio Website">
+                    </div>
+                    <div class="project-content">
+                        <div class="project-tags">
+                            <span class="project-tag">HTML/CSS</span>
+                            <span class="project-tag">JavaScript</span>
+                            <span class="project-tag">Animation</span>
+                        </div>
+                        <h3 class="project-title">Personal Portfolio</h3>
+                        <p class="project-description">
+                            A modern, responsive portfolio website with smooth scroll animations, 
+                            particle effects, and a dark theme design.
+                        </p>
+                        <div class="project-links">
+                            <a href="#" class="project-link">
+                                <i class="fas fa-external-link-alt"></i> Live Demo
+                            </a>
+                            <a href="#" class="project-link">
+                                <i class="fab fa-github"></i> Source Code
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- ========== PROJECT 7 - Weather App ========== -->
+                <div class="card project-card fade-in" data-category="mobile">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1504608524841-42fe6f032b4b?w=600&h=400&fit=crop" alt="Weather App">
+                    </div>
+                    <div class="project-content">
+                        <div class="project-tags">
+                            <span class="project-tag">Flutter</span>
+                            <span class="project-tag">Dart</span>
+                            <span class="project-tag">API</span>
+                        </div>
+                        <h3 class="project-title">Weather Forecast App</h3>
+                        <p class="project-description">
+                            A beautiful weather app with location-based forecasts, hourly updates, 
+                            weather alerts, and stunning animated backgrounds.
+                        </p>
+                        <div class="project-links">
+                            <a href="#" class="project-link">
+                                <i class="fas fa-external-link-alt"></i> Play Store
+                            </a>
+                            <a href="#" class="project-link">
+                                <i class="fab fa-github"></i> Source Code
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- ========== PROJECT 8 - Mobile Banking UI ========== -->
+                <div class="card project-card fade-in" data-category="design">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?w=600&h=400&fit=crop" alt="Mobile Banking UI">
+                    </div>
+                    <div class="project-content">
+                        <div class="project-tags">
+                            <span class="project-tag">Figma</span>
+                            <span class="project-tag">Prototype</span>
+                            <span class="project-tag">Mobile UI</span>
+                        </div>
+                        <h3 class="project-title">Mobile Banking App UI</h3>
+                        <p class="project-description">
+                            Complete UI/UX design for a fintech banking app with transaction history, 
+                            budgeting tools, and biometric authentication flows.
+                        </p>
+                        <div class="project-links">
+                            <a href="#" class="project-link">
+                                <i class="fab fa-figma"></i> View Design
+                            </a>
+                            <a href="#" class="project-link">
+                                <i class="fas fa-file-alt"></i> Case Study
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- ========== PROJECT 9 - CLI Tool ========== -->
+                <div class="card project-card fade-in" data-category="opensource">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1629654297299-c8506221ca97?w=600&h=400&fit=crop" alt="CLI Tool">
+                    </div>
+                    <div class="project-content">
+                        <div class="project-tags">
+                            <span class="project-tag">Node.js</span>
+                            <span class="project-tag">CLI</span>
+                            <span class="project-tag">NPM</span>
+                        </div>
+                        <h3 class="project-title">Project Scaffolding CLI</h3>
+                        <p class="project-description">
+                            A command-line tool for quickly scaffolding new projects with templates 
+                            for React, Vue, Node.js, and more. Over 5,000+ downloads.
+                        </p>
+                        <div class="project-links">
+                            <a href="#" class="project-link">
+                                <i class="fas fa-book"></i> Documentation
+                            </a>
+                            <a href="#" class="project-link">
+                                <i class="fab fa-github"></i> GitHub
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         CALL TO ACTION
+         ========================================== -->
+    <section class="section" style="background: var(--bg-secondary);">
+        <div class="container">
+            <div class="text-center fade-in">
+                <h2>Have a Project in <span class="gradient-text">Mind</span>?</h2>
+                <p style="max-width: 600px; margin: 20px auto 30px;">
+                    I'm always looking for exciting new projects to work on. Let's discuss how I can help bring your ideas to life.
+                </p>
+                <a href="contact.html" class="btn btn-primary">
+                    <i class="fas fa-paper-plane"></i> Start a Project
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         FOOTER
+         ========================================== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>Portfolio</h3>
+                    <p>
+                        Building digital experiences that make a difference. 
+                        Let's create something amazing together.
+                    </p>
+                    <div class="social-links">
+                        <a href="#" class="social-link" aria-label="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="#" class="social-link" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Dribbble">
+                            <i class="fab fa-dribbble"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Me</a></li>
+                        <li><a href="projects.html">Projects</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="#">Web Development</a></li>
+                        <li><a href="#">UI/UX Design</a></li>
+                        <li><a href="#">Mobile Apps</a></li>
+                        <li><a href="#">Consulting</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><a href="mailto:your@email.com">your@email.com</a></li>
+                        <li><a href="tel:+1234567890">+1 234 567 890</a></li>
+                        <li><a href="#">Your City, Country</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 Your Name. All rights reserved.</p>
+                <div class="footer-social">
+                    <a href="#" class="social-link" aria-label="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="#" class="social-link" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Main JavaScript -->
+    <script src="js/script.js"></script>
+</body>
+</html>

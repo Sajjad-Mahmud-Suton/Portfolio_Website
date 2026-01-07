@@ -1,0 +1,905 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- ============================================
+         BLOG PAGE - Personal Portfolio Website
+         Blog post cards with featured articles
+         ============================================ -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Read my latest thoughts on web development, design trends, and technology insights.">
+    <meta name="keywords" content="blog, articles, web development, design, technology, tutorials">
+    <meta name="author" content="Your Name">
+    
+    <title>Blog | Your Name - Web Developer</title>
+    
+    <!-- Google Fonts - Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- ==========================================
+         NAVIGATION BAR
+         ========================================== -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="nav-logo">Portfolio</a>
+            
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="education.html" class="nav-link">Education</a></li>
+                <li><a href="projects.html" class="nav-link">Projects</a></li>
+                <li><a href="blog.html" class="nav-link active">Blog</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+                <li>
+                    <a href="assets/cv/cv.html" class="btn btn-download" target="_blank">
+                        <i class="fas fa-download"></i> Download CV
+                    </a>
+                </li>
+            </ul>
+            
+            <!-- Theme Toggle Button -->
+            <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+                <i class="fas fa-moon"></i>
+            </button>
+            
+            <div class="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ==========================================
+         PAGE HEADER
+         ========================================== -->
+    <section class="section" style="padding-top: 150px; padding-bottom: 40px;">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2>My <span class="gradient-text">Blog</span></h2>
+                <p>Thoughts, tutorials, and insights on web development, design, and technology.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         FEATURED POST
+         ========================================== -->
+    <section class="section" style="padding-top: 0; padding-bottom: 40px;">
+        <div class="container">
+            <div class="card fade-in" style="padding: 0; overflow: hidden;">
+                <div style="display: grid; grid-template-columns: 1.2fr 1fr; gap: 0;">
+                    <!-- Featured Image -->
+                    <div style="position: relative; overflow: hidden;">
+                        <img src="https://images.unsplash.com/photo-1633356122544-f134324a6cee?w=800&h=500&fit=crop" 
+                             alt="Featured Post" 
+                             style="width: 100%; height: 100%; object-fit: cover; min-height: 350px;">
+                        <span style="position: absolute; top: 20px; left: 20px; background: var(--gradient-primary); 
+                                     padding: 8px 16px; border-radius: 20px; font-size: 0.85rem; font-weight: 500;">
+                            Featured
+                        </span>
+                    </div>
+                    
+                    <!-- Featured Content -->
+                    <div style="padding: 40px; display: flex; flex-direction: column; justify-content: center;">
+                        <div class="blog-meta">
+                            <span><i class="fas fa-calendar-alt"></i> December 15, 2024</span>
+                            <span><i class="fas fa-clock"></i> 10 min read</span>
+                        </div>
+                        <h3 style="font-size: 1.8rem; margin-bottom: 15px;">
+                            The Future of Web Development: Trends to Watch in 2025
+                        </h3>
+                        <p style="margin-bottom: 25px; font-size: 1.05rem;">
+                            Explore the emerging technologies and methodologies that will shape the 
+                            web development landscape in the coming year. From AI integration to 
+                            new frameworks, here's what you need to know.
+                        </p>
+                        <a href="javascript:void(0)" onclick="openBlogModal('featured')" class="btn btn-primary" style="width: fit-content;">
+                            <i class="fas fa-book-open"></i> Read Article
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         BLOG POSTS GRID
+         ========================================== -->
+    <section class="section" style="padding-top: 0;">
+        <div class="container">
+            <div class="blog-grid">
+                
+                <!-- ========== BLOG POST 1 ========== -->
+                <article class="card blog-card fade-in">
+                    <div class="blog-image">
+                        <img src="https://images.unsplash.com/photo-1633356122102-3fe601e05bd2?w=600&h=400&fit=crop" alt="React Hooks Guide">
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span><i class="fas fa-calendar-alt"></i> Dec 10, 2024</span>
+                            <span><i class="fas fa-clock"></i> 8 min</span>
+                        </div>
+                        <h3 class="blog-title">
+                            <a href="javascript:void(0)" onclick="openBlogModal('react-hooks')">Mastering React Hooks: A Complete Guide</a>
+                        </h3>
+                        <p class="blog-excerpt">
+                            Deep dive into React Hooks, from useState and useEffect to custom hooks. 
+                            Learn best practices and common patterns for modern React development.
+                        </p>
+                        <a href="javascript:void(0)" onclick="openBlogModal('react-hooks')" class="blog-link">
+                            Read More <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </article>
+                
+                <!-- ========== BLOG POST 2 ========== -->
+                <article class="card blog-card fade-in fade-in-delay-1">
+                    <div class="blog-image">
+                        <img src="https://images.unsplash.com/photo-1507721999472-8ed4421c4af2?w=600&h=400&fit=crop" alt="CSS Tips">
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span><i class="fas fa-calendar-alt"></i> Dec 5, 2024</span>
+                            <span><i class="fas fa-clock"></i> 6 min</span>
+                        </div>
+                        <h3 class="blog-title">
+                            <a href="javascript:void(0)" onclick="openBlogModal('css-tricks')">10 CSS Tricks Every Developer Should Know</a>
+                        </h3>
+                        <p class="blog-excerpt">
+                            Level up your CSS skills with these essential tricks. From modern layouts 
+                            with Grid and Flexbox to smooth animations and responsive techniques.
+                        </p>
+                        <a href="javascript:void(0)" onclick="openBlogModal('css-tricks')" class="blog-link">
+                            Read More <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </article>
+                
+                <!-- ========== BLOG POST 3 ========== -->
+                <article class="card blog-card fade-in fade-in-delay-2">
+                    <div class="blog-image">
+                        <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=600&h=400&fit=crop" alt="API Design">
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span><i class="fas fa-calendar-alt"></i> Nov 28, 2024</span>
+                            <span><i class="fas fa-clock"></i> 12 min</span>
+                        </div>
+                        <h3 class="blog-title">
+                            <a href="javascript:void(0)" onclick="openBlogModal('api-design')">RESTful API Design: Best Practices</a>
+                        </h3>
+                        <p class="blog-excerpt">
+                            Learn how to design clean, scalable, and developer-friendly REST APIs. 
+                            Covering naming conventions, error handling, and versioning strategies.
+                        </p>
+                        <a href="javascript:void(0)" onclick="openBlogModal('api-design')" class="blog-link">
+                            Read More <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </article>
+                
+                <!-- ========== BLOG POST 4 ========== -->
+                <article class="card blog-card fade-in">
+                    <div class="blog-image">
+                        <img src="https://images.unsplash.com/photo-1555099962-4199c345e5dd?w=600&h=400&fit=crop" alt="Dark Mode">
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span><i class="fas fa-calendar-alt"></i> Nov 20, 2024</span>
+                            <span><i class="fas fa-clock"></i> 5 min</span>
+                        </div>
+                        <h3 class="blog-title">
+                            <a href="javascript:void(0)" onclick="openBlogModal('dark-mode')">Implementing Dark Mode with CSS Variables</a>
+                        </h3>
+                        <p class="blog-excerpt">
+                            A step-by-step guide to adding dark mode to your website using CSS 
+                            custom properties and JavaScript. Make your site easy on the eyes.
+                        </p>
+                        <a href="javascript:void(0)" onclick="openBlogModal('dark-mode')" class="blog-link">
+                            Read More <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </article>
+                
+                <!-- ========== BLOG POST 5 ========== -->
+                <article class="card blog-card fade-in fade-in-delay-1">
+                    <div class="blog-image">
+                        <img src="https://images.unsplash.com/photo-1516116216624-53e697fedbea?w=600&h=400&fit=crop" alt="TypeScript">
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span><i class="fas fa-calendar-alt"></i> Nov 15, 2024</span>
+                            <span><i class="fas fa-clock"></i> 10 min</span>
+                        </div>
+                        <h3 class="blog-title">
+                            <a href="javascript:void(0)" onclick="openBlogModal('typescript')">Why You Should Use TypeScript in 2025</a>
+                        </h3>
+                        <p class="blog-excerpt">
+                            Discover the benefits of TypeScript for large-scale applications. 
+                            Better tooling, fewer bugs, and improved developer experience await.
+                        </p>
+                        <a href="javascript:void(0)" onclick="openBlogModal('typescript')" class="blog-link">
+                            Read More <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </article>
+                
+                <!-- ========== BLOG POST 6 ========== -->
+                <article class="card blog-card fade-in fade-in-delay-2">
+                    <div class="blog-image">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop" alt="Web Performance">
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span><i class="fas fa-calendar-alt"></i> Nov 8, 2024</span>
+                            <span><i class="fas fa-clock"></i> 9 min</span>
+                        </div>
+                        <h3 class="blog-title">
+                            <a href="javascript:void(0)" onclick="openBlogModal('performance')">Web Performance Optimization Techniques</a>
+                        </h3>
+                        <p class="blog-excerpt">
+                            Speed up your website with these proven optimization strategies. 
+                            From lazy loading to code splitting, make your site lightning fast.
+                        </p>
+                        <a href="javascript:void(0)" onclick="openBlogModal('performance')" class="blog-link">
+                            Read More <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </article>
+                
+                <!-- ========== BLOG POST 7 ========== -->
+                <article class="card blog-card fade-in">
+                    <div class="blog-image">
+                        <img src="https://images.unsplash.com/photo-1556075798-4825dfaaf498?w=600&h=400&fit=crop" alt="Git Workflow">
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span><i class="fas fa-calendar-alt"></i> Nov 1, 2024</span>
+                            <span><i class="fas fa-clock"></i> 7 min</span>
+                        </div>
+                        <h3 class="blog-title">
+                            <a href="javascript:void(0)" onclick="openBlogModal('git-workflow')">Git Workflow Strategies for Teams</a>
+                        </h3>
+                        <p class="blog-excerpt">
+                            Compare GitFlow, GitHub Flow, and trunk-based development. Find the 
+                            right workflow for your team's size and project requirements.
+                        </p>
+                        <a href="javascript:void(0)" onclick="openBlogModal('git-workflow')" class="blog-link">
+                            Read More <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </article>
+                
+                <!-- ========== BLOG POST 8 ========== -->
+                <article class="card blog-card fade-in fade-in-delay-1">
+                    <div class="blog-image">
+                        <img src="https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?w=600&h=400&fit=crop" alt="Accessibility">
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span><i class="fas fa-calendar-alt"></i> Oct 25, 2024</span>
+                            <span><i class="fas fa-clock"></i> 8 min</span>
+                        </div>
+                        <h3 class="blog-title">
+                            <a href="javascript:void(0)" onclick="openBlogModal('accessibility')">Building Accessible Web Applications</a>
+                        </h3>
+                        <p class="blog-excerpt">
+                            Make your websites inclusive for everyone. Learn about ARIA, semantic 
+                            HTML, keyboard navigation, and screen reader compatibility.
+                        </p>
+                        <a href="javascript:void(0)" onclick="openBlogModal('accessibility')" class="blog-link">
+                            Read More <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </article>
+                
+                <!-- ========== BLOG POST 9 ========== -->
+                <article class="card blog-card fade-in fade-in-delay-2">
+                    <div class="blog-image">
+                        <img src="https://images.unsplash.com/photo-1677442136019-21780ecad995?w=600&h=400&fit=crop" alt="AI Tools">
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span><i class="fas fa-calendar-alt"></i> Oct 18, 2024</span>
+                            <span><i class="fas fa-clock"></i> 6 min</span>
+                        </div>
+                        <h3 class="blog-title">
+                            <a href="javascript:void(0)" onclick="openBlogModal('ai-tools')">AI Tools That Boost Developer Productivity</a>
+                        </h3>
+                        <p class="blog-excerpt">
+                            Explore AI-powered tools that can help you code faster and smarter. 
+                            From GitHub Copilot to ChatGPT, see how AI is changing development.
+                        </p>
+                        <a href="javascript:void(0)" onclick="openBlogModal('ai-tools')" class="blog-link">
+                            Read More <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </article>
+                
+            </div>
+            
+            <!-- Load More Button -->
+            <div class="text-center mt-5 fade-in">
+                <button class="btn btn-secondary">
+                    <i class="fas fa-sync-alt"></i> Load More Articles
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         NEWSLETTER SIGNUP
+         ========================================== -->
+    <section class="section" style="background: var(--bg-secondary);">
+        <div class="container">
+            <div class="text-center fade-in">
+                <h2>Subscribe to My <span class="gradient-text">Newsletter</span></h2>
+                <p style="max-width: 600px; margin: 20px auto 30px;">
+                    Get the latest articles, tutorials, and insights delivered straight to your inbox. No spam, unsubscribe anytime.
+                </p>
+                
+                <!-- Newsletter Form -->
+                <form class="fade-in" style="display: flex; gap: 15px; max-width: 500px; margin: 0 auto; flex-wrap: wrap; justify-content: center;">
+                    <input type="email" 
+                           placeholder="Enter your email address" 
+                           style="flex: 1; min-width: 250px; padding: 15px 20px; background: var(--bg-card); 
+                                  border: 1px solid rgba(255,255,255,0.1); border-radius: var(--radius-md); 
+                                  color: var(--text-primary); font-family: 'Poppins', sans-serif;">
+                    <button type="submit" class="btn btn-primary">
+                        <i class="fas fa-paper-plane"></i> Subscribe
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         FOOTER
+         ========================================== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>Portfolio</h3>
+                    <p>
+                        Building digital experiences that make a difference. 
+                        Let's create something amazing together.
+                    </p>
+                    <div class="social-links">
+                        <a href="#" class="social-link" aria-label="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="#" class="social-link" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Dribbble">
+                            <i class="fab fa-dribbble"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Me</a></li>
+                        <li><a href="projects.html">Projects</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="#">Web Development</a></li>
+                        <li><a href="#">UI/UX Design</a></li>
+                        <li><a href="#">Mobile Apps</a></li>
+                        <li><a href="#">Consulting</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><a href="mailto:your@email.com">your@email.com</a></li>
+                        <li><a href="tel:+1234567890">+1 234 567 890</a></li>
+                        <li><a href="#">Your City, Country</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 Your Name. All rights reserved.</p>
+                <div class="footer-social">
+                    <a href="#" class="social-link" aria-label="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="#" class="social-link" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Main JavaScript -->
+    <script src="js/script.js"></script>
+
+    <!-- Blog Article Modal -->
+    <div id="blogModal" class="blog-modal">
+        <div class="blog-modal-content">
+            <button class="blog-modal-close" onclick="closeBlogModal()">&times;</button>
+            <div class="blog-modal-header">
+                <img id="modalImage" src="" alt="Article Image">
+            </div>
+            <div class="blog-modal-body">
+                <div class="blog-meta" id="modalMeta"></div>
+                <h2 id="modalTitle"></h2>
+                <div id="modalContent"></div>
+            </div>
+        </div>
+    </div>
+
+    <style>
+        .blog-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            z-index: 10000;
+            overflow-y: auto;
+            padding: 20px;
+        }
+        .blog-modal.active {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+        }
+        .blog-modal-content {
+            background: var(--bg-card);
+            max-width: 900px;
+            width: 100%;
+            border-radius: 20px;
+            overflow: hidden;
+            margin: 40px auto;
+            position: relative;
+            animation: modalSlideIn 0.3s ease;
+        }
+        @keyframes modalSlideIn {
+            from { opacity: 0; transform: translateY(-30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .blog-modal-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 45px;
+            height: 45px;
+            background: rgba(0, 0, 0, 0.7);
+            border: none;
+            border-radius: 50%;
+            font-size: 28px;
+            color: white;
+            cursor: pointer;
+            z-index: 10;
+            transition: all 0.3s ease;
+        }
+        .blog-modal-close:hover {
+            background: var(--gradient-teal);
+            transform: rotate(90deg);
+        }
+        .blog-modal-header img {
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+        }
+        .blog-modal-body {
+            padding: 40px;
+        }
+        .blog-modal-body h2 {
+            font-size: 2rem;
+            margin: 15px 0 25px;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .blog-modal-body .blog-meta {
+            margin-bottom: 10px;
+        }
+        #modalContent {
+            font-size: 1.1rem;
+            line-height: 1.9;
+            color: var(--text-secondary);
+        }
+        #modalContent p {
+            margin-bottom: 20px;
+        }
+        #modalContent h3 {
+            color: var(--text-primary);
+            margin: 30px 0 15px;
+            font-size: 1.4rem;
+        }
+        #modalContent ul {
+            margin: 15px 0 20px 25px;
+        }
+        #modalContent li {
+            margin-bottom: 10px;
+        }
+        #modalContent code {
+            background: var(--bg-secondary);
+            padding: 3px 8px;
+            border-radius: 5px;
+            font-family: monospace;
+        }
+        @media (max-width: 768px) {
+            .blog-modal-content {
+                margin: 20px auto;
+            }
+            .blog-modal-header img {
+                height: 200px;
+            }
+            .blog-modal-body {
+                padding: 25px;
+            }
+            .blog-modal-body h2 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+
+    <script>
+        // Blog Articles Data
+        const blogArticles = {
+            'featured': {
+                title: 'The Future of Web Development: Trends to Watch in 2025',
+                image: 'https://images.unsplash.com/photo-1633356122544-f134324a6cee?w=800&h=500&fit=crop',
+                date: 'December 15, 2024',
+                readTime: '10 min read',
+                content: `
+                    <p>The web development landscape is constantly evolving, and 2025 promises to bring exciting changes that will reshape how we build and interact with websites.</p>
+                    
+                    <h3>1. AI-Powered Development</h3>
+                    <p>Artificial Intelligence is no longer just a buzzword. Tools like GitHub Copilot and AI-assisted code completion are becoming essential parts of the developer toolkit. Expect to see more intelligent debugging, automated testing, and even AI-generated UI components.</p>
+                    
+                    <h3>2. WebAssembly Goes Mainstream</h3>
+                    <p>WebAssembly (Wasm) is enabling high-performance applications in the browser. From video editing to 3D games, complex applications that once required native installations can now run directly in your browser.</p>
+                    
+                    <h3>3. Edge Computing</h3>
+                    <p>Edge functions and serverless computing at the edge are reducing latency and improving user experiences globally. Platforms like Cloudflare Workers and Vercel Edge Functions are leading this revolution.</p>
+                    
+                    <h3>4. Component-First Architecture</h3>
+                    <p>The rise of design systems and component libraries continues. Tools like Storybook, along with frameworks prioritizing components, are making it easier to build consistent, maintainable UIs.</p>
+                    
+                    <h3>Key Takeaways</h3>
+                    <ul>
+                        <li>AI will augment, not replace, developers</li>
+                        <li>Performance will be non-negotiable</li>
+                        <li>Accessibility and inclusivity are essential</li>
+                        <li>Cross-platform development will dominate</li>
+                    </ul>
+                `
+            },
+            'react-hooks': {
+                title: 'Mastering React Hooks: A Complete Guide',
+                image: 'https://images.unsplash.com/photo-1633356122102-3fe601e05bd2?w=600&h=400&fit=crop',
+                date: 'Dec 10, 2024',
+                readTime: '8 min',
+                content: `
+                    <p>React Hooks revolutionized how we write React components. Let's dive deep into the most important hooks and learn how to use them effectively.</p>
+                    
+                    <h3>useState - Managing State</h3>
+                    <p>The <code>useState</code> hook allows functional components to have state. It returns a pair: the current state value and a function to update it.</p>
+                    
+                    <h3>useEffect - Side Effects</h3>
+                    <p>Use <code>useEffect</code> for data fetching, subscriptions, or manually changing the DOM. Think of it as componentDidMount, componentDidUpdate, and componentWillUnmount combined.</p>
+                    
+                    <h3>useContext - Global State</h3>
+                    <p>Context provides a way to pass data through the component tree without having to pass props manually at every level.</p>
+                    
+                    <h3>Custom Hooks</h3>
+                    <p>Create your own hooks to extract component logic into reusable functions. This is one of the most powerful features of React Hooks.</p>
+                    
+                    <h3>Best Practices</h3>
+                    <ul>
+                        <li>Only call hooks at the top level</li>
+                        <li>Only call hooks from React functions</li>
+                        <li>Use the exhaustive-deps ESLint rule</li>
+                        <li>Keep hooks focused and single-purpose</li>
+                    </ul>
+                `
+            },
+            'css-tricks': {
+                title: '10 CSS Tricks Every Developer Should Know',
+                image: 'https://images.unsplash.com/photo-1507721999472-8ed4421c4af2?w=600&h=400&fit=crop',
+                date: 'Dec 5, 2024',
+                readTime: '6 min',
+                content: `
+                    <p>CSS has evolved tremendously. Here are 10 modern CSS tricks that will level up your styling game.</p>
+                    
+                    <h3>1. CSS Grid for Layouts</h3>
+                    <p>CSS Grid is the most powerful layout system in CSS. Use <code>display: grid</code> with <code>grid-template-columns</code> for complex layouts with minimal code.</p>
+                    
+                    <h3>2. CSS Custom Properties</h3>
+                    <p>Variables in CSS! Define once with <code>--my-color: blue</code> and use everywhere with <code>var(--my-color)</code>.</p>
+                    
+                    <h3>3. Smooth Scroll</h3>
+                    <p>Just add <code>scroll-behavior: smooth</code> to your html element for smooth scrolling across your entire site.</p>
+                    
+                    <h3>4. Aspect Ratio</h3>
+                    <p>The <code>aspect-ratio</code> property makes maintaining proportions easy: <code>aspect-ratio: 16/9</code>.</p>
+                    
+                    <h3>5. Clamp for Responsive Typography</h3>
+                    <p>Use <code>font-size: clamp(1rem, 2.5vw, 2rem)</code> for fluid typography that scales perfectly.</p>
+                    
+                    <h3>More Tricks</h3>
+                    <ul>
+                        <li>backdrop-filter for glassmorphism</li>
+                        <li>:is() and :where() for cleaner selectors</li>
+                        <li>Container queries for component-level responsiveness</li>
+                        <li>Scroll snap for carousels</li>
+                        <li>accent-color for form styling</li>
+                    </ul>
+                `
+            },
+            'api-design': {
+                title: 'RESTful API Design: Best Practices',
+                image: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=600&h=400&fit=crop',
+                date: 'Nov 28, 2024',
+                readTime: '12 min',
+                content: `
+                    <p>A well-designed API is crucial for any modern application. Here are the best practices for creating RESTful APIs.</p>
+                    
+                    <h3>Use Proper HTTP Methods</h3>
+                    <p>GET for reading, POST for creating, PUT/PATCH for updating, DELETE for removing. Never use GET for mutations.</p>
+                    
+                    <h3>Meaningful Resource Names</h3>
+                    <p>Use nouns, not verbs: <code>/users</code> not <code>/getUsers</code>. Use plural forms consistently.</p>
+                    
+                    <h3>Proper Status Codes</h3>
+                    <ul>
+                        <li>200 - OK</li>
+                        <li>201 - Created</li>
+                        <li>400 - Bad Request</li>
+                        <li>401 - Unauthorized</li>
+                        <li>404 - Not Found</li>
+                        <li>500 - Server Error</li>
+                    </ul>
+                    
+                    <h3>Versioning</h3>
+                    <p>Always version your API: <code>/api/v1/users</code>. This allows you to make breaking changes without affecting existing clients.</p>
+                    
+                    <h3>Pagination & Filtering</h3>
+                    <p>For large datasets, implement pagination with <code>?page=1&limit=20</code> and filtering with query parameters.</p>
+                `
+            },
+            'dark-mode': {
+                title: 'Implementing Dark Mode with CSS Variables',
+                image: 'https://images.unsplash.com/photo-1555099962-4199c345e5dd?w=600&h=400&fit=crop',
+                date: 'Nov 20, 2024',
+                readTime: '5 min',
+                content: `
+                    <p>Dark mode is no longer optional - users expect it. Here's how to implement it elegantly using CSS custom properties.</p>
+                    
+                    <h3>Define Your Color Scheme</h3>
+                    <p>Create CSS variables for all your colors in :root, then override them in a [data-theme="dark"] selector.</p>
+                    
+                    <h3>JavaScript Toggle</h3>
+                    <p>Toggle the theme by changing the data-theme attribute on the document element and save the preference to localStorage.</p>
+                    
+                    <h3>System Preference Detection</h3>
+                    <p>Use <code>prefers-color-scheme</code> media query to detect the user's system preference and apply it automatically.</p>
+                    
+                    <h3>Tips for Great Dark Mode</h3>
+                    <ul>
+                        <li>Don't use pure black (#000) - use dark gray instead</li>
+                        <li>Reduce contrast slightly for less eye strain</li>
+                        <li>Test images and graphics in both modes</li>
+                        <li>Consider color meaning (red for errors still needs to work)</li>
+                    </ul>
+                `
+            },
+            'typescript': {
+                title: 'Why You Should Use TypeScript in 2025',
+                image: 'https://images.unsplash.com/photo-1516116216624-53e697fedbea?w=600&h=400&fit=crop',
+                date: 'Nov 15, 2024',
+                readTime: '10 min',
+                content: `
+                    <p>TypeScript has become the standard for large-scale JavaScript applications. Here's why you should adopt it.</p>
+                    
+                    <h3>Catch Errors Early</h3>
+                    <p>TypeScript's static type checking catches errors at compile time, before they reach production.</p>
+                    
+                    <h3>Better IDE Support</h3>
+                    <p>IntelliSense, auto-completion, and inline documentation make development faster and more enjoyable.</p>
+                    
+                    <h3>Improved Refactoring</h3>
+                    <p>Rename a variable or function and TypeScript updates all references automatically with confidence.</p>
+                    
+                    <h3>Self-Documenting Code</h3>
+                    <p>Types serve as inline documentation, making code easier to understand without external docs.</p>
+                    
+                    <h3>Key Features</h3>
+                    <ul>
+                        <li>Interfaces and Type Aliases</li>
+                        <li>Generics for reusable components</li>
+                        <li>Union and Intersection types</li>
+                        <li>Type guards and narrowing</li>
+                        <li>Decorators for meta-programming</li>
+                    </ul>
+                `
+            },
+            'performance': {
+                title: 'Web Performance Optimization Techniques',
+                image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop',
+                date: 'Nov 8, 2024',
+                readTime: '9 min',
+                content: `
+                    <p>Speed matters. Users expect pages to load in under 3 seconds. Here's how to achieve that.</p>
+                    
+                    <h3>Image Optimization</h3>
+                    <p>Use WebP format, lazy loading with <code>loading="lazy"</code>, and responsive images with srcset.</p>
+                    
+                    <h3>Code Splitting</h3>
+                    <p>Don't load everything at once. Use dynamic imports to load code only when needed.</p>
+                    
+                    <h3>Caching Strategies</h3>
+                    <p>Implement proper cache headers and use Service Workers for offline-first experiences.</p>
+                    
+                    <h3>Core Web Vitals</h3>
+                    <ul>
+                        <li>LCP (Largest Contentful Paint) - under 2.5s</li>
+                        <li>FID (First Input Delay) - under 100ms</li>
+                        <li>CLS (Cumulative Layout Shift) - under 0.1</li>
+                    </ul>
+                    
+                    <h3>Quick Wins</h3>
+                    <ul>
+                        <li>Minify CSS and JavaScript</li>
+                        <li>Enable Gzip/Brotli compression</li>
+                        <li>Use a CDN for static assets</li>
+                        <li>Preconnect to required origins</li>
+                    </ul>
+                `
+            },
+            'git-workflow': {
+                title: 'Git Workflow Strategies for Teams',
+                image: 'https://images.unsplash.com/photo-1556075798-4825dfaaf498?w=600&h=400&fit=crop',
+                date: 'Nov 1, 2024',
+                readTime: '7 min',
+                content: `
+                    <p>Choosing the right Git workflow can make or break team productivity. Let's compare the popular options.</p>
+                    
+                    <h3>GitFlow</h3>
+                    <p>Best for products with scheduled releases. Uses develop, feature, release, and hotfix branches.</p>
+                    
+                    <h3>GitHub Flow</h3>
+                    <p>Simple and effective for continuous deployment. Feature branches merge directly to main after PR review.</p>
+                    
+                    <h3>Trunk-Based Development</h3>
+                    <p>Everyone commits to main with small, frequent changes. Requires strong CI/CD and feature flags.</p>
+                    
+                    <h3>Best Practices</h3>
+                    <ul>
+                        <li>Write meaningful commit messages</li>
+                        <li>Keep commits small and focused</li>
+                        <li>Use pull requests for code review</li>
+                        <li>Automate tests in CI pipeline</li>
+                        <li>Protect important branches</li>
+                    </ul>
+                `
+            },
+            'accessibility': {
+                title: 'Building Accessible Web Applications',
+                image: 'https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?w=600&h=400&fit=crop',
+                date: 'Oct 25, 2024',
+                readTime: '8 min',
+                content: `
+                    <p>Web accessibility ensures everyone can use your site, regardless of abilities. It's not just right—it's often legally required.</p>
+                    
+                    <h3>Semantic HTML</h3>
+                    <p>Use proper HTML elements: <code>&lt;button&gt;</code> for buttons, <code>&lt;nav&gt;</code> for navigation, <code>&lt;main&gt;</code> for main content.</p>
+                    
+                    <h3>Keyboard Navigation</h3>
+                    <p>Everything should be accessible via keyboard. Use proper focus states and logical tab order.</p>
+                    
+                    <h3>ARIA Labels</h3>
+                    <p>When HTML semantics aren't enough, use ARIA attributes to provide context for screen readers.</p>
+                    
+                    <h3>Color Contrast</h3>
+                    <p>Maintain at least 4.5:1 contrast ratio for normal text, 3:1 for large text. Don't rely on color alone.</p>
+                    
+                    <h3>Accessibility Checklist</h3>
+                    <ul>
+                        <li>Alt text for all images</li>
+                        <li>Form labels and error messages</li>
+                        <li>Skip navigation links</li>
+                        <li>Responsive and zoomable design</li>
+                        <li>Captions for video content</li>
+                    </ul>
+                `
+            },
+            'ai-tools': {
+                title: 'AI Tools That Boost Developer Productivity',
+                image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?w=600&h=400&fit=crop',
+                date: 'Oct 18, 2024',
+                readTime: '6 min',
+                content: `
+                    <p>AI is transforming software development. Here are the tools every developer should know about.</p>
+                    
+                    <h3>GitHub Copilot</h3>
+                    <p>Your AI pair programmer. It suggests code completions, entire functions, and even helps write tests.</p>
+                    
+                    <h3>ChatGPT / Claude</h3>
+                    <p>Great for explaining code, debugging issues, learning new concepts, and brainstorming solutions.</p>
+                    
+                    <h3>Cursor IDE</h3>
+                    <p>An AI-first code editor built on VS Code with deep AI integration for code generation and editing.</p>
+                    
+                    <h3>AI for Code Review</h3>
+                    <p>Tools like CodeRabbit and Sourcery provide automated code review suggestions.</p>
+                    
+                    <h3>Tips for Using AI Effectively</h3>
+                    <ul>
+                        <li>Be specific in your prompts</li>
+                        <li>Always review and test AI-generated code</li>
+                        <li>Use AI to learn, not just copy</li>
+                        <li>Combine AI with your expertise</li>
+                        <li>Stay updated on new AI tools</li>
+                    </ul>
+                `
+            }
+        };
+
+        // Open Blog Modal
+        function openBlogModal(articleId) {
+            const article = blogArticles[articleId];
+            if (!article) return;
+
+            document.getElementById('modalImage').src = article.image;
+            document.getElementById('modalTitle').textContent = article.title;
+            document.getElementById('modalMeta').innerHTML = `
+                <span><i class="fas fa-calendar-alt"></i> ${article.date}</span>
+                <span><i class="fas fa-clock"></i> ${article.readTime}</span>
+            `;
+            document.getElementById('modalContent').innerHTML = article.content;
+
+            document.getElementById('blogModal').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        // Close Blog Modal
+        function closeBlogModal() {
+            document.getElementById('blogModal').classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        // Close modal on escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') closeBlogModal();
+        });
+
+        // Close modal on backdrop click
+        document.getElementById('blogModal').addEventListener('click', function(e) {
+            if (e.target === this) closeBlogModal();
+        });
+    </script>
+</body>
+</html>
