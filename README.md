@@ -41,7 +41,7 @@
 ### 🏠 Home Page
 | Light Theme | Dark Theme |
 |-------------|------------|
-| ![Light](Portfolio.PNG) | ![Dark](Portfolio.1.PNG) |
+| ![Light](Portfolio.PNG) | ![Dark](Portfolio1.PNG) |
 
 </div>
 
