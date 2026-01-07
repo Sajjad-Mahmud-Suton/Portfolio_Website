@@ -3,7 +3,7 @@
 
 <div align="center">
 
-![Portfolio Banner](Green_Bites.PNG)
+![Portfolio Banner](Portfolio.PNG)
 
 [![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/HTML)
 [![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/CSS)
@@ -12,7 +12,7 @@
 
 **A modern, responsive portfolio website showcasing my skills, projects, and academic journey.**
 
-[🌐 Live Demo](#) • [📧 Contact Me](mailto:sajjadmahmudsuton@gmail.com) • [💼 LinkedIn](https://linkedin.com/in/sajjadmahmud)
+[🌐 Live Demo](#) • [📧 Contact Me](mailto:sajjadmahmudsuton@gmail.com) • [💼 LinkedIn]([https://linkedin.com/in/sajjadmahmud](https://www.linkedin.com/in/md-sajjad-mahmud-suton-344a802a7/))
 
 </div>
 
@@ -41,7 +41,7 @@
 ### 🏠 Home Page
 | Light Theme | Dark Theme |
 |-------------|------------|
-| ![Light](https://via.placeholder.com/400x250/ffffff/1a1a2e?text=Light+Theme) | ![Dark](https://via.placeholder.com/400x250/0a1628/ffffff?text=Dark+Theme) |
+| ![Light](Portfolio.PNG) | ![Dark](Portfolio.1.PNG) |
 
 </div>
 
@@ -198,9 +198,9 @@ This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) 
 
 *CSE Student & Web Developer*
 
-[![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/sajjadmahmud)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://linkedin.com/in/sajjadmahmud)
-[![Facebook](https://img.shields.io/badge/Facebook-1877F2?style=for-the-badge&logo=facebook&logoColor=white)](https://facebook.com/sajjadmahmud)
+[![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)]([https://github.com/sajjadmahmud](https://github.com/Sajjad-Mahmud-Suton))
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)]([https://linkedin.com/in/sajjadmahmud](https://www.linkedin.com/in/md-sajjad-mahmud-suton-344a802a7/))
+[![Facebook](https://img.shields.io/badge/Facebook-1877F2?style=for-the-badge&logo=facebook&logoColor=white)]([https://facebook.com/sajjadmahmud](https://www.facebook.com/sajjadmahmudsuton.suton/))
 [![Email](https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:sajjadmahmudsuton@gmail.com)
 
 </div>
@@ -211,7 +211,7 @@ This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) 
 
 ### ⭐ If you like this project, give it a star!
 
-Made with ❤️ in Bangladesh 🇧🇩
+Made with ❤️ Sajjad Mahmud 🇧🇩
 
 **© 2026 Md. Sajjad Mahmud Suton. All rights reserved.**
 
