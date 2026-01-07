@@ -1503,6 +1503,43 @@ a:hover {
     font-family: 'Poppins', monospace;
 }
 
+
+
+.btn-cv-download {
+  padding: 8px 18px;
+  border-radius: 25px;
+  border: 1px solid #00e0ff;
+  background: linear-gradient(135deg, #00e0ff, #7c3aed); /* smart initial color */
+  color: #f8f9fa;
+  font-weight: 500;
+  box-shadow: 0 0 8px rgba(0, 224, 255, 0.4);
+  transition:
+    background 0.3s ease,
+    color 0.3s ease,
+    box-shadow 0.5s ease,
+    transform 0.2s ease;
+}
+
+.btn-cv-download i {
+  margin-right: 6px;
+}
+
+.btn-cv-download:hover {
+  color: #141414;
+  background: linear-gradient(135deg, #38bdf8, #a855f7); /* brighter on hover */
+  box-shadow: 0 0 14px rgba(56, 189, 248, 0.9),
+              0 0 26px rgba(168, 85, 247, 0.7);
+  transform: translateY(-3px);
+  text-decoration: none;
+}
+
+.btn-cv-download:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(56, 189, 248, 0.7);
+}
+
+
+
 .time-mini i {
     color: var(--gradient-teal);
     font-size: 0.9rem;
