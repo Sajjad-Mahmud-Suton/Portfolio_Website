@@ -3,7 +3,7 @@
 
 <div align="center">
 
-![Portfolio Banner](https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=800&h=300&fit=crop)
+![Portfolio Banner](Green_Bites.PNG)
 
 [![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/HTML)
 [![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/CSS)
