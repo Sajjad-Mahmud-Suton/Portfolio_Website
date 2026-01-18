@@ -31,7 +31,7 @@
          ========================================== -->
     <nav class="navbar">
         <div class="container">
-            <a href="index.html" class="nav-logo">Portfolio</a>
+            <a href="index.html" class="nav-logo">SAJJAD MAHMUD</a>
             
             <ul class="nav-menu">
                 <li><a href="index.html" class="nav-link">Home</a></li>
@@ -81,7 +81,7 @@
                     <div class="stat-icon" style="width: 60px; height: 60px; background: var(--gradient-primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 10px; font-size: 1.5rem;">
                         <i class="fas fa-book"></i>
                     </div>
-                    <h3 class="gradient-text" style="margin-bottom: 5px;">8</h3>
+                    <h3 class="gradient-text" style="margin-bottom: 5px;">7</h3>
                     <p style="margin: 0; font-size: 0.9rem;">Semesters</p>
                 </div>
                 <div class="stat-item text-center">
@@ -240,7 +240,7 @@
                     </div>
                 </a>
                 
-                <!-- ========== SEMESTER 8 ========== -->
+                <!-- ========== SEMESTER 8 ========== 
                 <a href="semester.html?sem=8" class="semester-card card fade-in fade-in-delay-1" style="text-decoration: none; position: relative; overflow: hidden;">
                     <div class="semester-number" style="position: absolute; top: -20px; right: -20px; font-size: 6rem; font-weight: 800; opacity: 0.1; color: #e879f9;">8</div>
                     <div class="semester-icon" style="width: 70px; height: 70px; background: linear-gradient(135deg, #e879f9, #d946ef); border-radius: 16px; display: flex; align-items: center; justify-content: center; font-size: 1.8rem; margin-bottom: 20px; box-shadow: 0 10px 30px rgba(232, 121, 249, 0.3);">
@@ -255,7 +255,7 @@
                     <div class="semester-arrow" style="position: absolute; bottom: 25px; right: 25px; width: 40px; height: 40px; background: var(--bg-secondary); border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: all 0.3s ease;">
                         <i class="fas fa-arrow-right" style="color: #e879f9;"></i>
                     </div>
-                </a>
+                </a> -->
                 
             </div>
         </div>
@@ -348,17 +348,18 @@
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
+                <!-- Brand Section -->
                 <div class="footer-brand">
-                    <h3>Portfolio</h3>
+                    <h3>SAJJAD MAHMUD</h3>
                     <p>
                         Building digital experiences that make a difference. 
                         Let's create something amazing together.
                     </p>
                     <div class="social-links">
-                        <a href="#" class="social-link" aria-label="GitHub">
+                        <a href="https://github.com/Sajjad-Mahmud-Suton" target="_blank" class="social-link" aria-label="GitHub">
                             <i class="fab fa-github"></i>
                         </a>
-                        <a href="#" class="social-link" aria-label="LinkedIn">
+                        <a href="https://www.linkedin.com/in/md-sajjad-mahmud-suton-344a802a7/" target="_blank" class="social-link" aria-label="LinkedIn">
                             <i class="fab fa-linkedin-in"></i>
                         </a>
                         <a href="#" class="social-link" aria-label="Twitter">
@@ -370,6 +371,7 @@
                     </div>
                 </div>
                 
+                <!-- Quick Links -->
                 <div class="footer-links">
                     <h4>Quick Links</h4>
                     <ul>
@@ -381,6 +383,7 @@
                     </ul>
                 </div>
                 
+                <!-- Services -->
                 <div class="footer-links">
                     <h4>Resources</h4>
                     <ul>
@@ -391,23 +394,56 @@
                     </ul>
                 </div>
                 
+                <!-- Contact Info -->
                 <div class="footer-links">
                     <h4>Contact</h4>
                     <ul>
                         <li><a href="mailto:sajjadmahmudsuton@gmail.com">sajjadmahmudsuton@gmail.com</a></li>
-                        <li><a href="tel:+8801968161494">+88 019 681 61494</a></li>
-                        <li><a href="#">Your City, Country</a></li>
+                        <li><a href="tel:+8801968161494">+880 1968 161 494</a></li>
+                        <li><a href="#">Dhaka,Bangladeh</a></li>
                     </ul>
                 </div>
             </div>
             
+            <!-- Compact Date Time Widget with Popup Calendar -->
+            <div class="datetime-compact">
+                <div class="datetime-mini">
+                    <div class="time-mini">
+                        <i class="far fa-clock"></i>
+                        <span id="hours">00</span>:<span id="minutes">00</span>:<span id="seconds">00</span>
+                        <span class="ampm-mini" id="ampm">AM</span>
+                    </div>
+                    <div class="date-mini" id="dateToggle">
+                        <i class="far fa-calendar-alt"></i>
+                        <span id="dayNum">01</span>
+                        <span id="monthName">Jan</span>
+                        <span id="year">2026</span>
+                        <span class="date-day-mini" id="dayName">(Mon)</span>
+                        <i class="fas fa-chevron-down calendar-arrow"></i>
+                    </div>
+                </div>
+                <!-- Popup Calendar -->
+                <div class="calendar-popup" id="calendarPopup">
+                    <div class="calendar-popup-header">
+                        <button class="calendar-nav" id="prevMonth"><i class="fas fa-chevron-left"></i></button>
+                        <span id="calendarMonth">January 2026</span>
+                        <button class="calendar-nav" id="nextMonth"><i class="fas fa-chevron-right"></i></button>
+                    </div>
+                    <div class="calendar-weekdays">
+                        <span>Su</span><span>Mo</span><span>Tu</span><span>We</span><span>Th</span><span>Fr</span><span>Sa</span>
+                    </div>
+                    <div class="calendar-days" id="calendarDays"></div>
+                </div>
+            </div>
+
+            <!-- Footer Bottom -->
             <div class="footer-bottom">
-                <p>&copy; 2024 Your Name. All rights reserved.</p>
+                <p>&copy; 2025 Sajjad Mahmud. All rights reserved.</p>
                 <div class="footer-social">
-                    <a href="#" class="social-link" aria-label="GitHub">
+                    <a href="https://github.com/Sajjad-Mahmud-Suton" target="_blank" class="social-link" aria-label="GitHub">
                         <i class="fab fa-github"></i>
                     </a>
-                    <a href="#" class="social-link" aria-label="LinkedIn">
+                    <a href="https://www.linkedin.com/in/md-sajjad-mahmud-suton-344a802a7/" target="_blank" class="social-link" aria-label="LinkedIn">
                         <i class="fab fa-linkedin-in"></i>
                     </a>
                 </div>
