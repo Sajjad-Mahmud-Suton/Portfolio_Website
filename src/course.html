@@ -1064,7 +1064,7 @@
     <section class="section" style="padding-top: 20px;">
         <div class="container">
             <div class="text-center fade-in" style="display: flex; justify-content: center; gap: 15px; flex-wrap: wrap;">
-                <a href="semester.html?sem=1" class="btn btn-secondary">
+                <a href="semester1.html" id="back-to-semester" class="btn btn-secondary">
                     <i class="fas fa-arrow-left"></i> Back to Courses
                 </a>
                 <a href="university.html" class="btn btn-secondary">
@@ -1294,52 +1294,432 @@
             const sem = urlParams.get('sem') || '1';
             const course = urlParams.get('course') || 'programming';
             
-            // Update breadcrumb semester link
-            document.querySelector('#breadcrumb-semester').href = `semester.html?sem=${sem}`;
+            // Update breadcrumb semester link based on semester
+            const semesterLinks = {
+                '1': 'semester1.html',
+                '2': 'semester2.html',
+                '3': 'semester3.html',
+                '4': 'semester4.html',
+                '5': 'semester5.html',
+                '6': 'semester6.html',
+                '7': 'semester7.html',
+                '8': 'semester8.html'
+            };
+            const semesterNames = {
+                '1': '1st Semester',
+                '2': '2nd Semester',
+                '3': '3rd Semester',
+                '4': '4th Semester',
+                '5': '5th Semester',
+                '6': '6th Semester',
+                '7': '7th Semester',
+                '8': '8th Semester'
+            };
+            document.querySelector('#breadcrumb-semester').href = semesterLinks[sem] || 'semester1.html';
+            document.querySelector('#breadcrumb-semester').textContent = semesterNames[sem] || '1st Semester';
             
-            // Course data (customize as needed)
+            // Complete Course data for all semesters
             const courseData = {
-                programming: {
-                    title: 'Programming Fundamentals',
-                    code: 'CSE-101',
-                    description: 'Introduction to C Programming - Learn the basics of programming, algorithms, and problem-solving.',
-                    icon: 'fas fa-code',
-                    color: '#38bdf8'
-                },
-                physics: {
+                // ========== SEMESTER 1 ==========
+                'physics': {
                     title: 'Engineering Physics',
                     code: 'PHY-101',
                     description: 'Fundamental physics concepts including mechanics, thermodynamics, and waves.',
                     icon: 'fas fa-atom',
                     color: '#14b8a6'
                 },
-                math: {
+                'math': {
                     title: 'Mathematics',
                     code: 'MAT-101',
                     description: 'Calculus, Linear Algebra, and Mathematical foundations for engineering.',
                     icon: 'fas fa-square-root-alt',
                     color: '#a855f7'
                 },
-                chemistry: {
+                'programming': {
+                    title: 'Programming Fundamentals',
+                    code: 'CSE-101',
+                    description: 'Introduction to C Programming - Learn the basics of programming, algorithms, and problem-solving.',
+                    icon: 'fas fa-code',
+                    color: '#38bdf8'
+                },
+                'chemistry': {
                     title: 'Engineering Chemistry',
                     code: 'CHM-101',
                     description: 'Chemistry fundamentals including organic, inorganic, and physical chemistry.',
                     icon: 'fas fa-vial',
                     color: '#f472b6'
                 },
-                english: {
+                'english': {
                     title: 'Technical English',
                     code: 'ENG-101',
                     description: 'Technical writing, communication skills, and professional English.',
                     icon: 'fas fa-language',
                     color: '#fb923c'
                 },
-                electrical: {
+                'electrical': {
                     title: 'Basic Electrical Engineering',
                     code: 'EEE-101',
                     description: 'Electrical circuits, electronics basics, and electrical systems.',
                     icon: 'fas fa-bolt',
                     color: '#4ade80'
+                },
+                
+                // ========== SEMESTER 2 ==========
+                'oop': {
+                    title: 'Object Oriented Programming',
+                    code: 'CSE-102',
+                    description: 'OOP concepts with C++ including classes, inheritance, polymorphism, and encapsulation.',
+                    icon: 'fas fa-cubes',
+                    color: '#a855f7'
+                },
+                'discrete-math': {
+                    title: 'Discrete Mathematics',
+                    code: 'MAT-102',
+                    description: 'Logic, sets, relations, functions, graph theory and combinatorics.',
+                    icon: 'fas fa-project-diagram',
+                    color: '#14b8a6'
+                },
+                'digital-logic': {
+                    title: 'Digital Logic Design',
+                    code: 'CSE-103',
+                    description: 'Boolean algebra, logic gates, combinational and sequential circuits.',
+                    icon: 'fas fa-microchip',
+                    color: '#38bdf8'
+                },
+                'physics2': {
+                    title: 'Physics II',
+                    code: 'PHY-102',
+                    description: 'Waves, optics, electromagnetism, and modern physics concepts.',
+                    icon: 'fas fa-wave-square',
+                    color: '#f472b6'
+                },
+                'calculus2': {
+                    title: 'Calculus II',
+                    code: 'MAT-103',
+                    description: 'Differential equations, multivariable calculus, and integration techniques.',
+                    icon: 'fas fa-infinity',
+                    color: '#fb923c'
+                },
+                'data-comm': {
+                    title: 'Data Communication',
+                    code: 'CSE-104',
+                    description: 'Signals, transmission media, encoding techniques, and communication protocols.',
+                    icon: 'fas fa-satellite-dish',
+                    color: '#4ade80'
+                },
+                'english2': {
+                    title: 'English II',
+                    code: 'ENG-102',
+                    description: 'Technical writing, professional communication, and presentation skills.',
+                    icon: 'fas fa-pen-fancy',
+                    color: '#facc15'
+                },
+                
+                // ========== SEMESTER 3 ==========
+                'data-structures': {
+                    title: 'Data Structures',
+                    code: 'CSE-201',
+                    description: 'Arrays, linked lists, stacks, queues, trees, graphs, and hash tables.',
+                    icon: 'fas fa-layer-group',
+                    color: '#38bdf8'
+                },
+                'algorithms': {
+                    title: 'Algorithms',
+                    code: 'CSE-202',
+                    description: 'Sorting, searching, dynamic programming, greedy algorithms, and complexity analysis.',
+                    icon: 'fas fa-sitemap',
+                    color: '#a855f7'
+                },
+                'computer-arch': {
+                    title: 'Computer Architecture',
+                    code: 'CSE-203',
+                    description: 'CPU design, memory hierarchy, pipelining, and I/O systems.',
+                    icon: 'fas fa-memory',
+                    color: '#14b8a6'
+                },
+                'statistics': {
+                    title: 'Statistics & Probability',
+                    code: 'MAT-201',
+                    description: 'Probability theory, statistical distributions, hypothesis testing, and regression.',
+                    icon: 'fas fa-chart-bar',
+                    color: '#f472b6'
+                },
+                'electronics': {
+                    title: 'Electronic Devices',
+                    code: 'EEE-201',
+                    description: 'Semiconductors, diodes, transistors, amplifiers, and basic analog circuits.',
+                    icon: 'fas fa-plug',
+                    color: '#fb923c'
+                },
+                'economics': {
+                    title: 'Engineering Economics',
+                    code: 'ECO-201',
+                    description: 'Cost analysis, time value of money, project evaluation, and decision making.',
+                    icon: 'fas fa-coins',
+                    color: '#4ade80'
+                },
+                
+                // ========== SEMESTER 4 ==========
+                'operating-systems': {
+                    title: 'Operating Systems',
+                    code: 'CSE-301',
+                    description: 'Process management, memory management, file systems, and synchronization.',
+                    icon: 'fas fa-desktop',
+                    color: '#f472b6'
+                },
+                'computer-networks': {
+                    title: 'Computer Networks',
+                    code: 'CSE-302',
+                    description: 'TCP/IP, OSI model, routing protocols, and network security basics.',
+                    icon: 'fas fa-globe',
+                    color: '#38bdf8'
+                },
+                'database': {
+                    title: 'Database Systems',
+                    code: 'CSE-303',
+                    description: 'SQL, ER models, normalization, transactions, and database design.',
+                    icon: 'fas fa-database',
+                    color: '#a855f7'
+                },
+                'toc': {
+                    title: 'Theory of Computation',
+                    code: 'CSE-304',
+                    description: 'Automata theory, formal languages, Turing machines, and computability.',
+                    icon: 'fas fa-cogs',
+                    color: '#14b8a6'
+                },
+                'numerical': {
+                    title: 'Numerical Methods',
+                    code: 'MAT-301',
+                    description: 'Root finding, interpolation, numerical integration, and differential equations.',
+                    icon: 'fas fa-calculator',
+                    color: '#fb923c'
+                },
+                'microprocessor': {
+                    title: 'Microprocessor & Interfacing',
+                    code: 'CSE-305',
+                    description: 'Assembly language programming, hardware interfacing, and embedded systems.',
+                    icon: 'fas fa-microchip',
+                    color: '#4ade80'
+                },
+                'accounting': {
+                    title: 'Accounting',
+                    code: 'ACC-301',
+                    description: 'Financial accounting, cost accounting, and business finance fundamentals.',
+                    icon: 'fas fa-file-invoice-dollar',
+                    color: '#facc15'
+                },
+                
+                // ========== SEMESTER 5 ==========
+                'software-eng': {
+                    title: 'Software Engineering',
+                    code: 'CSE-401',
+                    description: 'SDLC, Agile methodology, design patterns, and software project management.',
+                    icon: 'fas fa-project-diagram',
+                    color: '#fb923c'
+                },
+                'adv-database': {
+                    title: 'Advanced Database',
+                    code: 'CSE-402',
+                    description: 'NoSQL databases, transactions, query optimization, and distributed databases.',
+                    icon: 'fas fa-server',
+                    color: '#a855f7'
+                },
+                'web-dev': {
+                    title: 'Web Development',
+                    code: 'CSE-403',
+                    description: 'HTML, CSS, JavaScript, PHP, and full-stack web application development.',
+                    icon: 'fas fa-globe',
+                    color: '#38bdf8'
+                },
+                'compiler': {
+                    title: 'Compiler Design',
+                    code: 'CSE-404',
+                    description: 'Lexical analysis, parsing, syntax trees, and code generation.',
+                    icon: 'fas fa-terminal',
+                    color: '#14b8a6'
+                },
+                'graphics': {
+                    title: 'Computer Graphics',
+                    code: 'CSE-405',
+                    description: '2D/3D transformations, rendering, OpenGL, and graphics algorithms.',
+                    icon: 'fas fa-palette',
+                    color: '#f472b6'
+                },
+                'management': {
+                    title: 'Industrial Management',
+                    code: 'MGT-401',
+                    description: 'Organization behavior, leadership, human resource management, and quality control.',
+                    icon: 'fas fa-users-cog',
+                    color: '#4ade80'
+                },
+                
+                // ========== SEMESTER 6 ==========
+                'ai': {
+                    title: 'Artificial Intelligence',
+                    code: 'CSE-501',
+                    description: 'Search algorithms, knowledge representation, reasoning, and expert systems.',
+                    icon: 'fas fa-robot',
+                    color: '#4ade80'
+                },
+                'ml': {
+                    title: 'Machine Learning',
+                    code: 'CSE-502',
+                    description: 'Supervised and unsupervised learning, neural networks, and deep learning basics.',
+                    icon: 'fas fa-brain',
+                    color: '#a855f7'
+                },
+                'adv-web': {
+                    title: 'Advanced Web Development',
+                    code: 'CSE-503',
+                    description: 'React, Node.js, REST APIs, and modern JavaScript frameworks.',
+                    icon: 'fas fa-laptop-code',
+                    color: '#38bdf8'
+                },
+                'image-processing': {
+                    title: 'Image Processing',
+                    code: 'CSE-504',
+                    description: 'Digital image fundamentals, filtering, segmentation, and computer vision basics.',
+                    icon: 'fas fa-image',
+                    color: '#14b8a6'
+                },
+                'mobile-dev': {
+                    title: 'Mobile App Development',
+                    code: 'CSE-505',
+                    description: 'Android development, Flutter, cross-platform app development.',
+                    icon: 'fas fa-mobile-alt',
+                    color: '#f472b6'
+                },
+                'info-security': {
+                    title: 'Information Security',
+                    code: 'CSE-506',
+                    description: 'Cryptography, network security, authentication, and security protocols.',
+                    icon: 'fas fa-lock',
+                    color: '#fb923c'
+                },
+                'entrepreneurship': {
+                    title: 'Entrepreneurship',
+                    code: 'BUS-501',
+                    description: 'Business planning, startup development, innovation, and venture capital.',
+                    icon: 'fas fa-lightbulb',
+                    color: '#facc15'
+                },
+                
+                // ========== SEMESTER 7 ==========
+                'cloud-computing': {
+                    title: 'Cloud Computing',
+                    code: 'CSE-701',
+                    description: 'AWS, Azure, Google Cloud, virtualization, containers, and serverless computing.',
+                    icon: 'fas fa-cloud',
+                    color: '#38bdf8'
+                },
+                'cybersecurity': {
+                    title: 'Cybersecurity',
+                    code: 'CSE-702',
+                    description: 'Network security, ethical hacking, penetration testing, and security protocols.',
+                    icon: 'fas fa-shield-alt',
+                    color: '#14b8a6'
+                },
+                'distributed-systems': {
+                    title: 'Distributed Systems',
+                    code: 'CSE-703',
+                    description: 'Distributed computing, consensus algorithms, fault tolerance, and microservices.',
+                    icon: 'fas fa-network-wired',
+                    color: '#a855f7'
+                },
+                'big-data': {
+                    title: 'Big Data Analytics',
+                    code: 'CSE-704',
+                    description: 'Hadoop, Spark, data mining, real-time processing, and data visualization.',
+                    icon: 'fas fa-database',
+                    color: '#f472b6'
+                },
+                'iot': {
+                    title: 'IoT and Embedded Systems',
+                    code: 'CSE-705',
+                    description: 'Arduino, Raspberry Pi, sensor networks, and smart device development.',
+                    icon: 'fas fa-microchip',
+                    color: '#fb923c'
+                },
+                'ethics': {
+                    title: 'Professional Ethics in IT',
+                    code: 'CSE-706',
+                    description: 'Ethical issues, privacy, intellectual property, and professional responsibility.',
+                    icon: 'fas fa-balance-scale',
+                    color: '#4ade80'
+                },
+                // Legacy support for numbered courses in semester 7
+                '1': {
+                    title: 'Cloud Computing',
+                    code: 'CSE-701',
+                    description: 'AWS, Azure, Google Cloud, virtualization, containers, and serverless computing.',
+                    icon: 'fas fa-cloud',
+                    color: '#38bdf8'
+                },
+                '2': {
+                    title: 'Cybersecurity',
+                    code: 'CSE-702',
+                    description: 'Network security, ethical hacking, penetration testing, and security protocols.',
+                    icon: 'fas fa-shield-alt',
+                    color: '#14b8a6'
+                },
+                '3': {
+                    title: 'Distributed Systems',
+                    code: 'CSE-703',
+                    description: 'Distributed computing, consensus algorithms, fault tolerance, and microservices.',
+                    icon: 'fas fa-network-wired',
+                    color: '#a855f7'
+                },
+                '4': {
+                    title: 'Big Data Analytics',
+                    code: 'CSE-704',
+                    description: 'Hadoop, Spark, data mining, real-time processing, and data visualization.',
+                    icon: 'fas fa-database',
+                    color: '#f472b6'
+                },
+                '5': {
+                    title: 'IoT and Embedded Systems',
+                    code: 'CSE-705',
+                    description: 'Arduino, Raspberry Pi, sensor networks, and smart device development.',
+                    icon: 'fas fa-microchip',
+                    color: '#fb923c'
+                },
+                '6': {
+                    title: 'Professional Ethics in IT',
+                    code: 'CSE-706',
+                    description: 'Ethical issues, privacy, intellectual property, and professional responsibility.',
+                    icon: 'fas fa-balance-scale',
+                    color: '#4ade80'
+                },
+                
+                // ========== SEMESTER 8 ==========
+                'final-project': {
+                    title: 'Final Year Project',
+                    code: 'CSE-801',
+                    description: 'Capstone project with complete software solution, documentation, and presentation.',
+                    icon: 'fas fa-project-diagram',
+                    color: '#ff6b6b'
+                },
+                'internship': {
+                    title: 'Industrial Internship',
+                    code: 'CSE-802',
+                    description: 'Hands-on industry experience at a technology company.',
+                    icon: 'fas fa-building',
+                    color: '#38bdf8'
+                },
+                'seminar': {
+                    title: 'Technical Seminar',
+                    code: 'CSE-803',
+                    description: 'Research presentation on emerging technologies and trends.',
+                    icon: 'fas fa-chalkboard-teacher',
+                    color: '#a855f7'
+                },
+                'career': {
+                    title: 'Career Development',
+                    code: 'CSE-804',
+                    description: 'Resume building, interview skills, and professional career preparation.',
+                    icon: 'fas fa-user-tie',
+                    color: '#14b8a6'
                 }
             };
             
@@ -1353,6 +1733,12 @@
                 document.getElementById('course-icon').style.background = `linear-gradient(135deg, ${data.color}, ${adjustColor(data.color, -20)})`;
                 document.getElementById('breadcrumb-course').textContent = data.title;
                 document.title = `${data.title} | University Resources`;
+            }
+            
+            // Update back to semester button link
+            const backBtn = document.getElementById('back-to-semester');
+            if (backBtn && semesterLinks[sem]) {
+                backBtn.href = semesterLinks[sem];
             }
             
             // Helper function to darken color
