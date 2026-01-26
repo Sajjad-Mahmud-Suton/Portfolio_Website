@@ -249,50 +249,50 @@ const courseMetadata = {
     },
     
     // ========== SEMESTER 5 ==========
-    'software-engineering': {
+    'software-eng': {
         semester: 5,
         title: 'Software Engineering',
         code: 'CSE-401',
         credits: 3,
         description: 'Software development life cycle, agile methodologies, and project management.',
-        icon: 'fas fa-cogs',
-        color: '#14b8a6'
+        icon: 'fas fa-project-diagram',
+        color: '#fb923c'
     },
-    'web-development': {
+    'adv-database': {
         semester: 5,
-        title: 'Web Development',
+        title: 'Advanced Database',
         code: 'CSE-402',
-        credits: 3,
-        description: 'HTML, CSS, JavaScript, React, Node.js, and full-stack development.',
-        icon: 'fas fa-globe',
+        credits: 4,
+        description: 'NoSQL databases, transactions, optimization, and advanced SQL.',
+        icon: 'fas fa-server',
         color: '#a855f7'
     },
-    'ai': {
+    'web-dev': {
         semester: 5,
-        title: 'Artificial Intelligence',
+        title: 'Web Development',
         code: 'CSE-403',
-        credits: 3,
-        description: 'Search algorithms, knowledge representation, machine learning basics.',
-        icon: 'fas fa-brain',
+        credits: 4,
+        description: 'HTML, CSS, JavaScript, PHP, and full-stack development.',
+        icon: 'fas fa-globe',
         color: '#38bdf8'
+    },
+    'compiler': {
+        semester: 5,
+        title: 'Compiler Design',
+        code: 'CSE-404',
+        credits: 3,
+        description: 'Lexical analysis, parsing, semantic analysis, and code generation.',
+        icon: 'fas fa-code-branch',
+        color: '#14b8a6'
     },
     'graphics': {
         semester: 5,
         title: 'Computer Graphics',
-        code: 'CSE-404',
+        code: 'CSE-405',
         credits: 3,
         description: '2D/3D graphics, transformations, rendering, and OpenGL basics.',
         icon: 'fas fa-cube',
         color: '#f472b6'
-    },
-    'signals': {
-        semester: 5,
-        title: 'Signals & Systems',
-        code: 'EEE-401',
-        credits: 3,
-        description: 'Signal analysis, Fourier transforms, filtering, and system response.',
-        icon: 'fas fa-wave-square',
-        color: '#fb923c'
     },
     'management': {
         semester: 5,
@@ -305,59 +305,68 @@ const courseMetadata = {
     },
     
     // ========== SEMESTER 6 ==========
+    'ai': {
+        semester: 6,
+        title: 'Web Programming',
+        code: 'CSE-301',
+        credits: 3,
+        description: 'Core Concepts of Web Development.',
+        icon: 'fas fa-robot',
+        color: '#4ade80'
+    },
     'ml': {
         semester: 6,
-        title: 'Machine Learning',
-        code: 'CSE-501',
-        credits: 3,
-        description: 'Supervised and unsupervised learning, neural networks, and deep learning.',
-        icon: 'fas fa-robot',
+        title: 'Web Programming Lab',
+        code: 'CSE-302',
+        credits: 1.5,
+        description: 'From Logic to Web Apps.',
+        icon: 'fas fa-brain',
         color: '#a855f7'
     },
-    'compiler': {
+    'adv-web': {
         semester: 6,
-        title: 'Compiler Design',
-        code: 'CSE-502',
+        title: 'Microprocessors, Microcontrollers and Embedded Systems',
+        code: 'CSE-303',
         credits: 3,
-        description: 'Lexical analysis, parsing, semantic analysis, and code generation.',
-        icon: 'fas fa-code-branch',
+        description: 'Processor Architecture & Interfacing.',
+        icon: 'fas fa-laptop-code',
+        color: '#38bdf8'
+    },
+    'image-processing': {
+        semester: 6,
+        title: 'Microprocessors, Microcontrollers and Embedded Systems Lab',
+        code: 'CSE-304',
+        credits: 1,
+        description: 'Microcontroller Architecture & Programming.',
+        icon: 'fas fa-image',
         color: '#14b8a6'
     },
-    'mobile-app': {
+    'mobile-dev': {
         semester: 6,
-        title: 'Mobile App Development',
-        code: 'CSE-503',
+        title: 'Information System Design',
+        code: 'CSE-305',
         credits: 3,
-        description: 'Android/iOS development, React Native, and cross-platform apps.',
+        description: 'System Analysis & Design.',
         icon: 'fas fa-mobile-alt',
-        color: '#38bdf8'
+        color: '#f472b6'
     },
     'info-security': {
         semester: 6,
-        title: 'Information Security',
-        code: 'CSE-504',
-        credits: 3,
-        description: 'Cryptography, network security, ethical hacking, and security protocols.',
-        icon: 'fas fa-shield-alt',
-        color: '#f472b6'
-    },
-    'project-management': {
-        semester: 6,
-        title: 'Project Management',
-        code: 'MGT-501',
-        credits: 2,
-        description: 'Project planning, risk management, and team coordination.',
-        icon: 'fas fa-tasks',
+        title: 'Design Project I',
+        code: 'CSE-308',
+        credits: 1.5,
+        description: 'Project Planning & Design.',
+        icon: 'fas fa-lock',
         color: '#fb923c'
     },
-    'technical-writing': {
+    'entrepreneurship': {
         semester: 6,
-        title: 'Technical Writing',
-        code: 'ENG-501',
-        credits: 2,
-        description: 'Documentation, research papers, and professional communication.',
-        icon: 'fas fa-pen-fancy',
-        color: '#4ade80'
+        title: 'Electrical Drives and Instrumentation',
+        code: 'EEE-301',
+        credits: 3,
+        description: 'Electric Motor Drives & Applications.',
+        icon: 'fas fa-lightbulb',
+        color: '#facc15'
     },
     
     // ========== SEMESTER 7 ==========
@@ -510,19 +519,49 @@ function getResourceCounts(semester, courseKey) {
     const resources = courseResources[key] || [];
     
     const counts = {
+        // Camel case format (for semester pages)
+        labReports: 0,
+        notes: 0,
+        ppt: 0,
+        assignments: 0,
+        projects: 0,
+        books: 0,
+        total: resources.length,
+        // Hyphenated format (for course.html)
         'lab-report': 0,
-        'notes': 0,
-        'ppt': 0,
         'assignment': 0,
         'project': 0,
         'project-report': 0,
-        'book': 0,
-        'total': resources.length
+        'book': 0
     };
     
     resources.forEach(resource => {
-        if (counts.hasOwnProperty(resource.category)) {
-            counts[resource.category]++;
+        switch(resource.category) {
+            case 'lab-report':
+                counts.labReports++;
+                counts['lab-report']++;
+                break;
+            case 'notes':
+                counts.notes++;
+                break;
+            case 'ppt':
+                counts.ppt++;
+                break;
+            case 'assignment':
+                counts.assignments++;
+                counts['assignment']++;
+                break;
+            case 'project':
+                counts.projects++;
+                counts['project']++;
+                break;
+            case 'project-report':
+                counts['project-report']++;
+                break;
+            case 'book':
+                counts.books++;
+                counts['book']++;
+                break;
         }
     });
     
@@ -575,21 +614,21 @@ function getAllCourseKeys() {
 /**
  * Get semester statistics (course count and total files)
  * @param {number} semester - Semester number
- * @returns {object} - Object with courseCount and totalFiles
+ * @returns {object} - Object with courseCount and totalResources
  */
 function getSemesterStats(semester) {
     const courses = getCoursesBySemester(semester);
-    let totalFiles = 0;
+    let totalResources = 0;
     
     courses.forEach(course => {
         const key = `${semester}-${course.key}`;
         const resources = courseResources[key] || [];
-        totalFiles += resources.length;
+        totalResources += resources.length;
     });
     
     return {
         courseCount: courses.length,
-        totalFiles: totalFiles
+        totalResources: totalResources
     };
 }
 
