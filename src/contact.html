@@ -21,6 +21,9 @@
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
+    <!-- EmailJS SDK -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    
     <!-- Main Stylesheet -->
    <link rel="stylesheet" href="/css/style.css"></head>
 <body>
@@ -443,5 +446,124 @@
 
     <!-- Main JavaScript -->
     <script src="/js/script.js"></script>
+    
+    <!-- EmailJS Contact Form Script -->
+    <script type="text/javascript">
+        // ==========================================
+        // EMAILJS CONFIGURATION
+        // ==========================================
+        // Step 1: Go to https://www.emailjs.com/ and create a free account
+        // Step 2: Add an email service (Gmail, Outlook, etc.)
+        // Step 3: Create an email template with these variables:
+        //         {{from_name}}, {{from_email}}, {{subject}}, {{message}}
+        // Step 4: Replace the values below with your actual IDs
+        
+        const EMAILJS_PUBLIC_KEY = 'jt_E_2wOZ0XhwSTyF';  // Get from EmailJS Dashboard > Account > API Keys
+        const EMAILJS_SERVICE_ID = 'service_sajjad';  // Get from EmailJS Dashboard > Email Services
+        const EMAILJS_TEMPLATE_ID = 'template_wwymg5f'; // Get from EmailJS Dashboard > Email Templates
+        
+        // Initialize EmailJS
+        (function() {
+            emailjs.init(EMAILJS_PUBLIC_KEY);
+        })();
+        
+        // Form submission handler
+        document.getElementById('contact-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            const submitBtn = this.querySelector('button[type="submit"]');
+            const originalBtnText = submitBtn.innerHTML;
+            const formSuccess = document.querySelector('.form-success');
+            
+            // Show loading state
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+            submitBtn.disabled = true;
+            
+            // Get form data
+            const templateParams = {
+                from_name: document.getElementById('name').value,
+                from_email: document.getElementById('email').value,
+                subject: document.getElementById('subject').value,
+                message: document.getElementById('message').value,
+                to_email: 'sajjadmahmudsuton@gmail.com'
+            };
+            
+            // Send email using EmailJS
+            emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, templateParams)
+                .then(function(response) {
+                    console.log('Email sent successfully!', response.status, response.text);
+                    
+                    // Show success message
+                    formSuccess.style.display = 'block';
+                    formSuccess.style.animation = 'fadeIn 0.5s ease';
+                    
+                    // Hide the form
+                    document.getElementById('contact-form').style.display = 'none';
+                    
+                    // Reset form after 5 seconds and show it again
+                    setTimeout(function() {
+                        document.getElementById('contact-form').reset();
+                        document.getElementById('contact-form').style.display = 'block';
+                        formSuccess.style.display = 'none';
+                        submitBtn.innerHTML = originalBtnText;
+                        submitBtn.disabled = false;
+                    }, 5000);
+                    
+                }, function(error) {
+                    console.error('Failed to send email:', error);
+                    
+                    // Show error message
+                    alert('দুঃখিত! মেসেজ পাঠাতে সমস্যা হয়েছে। অনুগ্রহ করে আবার চেষ্টা করুন অথবা সরাসরি ইমেইল করুন।\n\nError: ' + JSON.stringify(error));
+                    
+                    // Reset button
+                    submitBtn.innerHTML = originalBtnText;
+                    submitBtn.disabled = false;
+                });
+        });
+    </script>
+    
+    <!-- Success Animation Style -->
+    <style>
+        .form-success {
+            display: none;
+            text-align: center;
+            padding: 40px 20px;
+            background: linear-gradient(135deg, rgba(20, 184, 166, 0.1), rgba(168, 85, 247, 0.1));
+            border-radius: 15px;
+            border: 1px solid rgba(20, 184, 166, 0.3);
+        }
+        
+        .form-success i {
+            color: #14b8a6;
+            font-size: 3rem;
+            margin-bottom: 15px;
+            animation: scaleIn 0.5s ease;
+        }
+        
+        .form-success h4 {
+            color: var(--text-primary);
+            margin-bottom: 10px;
+        }
+        
+        .form-success p {
+            color: var(--text-secondary);
+            margin: 0;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        @keyframes scaleIn {
+            from { transform: scale(0); }
+            to { transform: scale(1); }
+        }
+        
+        button[type="submit"]:disabled {
+            opacity: 0.7;
+            cursor: not-allowed;
+        }
+    </style>
 </body>
 </html>

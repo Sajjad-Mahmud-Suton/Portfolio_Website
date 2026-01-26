@@ -599,6 +599,55 @@ function getAllCourseKeys() {
     return Object.keys(courseMetadata);
 }
 
+/**
+ * Get semester statistics (course count and total files)
+ * @param {number} semester - Semester number
+ * @returns {object} - Object with courseCount and totalFiles
+ */
+function getSemesterStats(semester) {
+    const courses = getCoursesBySemester(semester);
+    let totalFiles = 0;
+    
+    courses.forEach(course => {
+        const key = `${semester}-${course.key}`;
+        const resources = courseResources[key] || [];
+        totalFiles += resources.length;
+    });
+    
+    return {
+        courseCount: courses.length,
+        totalFiles: totalFiles
+    };
+}
+
+/**
+ * Get overall stats for all semesters
+ * @returns {object} - Object with total semesters, lab reports, notes, projects
+ */
+function getOverallStats() {
+    let totalLabReports = 0;
+    let totalNotes = 0;
+    let totalProjects = 0;
+    let totalFiles = 0;
+    
+    for (const [key, resources] of Object.entries(courseResources)) {
+        resources.forEach(resource => {
+            totalFiles++;
+            if (resource.category === 'lab-report') totalLabReports++;
+            if (resource.category === 'notes') totalNotes++;
+            if (resource.category === 'project' || resource.category === 'project-report') totalProjects++;
+        });
+    }
+    
+    return {
+        semesters: 8,
+        labReports: totalLabReports,
+        notes: totalNotes,
+        projects: totalProjects,
+        totalFiles: totalFiles
+    };
+}
+
 // Export for use in other files (if using modules)
 if (typeof module !== 'undefined' && module.exports) {
     module.exports = {
@@ -608,7 +657,9 @@ if (typeof module !== 'undefined' && module.exports) {
         getCourseMetadata,
         getCoursesBySemester,
         getCourseResources,
-        getAllCourseKeys
+        getAllCourseKeys,
+        getSemesterStats,
+        getOverallStats
     };
 }
 
