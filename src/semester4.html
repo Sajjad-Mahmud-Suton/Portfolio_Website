@@ -94,11 +94,11 @@
                     <div style="display: flex; gap: 25px; flex-wrap: wrap;">
                         <span style="display: flex; align-items: center; gap: 8px; color: var(--text-secondary);">
                             <i class="fas fa-book-open" style="color: #f472b6;"></i>
-                            <span>7 Courses</span>
+                            <span id="header-courses">7 Courses</span>
                         </span>
                         <span style="display: flex; align-items: center; gap: 8px; color: var(--text-secondary);">
                             <i class="fas fa-file" style="color: var(--gradient-teal);"></i>
-                            <span>35+ Resources</span>
+                            <span id="header-resources">0 Resources</span>
                         </span>
                         <span style="display: flex; align-items: center; gap: 8px; color: var(--text-secondary);">
                             <i class="fas fa-clock" style="color: var(--gradient-purple);"></i>
@@ -538,6 +538,11 @@
         document.addEventListener('DOMContentLoaded', function() {
             const semester = 4;
             const courses = ['algorithms', 'database', 'computer-architecture', 'theory-of-computation', 'math-3', 'professional-ethics'];
+            
+            // Update header stats dynamically
+            const stats = getSemesterStats(semester);
+            document.getElementById('header-courses').textContent = stats.courseCount + ' Courses';
+            document.getElementById('header-resources').textContent = stats.totalResources + ' Resources';
             
             courses.forEach(course => {
                 const container = document.getElementById('resources-' + course);
