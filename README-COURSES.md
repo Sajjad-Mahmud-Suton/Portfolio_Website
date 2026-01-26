@@ -200,6 +200,10 @@ const courseResources = {
 | `project` | Projects (Source Code) | 🔧 project-diagram | GitHub links, source code |
 | `project-report` | Project Reports/Documentation | 📄 file-contract | Project documentation |
 | `book` | Books/PDF | 📚 book | Textbooks, reference books |
+| `question` | Questions | ❓ question-circle | Previous year questions, quiz |
+| `suggestion` | Suggestions | 💡 lightbulb | Exam suggestions, tips |
+| `course-outline` | Course Outline | 📋 clipboard-list | Syllabus, course plan |
+| `others` | Others | 📎 paperclip | Any other materials |
 
 ---
 
@@ -207,7 +211,7 @@ const courseResources = {
 
 ### Step 1: courseData.js এ getResourceCounts() function এ যান
 
-Location: `js/courseData.js` (Line ~530-580)
+Location: `js/courseData.js` (Line ~560-620)
 
 ### Step 2: counts object এ নতুন category add করুন
 
@@ -220,8 +224,12 @@ const counts = {
     assignments: 0,
     projects: 0,
     books: 0,
-    slides: 0,           // ← New category এখানে add করুন
-    newCategory: 0,      // ← আপনার category এখানে
+    slides: 0,
+    questions: 0,        // ← Question category
+    suggestions: 0,      // ← Suggestion category
+    courseOutlines: 0,   // ← Course Outline
+    others: 0,           // ← Others
+    newCategory: 0,      // ← আপনার নতুন category
     total: resources.length,
     
     // Hyphenated format (for course.html)
@@ -238,23 +246,73 @@ const counts = {
 ### Step 3: switch statement এ case add করুন
 
 ```javascript
-case 'slides':
-    counts.slides++;
-    counts['slides']++;
+case 'question':
+    counts.questions++;
+    counts['question']++;
     break;
-case 'new-category':    // ← আপনার category
+case 'suggestion':
+    counts.suggestions++;
+    counts['suggestion']++;
+    break;
+case 'course-outline':
+    counts.courseOutlines++;
+    counts['course-outline']++;
+    break;
+case 'others':
+    counts.others++;
+    counts['others']++;
+    break;
+case 'new-category':    // ← আপনার নতুন category
     counts.newCategory++;
     counts['new-category']++;
     break;
 ```
 
-### Step 4: course.html এ stats display add করুন (optional)
+### Step 4: course.html এ Tab add করুন
+
+`src/course.html` এ Resource Category Tabs section এ add করুন:
 
 ```html
-<div class="stat">
-    <i class="fas fa-chalkboard"></i>
-    <span id="slides-count">0</span> Slides
-</div>
+<button class="resource-tab" data-category="question">
+    <i class="fas fa-question-circle"></i> Questions
+    <span class="tab-count">0</span>
+</button>
+<button class="resource-tab" data-category="suggestion">
+    <i class="fas fa-lightbulb"></i> Suggestions
+    <span class="tab-count">0</span>
+</button>
+<button class="resource-tab" data-category="course-outline">
+    <i class="fas fa-clipboard-list"></i> Course Outline
+    <span class="tab-count">0</span>
+</button>
+<button class="resource-tab" data-category="others">
+    <i class="fas fa-paperclip"></i> Others
+    <span class="tab-count">0</span>
+</button>
+```
+
+### Step 5: course.html এ CSS add করুন
+
+```css
+.resource-type-badge.question {
+    background: rgba(239, 68, 68, 0.2);
+    color: #ef4444;
+}
+.resource-icon.question {
+    background: linear-gradient(135deg, #ef4444, #dc2626);
+}
+```
+
+### Step 6: course.html এ categoryConfig object এ add করুন
+
+```javascript
+const categoryConfig = {
+    // ... existing categories ...
+    'question': { icon: 'fas fa-question-circle', class: 'question' },
+    'suggestion': { icon: 'fas fa-lightbulb', class: 'suggestion' },
+    'course-outline': { icon: 'fas fa-clipboard-list', class: 'course-outline' },
+    'others': { icon: 'fas fa-paperclip', class: 'others' }
+};
 ```
 
 ---

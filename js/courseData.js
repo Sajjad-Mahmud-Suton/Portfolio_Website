@@ -503,13 +503,63 @@ const courseResources = {
     // ========================================================
     '6-ai': [
         {
-            category: 'slides',
-            title: 'Web Programming Lab Report 1',
-            description: 'Introduction to HTML and CSS.',
+            category: 'ppt',
+            title: 'Web Programming PPT ',
+            description: 'Midterm Slides.',
             fileType: 'PDF',
             meta: 'July 10, 2025',
-            previewUrl: 'https://example.com/preview1',
-            downloadUrl: 'https://example.com/download1',
+            previewUrl: 'https://drive.google.com/drive/folders/1ajlx6nEaB2zga23qLbeXoDTxH1qOHA_t?usp=sharing',
+            downloadUrl: 'https://drive.google.com/drive/folders/1ajlx6nEaB2zga23qLbeXoDTxH1qOHA_t?usp=sharing1',
+            featured: true
+        },
+         {
+            category: 'ppt',
+            title: 'Web Programming PPT ',
+            description: 'Final Slides.',
+            fileType: 'PDF',
+            meta: 'July 10, 2025',
+            previewUrl: 'https://drive.google.com/drive/folders/1DE9rxJJiRf66sSWvuZe4VWhb3ZtoUxtQ?usp=sharing',
+            downloadUrl: 'https://drive.google.com/drive/folders/1DE9rxJJiRf66sSWvuZe4VWhb3ZtoUxtQ?usp=sharing',
+            featured: true
+        },
+        {
+            category: 'notes',
+            title: 'Notes ',
+            description: 'Session & Cookies Notes.',
+            fileType: 'PDF',
+            meta: 'July 10, 2025',
+            previewUrl: 'https://drive.google.com/drive/folders/1raoZwslVT9BO5MEWw1hCdKFo_9lbG1kL?usp=sharing',
+            downloadUrl: 'https://drive.google.com/drive/folders/1raoZwslVT9BO5MEWw1hCdKFo_9lbG1kL?usp=sharing',
+            featured: true
+        },
+        {
+            category: 'assignment',
+            title: 'Paper Summary ',
+            description: 'Two Paper Summary Assignment.',
+            fileType: 'PDF',
+            meta: 'July 10, 2025',
+            previewUrl: 'https://drive.google.com/drive/folders/134LsXsxSR4o-epSjtFdbxuFCDj6Yz83y?usp=sharing',
+            downloadUrl: 'https://drive.google.com/drive/folders/134LsXsxSR4o-epSjtFdbxuFCDj6Yz83y?usp=sharing',
+            featured: true
+        },
+        {
+            category: 'question',
+            title: 'Questions ',
+            description: 'Class Test Questions.',
+            fileType: 'PDF',
+            meta: 'July 10, 2025',
+            previewUrl: 'https://drive.google.com/drive/folders/1BhP5u4pHqJQp522frShWw07_aIQncJI5?usp=sharing',
+            downloadUrl: 'https://drive.google.com/drive/folders/1BhP5u4pHqJQp522frShWw07_aIQncJI5?usp=sharing',
+            featured: true
+        },
+        {
+            category: 'course-outline',
+            title: 'Course Outline ',
+            description: 'Web Programming Course Outline.',
+            fileType: 'PDF',
+            meta: 'July 10, 2025',
+            previewUrl: 'https://drive.google.com/file/d/1sBjqsgoH8n5hWanQaaoHpbiBaHmtBInQ/view?usp=sharing',
+            downloadUrl: 'https://drive.google.com/file/d/1sBjqsgoH8n5hWanQaaoHpbiBaHmtBInQ/view?usp=sharing',
             featured: true
         }
     ]
@@ -539,6 +589,10 @@ function getResourceCounts(semester, courseKey) {
         projects: 0,
         books: 0,
         slides: 0,
+        questions: 0,
+        suggestions: 0,
+        courseOutlines: 0,
+        others: 0,
         total: resources.length,
         // Hyphenated format (for course.html)
         'lab-report': 0,
@@ -546,7 +600,11 @@ function getResourceCounts(semester, courseKey) {
         'project': 0,
         'project-report': 0,
         'book': 0,
-        'slides': 0
+        'slides': 0,
+        'question': 0,
+        'suggestion': 0,
+        'course-outline': 0,
+        'others': 0
     };
     
     resources.forEach(resource => {
@@ -579,6 +637,22 @@ function getResourceCounts(semester, courseKey) {
             case 'slides':
                 counts.slides++;
                 counts['slides']++;
+                break;
+            case 'question':
+                counts.questions++;
+                counts['question']++;
+                break;
+            case 'suggestion':
+                counts.suggestions++;
+                counts['suggestion']++;
+                break;
+            case 'course-outline':
+                counts.courseOutlines++;
+                counts['course-outline']++;
+                break;
+            case 'others':
+                counts.others++;
+                counts['others']++;
                 break;
         }
     });
@@ -658,6 +732,7 @@ function getOverallStats() {
     let totalLabReports = 0;
     let totalNotes = 0;
     let totalProjects = 0;
+    let totalPPT = 0;
     let totalFiles = 0;
     
     for (const [key, resources] of Object.entries(courseResources)) {
@@ -666,6 +741,7 @@ function getOverallStats() {
             if (resource.category === 'lab-report') totalLabReports++;
             if (resource.category === 'notes') totalNotes++;
             if (resource.category === 'project' || resource.category === 'project-report') totalProjects++;
+            if (resource.category === 'ppt' || resource.category === 'slides') totalPPT++;
         });
     }
     
@@ -674,6 +750,7 @@ function getOverallStats() {
         labReports: totalLabReports,
         notes: totalNotes,
         projects: totalProjects,
+        ppt: totalPPT,
         totalFiles: totalFiles
     };
 }

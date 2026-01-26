@@ -204,6 +204,31 @@
             box-shadow: 0 8px 25px rgba(250, 204, 21, 0.3);
         }
         
+        .resource-icon.slides {
+            background: linear-gradient(135deg, #f472b6, #db2777);
+            box-shadow: 0 8px 25px rgba(244, 114, 182, 0.3);
+        }
+        
+        .resource-icon.question {
+            background: linear-gradient(135deg, #ef4444, #dc2626);
+            box-shadow: 0 8px 25px rgba(239, 68, 68, 0.3);
+        }
+        
+        .resource-icon.suggestion {
+            background: linear-gradient(135deg, #fbbf24, #f59e0b);
+            box-shadow: 0 8px 25px rgba(251, 191, 36, 0.3);
+        }
+        
+        .resource-icon.course-outline {
+            background: linear-gradient(135deg, #6366f1, #4f46e5);
+            box-shadow: 0 8px 25px rgba(99, 102, 241, 0.3);
+        }
+        
+        .resource-icon.others {
+            background: linear-gradient(135deg, #9ca3af, #6b7280);
+            box-shadow: 0 8px 25px rgba(156, 163, 175, 0.3);
+        }
+        
         .resource-icon.video {
             background: linear-gradient(135deg, #ef4444, #dc2626);
             box-shadow: 0 8px 25px rgba(239, 68, 68, 0.3);
@@ -324,6 +349,46 @@
         .resource-type-badge.ppt {
             background: rgba(251, 146, 60, 0.2);
             color: #fb923c;
+        }
+        
+        .resource-type-badge.assignment {
+            background: rgba(234, 179, 8, 0.2);
+            color: #eab308;
+        }
+        
+        .resource-type-badge.book {
+            background: rgba(74, 222, 128, 0.2);
+            color: #4ade80;
+        }
+        
+        .resource-type-badge.slides {
+            background: rgba(244, 114, 182, 0.2);
+            color: #f472b6;
+        }
+        
+        .resource-type-badge.question {
+            background: rgba(239, 68, 68, 0.2);
+            color: #ef4444;
+        }
+        
+        .resource-type-badge.suggestion {
+            background: rgba(250, 204, 21, 0.2);
+            color: #facc15;
+        }
+        
+        .resource-type-badge.course-outline {
+            background: rgba(99, 102, 241, 0.2);
+            color: #6366f1;
+        }
+        
+        .resource-type-badge.others {
+            background: rgba(156, 163, 175, 0.2);
+            color: #9ca3af;
+        }
+        
+        .resource-type-badge.project-report {
+            background: rgba(236, 72, 153, 0.2);
+            color: #ec4899;
         }
         
         /* Stats Cards */
@@ -717,6 +782,22 @@
                     <i class="fas fa-book"></i> Books/PDF
                     <span class="tab-count">4</span>
                 </button>
+                <button class="resource-tab" data-category="question">
+                    <i class="fas fa-question-circle"></i> Questions
+                    <span class="tab-count">0</span>
+                </button>
+                <button class="resource-tab" data-category="suggestion">
+                    <i class="fas fa-lightbulb"></i> Suggestions
+                    <span class="tab-count">0</span>
+                </button>
+                <button class="resource-tab" data-category="course-outline">
+                    <i class="fas fa-clipboard-list"></i> Course Outline
+                    <span class="tab-count">0</span>
+                </button>
+                <button class="resource-tab" data-category="others">
+                    <i class="fas fa-paperclip"></i> Others
+                    <span class="tab-count">0</span>
+                </button>
             </div>
             
             <!-- Resources Grid - Course-specific resources will be loaded here -->
@@ -1078,7 +1159,12 @@
                 'project-report': { icon: 'fas fa-file-contract', class: 'project-report' },
                 'ppt': { icon: 'fas fa-file-powerpoint', class: 'ppt' },
                 'assignment': { icon: 'fas fa-tasks', class: 'assignment' },
-                'book': { icon: 'fas fa-book', class: 'book' }
+                'book': { icon: 'fas fa-book', class: 'book' },
+                'slides': { icon: 'fas fa-chalkboard', class: 'slides' },
+                'question': { icon: 'fas fa-question-circle', class: 'question' },
+                'suggestion': { icon: 'fas fa-lightbulb', class: 'suggestion' },
+                'course-outline': { icon: 'fas fa-clipboard-list', class: 'course-outline' },
+                'others': { icon: 'fas fa-paperclip', class: 'others' }
             };
             
             // Render resources

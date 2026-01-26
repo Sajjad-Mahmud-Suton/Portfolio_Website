@@ -105,6 +105,13 @@
                     <h3 id="stat-projects" class="gradient-text" style="margin-bottom: 5px;">0</h3>
                     <p style="margin: 0; font-size: 0.9rem;">Projects</p>
                 </div>
+                <div class="stat-item text-center">
+                    <div class="stat-icon" style="width: 60px; height: 60px; background: var(--gradient-primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 10px; font-size: 1.5rem;">
+                        <i class="fas fa-file-powerpoint"></i>
+                    </div>
+                    <h3 id="stat-ppt" class="gradient-text" style="margin-bottom: 5px;">0</h3>
+                    <p style="margin: 0; font-size: 0.9rem;">PPT/Slides</p>
+                </div>
             </div>
         </div>
     </section>
@@ -468,6 +475,7 @@
             document.getElementById('stat-labreports').textContent = overallStats.labReports > 0 ? overallStats.labReports + '+' : '0';
             document.getElementById('stat-notes').textContent = overallStats.notes > 0 ? overallStats.notes + '+' : '0';
             document.getElementById('stat-projects').textContent = overallStats.projects > 0 ? overallStats.projects + '+' : '0';
+            document.getElementById('stat-ppt').textContent = overallStats.ppt > 0 ? overallStats.ppt + '+' : '0';
             
             // Update each semester card
             for (let sem = 1; sem <= 8; sem++) {
