@@ -154,7 +154,7 @@
                     </div>
                     
                     <div class="course-content" style="padding: 20px;">
-                        <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 15px;">
+                        <div id="resources-ai" style="display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 15px;">
                             <span class="resource-tag" style="font-size: 0.75rem; padding: 4px 10px; background: rgba(20, 184, 166, 0.15); color: #14b8a6; border-radius: 15px;">
                                 <i class="fas fa-flask"></i> 12 Lab Reports
                             </span>
@@ -191,7 +191,7 @@
                     </div>
                     
                     <div class="course-content" style="padding: 20px;">
-                        <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 15px;">
+                        <div id="resources-ml" style="display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 15px;">
                             <span class="resource-tag" style="font-size: 0.75rem; padding: 4px 10px; background: rgba(20, 184, 166, 0.15); color: #14b8a6; border-radius: 15px;">
                                 <i class="fas fa-flask"></i> 15 Lab Reports
                             </span>
@@ -228,7 +228,7 @@
                     </div>
                     
                     <div class="course-content" style="padding: 20px;">
-                        <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 15px;">
+                        <div id="resources-adv-web" style="display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 15px;">
                             <span class="resource-tag" style="font-size: 0.75rem; padding: 4px 10px; background: rgba(20, 184, 166, 0.15); color: #14b8a6; border-radius: 15px;">
                                 <i class="fas fa-flask"></i> 18 Lab Reports
                             </span>
@@ -265,7 +265,7 @@
                     </div>
                     
                     <div class="course-content" style="padding: 20px;">
-                        <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 15px;">
+                        <div id="resources-image-processing" style="display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 15px;">
                             <span class="resource-tag" style="font-size: 0.75rem; padding: 4px 10px; background: rgba(20, 184, 166, 0.15); color: #14b8a6; border-radius: 15px;">
                                 <i class="fas fa-flask"></i> 14 Lab Reports
                             </span>
@@ -302,7 +302,7 @@
                     </div>
                     
                     <div class="course-content" style="padding: 20px;">
-                        <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 15px;">
+                        <div id="resources-mobile-dev" style="display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 15px;">
                             <span class="resource-tag" style="font-size: 0.75rem; padding: 4px 10px; background: rgba(20, 184, 166, 0.15); color: #14b8a6; border-radius: 15px;">
                                 <i class="fas fa-flask"></i> 12 Lab Reports
                             </span>
@@ -339,7 +339,7 @@
                     </div>
                     
                     <div class="course-content" style="padding: 20px;">
-                        <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 15px;">
+                        <div id="resources-info-security" style="display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 15px;">
                             <span class="resource-tag" style="font-size: 0.75rem; padding: 4px 10px; background: rgba(20, 184, 166, 0.15); color: #14b8a6; border-radius: 15px;">
                                 <i class="fas fa-flask"></i> 10 Lab Reports
                             </span>
@@ -376,7 +376,7 @@
                     </div>
                     
                     <div class="course-content" style="padding: 20px;">
-                        <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 15px;">
+                        <div id="resources-entrepreneurship" style="display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 15px;">
                             <span class="resource-tag" style="font-size: 0.75rem; padding: 4px 10px; background: rgba(168, 85, 247, 0.15); color: #a855f7; border-radius: 15px;">
                                 <i class="fas fa-sticky-note"></i> 8 Notes
                             </span>
@@ -538,5 +538,63 @@
             .courses-grid { grid-template-columns: 1fr !important; }
         }
     </style>
+    
+    <!-- Course Data Script -->
+    <script src="/js/courseData.js"></script>
+    
+    <!-- Dynamic Resource Count Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const semester = 6;
+            const courses = ['ai', 'ml', 'adv-web', 'image-processing', 'mobile-dev', 'info-security', 'entrepreneurship'];
+            
+            courses.forEach(course => {
+                const container = document.getElementById('resources-' + course);
+                if (!container) return;
+                
+                const counts = getResourceCounts(semester, course);
+                const total = counts.labReports + counts.notes + counts.ppt + counts.assignments + counts.projects + counts.books;
+                
+                if (total > 0) {
+                    let html = '';
+                    if (counts.labReports > 0) {
+                        html += `<span class="resource-tag" style="font-size: 0.75rem; padding: 4px 10px; background: rgba(20, 184, 166, 0.15); color: #14b8a6; border-radius: 15px;">
+                            <i class="fas fa-flask"></i> ${counts.labReports} Lab Reports
+                        </span>`;
+                    }
+                    if (counts.notes > 0) {
+                        html += `<span class="resource-tag" style="font-size: 0.75rem; padding: 4px 10px; background: rgba(168, 85, 247, 0.15); color: #a855f7; border-radius: 15px;">
+                            <i class="fas fa-sticky-note"></i> ${counts.notes} Notes
+                        </span>`;
+                    }
+                    if (counts.ppt > 0) {
+                        html += `<span class="resource-tag" style="font-size: 0.75rem; padding: 4px 10px; background: rgba(56, 189, 248, 0.15); color: #38bdf8; border-radius: 15px;">
+                            <i class="fas fa-file-powerpoint"></i> ${counts.ppt} PPT
+                        </span>`;
+                    }
+                    if (counts.assignments > 0) {
+                        html += `<span class="resource-tag" style="font-size: 0.75rem; padding: 4px 10px; background: rgba(251, 146, 60, 0.15); color: #fb923c; border-radius: 15px;">
+                            <i class="fas fa-tasks"></i> ${counts.assignments} Assignments
+                        </span>`;
+                    }
+                    if (counts.projects > 0) {
+                        html += `<span class="resource-tag" style="font-size: 0.75rem; padding: 4px 10px; background: rgba(244, 114, 182, 0.15); color: #f472b6; border-radius: 15px;">
+                            <i class="fas fa-project-diagram"></i> ${counts.projects} Projects
+                        </span>`;
+                    }
+                    if (counts.books > 0) {
+                        html += `<span class="resource-tag" style="font-size: 0.75rem; padding: 4px 10px; background: rgba(74, 222, 128, 0.15); color: #4ade80; border-radius: 15px;">
+                            <i class="fas fa-book"></i> ${counts.books} Books
+                        </span>`;
+                    }
+                    container.innerHTML = html;
+                } else {
+                    container.innerHTML = `<span class="resource-tag" style="font-size: 0.75rem; padding: 4px 10px; background: rgba(156, 163, 175, 0.15); color: #9ca3af; border-radius: 15px;">
+                        <i class="fas fa-folder-open"></i> No resources yet
+                    </span>`;
+                }
+            });
+        });
+    </script>
 </body>
 </html>
