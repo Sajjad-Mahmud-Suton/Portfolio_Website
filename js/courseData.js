@@ -372,46 +372,46 @@ const courseMetadata = {
     // ========== SEMESTER 7 ==========
     'cloud-computing': {
         semester: 7,
-        title: 'Cloud Computing',
-        code: 'CSE-701',
+        title: 'Software Engineering',
+        code: 'CSE-313',
         credits: 3,
-        description: 'AWS, Azure, cloud architecture, deployment, and serverless computing.',
+        description: 'Scalable Software Systems, Architecture & Best Practices',
         icon: 'fas fa-cloud',
         color: '#14b8a6'
     },
     'cybersecurity': {
         semester: 7,
-        title: 'Cybersecurity',
-        code: 'CSE-702',
+        title: 'Artificial Intelligence',
+        code: 'CSE-315',
         credits: 3,
-        description: 'Network security, penetration testing, ethical hacking, and security protocols.',
+        description: 'Intelligent Systems, Machine Learning & Data-Driven Models',
         icon: 'fas fa-shield-alt',
         color: '#a855f7'
     },
     'distributed-systems': {
         semester: 7,
-        title: 'Distributed Systems',
-        code: 'CSE-703',
-        credits: 3,
-        description: 'Distributed computing, consensus algorithms, fault tolerance, and microservices.',
+        title: 'Artificial Intelligence Lab',
+        code: 'CSE-316',
+        credits: 1.5,
+        description: 'Machine Learning Models, AI Algorithms & Practical Implementation.',
         icon: 'fas fa-network-wired',
         color: '#38bdf8'
     },
     'big-data': {
         semester: 7,
-        title: 'Big Data Analytics',
-        code: 'CSE-704',
+        title: 'Computer Networking',
+        code: 'CSE-317',
         credits: 3,
-        description: 'Hadoop, Spark, data mining, real-time processing, and data visualization.',
+        description: 'Network Fundamentals, Protocols & Communication Systems.',
         icon: 'fas fa-database',
         color: '#f472b6'
     },
     'iot': {
         semester: 7,
-        title: 'Internet of Things',
-        code: 'CSE-705',
-        credits: 3,
-        description: 'IoT systems, embedded programming, sensors, and smart device development.',
+        title: 'Computer Networking Lab',
+        code: 'CSE-318',
+        credits: 1.5,
+        description: 'Network Configuration, Protocol Analysis & Practical Implementation.',
         icon: 'fas fa-microchip',
         color: '#fb923c'
     },
