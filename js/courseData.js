@@ -18,288 +18,289 @@ const courseMetadata = {
     // ========== SEMESTER 1 ==========
     'physics': {
         semester: 1,
-        title: 'Engineering Physics',
+        title: '	Physics I',
         code: 'PHY-101',
         credits: 3,
-        description: 'Fundamental physics concepts including mechanics, thermodynamics, and waves.',
+        description: 'Fundamental principles of mechanics, waves, and physical phenomena.',
         icon: 'fas fa-atom',
         color: '#14b8a6'
     },
     'math': {
         semester: 1,
-        title: 'Mathematics',
+        title: 'Calculus for Computing',
         code: 'MAT-101',
-        credits: 4,
-        description: 'Calculus, Linear Algebra, and Mathematical foundations for engineering.',
+        credits: 3,
+        description: 'Calculus fundamentals applied to computing and problem-solving.',
         icon: 'fas fa-square-root-alt',
         color: '#a855f7'
     },
     'programming': {
         semester: 1,
-        title: 'Programming Fundamentals',
+        title: 'Discrete Mathematics',
         code: 'CSE-101',
-        credits: 4,
-        description: 'Introduction to C Programming - Learn the basics of programming, algorithms, and problem-solving.',
+        credits: 3,
+        description: 'Study of logic, sets, relations, and discrete mathematical structures.',
         icon: 'fas fa-code',
         color: '#38bdf8'
     },
     'chemistry': {
         semester: 1,
-        title: 'Engineering Chemistry',
-        code: 'CHM-101',
+        title: 'Chemistry',
+        code: 'CHE-101',
         credits: 3,
-        description: 'Chemistry fundamentals including organic, inorganic, and physical chemistry.',
+        description: 'Fundamental principles of chemistry and their applications.',
         icon: 'fas fa-vial',
         color: '#f472b6'
     },
     'english': {
         semester: 1,
-        title: 'Technical English',
-        code: 'ENG-101',
-        credits: 2,
-        description: 'Technical writing, communication skills, and professional English.',
+        title: 'Chemistry Lab',
+        code: 'CHE-102',
+        credits: 1,
+        description: 'Hands-on experiments and analysis of basic chemistry concepts.',
         icon: 'fas fa-language',
         color: '#fb923c'
     },
     'electrical': {
         semester: 1,
-        title: 'Basic Electrical Engineering',
-        code: 'EEE-101',
-        credits: 3,
-        description: 'Electrical circuits, electronics basics, and electrical systems.',
+        title: 'Computational Thinking and Problem Solving',
+        code: 'CSE-100',
+        credits: 1.5,
+        description: 'Developing logical and structured approaches to solve problems using computational methods.',
         icon: 'fas fa-bolt',
         color: '#4ade80'
     },
+
+    'ENG': {
+        semester: 1,
+        title: 'Academic English I',
+        code: 'ESP-101',
+        credits: 3,
+        description: 'Development of reading, writing, and communication skills for academic purposes.',
+        icon: 'fas fa-bolt',
+        color: '#45f0d3ff'
+    },
     
-    // ========== SEMESTER 2 ==========
-    'oop': {
+    // ========== SEMESTER 2 (241) ==========
+    'eee-lab': {
         semester: 2,
-        title: 'Object Oriented Programming',
-        code: 'CSE-102',
-        credits: 4,
-        description: 'OOP concepts with C++ including classes, inheritance, polymorphism, and encapsulation.',
-        icon: 'fas fa-cubes',
+        title: 'Introduction to Electrical Engineering Lab',
+        code: 'EEE-102',
+        credits: 1,
+        description: 'Practical experiments on basic electrical circuits, measurements, and instruments.',
+        icon: 'fas fa-plug',
+        color: '#f472b6'
+    },
+    'sp-lab': {
+        semester: 2,
+        title: 'Structured Programming Lab',
+        code: 'CSE-104',
+        credits: 1.5,
+        description: 'Hands-on programming exercises using C language to implement algorithms.',
+        icon: 'fas fa-laptop-code',
+        color: '#38bdf8'
+    },
+    'bengali': {
+        semester: 2,
+        title: 'Functional Bengali',
+        code: 'GED-103',
+        credits: 2,
+        description: 'Development of Bengali language skills for professional communication.',
+        icon: 'fas fa-book-open',
         color: '#a855f7'
     },
-    'discrete-math': {
+    'linear-algebra': {
         semester: 2,
-        title: 'Discrete Mathematics',
-        code: 'MAT-102',
+        title: 'Linear Algebra and Vector Analysis',
+        code: 'MAT-103',
         credits: 3,
-        description: 'Logic, sets, relations, functions, graph theory and combinatorics.',
-        icon: 'fas fa-project-diagram',
+        description: 'Study of matrices, vectors, linear transformations, and their applications.',
+        icon: 'fas fa-vector-square',
         color: '#14b8a6'
-    },
-    'digital-logic': {
-        semester: 2,
-        title: 'Digital Logic Design',
-        code: 'CSE-103',
-        credits: 3,
-        description: 'Boolean algebra, logic gates, combinational and sequential circuits.',
-        icon: 'fas fa-microchip',
-        color: '#38bdf8'
     },
     'physics2': {
         semester: 2,
         title: 'Physics II',
-        code: 'PHY-102',
+        code: 'PHY-103',
         credits: 3,
-        description: 'Waves, optics, electromagnetism, and modern physics concepts.',
+        description: 'Electromagnetic theory, optics, and modern physics concepts.',
         icon: 'fas fa-wave-square',
-        color: '#f472b6'
-    },
-    'calculus2': {
-        semester: 2,
-        title: 'Calculus II',
-        code: 'MAT-103',
-        credits: 3,
-        description: 'Differential equations, multivariable calculus, and integration techniques.',
-        icon: 'fas fa-infinity',
         color: '#fb923c'
     },
-    'data-comm': {
+    'physics-lab': {
         semester: 2,
-        title: 'Data Communication',
-        code: 'CSE-104',
-        credits: 3,
-        description: 'Signals, transmission media, encoding techniques, and communication protocols.',
-        icon: 'fas fa-satellite-dish',
+        title: 'Physics Lab',
+        code: 'PHY-104',
+        credits: 1.5,
+        description: 'Practical experiments in physics covering mechanics, optics, and electricity.',
+        icon: 'fas fa-flask',
         color: '#4ade80'
     },
-    'english2': {
+    'sp': {
         semester: 2,
-        title: 'English II',
-        code: 'ENG-102',
-        credits: 2,
-        description: 'Advanced English communication, writing skills, and professional correspondence.',
-        icon: 'fas fa-language',
+        title: 'Structured Programming',
+        code: 'CSE-103',
+        credits: 3,
+        description: 'Fundamentals of C programming, control structures, functions, and arrays.',
+        icon: 'fas fa-code',
+        color: '#e879f9'
+    },
+    'eee': {
+        semester: 2,
+        title: 'Introduction to Electrical Engineering',
+        code: 'EEE-101',
+        credits: 3,
+        description: 'Basic electrical circuits, components, and fundamental electrical concepts.',
+        icon: 'fas fa-bolt',
+        color: '#facc15'
+    },
+    
+    // ========== SEMESTER 3 (242) ==========
+    'oop': {
+        semester: 3,
+        title: 'Object Oriented Programming',
+        code: 'CSE-201',
+        credits: 3,
+        description: 'OOP concepts including classes, inheritance, polymorphism, and encapsulation using C++/Java.',
+        icon: 'fas fa-cubes',
+        color: '#a855f7'
+    },
+    'oop-lab': {
+        semester: 3,
+        title: 'Object Oriented Programming Lab',
+        code: 'CSE-202',
+        credits: 1.5,
+        description: 'Practical implementation of OOP concepts through programming exercises.',
+        icon: 'fas fa-laptop-code',
+        color: '#38bdf8'
+    },
+    'dld': {
+        semester: 3,
+        title: 'Digital Logic Design',
+        code: 'CSE-203',
+        credits: 3,
+        description: 'Boolean algebra, logic gates, combinational and sequential circuits design.',
+        icon: 'fas fa-microchip',
+        color: '#14b8a6'
+    },
+    'dld-lab': {
+        semester: 3,
+        title: 'Digital Logic Design Lab',
+        code: 'CSE-204',
+        credits: 1,
+        description: 'Hands-on experiments with logic gates, flip-flops, and digital circuits.',
+        icon: 'fas fa-tools',
+        color: '#f472b6'
+    },
+    'ds': {
+        semester: 3,
+        title: 'Data Structures',
+        code: 'CSE-205',
+        credits: 3,
+        description: 'Arrays, linked lists, stacks, queues, trees, graphs, and hash tables.',
+        icon: 'fas fa-layer-group',
+        color: '#fb923c'
+    },
+    'ds-lab': {
+        semester: 3,
+        title: 'Data Structures Lab',
+        code: 'CSE-206',
+        credits: 1.5,
+        description: 'Implementation of data structures and algorithms in programming.',
+        icon: 'fas fa-laptop-code',
+        color: '#4ade80'
+    },
+    'diff-eq': {
+        semester: 3,
+        title: 'Differential Equations and Coordinate Geometry',
+        code: 'MAT-201',
+        credits: 3,
+        description: 'Study of differential equations and coordinate geometry concepts.',
+        icon: 'fas fa-superscript',
         color: '#e879f9'
     },
     
-    // ========== SEMESTER 3 ==========
-    'data-structures': {
-        semester: 3,
-        title: 'Data Structures',
-        code: 'CSE-201',
-        credits: 4,
-        description: 'Arrays, linked lists, stacks, queues, trees, graphs, and hash tables.',
-        icon: 'fas fa-layer-group',
-        color: '#38bdf8'
-    },
-    'algorithms': {
-        semester: 3,
-        title: 'Algorithms',
-        code: 'CSE-202',
-        credits: 4,
-        description: 'Sorting, searching, dynamic programming, greedy algorithms, and complexity analysis.',
-        icon: 'fas fa-sitemap',
-        color: '#a855f7'
-    },
-    'computer-arch': {
-        semester: 3,
-        title: 'Computer Architecture',
-        code: 'CSE-203',
+    // ========== SEMESTER 4 (250) ==========
+    'probability': {
+        semester: 4,
+        title: 'Probability and Statistics for Computing',
+        code: 'MAT-203',
         credits: 3,
-        description: 'CPU design, memory hierarchy, pipelining, and I/O systems.',
-        icon: 'fas fa-memory',
-        color: '#14b8a6'
-    },
-    'statistics': {
-        semester: 3,
-        title: 'Statistics & Probability',
-        code: 'MAT-201',
-        credits: 3,
-        description: 'Probability theory, statistical distributions, hypothesis testing, and regression.',
+        description: 'Probability theory, statistical distributions, hypothesis testing, and data analysis.',
         icon: 'fas fa-chart-bar',
-        color: '#f472b6'
-    },
-    'electronics': {
-        semester: 3,
-        title: 'Electronic Devices',
-        code: 'EEE-201',
-        credits: 3,
-        description: 'Semiconductors, diodes, transistors, amplifiers, and basic analog circuits.',
-        icon: 'fas fa-plug',
-        color: '#fb923c'
-    },
-    'economics': {
-        semester: 3,
-        title: 'Engineering Economics',
-        code: 'ECO-201',
-        credits: 2,
-        description: 'Cost analysis, time value of money, project evaluation, and decision making.',
-        icon: 'fas fa-coins',
-        color: '#4ade80'
-    },
-    
-    // ========== SEMESTER 4 ==========
-    'operating-systems': {
-        semester: 4,
-        title: 'Operating Systems',
-        code: 'CSE-301',
-        credits: 4,
-        description: 'Process management, memory management, file systems, and synchronization.',
-        icon: 'fas fa-desktop',
-        color: '#f472b6'
-    },
-    'computer-networks': {
-        semester: 4,
-        title: 'Computer Networks',
-        code: 'CSE-302',
-        credits: 4,
-        description: 'TCP/IP, OSI model, routing protocols, and network security basics.',
-        icon: 'fas fa-globe',
-        color: '#38bdf8'
+        color: '#a855f7'
     },
     'database': {
         semester: 4,
-        title: 'Database Systems',
-        code: 'CSE-303',
-        credits: 4,
-        description: 'SQL, ER models, normalization, transactions, and database design.',
-        icon: 'fas fa-database',
-        color: '#a855f7'
-    },
-    'toc': {
-        semester: 4,
-        title: 'Theory of Computation',
-        code: 'CSE-304',
+        title: 'Database',
+        code: 'CSE-209',
         credits: 3,
-        description: 'Automata theory, formal languages, Turing machines, and computability.',
-        icon: 'fas fa-cogs',
+        description: 'Database concepts, SQL, ER models, normalization, and query optimization.',
+        icon: 'fas fa-database',
         color: '#14b8a6'
     },
-    'numerical': {
+    'database-lab': {
         semester: 4,
-        title: 'Numerical Methods',
-        code: 'MAT-301',
-        credits: 3,
-        description: 'Root finding, interpolation, numerical integration, and differential equations.',
-        icon: 'fas fa-calculator',
-        color: '#fb923c'
-    },
-    'microprocessor': {
-        semester: 4,
-        title: 'Microprocessor & Interfacing',
-        code: 'CSE-305',
-        credits: 3,
-        description: 'Assembly programming, microprocessor architecture, and hardware interfacing.',
-        icon: 'fas fa-microchip',
-        color: '#4ade80'
+        title: 'Database Lab',
+        code: 'CSE-210',
+        credits: 1.5,
+        description: 'Practical SQL queries, database design, and implementation exercises.',
+        icon: 'fas fa-laptop-code',
+        color: '#38bdf8'
     },
     
     // ========== SEMESTER 5 ==========
     'software-eng': {
         semester: 5,
-        title: 'Software Engineering',
-        code: 'CSE-401',
+        title: 'Computer Architecture',
+        code: 'CSE-211',
         credits: 3,
-        description: 'Software development life cycle, agile methodologies, and project management.',
+        description: 'CPU organization, memory structure, and how hardware executes programs.',
         icon: 'fas fa-project-diagram',
         color: '#fb923c'
     },
     'adv-database': {
         semester: 5,
-        title: 'Advanced Database',
-        code: 'CSE-402',
-        credits: 4,
-        description: 'NoSQL databases, transactions, optimization, and advanced SQL.',
+        title: 'Algorithms',
+        code: 'CSE-207',
+        credits: 3,
+        description: 'Design and analysis of efficient problem-solving methods.',
         icon: 'fas fa-server',
         color: '#a855f7'
     },
     'web-dev': {
         semester: 5,
-        title: 'Web Development',
-        code: 'CSE-403',
-        credits: 4,
-        description: 'HTML, CSS, JavaScript, PHP, and full-stack development.',
+        title: 'Algorithms Lab',
+        code: 'CSE-208',
+        credits: 1.5,
+        description: 'Hands-on implementation and testing of algorithms.',
         icon: 'fas fa-globe',
         color: '#38bdf8'
     },
     'compiler': {
         semester: 5,
-        title: 'Compiler Design',
-        code: 'CSE-404',
+        title: 'Electronic Devices, Circuits and Pulse Techniques',
+        code: 'EEE-201',
         credits: 3,
-        description: 'Lexical analysis, parsing, semantic analysis, and code generation.',
+        description: 'Study of electronic devices, circuit behavior, and pulse generation techniques.',
         icon: 'fas fa-code-branch',
         color: '#14b8a6'
     },
     'graphics': {
         semester: 5,
-        title: 'Computer Graphics',
-        code: 'CSE-405',
-        credits: 3,
-        description: '2D/3D graphics, transformations, rendering, and OpenGL basics.',
+        title: 'Electronic Devices, Circuits and Pulse Techniques Lab',
+        code: 'EEE-202',
+        credits: 1,
+        description: 'Hands-on analysis and implementation of electronic devices and pulse circuits.',
         icon: 'fas fa-cube',
         color: '#f472b6'
     },
     'management': {
         semester: 5,
-        title: 'Management Principles',
-        code: 'MGT-401',
-        credits: 2,
-        description: 'Business management, leadership, organizational behavior, and ethics.',
+        title: 'Financial and Managerial Accounting',
+        code: 'GED-201',
+        credits: 3,
+        description: 'Principles of financial reporting and managerial decision-making.',
         icon: 'fas fa-users-cog',
         color: '#4ade80'
     },
