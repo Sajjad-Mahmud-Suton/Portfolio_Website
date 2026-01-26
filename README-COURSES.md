@@ -3,10 +3,24 @@
 এই documentation এ আপনি শিখবেন কিভাবে:
 - ✅ নতুন Course add করবেন
 - ✅ নতুন Semester add করবেন  
-- ✅ Course এ Resources (Lab Reports, Notes, PPT, etc.) add করবেন
+- ✅ Course এ Resources (Lab Reports, Notes, PPT, Slides, etc.) add করবেন
+- ✅ নতুন Category add/modify/delete করবেন
 - ✅ Course/Semester Delete করবেন
 - ✅ Dynamic Counting System কিভাবে কাজ করে
 - ✅ EmailJS Contact Form কিভাবে কাজ করে
+
+---
+
+## ⚡ Quick Reference (একনজরে)
+
+| আপনি কী করতে চান? | কোথায় যাবেন? | Section |
+|-------------------|--------------|---------|
+| 🆕 Resource Add করতে | `js/courseData.js` → `courseResources` | [Resource Add](#-quick-start---কিভাবে-resource-add-করবেন) |
+| 📁 Category Add/Modify করতে | `js/courseData.js` → `getResourceCounts()` | [Category Management](#-resource-categories-ধরনসমূহ) |
+| 📚 নতুন Course Add করতে | `js/courseData.js` + `semesterX.html` | [Course Add](#-নতুন-course-add-করার-পদ্ধতি) |
+| 📅 নতুন Semester Add করতে | `semesterX.html` + `university.html` | [Semester Add](#-নতুন-semester-add-করার-পদ্ধতি) |
+| 🗑️ Course/Resource Delete করতে | `js/courseData.js` থেকে remove | [Delete](#-course-বা-resource-delete-করার-পদ্ধতি) |
+| 📧 EmailJS Setup করতে | `src/contact.html` | [EmailJS Setup](#-emailjs-integration) |
 
 ---
 
@@ -136,22 +150,23 @@ const courseResources = {
 ### Semester 5 Courses
 | Course Name | Course Key | Resource Key |
 |-------------|------------|--------------|
-| Software Engineering | `software-engineering` | `5-software-engineering` |
-| Web Development | `web-development` | `5-web-development` |
-| Artificial Intelligence | `ai` | `5-ai` |
+| Software Engineering | `software-eng` | `5-software-eng` |
+| Advanced Database | `adv-database` | `5-adv-database` |
+| Web Development | `web-dev` | `5-web-dev` |
+| Compiler Design | `compiler` | `5-compiler` |
 | Computer Graphics | `graphics` | `5-graphics` |
-| Signals & Systems | `signals` | `5-signals` |
 | Management Principles | `management` | `5-management` |
 
 ### Semester 6 Courses
 | Course Name | Course Key | Resource Key |
 |-------------|------------|--------------|
+| Artificial Intelligence | `ai` | `6-ai` |
 | Machine Learning | `ml` | `6-ml` |
-| Compiler Design | `compiler` | `6-compiler` |
-| Mobile App Development | `mobile-app` | `6-mobile-app` |
+| Advanced Web Development | `adv-web` | `6-adv-web` |
+| Image Processing | `image-processing` | `6-image-processing` |
+| Mobile App Development | `mobile-dev` | `6-mobile-dev` |
 | Information Security | `info-security` | `6-info-security` |
-| Project Management | `project-management` | `6-project-management` |
-| Technical Writing | `technical-writing` | `6-technical-writing` |
+| Entrepreneurship | `entrepreneurship` | `6-entrepreneurship` |
 
 ### Semester 7 Courses
 | Course Name | Course Key | Resource Key |
@@ -175,15 +190,89 @@ const courseResources = {
 
 ## 📝 Resource Categories (ধরনসমূহ)
 
-| Category | Description | Icon |
-|----------|-------------|------|
-| `lab-report` | Lab Reports | 🧪 flask |
-| `notes` | Lecture Notes | 📝 sticky-note |
-| `ppt` | PowerPoint Presentations | 📊 file-powerpoint |
-| `assignment` | Assignments | ✅ tasks |
-| `project` | Projects (Source Code) | 🔧 project-diagram |
-| `project-report` | Project Reports/Documentation | 📄 file-contract |
-| `book` | Books/PDF | 📚 book |
+| Category | Description | Icon | Example |
+|----------|-------------|------|---------|
+| `lab-report` | Lab Reports | 🧪 flask | Lab experiments, practical work |
+| `notes` | Lecture Notes | 📝 sticky-note | Class notes, summaries |
+| `ppt` | PowerPoint Presentations | 📊 file-powerpoint | Lecture slides (PPTX format) |
+| `slides` | Slides (Any Format) | 🎯 chalkboard | PDF slides, Google Slides |
+| `assignment` | Assignments | ✅ tasks | Homework, classwork |
+| `project` | Projects (Source Code) | 🔧 project-diagram | GitHub links, source code |
+| `project-report` | Project Reports/Documentation | 📄 file-contract | Project documentation |
+| `book` | Books/PDF | 📚 book | Textbooks, reference books |
+
+---
+
+## 🆕 How to Add a New Category
+
+### Step 1: courseData.js এ getResourceCounts() function এ যান
+
+Location: `js/courseData.js` (Line ~530-580)
+
+### Step 2: counts object এ নতুন category add করুন
+
+```javascript
+const counts = {
+    // Camel case format (for semester pages)
+    labReports: 0,
+    notes: 0,
+    ppt: 0,
+    assignments: 0,
+    projects: 0,
+    books: 0,
+    slides: 0,           // ← New category এখানে add করুন
+    newCategory: 0,      // ← আপনার category এখানে
+    total: resources.length,
+    
+    // Hyphenated format (for course.html)
+    'lab-report': 0,
+    'assignment': 0,
+    'project': 0,
+    'project-report': 0,
+    'book': 0,
+    'slides': 0,         // ← এখানেও add করুন
+    'new-category': 0    // ← আপনার category
+};
+```
+
+### Step 3: switch statement এ case add করুন
+
+```javascript
+case 'slides':
+    counts.slides++;
+    counts['slides']++;
+    break;
+case 'new-category':    // ← আপনার category
+    counts.newCategory++;
+    counts['new-category']++;
+    break;
+```
+
+### Step 4: course.html এ stats display add করুন (optional)
+
+```html
+<div class="stat">
+    <i class="fas fa-chalkboard"></i>
+    <span id="slides-count">0</span> Slides
+</div>
+```
+
+---
+
+## 🔄 How to Modify an Existing Category
+
+### Category Name Change করতে চাইলে:
+
+1. `courseData.js` এ `getResourceCounts()` function এ পুরানো category name খুঁজুন
+2. সব জায়গায় (counts object + switch statement) নাম পরিবর্তন করুন
+3. `courseResources` এ সব resource এর category field update করুন
+4. HTML files এ icon/label update করুন
+
+### Category Delete করতে চাইলে:
+
+1. `getResourceCounts()` থেকে category remove করুন (counts object + switch case)
+2. HTML থেকে related display remove করুন
+3. `courseResources` থেকে ঐ category র সব resources remove করুন
 
 ---
 
@@ -709,14 +798,30 @@ Course এর জন্য ব্যবহৃত colors:
 2. Resource key সঠিক format এ আছে কিনা check করুন (`semester-coursekey`)
 3. Browser console এ error আছে কিনা দেখুন
 
-### Course page এ "Course not found" দেখাচ্ছে?
-1. URL এর course parameter check করুন
-2. `courseMetadata` এ course key আছে কিনা verify করুন
+### Course page এ "Course not found" বা ভুল course দেখাচ্ছে?
+1. **URL check করুন:** `course.html?sem=5&course=web-dev` - sem ও course সঠিক আছে?
+2. **courseMetadata তে course key আছে?** `courseData.js` এ check করুন
+3. **Semester HTML এ link সঠিক?** `href="course.html?sem=5&course=web-dev"` - course key মিলছে?
+4. **JavaScript Syntax Error?** Browser console (F12) এ error দেখুন
+5. **Course key mismatch?** HTML এর href এর course= এবং courseData.js এর key একই হতে হবে
+
+**Example:**
+```
+❌ ভুল: HTML এ course=web-development কিন্তু courseData.js এ key='web-dev'
+✅ সঠিক: HTML এ course=web-dev এবং courseData.js এ key='web-dev'
+```
 
 ### Count update হচ্ছে না?
-1. Page refresh করুন
+1. Page refresh করুন (Ctrl+Shift+R for hard refresh)
 2. Browser cache clear করুন
 3. `courseData.js` এ resources সঠিকভাবে add করা আছে কিনা check করুন
+4. Category name সঠিক আছে কিনা check করুন (e.g., `'lab-report'` not `'lab report'`)
+
+### "undefined Files" বা "undefined Courses" দেখাচ্ছে?
+1. `getSemesterStats()` function ঠিকমতো return করছে কিনা check করুন
+2. HTML এ সঠিক property name ব্যবহার করা হচ্ছে কিনা check করুন
+   - `stats.totalResources` (not `stats.totalFiles`)
+   - `stats.courseCount` (not `stats.courses`)
 
 ### Email send হচ্ছে না?
 1. EmailJS credentials সঠিক কিনা check করুন

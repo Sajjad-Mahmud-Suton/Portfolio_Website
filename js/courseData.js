@@ -499,8 +499,20 @@ const courseResources = {
     //     }
     // ],
     //
-    // Categories: 'lab-report', 'notes', 'ppt', 'assignment', 'project', 'project-report', 'book'
+    // Categories: 'lab-report', 'notes', 'ppt', 'slides', 'assignment', 'project', 'project-report', 'book'
     // ========================================================
+    '6-ai': [
+        {
+            category: 'slides',
+            title: 'Web Programming Lab Report 1',
+            description: 'Introduction to HTML and CSS.',
+            fileType: 'PDF',
+            meta: 'July 10, 2025',
+            previewUrl: 'https://example.com/preview1',
+            downloadUrl: 'https://example.com/download1',
+            featured: true
+        }
+    ]
 };
 
 
@@ -526,13 +538,15 @@ function getResourceCounts(semester, courseKey) {
         assignments: 0,
         projects: 0,
         books: 0,
+        slides: 0,
         total: resources.length,
         // Hyphenated format (for course.html)
         'lab-report': 0,
         'assignment': 0,
         'project': 0,
         'project-report': 0,
-        'book': 0
+        'book': 0,
+        'slides': 0
     };
     
     resources.forEach(resource => {
@@ -561,6 +575,10 @@ function getResourceCounts(semester, courseKey) {
             case 'book':
                 counts.books++;
                 counts['book']++;
+                break;
+            case 'slides':
+                counts.slides++;
+                counts['slides']++;
                 break;
         }
     });

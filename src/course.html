@@ -611,7 +611,7 @@
                         <span style="background: rgba(56, 189, 248, 0.2); color: #38bdf8; padding: 6px 16px; border-radius: 20px; font-size: 0.85rem; font-weight: 600;" id="course-code">
                             CSE-101
                         </span>
-                        <span style="color: var(--text-secondary); font-size: 0.9rem;">
+                        <span style="color: var(--text-secondary); font-size: 0.9rem;" id="course-credits">
                             <i class="fas fa-credit-card"></i> 4 Credits
                         </span>
                     </div>
@@ -1016,6 +1016,7 @@
                 document.getElementById('course-icon').innerHTML = `<i class="${data.icon}"></i>`;
                 document.getElementById('course-icon').style.background = `linear-gradient(135deg, ${data.color}, ${adjustColor(data.color, -20)})`;
                 document.getElementById('breadcrumb-course').textContent = data.title;
+                document.getElementById('course-credits').innerHTML = `<i class="fas fa-credit-card"></i> ${data.credits} Credits`;
                 document.title = `${data.title} | University Resources`;
             }
             
