@@ -1,524 +1,557 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- ============================================
+         SEMESTER 7 PAGE - Advanced Specialization
+         7th Semester courses with all resources
+         ============================================ -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>7th Semester - Security, Cloud & Advanced Topics</title>
-    <link rel="stylesheet" href="/css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <meta name="description" content="7th Semester courses - Advanced specialization including Cloud Computing, Cybersecurity, Distributed Systems, Big Data, IoT, and Professional Ethics.">
+    <meta name="keywords" content="semester 7, seventh semester, courses, academic, university, specialization">
+    <meta name="author" content="Sajjad Mahmud">
+    
+    <title>7th Semester | University Resources</title>
+    
+    <!-- Google Fonts - Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="/css/style.css">
+
+</head>
+<body>
+    <!-- ==========================================
+         NAVIGATION BAR
+         ========================================== -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="nav-logo">SAJJAD MAHMUD</a>
+            
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="education.html" class="nav-link">Education</a></li>
+                <li><a href="projects.html" class="nav-link">Projects</a></li>
+                <li><a href="blog.html" class="nav-link">Blog</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+                <li><a href="cv.html" class="btn btn-cv-download" target="_blank"><i class="fas fa-download"></i>Download CV</a></li>
+            </ul>
+            
+            <!-- Theme Toggle Button -->
+            <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+                <i class="fas fa-moon"></i>
+            </button>
+            
+            <div class="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ==========================================
+         BREADCRUMB NAVIGATION
+         ========================================== -->
+    <section style="padding-top: 100px; padding-bottom: 20px;">
+        <div class="container">
+            <nav class="breadcrumb fade-in" style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
+                <a href="index.html" style="color: var(--text-secondary); font-size: 0.95rem;">
+                    <i class="fas fa-home"></i> Home
+                </a>
+                <span style="color: var(--text-secondary);">/</span>
+                <a href="projects.html" style="color: var(--text-secondary); font-size: 0.95rem;">Projects</a>
+                <span style="color: var(--text-secondary);">/</span>
+                <a href="university.html" style="color: var(--text-secondary); font-size: 0.95rem;">University</a>
+                <span style="color: var(--text-secondary);">/</span>
+                <span style="color: var(--text-accent); font-size: 0.95rem;">7th Semester</span>
+            </nav>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         SEMESTER HEADER
+         ========================================== -->
+    <section class="section" style="padding-top: 30px; padding-bottom: 40px;">
+        <div class="container">
+            <div class="semester-header fade-in" style="display: flex; align-items: center; gap: 30px; flex-wrap: wrap;">
+                <!-- Semester Icon -->
+                <div style="width: 100px; height: 100px; background: linear-gradient(135deg, #f472b6, #ec4899); border-radius: 20px; display: flex; align-items: center; justify-content: center; font-size: 2.5rem; box-shadow: 0 15px 40px rgba(244, 114, 182, 0.3);">
+                    <i class="fas fa-rocket"></i>
+                </div>
+                
+                <!-- Semester Info -->
+                <div>
+                    <h1 style="margin-bottom: 10px;">
+                        <span class="gradient-text">7th Semester</span>
+                    </h1>
+                    <p style="font-size: 1.1rem; margin-bottom: 15px;">
+                        Advanced specialization and emerging technologies
+                    </p>
+                    <div style="display: flex; gap: 25px; flex-wrap: wrap;">
+                        <span style="display: flex; align-items: center; gap: 8px; color: var(--text-secondary);">
+                            <i class="fas fa-book-open" style="color: var(--gradient-teal);"></i>
+                            <span>6 Courses</span>
+                        </span>
+                        <span style="display: flex; align-items: center; gap: 8px; color: var(--text-secondary);">
+                            <i class="fas fa-file" style="color: var(--gradient-purple);"></i>
+                            <span>30+ Resources</span>
+                        </span>
+                        <span style="display: flex; align-items: center; gap: 8px; color: var(--text-secondary);">
+                            <i class="fas fa-clock" style="color: var(--text-accent);"></i>
+                            <span>Jan - May 2024</span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         SEMESTER NAVIGATION TABS
+         ========================================== -->
+    <section style="padding-bottom: 20px; position: sticky; top: 70px; z-index: 100; background: var(--bg-primary);">
+        <div class="container">
+            <div class="semester-tabs fade-in" style="display: flex; gap: 10px; overflow-x: auto; padding: 10px 0; -webkit-overflow-scrolling: touch;">
+                <a href="semester1.html" class="semester-tab">1st Sem</a>
+                <a href="semester2.html" class="semester-tab">2nd Sem</a>
+                <a href="semester3.html" class="semester-tab">3rd Sem</a>
+                <a href="semester4.html" class="semester-tab">4th Sem</a>
+                <a href="semester5.html" class="semester-tab">5th Sem</a>
+                <a href="semester6.html" class="semester-tab">6th Sem</a>
+                <a href="semester7.html" class="semester-tab active">7th Sem</a>
+                <a href="semester8.html" class="semester-tab">8th Sem</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         COURSES GRID
+         ========================================== -->
+    <section class="section" style="padding-top: 30px;">
+        <div class="container">
+            <div class="section-header fade-in" style="margin-bottom: 40px;">
+                <h3>Available <span class="gradient-text">Courses</span></h3>
+                <p>Click on a course to view all resources</p>
+            </div>
+            
+            <div class="courses-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 25px;">
+                
+                <!-- ========== COURSE 1: CLOUD COMPUTING ========== -->
+                <a href="course.html?sem=7&course=cloud-computing" class="course-card card fade-in" style="text-decoration: none; position: relative; overflow: hidden; padding: 0;">
+                    <!-- Course Header with Color -->
+                    <div class="course-header" style="background: linear-gradient(135deg, #14b8a6, #0d9488); padding: 25px; position: relative;">
+                        <div class="course-code" style="position: absolute; top: 15px; right: 15px; background: rgba(255,255,255,0.2); padding: 5px 12px; border-radius: 20px; font-size: 0.8rem; font-weight: 600;">
+                            CSE-701
+                        </div>
+                        <div class="course-icon" style="width: 60px; height: 60px; background: rgba(255,255,255,0.2); border-radius: 15px; display: flex; align-items: center; justify-content: center; font-size: 1.8rem; margin-bottom: 15px;">
+                            <i class="fas fa-cloud"></i>
+                        </div>
+                        <h3 style="color: white; margin-bottom: 5px; font-size: 1.2rem;">Cloud Computing</h3>
+                        <p style="color: rgba(255,255,255,0.8); margin: 0; font-size: 0.9rem;">AWS, Azure & Cloud Architecture</p>
+                    </div>
+                    
+                    <!-- Course Content -->
+                    <div class="course-content" style="padding: 20px;">
+                        <!-- Resource Tags -->
+                        <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 15px;">
+                            <span class="resource-tag" style="font-size: 0.75rem; padding: 4px 10px; background: rgba(20, 184, 166, 0.15); color: #14b8a6; border-radius: 15px;">
+                                <i class="fas fa-flask"></i> Lab Reports
+                            </span>
+                            <span class="resource-tag" style="font-size: 0.75rem; padding: 4px 10px; background: rgba(168, 85, 247, 0.15); color: #a855f7; border-radius: 15px;">
+                                <i class="fas fa-sticky-note"></i> Notes
+                            </span>
+                            <span class="resource-tag" style="font-size: 0.75rem; padding: 4px 10px; background: rgba(244, 114, 182, 0.15); color: #f472b6; border-radius: 15px;">
+                                <i class="fas fa-project-diagram"></i> Projects
+                            </span>
+                        </div>
+                        
+                        <!-- Course Info -->
+                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                            <span style="font-size: 0.85rem; color: var(--text-secondary);">
+                                <i class="fas fa-credit-card"></i> 3 Credits
+                            </span>
+                            <span style="display: flex; align-items: center; gap: 5px; color: var(--gradient-teal); font-size: 0.9rem; font-weight: 500;">
+                                View Resources <i class="fas fa-arrow-right"></i>
+                            </span>
+                        </div>
+                    </div>
+                </a>
+                
+                <!-- ========== COURSE 2: CYBERSECURITY ========== -->
+                <a href="course.html?sem=7&course=cybersecurity" class="course-card card fade-in fade-in-delay-1" style="text-decoration: none; position: relative; overflow: hidden; padding: 0;">
+                    <div class="course-header" style="background: linear-gradient(135deg, #a855f7, #9333ea); padding: 25px; position: relative;">
+                        <div class="course-code" style="position: absolute; top: 15px; right: 15px; background: rgba(255,255,255,0.2); padding: 5px 12px; border-radius: 20px; font-size: 0.8rem; font-weight: 600;">
+                            CSE-702
+                        </div>
+                        <div class="course-icon" style="width: 60px; height: 60px; background: rgba(255,255,255,0.2); border-radius: 15px; display: flex; align-items: center; justify-content: center; font-size: 1.8rem; margin-bottom: 15px;">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h3 style="color: white; margin-bottom: 5px; font-size: 1.2rem;">Cybersecurity</h3>
+                        <p style="color: rgba(255,255,255,0.8); margin: 0; font-size: 0.9rem;">Network Security & Ethical Hacking</p>
+                    </div>
+                    
+                    <div class="course-content" style="padding: 20px;">
+                        <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 15px;">
+                            <span class="resource-tag" style="font-size: 0.75rem; padding: 4px 10px; background: rgba(20, 184, 166, 0.15); color: #14b8a6; border-radius: 15px;">
+                                <i class="fas fa-flask"></i> Lab Reports
+                            </span>
+                            <span class="resource-tag" style="font-size: 0.75rem; padding: 4px 10px; background: rgba(168, 85, 247, 0.15); color: #a855f7; border-radius: 15px;">
+                                <i class="fas fa-sticky-note"></i> Notes
+                            </span>
+                        </div>
+                        
+                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                            <span style="font-size: 0.85rem; color: var(--text-secondary);">
+                                <i class="fas fa-credit-card"></i> 3 Credits
+                            </span>
+                            <span style="display: flex; align-items: center; gap: 5px; color: var(--gradient-purple); font-size: 0.9rem; font-weight: 500;">
+                                View Resources <i class="fas fa-arrow-right"></i>
+                            </span>
+                        </div>
+                    </div>
+                </a>
+                
+                <!-- ========== COURSE 3: DISTRIBUTED SYSTEMS ========== -->
+                <a href="course.html?sem=7&course=distributed-systems" class="course-card card fade-in fade-in-delay-2" style="text-decoration: none; position: relative; overflow: hidden; padding: 0;">
+                    <div class="course-header" style="background: linear-gradient(135deg, #38bdf8, #0ea5e9); padding: 25px; position: relative;">
+                        <div class="course-code" style="position: absolute; top: 15px; right: 15px; background: rgba(255,255,255,0.2); padding: 5px 12px; border-radius: 20px; font-size: 0.8rem; font-weight: 600;">
+                            CSE-703
+                        </div>
+                        <div class="course-icon" style="width: 60px; height: 60px; background: rgba(255,255,255,0.2); border-radius: 15px; display: flex; align-items: center; justify-content: center; font-size: 1.8rem; margin-bottom: 15px;">
+                            <i class="fas fa-network-wired"></i>
+                        </div>
+                        <h3 style="color: white; margin-bottom: 5px; font-size: 1.2rem;">Distributed Systems</h3>
+                        <p style="color: rgba(255,255,255,0.8); margin: 0; font-size: 0.9rem;">Scalable System Architecture</p>
+                    </div>
+                    
+                    <div class="course-content" style="padding: 20px;">
+                        <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 15px;">
+                            <span class="resource-tag" style="font-size: 0.75rem; padding: 4px 10px; background: rgba(168, 85, 247, 0.15); color: #a855f7; border-radius: 15px;">
+                                <i class="fas fa-sticky-note"></i> Notes
+                            </span>
+                            <span class="resource-tag" style="font-size: 0.75rem; padding: 4px 10px; background: rgba(56, 189, 248, 0.15); color: #38bdf8; border-radius: 15px;">
+                                <i class="fas fa-file-powerpoint"></i> PPT
+                            </span>
+                            <span class="resource-tag" style="font-size: 0.75rem; padding: 4px 10px; background: rgba(244, 114, 182, 0.15); color: #f472b6; border-radius: 15px;">
+                                <i class="fas fa-project-diagram"></i> Projects
+                            </span>
+                        </div>
+                        
+                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                            <span style="font-size: 0.85rem; color: var(--text-secondary);">
+                                <i class="fas fa-credit-card"></i> 3 Credits
+                            </span>
+                            <span style="display: flex; align-items: center; gap: 5px; color: var(--text-accent); font-size: 0.9rem; font-weight: 500;">
+                                View Resources <i class="fas fa-arrow-right"></i>
+                            </span>
+                        </div>
+                    </div>
+                </a>
+                
+                <!-- ========== COURSE 4: BIG DATA ANALYTICS ========== -->
+                <a href="course.html?sem=7&course=big-data" class="course-card card fade-in" style="text-decoration: none; position: relative; overflow: hidden; padding: 0;">
+                    <div class="course-header" style="background: linear-gradient(135deg, #f472b6, #ec4899); padding: 25px; position: relative;">
+                        <div class="course-code" style="position: absolute; top: 15px; right: 15px; background: rgba(255,255,255,0.2); padding: 5px 12px; border-radius: 20px; font-size: 0.8rem; font-weight: 600;">
+                            CSE-704
+                        </div>
+                        <div class="course-icon" style="width: 60px; height: 60px; background: rgba(255,255,255,0.2); border-radius: 15px; display: flex; align-items: center; justify-content: center; font-size: 1.8rem; margin-bottom: 15px;">
+                            <i class="fas fa-database"></i>
+                        </div>
+                        <h3 style="color: white; margin-bottom: 5px; font-size: 1.2rem;">Big Data Analytics</h3>
+                        <p style="color: rgba(255,255,255,0.8); margin: 0; font-size: 0.9rem;">Hadoop, Spark & Data Processing</p>
+                    </div>
+                    
+                    <div class="course-content" style="padding: 20px;">
+                        <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 15px;">
+                            <span class="resource-tag" style="font-size: 0.75rem; padding: 4px 10px; background: rgba(20, 184, 166, 0.15); color: #14b8a6; border-radius: 15px;">
+                                <i class="fas fa-flask"></i> Lab Reports
+                            </span>
+                            <span class="resource-tag" style="font-size: 0.75rem; padding: 4px 10px; background: rgba(168, 85, 247, 0.15); color: #a855f7; border-radius: 15px;">
+                                <i class="fas fa-sticky-note"></i> Notes
+                            </span>
+                        </div>
+                        
+                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                            <span style="font-size: 0.85rem; color: var(--text-secondary);">
+                                <i class="fas fa-credit-card"></i> 3 Credits
+                            </span>
+                            <span style="display: flex; align-items: center; gap: 5px; color: #f472b6; font-size: 0.9rem; font-weight: 500;">
+                                View Resources <i class="fas fa-arrow-right"></i>
+                            </span>
+                        </div>
+                    </div>
+                </a>
+                
+                <!-- ========== COURSE 5: INTERNET OF THINGS ========== -->
+                <a href="course.html?sem=7&course=iot" class="course-card card fade-in fade-in-delay-1" style="text-decoration: none; position: relative; overflow: hidden; padding: 0;">
+                    <div class="course-header" style="background: linear-gradient(135deg, #fb923c, #f97316); padding: 25px; position: relative;">
+                        <div class="course-code" style="position: absolute; top: 15px; right: 15px; background: rgba(255,255,255,0.2); padding: 5px 12px; border-radius: 20px; font-size: 0.8rem; font-weight: 600;">
+                            CSE-705
+                        </div>
+                        <div class="course-icon" style="width: 60px; height: 60px; background: rgba(255,255,255,0.2); border-radius: 15px; display: flex; align-items: center; justify-content: center; font-size: 1.8rem; margin-bottom: 15px;">
+                            <i class="fas fa-microchip"></i>
+                        </div>
+                        <h3 style="color: white; margin-bottom: 5px; font-size: 1.2rem;">Internet of Things</h3>
+                        <p style="color: rgba(255,255,255,0.8); margin: 0; font-size: 0.9rem;">IoT Systems & Embedded Programming</p>
+                    </div>
+                    
+                    <div class="course-content" style="padding: 20px;">
+                        <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 15px;">
+                            <span class="resource-tag" style="font-size: 0.75rem; padding: 4px 10px; background: rgba(20, 184, 166, 0.15); color: #14b8a6; border-radius: 15px;">
+                                <i class="fas fa-flask"></i> Lab Reports
+                            </span>
+                            <span class="resource-tag" style="font-size: 0.75rem; padding: 4px 10px; background: rgba(244, 114, 182, 0.15); color: #f472b6; border-radius: 15px;">
+                                <i class="fas fa-project-diagram"></i> Projects
+                            </span>
+                        </div>
+                        
+                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                            <span style="font-size: 0.85rem; color: var(--text-secondary);">
+                                <i class="fas fa-credit-card"></i> 3 Credits
+                            </span>
+                            <span style="display: flex; align-items: center; gap: 5px; color: #fb923c; font-size: 0.9rem; font-weight: 500;">
+                                View Resources <i class="fas fa-arrow-right"></i>
+                            </span>
+                        </div>
+                    </div>
+                </a>
+                
+                <!-- ========== COURSE 6: PROFESSIONAL ETHICS ========== -->
+                <a href="course.html?sem=7&course=ethics" class="course-card card fade-in fade-in-delay-2" style="text-decoration: none; position: relative; overflow: hidden; padding: 0;">
+                    <div class="course-header" style="background: linear-gradient(135deg, #4ade80, #22c55e); padding: 25px; position: relative;">
+                        <div class="course-code" style="position: absolute; top: 15px; right: 15px; background: rgba(255,255,255,0.2); padding: 5px 12px; border-radius: 20px; font-size: 0.8rem; font-weight: 600;">
+                            HUM-701
+                        </div>
+                        <div class="course-icon" style="width: 60px; height: 60px; background: rgba(255,255,255,0.2); border-radius: 15px; display: flex; align-items: center; justify-content: center; font-size: 1.8rem; margin-bottom: 15px;">
+                            <i class="fas fa-balance-scale"></i>
+                        </div>
+                        <h3 style="color: white; margin-bottom: 5px; font-size: 1.2rem;">Professional Ethics</h3>
+                        <p style="color: rgba(255,255,255,0.8); margin: 0; font-size: 0.9rem;">Ethics in Computing & IT Law</p>
+                    </div>
+                    
+                    <div class="course-content" style="padding: 20px;">
+                        <div style="display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 15px;">
+                            <span class="resource-tag" style="font-size: 0.75rem; padding: 4px 10px; background: rgba(168, 85, 247, 0.15); color: #a855f7; border-radius: 15px;">
+                                <i class="fas fa-sticky-note"></i> Notes
+                            </span>
+                            <span class="resource-tag" style="font-size: 0.75rem; padding: 4px 10px; background: rgba(56, 189, 248, 0.15); color: #38bdf8; border-radius: 15px;">
+                                <i class="fas fa-file-powerpoint"></i> PPT
+                            </span>
+                            <span class="resource-tag" style="font-size: 0.75rem; padding: 4px 10px; background: rgba(74, 222, 128, 0.15); color: #4ade80; border-radius: 15px;">
+                                <i class="fas fa-tasks"></i> Assignments
+                            </span>
+                        </div>
+                        
+                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                            <span style="font-size: 0.85rem; color: var(--text-secondary);">
+                                <i class="fas fa-credit-card"></i> 2 Credits
+                            </span>
+                            <span style="display: flex; align-items: center; gap: 5px; color: #4ade80; font-size: 0.9rem; font-weight: 500;">
+                                View Resources <i class="fas fa-arrow-right"></i>
+                            </span>
+                        </div>
+                    </div>
+                </a>
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         BACK NAVIGATION
+         ========================================== -->
+    <section class="section" style="padding-top: 40px;">
+        <div class="container">
+            <div class="text-center fade-in">
+                <a href="university.html" class="btn btn-secondary">
+                    <i class="fas fa-arrow-left"></i> Back to Semesters
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         FOOTER
+         ========================================== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <!-- Brand Section -->
+                <div class="footer-brand">
+                    <h3>SAJJAD MAHMUD</h3>
+                    <p>
+                        Building digital experiences that make a difference. 
+                        Let's create something amazing together.
+                    </p>
+                    <div class="social-links">
+                        <a href="https://github.com/Sajjad-Mahmud-Suton" target="_blank" class="social-link" aria-label="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/md-sajjad-mahmud-suton-344a802a7/" target="_blank" class="social-link" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Dribbble">
+                            <i class="fab fa-dribbble"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Quick Links -->
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Me</a></li>
+                        <li><a href="projects.html">Projects</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Services -->
+                <div class="footer-links">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="university.html">University</a></li>
+                        <li><a href="#">Lab Reports</a></li>
+                        <li><a href="#">Projects</a></li>
+                        <li><a href="#">Notes</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Contact Info -->
+                <div class="footer-links">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><a href="mailto:sajjadmahmudsuton@gmail.com">sajjadmahmudsuton@gmail.com</a></li>
+                        <li><a href="tel:+8801968161494">+880 1968 161 494</a></li>
+                        <li><a href="#">Dhaka, Bangladesh</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Compact Date Time Widget with Popup Calendar -->
+            <div class="datetime-compact">
+                <div class="datetime-mini">
+                    <div class="time-mini">
+                        <i class="far fa-clock"></i>
+                        <span id="hours">00</span>:<span id="minutes">00</span>:<span id="seconds">00</span>
+                        <span class="ampm-mini" id="ampm">AM</span>
+                    </div>
+                    <div class="date-mini" id="dateToggle">
+                        <i class="far fa-calendar-alt"></i>
+                        <span id="dayNum">01</span>
+                        <span id="monthName">Jan</span>
+                        <span id="year">2026</span>
+                        <span class="date-day-mini" id="dayName">(Mon)</span>
+                        <i class="fas fa-chevron-down calendar-arrow"></i>
+                    </div>
+                </div>
+                <!-- Popup Calendar -->
+                <div class="calendar-popup" id="calendarPopup">
+                    <div class="calendar-popup-header">
+                        <button class="calendar-nav" id="prevMonth"><i class="fas fa-chevron-left"></i></button>
+                        <span id="calendarMonth">January 2026</span>
+                        <button class="calendar-nav" id="nextMonth"><i class="fas fa-chevron-right"></i></button>
+                    </div>
+                    <div class="calendar-weekdays">
+                        <span>Su</span><span>Mo</span><span>Tu</span><span>We</span><span>Th</span><span>Fr</span><span>Sa</span>
+                    </div>
+                    <div class="calendar-days" id="calendarDays"></div>
+                </div>
+            </div>
+
+            <!-- Footer Bottom -->
+            <div class="footer-bottom">
+                <p>&copy; 2025 Sajjad Mahmud. All rights reserved.</p>
+                <div class="footer-social">
+                    <a href="https://github.com/Sajjad-Mahmud-Suton" target="_blank" class="social-link" aria-label="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/md-sajjad-mahmud-suton-344a802a7/" target="_blank" class="social-link" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Main JavaScript -->
+    <script src="/js/script.js"></script>
+    
+    <!-- Semester Page Specific Styles -->
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: 'Poppins', sans-serif;
-            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
-            min-height: 100vh;
-            color: #fff;
-        }
-        
-        /* Navigation */
-        nav {
-            background: rgba(0, 0, 0, 0.3);
-            backdrop-filter: blur(10px);
-            padding: 1rem 5%;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .logo {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: #00d9ff;
-            text-decoration: none;
-        }
-        
-        .nav-links {
-            display: flex;
-            list-style: none;
-            gap: 2rem;
-        }
-        
-        .nav-links a {
-            color: #fff;
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s;
-        }
-        
-        .nav-links a:hover {
-            color: #00d9ff;
-        }
-        
-        .hamburger {
-            display: none;
-            flex-direction: column;
-            cursor: pointer;
-            gap: 5px;
-        }
-        
-        .hamburger span {
-            width: 25px;
-            height: 3px;
-            background: #fff;
-            transition: 0.3s;
-        }
-        
-        /* Main Content */
-        .semester-container {
-            padding: 120px 5% 50px;
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-        
-        .semester-header {
-            text-align: center;
-            margin-bottom: 3rem;
-        }
-        
-        .semester-header h1 {
-            font-size: 2.5rem;
-            margin-bottom: 0.5rem;
-            background: linear-gradient(135deg, #00d9ff, #00ff88);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-        
-        .semester-header p {
-            color: #aaa;
-            font-size: 1.1rem;
-        }
-        
-        .semester-info {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            margin-top: 1rem;
-            flex-wrap: wrap;
-        }
-        
-        .semester-info span {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            color: #00d9ff;
-        }
-        
-        /* Semester Tabs */
-        .semester-tabs {
-            display: flex;
-            justify-content: center;
-            gap: 0.5rem;
-            margin-bottom: 3rem;
-            flex-wrap: wrap;
-        }
-        
+        /* Semester Tab Styles */
         .semester-tab {
-            padding: 0.75rem 1.5rem;
-            background: rgba(255, 255, 255, 0.1);
-            border: none;
+            padding: 10px 20px;
+            background: var(--bg-card);
+            color: var(--text-secondary);
+            border: 1px solid rgba(255, 255, 255, 0.1);
             border-radius: 25px;
-            color: #fff;
-            cursor: pointer;
-            transition: all 0.3s;
-            text-decoration: none;
             font-family: 'Poppins', sans-serif;
             font-size: 0.9rem;
-        }
-        
-        .semester-tab:hover {
-            background: rgba(0, 217, 255, 0.3);
-        }
-        
-        .semester-tab.active {
-            background: linear-gradient(135deg, #00d9ff, #00ff88);
-            color: #1a1a2e;
-            font-weight: 600;
-        }
-        
-        /* Course Grid */
-        .course-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2rem;
-        }
-        
-        .course-card {
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 20px;
-            padding: 2rem;
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            text-decoration: none;
+            white-space: nowrap;
             transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
         }
         
-        .course-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 4px;
-            background: linear-gradient(135deg, #00d9ff, #00ff88);
+        .semester-tab:hover,
+        .semester-tab.active {
+            background: var(--gradient-primary);
+            color: var(--text-primary);
+            border-color: transparent;
+        }
+        
+        /* Course Card Hover Effects */
+        .course-card {
+            transition: all 0.3s ease !important;
         }
         
         .course-card:hover {
-            transform: translateY(-10px);
-            border-color: rgba(0, 217, 255, 0.5);
-            box-shadow: 0 20px 40px rgba(0, 217, 255, 0.2);
+            transform: translateY(-8px) !important;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4) !important;
         }
         
-        .course-icon {
-            width: 60px;
-            height: 60px;
-            background: linear-gradient(135deg, #00d9ff, #00ff88);
-            border-radius: 15px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            color: #1a1a2e;
-            margin-bottom: 1.5rem;
+        .course-card:hover .course-header {
+            filter: brightness(1.1);
         }
         
-        .course-card h3 {
-            font-size: 1.3rem;
-            margin-bottom: 0.5rem;
-            color: #fff;
+        /* Scrollbar for tabs */
+        .semester-tabs::-webkit-scrollbar {
+            height: 5px;
         }
         
-        .course-code {
-            color: #00d9ff;
-            font-size: 0.9rem;
-            margin-bottom: 1rem;
+        .semester-tabs::-webkit-scrollbar-track {
+            background: var(--bg-secondary);
+            border-radius: 5px;
         }
         
-        .course-card p {
-            color: #aaa;
-            font-size: 0.95rem;
-            line-height: 1.6;
-            margin-bottom: 1.5rem;
-        }
-        
-        .course-meta {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 1.5rem;
-            padding-bottom: 1rem;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        }
-        
-        .meta-item {
-            text-align: center;
-        }
-        
-        .meta-item span {
-            display: block;
-            font-size: 0.8rem;
-            color: #888;
-        }
-        
-        .meta-item strong {
-            color: #00d9ff;
-            font-size: 1.1rem;
-        }
-        
-        .course-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            color: #00d9ff;
-            text-decoration: none;
-            font-weight: 500;
-            transition: gap 0.3s;
-        }
-        
-        .course-link:hover {
-            gap: 1rem;
-        }
-        
-        /* Footer */
-        footer {
-            background: rgba(0, 0, 0, 0.3);
-            padding: 2rem 5%;
-            text-align: center;
-            margin-top: 4rem;
-        }
-        
-        footer p {
-            color: #888;
+        .semester-tabs::-webkit-scrollbar-thumb {
+            background: var(--gradient-primary);
+            border-radius: 5px;
         }
         
         /* Responsive */
         @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                width: 100%;
-                background: rgba(0, 0, 0, 0.9);
+            .semester-header {
                 flex-direction: column;
-                padding: 1rem;
-                gap: 1rem;
+                text-align: center;
             }
             
-            .nav-links.active {
-                display: flex;
-            }
-            
-            .hamburger {
-                display: flex;
-            }
-            
-            .semester-header h1 {
-                font-size: 1.8rem;
-            }
-            
-            .course-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .semester-tabs {
-                gap: 0.3rem;
-            }
-            
-            .semester-tab {
-                padding: 0.5rem 1rem;
-                font-size: 0.8rem;
+            .courses-grid {
+                grid-template-columns: 1fr !important;
             }
         }
     </style>
-</head>
-<body>
-    <!-- Navigation -->
-    <nav>
-        <a href="index.html" class="logo">Portfolio</a>
-        <ul class="nav-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="education.html">Education</a></li>
-            <li><a href="projects.html">Projects</a></li>
-            <li><a href="blog.html">Blog</a></li>
-            <li><a href="contact.html">Contact</a></li>
-        </ul>
-        <div class="hamburger" onclick="toggleMenu()">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-    </nav>
-
-    <!-- Main Content -->
-    <div class="semester-container">
-        <div class="semester-header">
-            <h1>7th Semester</h1>
-            <p>Security, Cloud & Advanced Topics</p>
-            <div class="semester-info">
-                <span><i class="fas fa-calendar-alt"></i> Jan - May 2024</span>
-                <span><i class="fas fa-book"></i> 6 Courses</span>
-                <span><i class="fas fa-clock"></i> 18 Credit Hours</span>
-            </div>
-        </div>
-        
-        <!-- Semester Tabs -->
-        <div class="semester-tabs">
-            <a href="semester1.html" class="semester-tab">1st Sem</a>
-            <a href="semester2.html" class="semester-tab">2nd Sem</a>
-            <a href="semester3.html" class="semester-tab">3rd Sem</a>
-            <a href="semester4.html" class="semester-tab">4th Sem</a>
-            <a href="semester5.html" class="semester-tab">5th Sem</a>
-            <a href="semester6.html" class="semester-tab">6th Sem</a>
-            <a href="semester7.html" class="semester-tab active">7th Sem</a>
-            <a href="semester8.html" class="semester-tab">8th Sem</a>
-        </div>
-        
-        <!-- Course Grid -->
-        <div class="course-grid">
-            <!-- Course 1: Cloud Computing -->
-            <div class="course-card">
-                <div class="course-icon">
-                    <i class="fas fa-cloud"></i>
-                </div>
-                <h3>Cloud Computing</h3>
-                <div class="course-code">CSE-701</div>
-                <p>Learn cloud architecture, virtualization, AWS, Azure, Google Cloud, containerization with Docker and Kubernetes, and serverless computing.</p>
-                <div class="course-meta">
-                    <div class="meta-item">
-                        <strong>3</strong>
-                        <span>Credits</span>
-                    </div>
-                    <div class="meta-item">
-                        <strong>4</strong>
-                        <span>Resources</span>
-                    </div>
-                    <div class="meta-item">
-                        <strong>A</strong>
-                        <span>Grade</span>
-                    </div>
-                </div>
-                <a href="course.html?sem=7&course=cloud-computing" class="course-link">
-                    View Resources <i class="fas fa-arrow-right"></i>
-                </a>
-            </div>
-            
-            <!-- Course 2: Cybersecurity -->
-            <div class="course-card">
-                <div class="course-icon">
-                    <i class="fas fa-shield-alt"></i>
-                </div>
-                <h3>Cybersecurity</h3>
-                <div class="course-code">CSE-702</div>
-                <p>Study network security, cryptography, ethical hacking, vulnerability assessment, penetration testing, and security protocols.</p>
-                <div class="course-meta">
-                    <div class="meta-item">
-                        <strong>3</strong>
-                        <span>Credits</span>
-                    </div>
-                    <div class="meta-item">
-                        <strong>4</strong>
-                        <span>Resources</span>
-                    </div>
-                    <div class="meta-item">
-                        <strong>A+</strong>
-                        <span>Grade</span>
-                    </div>
-                </div>
-                <a href="course.html?sem=7&course=cybersecurity" class="course-link">
-                    View Resources <i class="fas fa-arrow-right"></i>
-                </a>
-            </div>
-            
-            <!-- Course 3: Distributed Systems -->
-            <div class="course-card">
-                <div class="course-icon">
-                    <i class="fas fa-network-wired"></i>
-                </div>
-                <h3>Distributed Systems</h3>
-                <div class="course-code">CSE-703</div>
-                <p>Explore distributed computing concepts, consensus algorithms, fault tolerance, distributed databases, and microservices architecture.</p>
-                <div class="course-meta">
-                    <div class="meta-item">
-                        <strong>3</strong>
-                        <span>Credits</span>
-                    </div>
-                    <div class="meta-item">
-                        <strong>4</strong>
-                        <span>Resources</span>
-                    </div>
-                    <div class="meta-item">
-                        <strong>A</strong>
-                        <span>Grade</span>
-                    </div>
-                </div>
-                <a href="course.html?sem=7&course=distributed-systems" class="course-link">
-                    View Resources <i class="fas fa-arrow-right"></i>
-                </a>
-            </div>
-            
-            <!-- Course 4: Big Data Analytics -->
-            <div class="course-card">
-                <div class="course-icon">
-                    <i class="fas fa-database"></i>
-                </div>
-                <h3>Big Data Analytics</h3>
-                <div class="course-code">CSE-704</div>
-                <p>Learn Hadoop ecosystem, Spark, data mining techniques, NoSQL databases, real-time data processing, and data visualization.</p>
-                <div class="course-meta">
-                    <div class="meta-item">
-                        <strong>3</strong>
-                        <span>Credits</span>
-                    </div>
-                    <div class="meta-item">
-                        <strong>4</strong>
-                        <span>Resources</span>
-                    </div>
-                    <div class="meta-item">
-                        <strong>A-</strong>
-                        <span>Grade</span>
-                    </div>
-                </div>
-                <a href="course.html?sem=7&course=big-data" class="course-link">
-                    View Resources <i class="fas fa-arrow-right"></i>
-                </a>
-            </div>
-            
-            <!-- Course 5: IoT and Embedded Systems -->
-            <div class="course-card">
-                <div class="course-icon">
-                    <i class="fas fa-microchip"></i>
-                </div>
-                <h3>IoT and Embedded Systems</h3>
-                <div class="course-code">CSE-705</div>
-                <p>Study Internet of Things architecture, sensor networks, Arduino, Raspberry Pi, embedded programming, and smart device development.</p>
-                <div class="course-meta">
-                    <div class="meta-item">
-                        <strong>3</strong>
-                        <span>Credits</span>
-                    </div>
-                    <div class="meta-item">
-                        <strong>4</strong>
-                        <span>Resources</span>
-                    </div>
-                    <div class="meta-item">
-                        <strong>A</strong>
-                        <span>Grade</span>
-                    </div>
-                </div>
-                <a href="course.html?sem=7&course=iot" class="course-link">
-                    View Resources <i class="fas fa-arrow-right"></i>
-                </a>
-            </div>
-            
-            <!-- Course 6: Professional Ethics -->
-            <div class="course-card">
-                <div class="course-icon">
-                    <i class="fas fa-balance-scale"></i>
-                </div>
-                <h3>Professional Ethics in IT</h3>
-                <div class="course-code">CSE-706</div>
-                <p>Explore ethical issues in computing, privacy, intellectual property, professional responsibility, and legal aspects of information technology.</p>
-                <div class="course-meta">
-                    <div class="meta-item">
-                        <strong>3</strong>
-                        <span>Credits</span>
-                    </div>
-                    <div class="meta-item">
-                        <strong>4</strong>
-                        <span>Resources</span>
-                    </div>
-                    <div class="meta-item">
-                        <strong>A</strong>
-                        <span>Grade</span>
-                    </div>
-                </div>
-                <a href="course.html?sem=7&course=ethics" class="course-link">
-                    View Resources <i class="fas fa-arrow-right"></i>
-                </a>
-            </div>
-        </div>
-    </div>
-
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2024 Portfolio. All Rights Reserved.</p>
-    </footer>
-
-    <script>
-        function toggleMenu() {
-            document.querySelector('.nav-links').classList.toggle('active');
-        }
-    </script>
 </body>
 </html>
