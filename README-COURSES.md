@@ -1,10 +1,26 @@
-# 📚 Course Management System - Documentation
+# 📚 Course Management System - Complete Documentation
 
 এই documentation এ আপনি শিখবেন কিভাবে:
-- নতুন Course add করবেন
-- নতুন Semester add করবেন  
-- Course এ Resources (Lab Reports, Notes, PPT, etc.) add করবেন
-- System কিভাবে কাজ করে
+- ✅ নতুন Course add করবেন
+- ✅ নতুন Semester add করবেন  
+- ✅ Course এ Resources (Lab Reports, Notes, PPT, etc.) add করবেন
+- ✅ Course/Semester Delete করবেন
+- ✅ Dynamic Counting System কিভাবে কাজ করে
+- ✅ EmailJS Contact Form কিভাবে কাজ করে
+
+---
+
+## 🎯 Dynamic System Overview
+
+এই Portfolio তে **সব কিছু Dynamic**। আপনাকে শুধু `courseData.js` file এ data add/remove করতে হবে। বাকি সব automatically update হবে:
+
+| Feature | Auto Update Location |
+|---------|---------------------|
+| Semester এ Total Courses | `university.html` - Semester cards |
+| Semester এ Total Resources | `university.html` - Semester cards |
+| Course এ Resource Count | `semester1-8.html` - Course cards |
+| Course Page Stats | `course.html` - Lab/Notes/PPT/etc counts |
+| Resource List | `course.html` - Full resource display |
 
 ---
 
@@ -14,14 +30,19 @@
 Portfolio/
 ├── js/
 │   ├── courseData.js    ← 🔥 মূল ফাইল - সব Course ও Resources এখানে
+│   │                       ├── courseMetadata (Course info)
+│   │                       ├── courseResources (All resources)
+│   │                       ├── getSemesterStats() (For university.html)
+│   │                       └── getResourceCounts() (For semester/course pages)
 │   └── script.js        ← Main JavaScript
 ├── src/
-│   ├── university.html  ← Semester selection page
-│   ├── semester1.html   ← 1st Semester courses
-│   ├── semester2.html   ← 2nd Semester courses
+│   ├── university.html  ← Semester selection (Dynamic counts)
+│   ├── semester1.html   ← 1st Semester courses (Dynamic resource tags)
+│   ├── semester2.html   ← 2nd Semester courses (Dynamic resource tags)
 │   ├── ...
-│   ├── semester8.html   ← 8th Semester courses
-│   └── course.html      ← Course resources page (dynamic)
+│   ├── semester8.html   ← 8th Semester courses (Dynamic resource tags)
+│   └── course.html      ← Course resources page (Dynamic stats & list)
+│   └── contact.html     ← Contact form (EmailJS + Auto Reply)
 └── README-COURSES.md    ← এই ফাইল
 ```
 
@@ -90,6 +111,7 @@ const courseResources = {
 | Physics II | `physics2` | `2-physics2` |
 | Calculus II | `calculus2` | `2-calculus2` |
 | Data Communication | `data-comm` | `2-data-comm` |
+| English II | `english2` | `2-english2` |
 
 ### Semester 3 Courses
 | Course Name | Course Key | Resource Key |
@@ -278,6 +300,288 @@ const semesterNames = {
 
 ## 🔄 Dynamic Resource Counts (✅ Already Implemented!)
 
+---
+
+## 🔥 Dynamic Counting System - বিস্তারিত ব্যাখ্যা
+
+### কিভাবে কাজ করে?
+
+Portfolio তে তিনটি level এ dynamic counting হয়:
+
+```
+📊 Level 1: university.html
+   └── প্রতিটা Semester Card এ:
+       ├── Total Courses সংখ্যা
+       └── Total Resources সংখ্যা
+       
+📊 Level 2: semester1-8.html  
+   └── প্রতিটা Course Card এ:
+       ├── Lab Reports count
+       ├── Notes count
+       ├── PPT count
+       └── Other resource counts
+       
+📊 Level 3: course.html
+   └── Course Page এ:
+       ├── Stat boxes (Lab: X, Notes: X, etc.)
+       └── Resource list (Full details)
+```
+
+### Functions Used (courseData.js):
+
+```javascript
+// 1. getSemesterStats(semesterNumber)
+// Returns: { courseCount: X, totalResources: Y }
+// Used in: university.html
+
+const stats = getSemesterStats(1);
+// Result: { courseCount: 6, totalResources: 15 }
+
+// 2. getResourceCounts(semesterNumber, courseKey)
+// Returns: { 'lab-report': X, 'notes': Y, 'ppt': Z, 'total': T }
+// Used in: semester pages & course.html
+
+const counts = getResourceCounts(1, 'programming');
+// Result: { 'lab-report': 5, 'notes': 3, 'ppt': 2, 'total': 10 }
+```
+
+### Where Each File Gets Data:
+
+| File | Function Used | What Updates |
+|------|--------------|--------------|
+| `university.html` | `getSemesterStats(sem)` | Semester card এ courses ও resources count |
+| `semester1-8.html` | `getResourceCounts(sem, course)` | Course card এর resource tags |
+| `course.html` | `getResourceCounts(sem, course)` | Stats section ও resource list |
+
+---
+
+## ➕ নতুন Course Add করার Complete Guide
+
+### যখন Course Add করবেন, এই কাজগুলো করতে হবে:
+
+#### ✅ Step 1: courseData.js এ Course Metadata Add করুন
+
+```javascript
+// js/courseData.js এ courseMetadata object এ add করুন:
+
+const courseMetadata = {
+    // ... existing courses ...
+    
+    // নতুন Course (example: AI Lab)
+    'ai-lab': {
+        semester: 5,                        // কোন Semester এ
+        title: 'Artificial Intelligence Lab',
+        code: 'CSE-511',
+        credits: 1.5,
+        description: 'Practical AI implementations and projects.',
+        icon: 'fas fa-robot',              // Font Awesome icon
+        color: '#8b5cf6'                   // Theme color
+    }
+};
+```
+
+#### ✅ Step 2: courseResources এ Empty Array Add করুন
+
+```javascript
+// js/courseData.js এ courseResources object এ add করুন:
+
+const courseResources = {
+    // ... existing resources ...
+    
+    '5-ai-lab': []   // Format: 'semester-coursekey': []
+};
+```
+
+#### ✅ Step 3: Semester HTML File এ Course Card Add করুন
+
+`semester5.html` এ courses-grid section এ add করুন:
+
+```html
+<!-- AI Lab Course Card -->
+<a href="course.html?sem=5&course=ai-lab" class="course-card card fade-in" 
+   style="--course-color: #8b5cf6; animation-delay: 0.6s;">
+    <div class="course-header" style="background: linear-gradient(135deg, #8b5cf6, #7c3aed); color: white; padding: 1.5rem;">
+        <div class="course-code" style="...">CSE-511</div>
+        <div class="course-icon" style="font-size: 2.5rem; margin-bottom: 1rem;">
+            <i class="fas fa-robot"></i>
+        </div>
+        <h3>Artificial Intelligence Lab</h3>
+        <p style="opacity: 0.9; font-size: 0.9rem;">AI Implementations</p>
+    </div>
+    <div class="course-content" style="padding: 1.5rem;">
+        <div class="resource-tags" data-course="ai-lab">
+            <!-- Dynamic tags will appear here -->
+        </div>
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--border-color);">
+            <span style="color: var(--text-secondary);"><i class="fas fa-credit-card"></i> 1.5 Credits</span>
+            <span style="color: #8b5cf6; font-weight: 600;">View Resources <i class="fas fa-arrow-right"></i></span>
+        </div>
+    </div>
+</a>
+```
+
+#### 🎉 Done! এখন:
+- `university.html` এ semester 5 এর course count বাড়বে (6 → 7)
+- `semester5.html` এ নতুন course card দেখাবে
+- `course.html?sem=5&course=ai-lab` এ course page কাজ করবে
+
+---
+
+## ➕ নতুন Semester Add করার Complete Guide
+
+### ধরুন Semester 9 Add করতে চান:
+
+#### ✅ Step 1: semester9.html File Create করুন
+
+`semester8.html` copy করে `semester9.html` নাম দিন, তারপর modify করুন:
+
+```html
+<!-- Title change -->
+<title>9th Semester - Sajjad's Portfolio</title>
+
+<!-- Breadcrumb change -->
+<a href="semester9.html" class="active">9th Semester</a>
+
+<!-- Page title change -->
+<h1>9th Semester <span class="semester-badge">Fall 2027</span></h1>
+
+<!-- Semester tabs এ active class change -->
+<a href="semester9.html" class="semester-tab active">9th Sem</a>
+```
+
+#### ✅ Step 2: সব Semester Files এ Navigation Tab Add করুন
+
+`semester1.html` থেকে `semester8.html` পর্যন্ত সবগুলোতে semester-tabs section এ add করুন:
+
+```html
+<div class="semester-tabs">
+    <a href="semester1.html" class="semester-tab">1st Sem</a>
+    <!-- ... others ... -->
+    <a href="semester8.html" class="semester-tab">8th Sem</a>
+    <a href="semester9.html" class="semester-tab">9th Sem</a>  <!-- নতুন -->
+</div>
+```
+
+#### ✅ Step 3: university.html এ Semester Card Add করুন
+
+```html
+<!-- Semester 9 Card -->
+<a href="semester9.html" class="semester-card" id="semester-9">
+    <div class="semester-header">
+        <span class="semester-number">9</span>
+        <div class="semester-info">
+            <h3>9th Semester</h3>
+            <p>Fall 2027</p>
+        </div>
+    </div>
+    <div class="semester-stats">
+        <div class="stat-item">
+            <i class="fas fa-book"></i>
+            <span id="sem9-courses">0</span> Courses
+        </div>
+        <div class="stat-item">
+            <i class="fas fa-file-alt"></i>
+            <span id="sem9-resources">0</span> Resources
+        </div>
+    </div>
+</a>
+```
+
+#### ✅ Step 4: university.html এর JavaScript Update করুন
+
+```javascript
+// getSemesterStats calls এ add করুন:
+const sem9Stats = getSemesterStats(9);
+document.getElementById('sem9-courses').textContent = sem9Stats.courseCount;
+document.getElementById('sem9-resources').textContent = sem9Stats.totalResources;
+```
+
+#### ✅ Step 5: course.html এর Data Update করুন
+
+```javascript
+// semesterLinks object এ add করুন:
+const semesterLinks = {
+    // ... existing ...
+    '9': 'semester9.html'
+};
+
+// semesterNames object এ add করুন:
+const semesterNames = {
+    // ... existing ...
+    '9': '9th Semester'
+};
+```
+
+#### ✅ Step 6: courseData.js এ Courses Add করুন
+
+```javascript
+// courseMetadata এ semester 9 courses add করুন:
+'new-tech': {
+    semester: 9,
+    title: 'Emerging Technologies',
+    code: 'CSE-901',
+    credits: 3,
+    description: '...',
+    icon: 'fas fa-microchip',
+    color: '#06b6d4'
+}
+
+// courseResources এ add করুন:
+'9-new-tech': []
+```
+
+---
+
+## ➖ Course Delete করার Guide
+
+### যখন Course Delete করবেন:
+
+#### ✅ Step 1: courseData.js থেকে Remove করুন
+
+```javascript
+// courseMetadata থেকে delete করুন:
+// 'ai-lab': { ... }  ← এটা delete করুন
+
+// courseResources থেকে delete করুন:
+// '5-ai-lab': [ ... ]  ← এটা delete করুন
+```
+
+#### ✅ Step 2: Semester HTML থেকে Course Card Remove করুন
+
+`semester5.html` থেকে ঐ course এর `<a class="course-card">...</a>` পুরোটা delete করুন।
+
+#### 🎉 Done! 
+- `university.html` এ semester এর course count কমে যাবে
+- `semester5.html` থেকে course card চলে যাবে
+
+---
+
+## ➖ Semester Delete করার Guide
+
+### যখন Semester Delete করবেন:
+
+#### ✅ Step 1: semester HTML file delete করুন
+`semester9.html` file delete করুন।
+
+#### ✅ Step 2: সব semester files থেকে navigation tab remove করুন
+```html
+<!-- এই line সব semester files থেকে delete করুন -->
+<a href="semester9.html" class="semester-tab">9th Sem</a>
+```
+
+#### ✅ Step 3: university.html থেকে semester card remove করুন
+Semester 9 এর card এবং JavaScript code remove করুন।
+
+#### ✅ Step 4: course.html থেকে data remove করুন
+```javascript
+// semesterLinks এবং semesterNames থেকে '9' remove করুন
+```
+
+#### ✅ Step 5: courseData.js থেকে courses remove করুন
+সব semester 9 এর courses এবং resources delete করুন।
+
+---
+
 Course card এ Lab Reports, Notes, PPT এর count automatically হিসাব হয় `courseResources` থেকে।
 
 ### কিভাবে কাজ করে:
@@ -312,6 +616,59 @@ const courseResources = {
 ```
 ```
 Course Card: "2 Lab Reports" "1 Notes" দেখাবে
+```
+
+---
+
+## 📧 EmailJS Contact Form System
+
+### কিভাবে কাজ করে:
+
+Contact form এ EmailJS ব্যবহার করা হয়েছে। দুইটা email যায়:
+
+1. **Main Email** → আপনার কাছে (সব details সহ)
+2. **Auto Reply** → User এর কাছে (Thank you message)
+
+### Configuration (contact.html):
+
+```javascript
+// EmailJS Credentials
+const EMAILJS_PUBLIC_KEY = 'jt_E_2wOZ0XhwSTyF';
+const EMAILJS_SERVICE_ID = 'service_sajjad';
+const EMAILJS_TEMPLATE_ID = 'template_wwymg5f';        // Main email
+const EMAILJS_AUTOREPLY_TEMPLATE_ID = 'template_891ymr7';  // Auto reply
+
+// Template Variables পাঠানো হয়:
+{
+    name: 'User Name',
+    email: 'user@email.com',
+    subject: 'Subject',
+    message: 'Message content',
+    time: 'Monday, January 15, 2026 at 10:30:45 AM'
+}
+```
+
+### EmailJS Dashboard এ Template Variables:
+
+Main Template (`template_wwymg5f`) এ use করুন:
+- `{{name}}` - Sender's name
+- `{{email}}` - Sender's email
+- `{{subject}}` - Email subject
+- `{{message}}` - Message body
+- `{{time}}` - Submission time
+
+Auto Reply Template (`template_891ymr7`) এ use করুন:
+- `{{name}}` - Sender's name (for greeting)
+- `{{email}}` - Sender's email (To address)
+- `{{time}}` - When they sent the message
+
+### EmailJS Setup করতে চাইলে:
+
+1. [EmailJS Dashboard](https://dashboard.emailjs.com/) এ যান
+2. Email Service add করুন (Gmail/Outlook)
+3. Email Templates create করুন
+4. `contact.html` এ credentials update করুন
+
 ---
 
 ## 🎨 Color Palette
@@ -330,6 +687,21 @@ Course এর জন্য ব্যবহৃত colors:
 
 ---
 
+## 📝 Quick Reference - কোথায় কি আছে
+
+| যা করতে চান | যেখানে যেতে হবে |
+|-------------|----------------|
+| Course add করতে | `courseData.js` → `courseMetadata` + semester HTML |
+| Resource add করতে | `courseData.js` → `courseResources` |
+| Course delete করতে | `courseData.js` + semester HTML থেকে remove |
+| Semester add করতে | New HTML + update all semester HTMLs + university.html + course.html |
+| Email settings change করতে | `contact.html` → EmailJS section |
+| Course page stats দেখতে | `course.html` → uses `getResourceCounts()` |
+| Semester page counts দেখতে | `semester1-8.html` → uses `getResourceCounts()` |
+| University page stats দেখতে | `university.html` → uses `getSemesterStats()` |
+
+---
+
 ## 🔧 Troubleshooting
 
 ### Resource দেখাচ্ছে না?
@@ -345,6 +717,11 @@ Course এর জন্য ব্যবহৃত colors:
 1. Page refresh করুন
 2. Browser cache clear করুন
 3. `courseData.js` এ resources সঠিকভাবে add করা আছে কিনা check করুন
+
+### Email send হচ্ছে না?
+1. EmailJS credentials সঠিক কিনা check করুন
+2. EmailJS dashboard এ quota শেষ হয়ে গেছে কিনা দেখুন
+3. Browser console এ error আছে কিনা দেখুন
 
 ---
 

@@ -1040,6 +1040,35 @@
                 ? courseResources[resourceKey] 
                 : [];
             
+            // ==========================================
+            // UPDATE STATS DYNAMICALLY
+            // ==========================================
+            const statCounts = {
+                'lab-report': 0,
+                'notes': 0,
+                'project': 0,
+                'ppt': 0,
+                'assignment': 0,
+                'total': resources.length
+            };
+            resources.forEach(r => {
+                if (statCounts.hasOwnProperty(r.category)) {
+                    statCounts[r.category]++;
+                }
+                // Count project-report as project
+                if (r.category === 'project-report') {
+                    statCounts['project']++;
+                }
+            });
+            
+            // Update stat elements
+            document.getElementById('stat-lab').textContent = statCounts['lab-report'];
+            document.getElementById('stat-notes').textContent = statCounts['notes'];
+            document.getElementById('stat-project').textContent = statCounts['project'];
+            document.getElementById('stat-ppt').textContent = statCounts['ppt'];
+            document.getElementById('stat-assignment').textContent = statCounts['assignment'];
+            document.getElementById('stat-total').textContent = statCounts['total'];
+            
             // Resource category icons and colors
             const categoryConfig = {
                 'lab-report': { icon: 'fas fa-flask', class: 'lab-report' },

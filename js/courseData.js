@@ -126,6 +126,15 @@ const courseMetadata = {
         icon: 'fas fa-satellite-dish',
         color: '#4ade80'
     },
+    'english2': {
+        semester: 2,
+        title: 'English II',
+        code: 'ENG-102',
+        credits: 2,
+        description: 'Advanced English communication, writing skills, and professional correspondence.',
+        icon: 'fas fa-language',
+        color: '#e879f9'
+    },
     
     // ========== SEMESTER 3 ==========
     'data-structures': {
@@ -463,62 +472,26 @@ const courseMetadata = {
 
 const courseResources = {
     // ========================================================
-    // EXAMPLE: 1st Semester - Programming Fundamentals
+    // ADD YOUR COURSE RESOURCES HERE
+    // Format: 'semester-coursekey': [ array of resources ]
     // ========================================================
-    '1-programming': [
-        {
-            category: 'lab-report',
-            title: 'Lab 01: Introduction to C Programming',
-            description: 'Basic input/output operations, printf & scanf functions.',
-            fileType: 'PDF',
-            meta: 'Jan 15, 2024',
-            previewUrl: '#',
-            downloadUrl: '#'
-        },
-        {
-            category: 'lab-report',
-            title: 'Lab 02: Variables & Data Types',
-            description: 'Understanding int, float, char, double data types.',
-            fileType: 'PDF',
-            meta: 'Jan 22, 2024',
-            previewUrl: '#',
-            downloadUrl: '#'
-        },
-        {
-            category: 'notes',
-            title: 'Chapter 1: Introduction to Programming',
-            description: 'Complete lecture notes covering programming basics.',
-            fileType: 'PDF',
-            meta: '25 Pages',
-            previewUrl: '#',
-            downloadUrl: '#'
-        },
-        {
-            category: 'project',
-            title: 'Student Management System',
-            description: 'Complete C project with file handling.',
-            fileType: 'C Source',
-            meta: 'Featured',
-            previewUrl: '#',
-            downloadUrl: '#',
-            featured: true
-        }
-    ],
-    
+    // 
+    // Example:
+    // '1-programming': [
+    //     {
+    //         category: 'lab-report',
+    //         title: 'Lab 01: Introduction to C',
+    //         description: 'Basic input/output operations.',
+    //         fileType: 'PDF',
+    //         meta: 'Jan 15, 2024',
+    //         previewUrl: 'your-link',
+    //         downloadUrl: 'your-link',
+    //         featured: false
+    //     }
+    // ],
+    //
+    // Categories: 'lab-report', 'notes', 'ppt', 'assignment', 'project', 'project-report', 'book'
     // ========================================================
-    // ADD YOUR COURSE RESOURCES BELOW
-    // Copy the format above for each course
-    // ========================================================
-    
-    // '1-physics': [],
-    // '1-math': [],
-    // '1-chemistry': [],
-    // '1-english': [],
-    // '1-electrical': [],
-    
-    // '2-oop': [],
-    // '2-discrete-math': [],
-    // ... add more courses as needed
 };
 
 
