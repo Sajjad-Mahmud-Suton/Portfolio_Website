@@ -2,21 +2,21 @@
 <html lang="en">
 <head>
     <!-- ============================================
-         PROJECTS PAGE - Personal Portfolio Website
-         Filterable project grid with categories
+         HOME PAGE - Personal Portfolio Website
+         Modern dark theme with teal-purple accents
          ============================================ -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Explore my portfolio of web development and design projects across various technologies and industries.">
-    <meta name="keywords" content="projects, portfolio, web development, design, work">
-    <meta name="author" content="Your Name">
+    <meta name="description" content="Welcome to my portfolio - I'm a creative web developer specializing in modern, responsive websites.">
+    <meta name="keywords" content="portfolio, web developer, designer, frontend, developer">
+    <meta name="author" content="Sajjad Mahmud">
     
     <link rel="apple-touch-icon" sizes="180x180" href="image/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="image/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="image/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
     
-    <title>Projects | SAJJAD - Web Developer</title>
+    <title>Sajjad Mahmud | Web Developer & Designer</title>
     
     <!-- Google Fonts - Poppins -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -27,26 +27,50 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <!-- Main Stylesheet -->
-   <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/style.css">
 
 </head>
 <body>
     <!-- ==========================================
+         FIXED SOCIAL SIDEBAR - Left Side
+         ========================================== -->
+    <div class="social-sidebar">
+        <a href="https://github.com/Sajjad-Mahmud-Suton" target="_blank" class="social-sidebar-link" data-tooltip="GitHub">
+            <i class="fab fa-github"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/md-sajjad-mahmud-suton-344a802a7/" target="_blank" class="social-sidebar-link" data-tooltip="LinkedIn">
+            <i class="fab fa-linkedin-in"></i>
+        </a>
+        <a href="mailto:sajjadmahmudsuton@gmail.com"  class="social-sidebar-link" data-tooltip="Email">
+            <i class="fas fa-envelope"></i>
+        </a>
+        <a href="https://www.facebook.com/sajjadmahmudsuton.suton/" target="_blank" class="social-sidebar-link" data-tooltip="Facebook">
+            <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="https://twitter.com/sajjadmahmud" target="_blank" class="social-sidebar-link" data-tooltip="Twitter">
+            <i class="fab fa-twitter"></i>
+        </a>
+    </div>
+
+    <!-- ==========================================
          NAVIGATION BAR
+         Fixed navbar with logo, links, and CV download
          ========================================== -->
     <nav class="navbar">
         <div class="container">
+            <!-- Logo -->
             <a href="index.html" class="nav-logo">SAJJAD MAHMUD</a>
             
+            <!-- Navigation Menu -->
             <ul class="nav-menu">
-                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="index.html" class="nav-link active">Home</a></li>
                 <li><a href="about.html" class="nav-link">About</a></li>
                 <li><a href="education.html" class="nav-link">Education</a></li>
-                <li><a href="projects.html" class="nav-link active">Projects</a></li>
+                <li><a href="projects.html" class="nav-link">Projects</a></li>
                 <li><a href="blog.html" class="nav-link">Blog</a></li>
                 <li><a href="contact.html" class="nav-link">Contact</a></li>
-                <li><a href="cv.html" class="btn  btn-cv-download" target="_blank"><i class="fas fa-download"></i>Download CV</a></li>
-                
+                <!-- CV Download Button -->
+               <li><a href="cv.html" class="btn  btn-cv-download" target="_blank"><i class="fas fa-download"></i>Download CV</a></li>
             </ul>
             
             <!-- Theme Toggle Button -->
@@ -54,6 +78,7 @@
                 <i class="fas fa-moon"></i>
             </button>
             
+            <!-- Mobile Menu Toggle -->
             <div class="nav-toggle">
                 <span></span>
                 <span></span>
@@ -63,65 +88,142 @@
     </nav>
 
     <!-- ==========================================
-         PAGE HEADER
+         HERO SECTION
+         Full-screen hero with particles, gradient bg
          ========================================== -->
-    <section class="section" style="padding-top: 150px; padding-bottom: 40px;">
+    <section class="hero">
+        <!-- Particle/Gradient Background -->
+        <div class="hero-background">
+            <canvas id="particles-canvas"></canvas>
+            <div class="hero-gradient gradient-1"></div>
+            <div class="hero-gradient gradient-2"></div>
+        </div>
+        
+        <div class="container">
+            <div class="hero-content fade-in">
+                <!-- Subtitle -->
+                <span class="hero-subtitle"><i class="fas fa-hand-sparkles" style="color: #fbbf24;"></i> Welcome to my portfolio</span>
+                
+                <!-- Main Title -->
+                <h1 class="hero-title">
+                    Hi, I'm <span class="gradient-text">Sajjad Mahmud</span><br>
+                    A Creative <span class="typing-text">Web Developer</span>
+                </h1>
+                
+                <!-- Description -->
+                <p class="hero-description">
+                    I design and build beautiful, responsive websites that help businesses 
+                    grow and succeed in the digital world. Let's create something amazing together.
+                </p>
+                
+                <!-- Call to Action Buttons -->
+                <div class="hero-buttons">
+                    <a href="projects.html" class="btn btn-primary">
+                        <i class="fas fa-eye"></i> View My Work
+                    </a>
+                    <a href="contact.html" class="btn btn-secondary">
+                        <i class="fas fa-envelope"></i> Get In Touch
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Hero Image - Ultra Modern 3D Style -->
+            <div class="hero-visual float">
+                <!-- Background geometric shapes -->
+                <div class="geo-shape geo-1"></div>
+                <div class="geo-shape geo-2"></div>
+                <div class="geo-shape geo-3"></div>
+                
+                <!-- Glowing orbs -->
+                <div class="glow-orb orb-1"></div>
+                <div class="glow-orb orb-2"></div>
+                
+                <!-- Main 3D Card -->
+                <div class="hero-card-3d">
+                    <div class="card-inner">
+                        <!-- Glass overlay -->
+                        <div class="glass-overlay"></div>
+                        
+                        <!-- Image -->
+                        <img src="image/Sajjad_Mahmud.png" alt="Md.Sajjad Mahmud Suton">
+                        
+                        <!-- Animated border -->
+                        <div class="animated-border"></div>
+                    </div>
+                    
+                    <!-- Status indicator -->
+                    <div class="status-badge">
+                        <span class="status-dot"></span>
+                        <span>Available for work</span>
+                    </div>
+                </div>
+                
+                <!-- Floating tech icons -->
+                <div class="floating-icon icon-1"><i class="fab fa-react"></i></div>
+                <div class="floating-icon icon-2"><i class="fab fa-js"></i></div>
+                <div class="floating-icon icon-3"><i class="fab fa-python"></i></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         FEATURED SECTION - Quick Stats
+         ========================================== -->
+    <section class="section" style="padding-top: 60px;">
+        <div class="container">
+            <div class="projects-grid" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));">
+                <!-- Stat Card 1 -->
+                <div class="card fade-in text-center">
+                    <div class="skill-icon" style="margin-bottom: 15px;">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3 class="gradient-text">15+</h3>
+                    <p>Projects Completed</p>
+                </div>
+                
+                <!-- Stat Card 2 -->
+                <div class="card fade-in fade-in-delay-1 text-center">
+                    <div class="skill-icon" style="margin-bottom: 15px;">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3 class="gradient-text">30+</h3>
+                    <p>Happy Clients</p>
+                </div>
+                
+                <!-- Stat Card 3 -->
+                <div class="card fade-in fade-in-delay-2 text-center">
+                    <div class="skill-icon" style="margin-bottom: 15px;">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <h3 class="gradient-text">5+</h3>
+                    <p>Years Experience</p>
+                </div>
+                
+                <!-- Stat Card 4 -->
+                <div class="card fade-in fade-in-delay-3 text-center">
+                    <div class="skill-icon" style="margin-bottom: 15px;">
+                        <i class="fas fa-coffee"></i>
+                    </div>
+                    <h3 class="gradient-text">∞</h3>
+                    <p>Cups of Coffee</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         FEATURED PROJECTS PREVIEW
+         ========================================== -->
+    <section class="section">
         <div class="container">
             <div class="section-header fade-in">
-                <h2>My <span class="gradient-text">Projects</span></h2>
-                <p>A collection of my work across web development, design, and more. Filter by category to explore.</p>
+                <h2>Featured <span class="gradient-text">Projects</span></h2>
+                <p>Check out some of my recent work that showcases my skills and creativity.</p>
             </div>
-        </div>
-    </section>
-
-    <!-- ==========================================
-         FILTER BUTTONS
-         ========================================== -->
-    <section style="padding-bottom: 30px;">
-        <div class="container">
-            <div class="filter-buttons fade-in">
-                <!-- Filter: All -->
-                <button class="filter-btn active" data-filter="all">
-                    <i class="fas fa-th"></i> All Projects
-                </button>
-                
-                <!-- Filter: Web Apps -->
-                <button class="filter-btn" data-filter="web">
-                    <i class="fas fa-globe"></i> Web Apps
-                </button>
-                
-                <!-- Filter: Mobile -->
-                <button class="filter-btn" data-filter="mobile">
-                    <i class="fas fa-mobile-alt"></i> Mobile
-                </button>
-                
-                <!-- Filter: UI/UX -->
-                <button class="filter-btn" data-filter="design">
-                    <i class="fas fa-paint-brush"></i> UI/UX
-                </button>
-                
-                <!-- Filter: Open Source -->
-                <button class="filter-btn" data-filter="opensource">
-                    <i class="fab fa-github"></i> Open Source
-                </button>
-                
-                <!-- Filter: University - Links to separate page -->
-                <a href="university.html" class="filter-btn" style="text-decoration: none;">
-                    <i class="fas fa-university"></i> University
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- ==========================================
-         PROJECTS GRID
-         ========================================== -->
-    <section class="section" style="padding-top: 0;">
-        <div class="container">
+            
             <div class="projects-grid">
-                
-                <!-- ========== PROJECT 1 - E-Commerce ========== -->
-                <div class="card project-card fade-in" data-category="web">
+                <!-- Project Card 1 -->
+                <div class="card project-card fade-in">
                     <div class="project-image">
                         <img src="image/Green_Bites.png" alt="Project 1">
                     </div>
@@ -147,8 +249,8 @@
                     </div>
                 </div>
                 
-                <!-- ========== PROJECT 2 - Task Manager ========== -->
-                <div class="card project-card fade-in" data-category="web">
+                <!-- Project Card 2 -->
+                <div class="card project-card fade-in fade-in-delay-1">
                     <div class="project-image">
                         <img src="image/GreenGuardian.png" alt="Project 2">
                     </div>
@@ -167,98 +269,15 @@
                             <a href="https://green--guardian.web.app/" target="_blank" class="project-link">
                                 <i class="fas fa-external-link-alt"></i> Live Demo
                             </a>
-                            <a href="https://github.com/Sajjad-Mahmud-Suton/Green-Guardian" target="_blank" class="project-link">
+                            <a href="https://github.com/Sajjad-Mahmud-Suton/Green-Guardian" class="project-link">
                                 <i class="fab fa-github"></i> Source Code
                             </a>
                         </div>
                     </div>
                 </div>
                 
-                <!-- ========== PROJECT 3 - Fitness App ========== -->
-                <div class="card project-card fade-in" data-category="mobile">
-                    <div class="project-image">
-                        <img src="image/stu-man.jfif" alt="Fitness Tracking App">
-                    </div>
-                    <div class="project-content">
-                        <div class="project-tags">
-                            <span class="project-tag">React Native</span>
-                            <span class="project-tag">Redux</span>
-                            <span class="project-tag">Node.js</span>
-                        </div>
-                        <h3 class="project-title">Fitness Tracking App</h3>
-                        <p class="project-description">
-                            A cross-platform mobile app for tracking workouts, calories, 
-                            progress photos, and setting personalized fitness goals.
-                        </p>
-                        <div class="project-links">
-                            <a href="#" class="project-link">
-                                <i class="fas fa-external-link-alt"></i> App Store
-                            </a>
-                            <a href="#" class="project-link">
-                                <i class="fab fa-github"></i> Source Code
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- ========== PROJECT 4 - Student Management System ========== -->
-                <div class="card project-card fade-in" data-category="design">
-                    <div class="project-image">
-                        <img src="image/stu-man.jfif" alt="Analytics Dashboard">
-                    </div>
-                    <div class="project-content">
-                    <div class="project-tags">
-                        <span class="project-tag">C</span>
-                        <span class="project-tag">File Handling</span>
-                        <span class="project-tag">Data Structures</span>
-                    </div>
-                    <h3 class="project-title">Student Management System</h3>
-                    <p class="project-description">
-                        Console-based Student Management System in C. 
-                Allows adding, updating, searching, and deleting student records using file handling and arrays.
-                    </p>
-                    <div class="project-links">
-                        <a href="#" class="project-link">
-                            <i class="fas fa-code"></i> View Code
-                        </a>
-                        <a href="#" class="project-link">
-                            <i class="fas fa-file-alt"></i> Project Report
-                        </a>
-                    </div>
-                </div>
-
-                </div>
-                
-                <!-- ========== PROJECT 5 - Open Source Library ========== -->
-                <div class="card project-card fade-in" data-category="opensource">
-                    <div class="project-image">
-                        <img src="image/mini-atm.jfif" alt="React UI Library">
-                    </div>
-                    <div class="project-content">
-    <div class="project-tags">
-        <span class="project-tag">Assembly Language</span>
-        <span class="project-tag">Microprocessor</span>
-        <span class="project-tag">Low-Level Programming</span>
-    </div>
-    <h3 class="project-title">Mini ATM System</h3>
-    <p class="project-description">
-        A console-based Mini ATM simulation using Assembly language. 
-        Implements PIN verification, balance checking, and cash withdrawal, focusing on register management and low-level programming logic.
-    </p>
-    <div class="project-links">
-        <a href="#" class="project-link">
-            <i class="fas fa-code"></i> View Code
-        </a>
-        <a href="#" class="project-link">
-            <i class="fas fa-file-alt"></i> Project Report
-        </a>
-    </div>
-</div>
-
-                </div>
-                
-                <!-- ========== PROJECT 6 - Portfolio ========== -->
-                <div class="card project-card fade-in" data-category="web">
+                <!-- Project Card 3 -->
+                <div class="card project-card fade-in fade-in-delay-2">
                     <div class="project-image">
                         <img src="image/Portfolio1.png" alt="PortfolioWebsite">
                     </div>
@@ -275,94 +294,19 @@
                             <a href="#" class="project-link">
                                 <i class="fas fa-external-link-alt"></i> Live Demo
                             </a>
-                            <a href="https://github.com/Sajjad-Mahmud-Suton/Portfolio_Website" target="_blank" class="project-link">
+                            <a href="https://github.com/Sajjad-Mahmud-Suton/Portfolio_Website" class="project-link">
                                 <i class="fab fa-github"></i> Source Code
                             </a>
                         </div>
                     </div>
                 </div>
-                
-                <!-- ========== PROJECT 7 - Weather App ========== -->
-                <div class="card project-card fade-in" data-category="mobile">
-                    <div class="project-image">
-                        <img src="https://images.unsplash.com/photo-1504608524841-42fe6f032b4b?w=600&h=400&fit=crop" alt="Weather App">
-                    </div>
-                    <div class="project-content">
-                        <div class="project-tags">
-                            <span class="project-tag">Flutter</span>
-                            <span class="project-tag">Dart</span>
-                            <span class="project-tag">API</span>
-                        </div>
-                        <h3 class="project-title">Weather Forecast App</h3>
-                        <p class="project-description">
-                            A beautiful weather app with location-based forecasts, hourly updates, 
-                            weather alerts, and stunning animated backgrounds.
-                        </p>
-                        <div class="project-links">
-                            <a href="#" class="project-link">
-                                <i class="fas fa-external-link-alt"></i> Play Store
-                            </a>
-                            <a href="#" class="project-link">
-                                <i class="fab fa-github"></i> Source Code
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- ========== PROJECT 8 - Mobile Banking UI ========== -->
-                <div class="card project-card fade-in" data-category="design">
-                    <div class="project-image">
-                        <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?w=600&h=400&fit=crop" alt="Mobile Banking UI">
-                    </div>
-                    <div class="project-content">
-                        <div class="project-tags">
-                            <span class="project-tag">Figma</span>
-                            <span class="project-tag">Prototype</span>
-                            <span class="project-tag">Mobile UI</span>
-                        </div>
-                        <h3 class="project-title">Mobile Banking App UI</h3>
-                        <p class="project-description">
-                            Complete UI/UX design for a fintech banking app with transaction history, 
-                            budgeting tools, and biometric authentication flows.
-                        </p>
-                        <div class="project-links">
-                            <a href="#" class="project-link">
-                                <i class="fab fa-figma"></i> View Design
-                            </a>
-                            <a href="#" class="project-link">
-                                <i class="fas fa-file-alt"></i> Case Study
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- ========== PROJECT 9 - CLI Tool ========== -->
-                <div class="card project-card fade-in" data-category="opensource">
-                    <div class="project-image">
-                        <img src="https://images.unsplash.com/photo-1629654297299-c8506221ca97?w=600&h=400&fit=crop" alt="CLI Tool">
-                    </div>
-                    <div class="project-content">
-                        <div class="project-tags">
-                            <span class="project-tag">Node.js</span>
-                            <span class="project-tag">CLI</span>
-                            <span class="project-tag">NPM</span>
-                        </div>
-                        <h3 class="project-title">Project Scaffolding CLI</h3>
-                        <p class="project-description">
-                            A command-line tool for quickly scaffolding new projects with templates 
-                            for React, Vue, Node.js, and more. Over 5,000+ downloads.
-                        </p>
-                        <div class="project-links">
-                            <a href="#" class="project-link">
-                                <i class="fas fa-book"></i> Documentation
-                            </a>
-                            <a href="#" class="project-link">
-                                <i class="fab fa-github"></i> GitHub
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                
+            </div>
+            
+            <!-- View All Projects Button -->
+            <div class="text-center mt-5 fade-in">
+                <a href="projects.html" class="btn btn-primary">
+                    <i class="fas fa-th"></i> View All Projects
+                </a>
             </div>
         </div>
     </section>
@@ -373,12 +317,12 @@
     <section class="section" style="background: var(--bg-secondary);">
         <div class="container">
             <div class="text-center fade-in">
-                <h2>Have a Project in <span class="gradient-text">Mind</span>?</h2>
+                <h2>Ready to Start a <span class="gradient-text">Project</span>?</h2>
                 <p style="max-width: 600px; margin: 20px auto 30px;">
-                    I'm always looking for exciting new projects to work on. Let's discuss how I can help bring your ideas to life.
+                    I'm always open to discussing new projects, creative ideas, or opportunities to be part of your visions.
                 </p>
                 <a href="contact.html" class="btn btn-primary">
-                    <i class="fas fa-paper-plane"></i> Start a Project
+                    <i class="fas fa-paper-plane"></i> Let's Talk
                 </a>
             </div>
         </div>
