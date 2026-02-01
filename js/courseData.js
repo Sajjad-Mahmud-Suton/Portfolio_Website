@@ -502,6 +502,14 @@ const courseResources = {
     //
     // Categories: 'lab-report', 'notes', 'ppt', 'slides', 'assignment', 'project', 'project-report', 'book'
     // ========================================================
+
+
+    // ========================================================
+    // ========================================================
+                    //6th Semester Courses Materials
+    // ========================================================
+    // ========================================================
+
     '6-ai': [
         {
             category: 'ppt',
@@ -563,6 +571,91 @@ const courseResources = {
             downloadUrl: 'https://drive.google.com/file/d/1sBjqsgoH8n5hWanQaaoHpbiBaHmtBInQ/view?usp=sharing',
             featured: true
         }
+    ],
+
+
+    // ========================================================
+    // ========================================================
+                    //7th Semester Courses Materials
+    // ========================================================
+    // ========================================================
+     '7-cybersecurity': [
+       {
+            category: 'slides',
+             title: 'Slide 01: Introduction ',
+             description: 'Basic information.',
+            fileType: 'PPTX',
+             meta: 'Feb 01, 2026',
+             previewUrl: 'https://docs.google.com/presentation/d/18-g3T7g469W4DT9XCzJ9TMcPWBUwhlnk/edit?usp=sharing&ouid=108140212801946690894&rtpof=true&sd=true',
+             downloadUrl: 'https://docs.google.com/presentation/d/18-g3T7g469W4DT9XCzJ9TMcPWBUwhlnk/edit?usp=sharing&ouid=108140212801946690894&rtpof=true&sd=true',
+             featured: false
+         },
+         {
+            category: 'book',
+             title: 'Artificial Intelligence by Stuart Russel and Peter Norvig ',
+             description: 'Book.',
+            fileType: 'PDF',
+             meta: 'Feb 01, 2026',
+             previewUrl: 'https://drive.google.com/file/d/1LouE_SRsfaAuqW_QtHZWQlOmEsqGWGDM/view?usp=sharing',
+             downloadUrl: 'https://drive.google.com/file/d/1LouE_SRsfaAuqW_QtHZWQlOmEsqGWGDM/view?usp=sharing',
+             featured: false
+         }
+    ],
+
+    '7-distributed-systems': [
+       {
+            category: 'slides',
+             title: 'Implementation of HTTP POST and GET methods ',
+             description: 'Lab Manual 01.',
+            fileType: 'PDF',
+             meta: 'Feb 01, 2026',
+             previewUrl: 'https://drive.google.com/file/d/1WS3Rl5EEGq6pTijNfQdoK5qLcLBl7spg/view?usp=sharing',
+             downloadUrl: 'https://drive.google.com/file/d/1WS3Rl5EEGq6pTijNfQdoK5qLcLBl7spg/view?usp=sharing',
+             featured: false
+         }
+    ],
+
+        '7-big-data': [
+       {
+            category: 'slides',
+             title: 'Introduction to Computer Networking ',
+             description: 'Week 01 Class 01.',
+            fileType: 'PPTX',
+             meta: 'Feb 01, 2026',
+             previewUrl: 'https://docs.google.com/presentation/d/17roEV5mQkR9xo57ikmR-0a9QEcfObt4Y/edit?usp=sharing&ouid=108140212801946690894&rtpof=true&sd=true',
+             downloadUrl: 'https://docs.google.com/presentation/d/17roEV5mQkR9xo57ikmR-0a9QEcfObt4Y/edit?usp=sharing&ouid=108140212801946690894&rtpof=true&sd=true',
+             featured: false
+         },
+         {
+            category: 'slides',
+             title: 'Delay in Packet Switched Networks ',
+             description: 'Week 01 Class 02.',
+            fileType: 'PPTX',
+             meta: 'Feb 01, 2026',
+             previewUrl: 'https://docs.google.com/presentation/d/1nQg9E74pL00q9-qr6NrQNb7jOkCUcCxv/edit?usp=sharing&ouid=108140212801946690894&rtpof=true&sd=true',
+             downloadUrl: 'https://docs.google.com/presentation/d/1nQg9E74pL00q9-qr6NrQNb7jOkCUcCxv/edit?usp=sharing&ouid=108140212801946690894&rtpof=true&sd=true',
+             featured: false
+         },
+                  {
+            category: 'slides',
+             title: 'Principles of Network Applications',
+             description: 'Week 02 Class 01.',
+            fileType: 'PPTX',
+             meta: 'Feb 01, 2026',
+             previewUrl: 'https://docs.google.com/presentation/d/1kam6YsMjTZEPymrXD5nlUYtH4SlSQMZK/edit?usp=sharing&ouid=108140212801946690894&rtpof=true&sd=true',
+             downloadUrl: 'https://docs.google.com/presentation/d/1kam6YsMjTZEPymrXD5nlUYtH4SlSQMZK/edit?usp=sharing&ouid=108140212801946690894&rtpof=true&sd=true',
+             featured: false
+         },
+                  {
+            category: 'slides',
+             title: 'Electronic Mail-Email ',
+             description: 'Week 02 Class 02.',
+            fileType: 'PPTX',
+             meta: 'Feb 01, 2026',
+             previewUrl: 'https://docs.google.com/presentation/d/1L0QxnR3SNrKFD5arnsQGI8bx5JV5XESr/edit?usp=sharing&ouid=108140212801946690894&rtpof=true&sd=true',
+             downloadUrl: 'https://docs.google.com/presentation/d/1L0QxnR3SNrKFD5arnsQGI8bx5JV5XESr/edit?usp=sharing&ouid=108140212801946690894&rtpof=true&sd=true',
+             featured: false
+         },
     ]
 };
 
