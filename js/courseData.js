@@ -572,6 +572,68 @@ const courseResources = {
             featured: true
         }
     ],
+    '6-info-security': [
+        {
+            category: 'ppt',
+            title: 'Lab Manuals',
+            description: 'Design Project Course Lab Manuals.',
+            fileType: 'PDF',
+            meta: 'Feb 13, 2026',
+            previewUrl: 'https://drive.google.com/drive/folders/1jzUD7LzOkfMasTlGwV2IUjnyztRZ71VI?usp=sharing',
+            downloadUrl: 'https://drive.google.com/drive/folders/1jzUD7LzOkfMasTlGwV2IUjnyztRZ71VI?usp=sharing',
+            featured: true
+        },
+        {
+            category: 'lab-report',
+            title: 'Lab Reports',
+            description: 'Design Project Course Lab Reports.',
+            fileType: 'PDF',
+            meta: 'Feb 13, 2026',
+            previewUrl: 'https://drive.google.com/drive/folders/1q51LHbqN18OHM9esqWvhvid1_BfWkn7B?usp=sharing',
+            downloadUrl: 'https://drive.google.com/drive/folders/1q51LHbqN18OHM9esqWvhvid1_BfWkn7B?usp=sharing',
+            featured: true
+        },
+        {
+            category: 'project',
+            title: 'POSTER',
+            description: 'Design Project Course Poster.',
+            fileType: 'PDF',
+            meta: 'Feb 13, 2026',
+            previewUrl: 'https://drive.google.com/drive/folders/1vy5hCfEW05nksgEeAoqCeD7lF0Nf0CU3?usp=sharing',
+            downloadUrl: 'https://drive.google.com/drive/folders/1vy5hCfEW05nksgEeAoqCeD7lF0Nf0CU3?usp=sharing',
+            featured: true
+        },
+        {
+            category: 'project',
+            title: 'Live Project ',
+            description: 'Design Project Course Live Project.',
+            fileType: 'PDF',
+            meta: 'Feb 13, 2026',
+            previewUrl: 'https://drive.google.com/drive/folders/1Z4agfbQhHDJpQth00nTVQtExYWq_u-Mm?usp=sharing',
+            downloadUrl: 'https://drive.google.com/drive/folders/1Z4agfbQhHDJpQth00nTVQtExYWq_u-Mm?usp=sharing',
+            featured: true
+        },
+        {
+            category: 'assignment',
+            title: 'Project Proposal ',
+            description: 'Green Guardian Project Proposal.',
+            fileType: 'PDF',
+            meta: 'Feb 13, 2026',
+            previewUrl: 'https://drive.google.com/drive/folders/1uvE1w_C4JdPsnZqx9-gJyWxWKFIR1zB5?usp=sharing',
+            downloadUrl: 'https://drive.google.com/drive/folders/1uvE1w_C4JdPsnZqx9-gJyWxWKFIR1zB5?usp=sharing',
+            featured: true
+        },
+        {
+            category: 'project-report',
+            title: 'Project Report ',
+            description: 'Green Guardian Project Report.',
+            fileType: 'PDF',
+            meta: 'Feb 13, 2026',
+            previewUrl: 'https://drive.google.com/drive/folders/1r9R8cjENW4n8SRcWaaJtP2ko7Q09_rVk?usp=sharing',
+            downloadUrl: 'https://drive.google.com/drive/folders/1r9R8cjENW4n8SRcWaaJtP2ko7Q09_rVk?usp=sharing',
+            featured: true
+        }
+    ],
 
 
     // ========================================================
@@ -579,16 +641,101 @@ const courseResources = {
                     //7th Semester Courses Materials
     // ========================================================
     // ========================================================
+
+    '7-cloud-computing': [
+        {
+            category: 'ppt',
+             title: 'Midterm PPT ',
+             description: 'All Slides.',
+            fileType: 'PPTX',
+             meta: 'Feb 13, 2026',
+             previewUrl: 'https://drive.google.com/drive/folders/1WCJSuai4CpIfW4GQ46H7gkzhuZTYD5Cx?usp=sharing',
+             downloadUrl: 'https://drive.google.com/drive/folders/1WCJSuai4CpIfW4GQ46H7gkzhuZTYD5Cx?usp=sharing',
+             featured: true
+        },
+        {
+            category: 'others',
+             title: 'Course Outline ',
+             description: 'Course Outline of Software Engineering.',
+            fileType: 'PDF',
+             meta: 'Feb 13, 2026',
+             previewUrl: 'https://drive.google.com/file/d/1IPnfdZI85FBkL1K1wroJLS8sRKy0iDos/view?usp=sharing',
+             downloadUrl: 'https://drive.google.com/file/d/1IPnfdZI85FBkL1K1wroJLS8sRKy0iDos/view?usp=sharing',
+             featured: true
+        },
+        {
+            category: 'book',
+             title: 'Sommerville-Software-Engineering-10ed ',
+             description: 'Software Engineering Book by Sommerville.',
+            fileType: 'PDF',
+             meta: 'Feb 13, 2026',
+             previewUrl: 'https://drive.google.com/file/d/1SrEfIJMO5xotj2-6VyDDrIsUGYseh3Ok/view?usp=sharing',
+             downloadUrl: 'https://drive.google.com/file/d/1SrEfIJMO5xotj2-6VyDDrIsUGYseh3Ok/view?usp=sharing',
+             featured: true
+        },
+
+
+    ],
      '7-cybersecurity': [
        {
-            category: 'slides',
+            category: 'ppt',
              title: 'Slide 01: Introduction ',
              description: 'Basic information.',
             fileType: 'PPTX',
              meta: 'Feb 01, 2026',
              previewUrl: 'https://docs.google.com/presentation/d/18-g3T7g469W4DT9XCzJ9TMcPWBUwhlnk/edit?usp=sharing&ouid=108140212801946690894&rtpof=true&sd=true',
              downloadUrl: 'https://docs.google.com/presentation/d/18-g3T7g469W4DT9XCzJ9TMcPWBUwhlnk/edit?usp=sharing&ouid=108140212801946690894&rtpof=true&sd=true',
-             featured: false
+             featured: true
+         },
+         {
+            category: 'ppt',
+             title: 'Slide 02: Uniformed Search ',
+             description: 'About Uniformed Search.',
+            fileType: 'PPTX',
+             meta: 'Feb 13, 2026',
+             previewUrl: 'https://docs.google.com/presentation/d/1X0Bi-cQOJZyZHAfDS08vTY2JTl1_DioT/edit?usp=sharing&ouid=108140212801946690894&rtpof=true&sd=true',
+             downloadUrl: 'https://docs.google.com/presentation/d/1X0Bi-cQOJZyZHAfDS08vTY2JTl1_DioT/edit?usp=sharing&ouid=108140212801946690894&rtpof=true&sd=true',
+             featured: true
+         },
+          {
+            category: 'ppt',
+             title: 'Slide 03: Informed Search ',
+             description: 'About Informed Search.',
+            fileType: 'PPTX',
+             meta: 'Feb 13, 2026',
+             previewUrl: 'https://docs.google.com/presentation/d/1VC-UJEG6lkynk4QLMv5h9zu-ubO-Vpde/edit?usp=sharing&ouid=108140212801946690894&rtpof=true&sd=true',
+             downloadUrl: 'https://docs.google.com/presentation/d/1VC-UJEG6lkynk4QLMv5h9zu-ubO-Vpde/edit?usp=sharing&ouid=108140212801946690894&rtpof=true&sd=true',
+             featured: true
+         },
+         {
+            category: 'ppt',
+             title: 'Slide 04: Constraint Satisfaction Problems I',
+             description: 'About Constraint Satisfaction Problems I.',
+            fileType: 'PPTX',
+             meta: 'Feb 13, 2026',
+             previewUrl: 'https://docs.google.com/presentation/d/1STUK5fXxiYiWzwMFuiS4hqrCLwQW3HvV/edit?usp=sharing&ouid=108140212801946690894&rtpof=true&sd=true',
+             downloadUrl: 'https://docs.google.com/presentation/d/1STUK5fXxiYiWzwMFuiS4hqrCLwQW3HvV/edit?usp=sharing&ouid=108140212801946690894&rtpof=true&sd=true',
+             featured: true
+         },
+         {
+            category: 'ppt',
+             title: 'Slide 05: Constraint Satisfaction Problems II ',
+             description: 'About Constraint Satisfaction Problems II.',
+            fileType: 'PPTX',
+             meta: 'Feb 13, 2026',
+             previewUrl: 'https://docs.google.com/presentation/d/1oxXxxjnK-hM97z4uHM_PBJjuWAoSR5v-/edit?usp=sharing&ouid=108140212801946690894&rtpof=true&sd=true',
+             downloadUrl: 'https://docs.google.com/presentation/d/1oxXxxjnK-hM97z4uHM_PBJjuWAoSR5v-/edit?usp=sharing&ouid=108140212801946690894&rtpof=true&sd=true',
+             featured: true
+         },
+         {
+            category: 'ppt',
+             title: 'Slide 06: Local Search ',
+             description: 'About Local Search.',
+            fileType: 'PPTX',
+             meta: 'Feb 13, 2026',
+             previewUrl: 'https://docs.google.com/presentation/d/1KxXgbxZqvyUTJuUmaNAuJrtDVhSA6ecb/edit?usp=sharing&ouid=108140212801946690894&rtpof=true&sd=true',
+             downloadUrl: 'https://docs.google.com/presentation/d/1KxXgbxZqvyUTJuUmaNAuJrtDVhSA6ecb/edit?usp=sharing&ouid=108140212801946690894&rtpof=true&sd=true',
+             featured: true
          },
          {
             category: 'book',
@@ -598,21 +745,42 @@ const courseResources = {
              meta: 'Feb 01, 2026',
              previewUrl: 'https://drive.google.com/file/d/1LouE_SRsfaAuqW_QtHZWQlOmEsqGWGDM/view?usp=sharing',
              downloadUrl: 'https://drive.google.com/file/d/1LouE_SRsfaAuqW_QtHZWQlOmEsqGWGDM/view?usp=sharing',
-             featured: false
+             featured: true
          }
     ],
 
     '7-distributed-systems': [
-       {
-            category: 'slides',
-             title: 'Implementation of HTTP POST and GET methods ',
-             description: 'Lab Manual 01.',
+       
+            {
+            category: 'lab-manuals',
+             title: 'Lab Manuals ',
+             description: 'All Lab Manual .',
             fileType: 'PDF',
-             meta: 'Feb 01, 2026',
-             previewUrl: 'https://drive.google.com/file/d/1WS3Rl5EEGq6pTijNfQdoK5qLcLBl7spg/view?usp=sharing',
-             downloadUrl: 'https://drive.google.com/file/d/1WS3Rl5EEGq6pTijNfQdoK5qLcLBl7spg/view?usp=sharing',
-             featured: false
-         }
+             meta: 'Feb 13, 2026',
+             previewUrl: 'https://drive.google.com/drive/folders/19NC-Z9vRTZt_g1BdIr8-djm6TfBkpAWs?usp=sharing',
+             downloadUrl: 'https://drive.google.com/drive/folders/19NC-Z9vRTZt_g1BdIr8-djm6TfBkpAWs?usp=sharing',
+             featured: true
+            },
+            {
+            category: 'lab-report',
+             title: 'Introduction to Basic Operations on Python',
+             description: 'Lab Report NO 01.',
+            fileType: 'PDF',
+             meta: 'Feb 13, 2026',
+             previewUrl: 'https://drive.google.com/file/d/1gKykZnO-HcRccvhiLrxKLwWKzdRcFQ8O/view?usp=sharing',
+             downloadUrl: 'https://drive.google.com/file/d/1gKykZnO-HcRccvhiLrxKLwWKzdRcFQ8O/view?usp=sharing',
+             featured: true
+            },
+            {
+            category: 'question',
+             title: 'Introduction to Basic Operations on Python',
+             description: 'Lab Report NO 01 Questions.',
+            fileType: 'PDF',
+             meta: 'Feb 13, 2026',
+             previewUrl: 'https://drive.google.com/file/d/16ZvGcpcZceGEE-l2sGuY_xR5eKPABj_R/view?usp=sharing',
+             downloadUrl: 'https://drive.google.com/file/d/16ZvGcpcZceGEE-l2sGuY_xR5eKPABj_R/view?usp=sharing',
+             featured: true
+            }
     ],
 
         '7-big-data': [
@@ -624,7 +792,7 @@ const courseResources = {
              meta: 'Feb 01, 2026',
              previewUrl: 'https://docs.google.com/presentation/d/17roEV5mQkR9xo57ikmR-0a9QEcfObt4Y/edit?usp=sharing&ouid=108140212801946690894&rtpof=true&sd=true',
              downloadUrl: 'https://docs.google.com/presentation/d/17roEV5mQkR9xo57ikmR-0a9QEcfObt4Y/edit?usp=sharing&ouid=108140212801946690894&rtpof=true&sd=true',
-             featured: false
+             featured: true
          },
          {
             category: 'slides',
@@ -634,7 +802,7 @@ const courseResources = {
              meta: 'Feb 01, 2026',
              previewUrl: 'https://docs.google.com/presentation/d/1nQg9E74pL00q9-qr6NrQNb7jOkCUcCxv/edit?usp=sharing&ouid=108140212801946690894&rtpof=true&sd=true',
              downloadUrl: 'https://docs.google.com/presentation/d/1nQg9E74pL00q9-qr6NrQNb7jOkCUcCxv/edit?usp=sharing&ouid=108140212801946690894&rtpof=true&sd=true',
-             featured: false
+             featured: true
          },
                   {
             category: 'slides',
@@ -644,7 +812,7 @@ const courseResources = {
              meta: 'Feb 01, 2026',
              previewUrl: 'https://docs.google.com/presentation/d/1kam6YsMjTZEPymrXD5nlUYtH4SlSQMZK/edit?usp=sharing&ouid=108140212801946690894&rtpof=true&sd=true',
              downloadUrl: 'https://docs.google.com/presentation/d/1kam6YsMjTZEPymrXD5nlUYtH4SlSQMZK/edit?usp=sharing&ouid=108140212801946690894&rtpof=true&sd=true',
-             featured: false
+             featured: true
          },
                   {
             category: 'slides',
@@ -654,7 +822,29 @@ const courseResources = {
              meta: 'Feb 01, 2026',
              previewUrl: 'https://docs.google.com/presentation/d/1L0QxnR3SNrKFD5arnsQGI8bx5JV5XESr/edit?usp=sharing&ouid=108140212801946690894&rtpof=true&sd=true',
              downloadUrl: 'https://docs.google.com/presentation/d/1L0QxnR3SNrKFD5arnsQGI8bx5JV5XESr/edit?usp=sharing&ouid=108140212801946690894&rtpof=true&sd=true',
-             featured: false
+             featured: true
+         },
+    ],
+    '7-iot': [
+        {
+            category: 'ppt',
+             title: 'Implementation of HTTP POST and GET methods ',
+             description: 'Lab sheet 02.',
+            fileType: 'PDF',
+             meta: 'Feb 01, 2026',
+             previewUrl: 'https://drive.google.com/file/d/1WS3Rl5EEGq6pTijNfQdoK5qLcLBl7spg/view?usp=sharing',
+             downloadUrl: 'https://drive.google.com/file/d/1WS3Rl5EEGq6pTijNfQdoK5qLcLBl7spg/view?usp=sharing',
+             featured: true
+         },
+         {
+            category: 'ppt',
+             title: ' Configuration of SMTP Server ',
+             description: 'Lab sheet 03.',
+            fileType: 'PDF',
+             meta: 'Feb 13, 2026',
+             previewUrl: 'https://drive.google.com/file/d/10szY7IslNdhJVLktDec4kgH1kxyb6xRd/view?usp=sharing',
+             downloadUrl: 'https://drive.google.com/file/d/10szY7IslNdhJVLktDec4kgH1kxyb6xRd/view?usp=sharing',
+             featured: true
          },
     ]
 };
@@ -686,6 +876,7 @@ function getResourceCounts(semester, courseKey) {
         questions: 0,
         suggestions: 0,
         courseOutlines: 0,
+        labManuals: 0,
         others: 0,
         total: resources.length,
         // Hyphenated format (for course.html)
@@ -698,6 +889,7 @@ function getResourceCounts(semester, courseKey) {
         'question': 0,
         'suggestion': 0,
         'course-outline': 0,
+        'lab-manuals': 0,
         'others': 0
     };
     
@@ -743,6 +935,10 @@ function getResourceCounts(semester, courseKey) {
             case 'course-outline':
                 counts.courseOutlines++;
                 counts['course-outline']++;
+                break;
+            case 'lab-manuals':
+                counts.labManuals++;
+                counts['lab-manuals']++;
                 break;
             case 'others':
                 counts.others++;
