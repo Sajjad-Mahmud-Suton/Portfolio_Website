@@ -828,6 +828,16 @@ const courseResources = {
     '7-iot': [
         {
             category: 'ppt',
+             title: 'Basic Ping and Traceroute commands',
+             description: 'Lab sheet 01',
+            fileType: 'PDF',
+             meta: 'Feb 20, 2026',
+             previewUrl: 'https://drive.google.com/file/d/18xQ0_GDf6BYFVrbcr3fQUi8np-ZMN1ab/view?usp=sharing',
+             downloadUrl: 'https://drive.google.com/file/d/18xQ0_GDf6BYFVrbcr3fQUi8np-ZMN1ab/view?usp=sharing',
+             featured: true
+         },
+        {
+            category: 'ppt',
              title: 'Implementation of HTTP POST and GET methods ',
              description: 'Lab sheet 02.',
             fileType: 'PDF',
@@ -846,6 +856,27 @@ const courseResources = {
              downloadUrl: 'https://drive.google.com/file/d/10szY7IslNdhJVLktDec4kgH1kxyb6xRd/view?usp=sharing',
              featured: true
          },
+         {
+            category: 'ppt',
+             title: ' Configuration of FTP Server ',
+             description: 'Lab sheet 04',
+            fileType: 'PDF',
+             meta: 'Feb 20, 2026',
+             previewUrl: 'https://drive.google.com/file/d/1K74Rs4sNeF2csKri7AB4pKQAVeVL3I3Z/view?usp=sharing',
+             downloadUrl: 'https://drive.google.com/file/d/1K74Rs4sNeF2csKri7AB4pKQAVeVL3I3Z/view?usp=sharing',
+             featured: true
+         },
+         {
+            category: 'project-proposal',
+             title: ' Secure Hotel Management Network Using Cisco Packet Tracer ',
+             description: 'Project Proposal.',
+            fileType: 'PDF',
+             meta: 'Feb 20, 2026',
+             previewUrl: 'https://drive.google.com/file/d/1vRQOh24AzN1hVaSfcSEQpfSIUPJdaews/view?usp=sharing',
+             downloadUrl: 'https://drive.google.com/file/d/1vRQOh24AzN1hVaSfcSEQpfSIUPJdaews/view?usp=sharing',
+             featured: true
+         },
+
     ]
 };
 
