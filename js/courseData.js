@@ -654,7 +654,7 @@ const courseResources = {
              featured: true
         },
         {
-            category: 'others',
+            category: 'course-outline',
              title: 'Course Outline ',
              description: 'Course Outline of Software Engineering.',
             fileType: 'PDF',
@@ -752,7 +752,7 @@ const courseResources = {
     '7-distributed-systems': [
        
             {
-            category: 'lab-manuals',
+            category: 'ppt',
              title: 'Lab Manuals ',
              description: 'All Lab Manual .',
             fileType: 'PDF',
@@ -785,45 +785,36 @@ const courseResources = {
 
         '7-big-data': [
        {
-            category: 'slides',
-             title: 'Introduction to Computer Networking ',
-             description: 'Week 01 Class 01.',
+            category: 'ppt',
+             title: 'Midterm Slides ',
+             description: 'All Slides for Midterm.',
             fileType: 'PPTX',
-             meta: 'Feb 01, 2026',
-             previewUrl: 'https://docs.google.com/presentation/d/17roEV5mQkR9xo57ikmR-0a9QEcfObt4Y/edit?usp=sharing&ouid=108140212801946690894&rtpof=true&sd=true',
-             downloadUrl: 'https://docs.google.com/presentation/d/17roEV5mQkR9xo57ikmR-0a9QEcfObt4Y/edit?usp=sharing&ouid=108140212801946690894&rtpof=true&sd=true',
+             meta: 'Feb 22, 2026',
+             previewUrl: 'https://drive.google.com/drive/folders/1yyhGsaTrZEId8NEr7L5agdFQDnQeaMWf?usp=sharing',
+             downloadUrl: 'https://drive.google.com/drive/folders/1yyhGsaTrZEId8NEr7L5agdFQDnQeaMWf?usp=sharing',
              featured: true
          },
          {
-            category: 'slides',
-             title: 'Delay in Packet Switched Networks ',
-             description: 'Week 01 Class 02.',
+            category: 'course-outline',
+             title: 'Course Outline ',
+             description: 'Computer Networking Course Outline.',
             fileType: 'PPTX',
-             meta: 'Feb 01, 2026',
-             previewUrl: 'https://docs.google.com/presentation/d/1nQg9E74pL00q9-qr6NrQNb7jOkCUcCxv/edit?usp=sharing&ouid=108140212801946690894&rtpof=true&sd=true',
-             downloadUrl: 'https://docs.google.com/presentation/d/1nQg9E74pL00q9-qr6NrQNb7jOkCUcCxv/edit?usp=sharing&ouid=108140212801946690894&rtpof=true&sd=true',
+             meta: 'Feb 22, 2026',
+             previewUrl: 'https://drive.google.com/file/d/1W5GZpaCTnK6LHhziNZTshgGuSdFpmNxN/view?usp=drive_link',
+             downloadUrl: 'https://drive.google.com/file/d/1W5GZpaCTnK6LHhziNZTshgGuSdFpmNxN/view?usp=drive_link',
              featured: true
          },
                   {
-            category: 'slides',
-             title: 'Principles of Network Applications',
-             description: 'Week 02 Class 01.',
-            fileType: 'PPTX',
-             meta: 'Feb 01, 2026',
-             previewUrl: 'https://docs.google.com/presentation/d/1kam6YsMjTZEPymrXD5nlUYtH4SlSQMZK/edit?usp=sharing&ouid=108140212801946690894&rtpof=true&sd=true',
-             downloadUrl: 'https://docs.google.com/presentation/d/1kam6YsMjTZEPymrXD5nlUYtH4SlSQMZK/edit?usp=sharing&ouid=108140212801946690894&rtpof=true&sd=true',
+            category: 'book',
+             title: 'Book_8th_Edition_Ross,Kurose_Top-Down Approach',
+             description: 'Computer Networking Book.',
+            fileType: 'PDF',
+             meta: 'Feb 22, 2026',
+             previewUrl: 'https://drive.google.com/file/d/1hI4MLUNY72IJpFahNGeqN1QMKT5uLtav/view?usp=sharing',
+             downloadUrl: 'https://drive.google.com/file/d/1hI4MLUNY72IJpFahNGeqN1QMKT5uLtav/view?usp=sharing',
              featured: true
          },
-                  {
-            category: 'slides',
-             title: 'Electronic Mail-Email ',
-             description: 'Week 02 Class 02.',
-            fileType: 'PPTX',
-             meta: 'Feb 01, 2026',
-             previewUrl: 'https://docs.google.com/presentation/d/1L0QxnR3SNrKFD5arnsQGI8bx5JV5XESr/edit?usp=sharing&ouid=108140212801946690894&rtpof=true&sd=true',
-             downloadUrl: 'https://docs.google.com/presentation/d/1L0QxnR3SNrKFD5arnsQGI8bx5JV5XESr/edit?usp=sharing&ouid=108140212801946690894&rtpof=true&sd=true',
-             featured: true
-         },
+               
     ],
     '7-iot': [
         {
@@ -867,11 +858,31 @@ const courseResources = {
              featured: true
          },
          {
-            category: 'project-proposal',
+            category: 'ppt',
+             title: ' Distributed Database Management and Implementation of Iterative and Recursive Queries of DNS Records',
+             description: 'Lab sheet 05',
+            fileType: 'PDF',
+             meta: 'Feb 21, 2026',
+             previewUrl: 'https://drive.google.com/file/d/1Y5HuBsXsl34_2nM_T0RvJJQoFMq63r7Z/view?usp=sharing',
+             downloadUrl: 'https://drive.google.com/file/d/1Y5HuBsXsl34_2nM_T0RvJJQoFMq63r7Z/view?usp=sharing',
+             featured: true
+         },
+         {
+            category: 'project-report',
              title: ' Secure Hotel Management Network Using Cisco Packet Tracer ',
              description: 'Project Proposal.',
             fileType: 'PDF',
              meta: 'Feb 20, 2026',
+             previewUrl: 'https://drive.google.com/file/d/1vRQOh24AzN1hVaSfcSEQpfSIUPJdaews/view?usp=sharing',
+             downloadUrl: 'https://drive.google.com/file/d/1vRQOh24AzN1hVaSfcSEQpfSIUPJdaews/view?usp=sharing',
+             featured: true
+         },
+         {
+            category: 'lab-report',
+             title: ' Network Connectivity Testing (Ping & Traceroute) and Implementation of HTTP Methods (GET & POST) using Java. ',
+             description: 'Lab Report-1',
+            fileType: 'PDF',
+             meta: 'Feb 21, 2026',
              previewUrl: 'https://drive.google.com/file/d/1vRQOh24AzN1hVaSfcSEQpfSIUPJdaews/view?usp=sharing',
              downloadUrl: 'https://drive.google.com/file/d/1vRQOh24AzN1hVaSfcSEQpfSIUPJdaews/view?usp=sharing',
              featured: true
