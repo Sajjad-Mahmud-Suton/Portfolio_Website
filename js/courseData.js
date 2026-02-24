@@ -873,8 +873,8 @@ const courseResources = {
              description: 'Project Proposal.',
             fileType: 'PDF',
              meta: 'Feb 20, 2026',
-             previewUrl: 'https://drive.google.com/file/d/1vRQOh24AzN1hVaSfcSEQpfSIUPJdaews/view?usp=sharing',
-             downloadUrl: 'https://drive.google.com/file/d/1vRQOh24AzN1hVaSfcSEQpfSIUPJdaews/view?usp=sharing',
+             previewUrl: 'https://drive.google.com/file/d/19DxUcsjgoHe8eVx7FNk0g1ArjSbwhBSz/view?usp=sharing',
+             downloadUrl: 'https://drive.google.com/file/d/19DxUcsjgoHe8eVx7FNk0g1ArjSbwhBSz/view?usp=sharing',
              featured: true
          },
          {
