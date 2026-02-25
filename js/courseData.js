@@ -887,6 +887,16 @@ const courseResources = {
              downloadUrl: 'https://drive.google.com/file/d/1vRQOh24AzN1hVaSfcSEQpfSIUPJdaews/view?usp=sharing',
              featured: true
          },
+         {
+            category: 'lab-report',
+             title: ' Configuration of SMTP and FTP Server for the Given Network Using Cisco Packet Tracer. ',
+             description: 'Lab Report-2',
+            fileType: 'PDF',
+             meta: 'Feb 26, 2026',
+             previewUrl: 'https://drive.google.com/file/d/1t-yxktBxWXLWLPu8A9gwyvEhom7aQYdd/view?usp=sharing',
+             downloadUrl: 'https://drive.google.com/file/d/1t-yxktBxWXLWLPu8A9gwyvEhom7aQYdd/view?usp=sharing',
+             featured: true
+         },
 
     ]
 };
