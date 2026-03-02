@@ -780,6 +780,26 @@ const courseResources = {
              previewUrl: 'https://drive.google.com/file/d/16ZvGcpcZceGEE-l2sGuY_xR5eKPABj_R/view?usp=sharing',
              downloadUrl: 'https://drive.google.com/file/d/16ZvGcpcZceGEE-l2sGuY_xR5eKPABj_R/view?usp=sharing',
              featured: true
+            },
+            {
+            category: 'lab-report',
+             title: 'Implementation of Depth-First Search and Breadth-First Search Traversal',
+             description: 'Lab Report NO 02.',
+            fileType: 'PDF',
+             meta: 'Mar 02, 2026',
+             previewUrl: 'https://drive.google.com/file/d/13eojARLGovrJOr0QEbxhaewyKSG9pICt/view?usp=sharing',
+             downloadUrl: 'https://drive.google.com/file/d/13eojARLGovrJOr0QEbxhaewyKSG9pICt/view?usp=sharing',
+             featured: true
+            },
+            {
+            category: 'question',
+             title: 'Implementation of Depth-First Search and Breadth-First Search Traversal',
+             description: 'Lab Report NO 02 Questions.',
+            fileType: 'PDF',
+             meta: 'Mar 02, 2026',
+             previewUrl: 'https://drive.google.com/file/d/1qu8Gt4_FS8WSebTtL3TMxvP7riiJQYzw/view?usp=sharing',
+             downloadUrl: 'https://drive.google.com/file/d/1qu8Gt4_FS8WSebTtL3TMxvP7riiJQYzw/view?usp=sharing',
+             featured: true
             }
     ],
 
