@@ -513,6 +513,217 @@
             box-shadow: 0 15px 40px rgba(20, 184, 166, 0.4);
         }
 
+        /* Theme Toggle Buttons */
+        .theme-toggle-container {
+            position: fixed;
+            top: 20px;
+            right: 180px;
+            display: flex;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .theme-btn {
+            padding: 10px 18px;
+            border: none;
+            border-radius: 8px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 500;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            transition: all 0.3s ease;
+        }
+
+        .theme-btn.dark {
+            background: var(--card-bg);
+            color: var(--text-primary);
+            border: 2px solid var(--teal);
+        }
+
+        .theme-btn.light {
+            background: #f8fafc;
+            color: #1e293b;
+            border: 2px solid #cbd5e1;
+        }
+
+        .theme-btn.active {
+            box-shadow: 0 0 15px rgba(20, 184, 166, 0.5);
+            transform: scale(1.05);
+        }
+
+        .theme-btn:hover {
+            transform: translateY(-2px);
+        }
+
+        /* Light Theme Styles */
+        body.light-theme {
+            background: #f8fafc;
+            color: #1e293b;
+        }
+
+        body.light-theme .cv-container {
+            background: #ffffff;
+            box-shadow: 0 25px 80px rgba(0, 0, 0, 0.1);
+        }
+
+        body.light-theme .cv-header {
+            background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 50%, #f1f5f9 100%);
+        }
+
+        body.light-theme .header-info h1 {
+            background: linear-gradient(135deg, #0f766e, #7c3aed);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        body.light-theme .header-info .subtitle {
+            color: #475569;
+        }
+
+        body.light-theme .contact-item {
+            color: #475569;
+        }
+
+        body.light-theme .contact-item a {
+            color: #475569;
+        }
+
+        body.light-theme .cv-left {
+            background: #f1f5f9;
+        }
+
+        body.light-theme .cv-right {
+            background: #ffffff;
+        }
+
+        body.light-theme .section-title {
+            color: #1e293b;
+            border-bottom-color: #0f766e;
+        }
+
+        body.light-theme .about-text {
+            color: #475569;
+        }
+
+        body.light-theme .education-item {
+            border-left-color: #0f766e;
+        }
+
+        body.light-theme .education-item::before {
+            background: #0f766e;
+        }
+
+        body.light-theme .edu-degree {
+            color: #1e293b;
+        }
+
+        body.light-theme .edu-institution {
+            color: #7c3aed;
+        }
+
+        body.light-theme .edu-year,
+        body.light-theme .edu-details {
+            color: #64748b;
+        }
+
+        body.light-theme .project-item {
+            background: rgba(15, 118, 110, 0.05);
+            border-color: rgba(15, 118, 110, 0.15);
+        }
+
+        body.light-theme .project-name {
+            color: #1e293b;
+        }
+
+        body.light-theme .project-desc {
+            color: #475569;
+        }
+
+        body.light-theme .tech-badge {
+            background: #e2e8f0;
+            color: #0f766e;
+        }
+
+        body.light-theme .skill-tag {
+            background: linear-gradient(135deg, rgba(15, 118, 110, 0.1), rgba(124, 58, 237, 0.1));
+            border-color: rgba(15, 118, 110, 0.3);
+            color: #1e293b;
+        }
+
+        body.light-theme .skill-category-title {
+            color: #1e293b;
+        }
+
+        body.light-theme .cert-icon {
+            background: linear-gradient(135deg, #0f766e, #7c3aed);
+        }
+
+        body.light-theme .cert-info h4 {
+            color: #1e293b;
+        }
+
+        body.light-theme .cert-info p {
+            color: #64748b;
+        }
+
+        body.light-theme .cert-item {
+            border-bottom-color: #e2e8f0;
+        }
+
+        body.light-theme .interest-item {
+            background: #f1f5f9;
+            color: #475569;
+        }
+
+        body.light-theme .language-item {
+            border-bottom-color: #e2e8f0;
+        }
+
+        body.light-theme .language-name {
+            color: #1e293b;
+        }
+
+        body.light-theme .language-level {
+            background: rgba(15, 118, 110, 0.1);
+            color: #0f766e;
+        }
+
+        body.light-theme .cv-footer {
+            background: #f1f5f9;
+            border-top-color: #e2e8f0;
+        }
+
+        body.light-theme .cv-footer p {
+            color: #64748b;
+        }
+
+        body.light-theme .social-link {
+            background: #e2e8f0;
+            color: #475569;
+        }
+
+        body.light-theme .social-link:hover {
+            background: linear-gradient(135deg, #0f766e, #7c3aed);
+            color: white;
+        }
+
+        body.light-theme .profile-photo {
+            background: linear-gradient(#f1f5f9, #f1f5f9) padding-box,
+                        linear-gradient(135deg, #0f766e, #7c3aed) border-box;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .theme-toggle-container {
+                top: 70px;
+                right: 20px;
+            }
+        }
+
         /* Responsive */
         @media (max-width: 768px) {
             .header-content {
@@ -539,6 +750,16 @@
     </style>
 </head>
 <body>
+    <!-- Theme Toggle Buttons -->
+    <div class="theme-toggle-container no-print">
+        <button class="theme-btn dark active" onclick="setTheme('dark')">
+            <i class="fas fa-moon"></i> Dark
+        </button>
+        <button class="theme-btn light" onclick="setTheme('light')">
+            <i class="fas fa-sun"></i> Light
+        </button>
+    </div>
+
     <!-- Download Button -->
     <button class="download-btn no-print" onclick="downloadCV()">
         <i class="fas fa-download"></i> Download PDF
@@ -551,7 +772,7 @@
                 <img src="../src/image/Sajjad_Mahmud.png" alt="Md. Sajjad Mahmud Suton" class="profile-photo">
                 <div class="header-info">
                     <h1>Md. Sajjad Mahmud Suton</h1>
-                    <p class="subtitle">Computer Science & Engineering Student | Web Developer</p>
+                    <p class="subtitle">Computer Science & Engineering Student | Student Mentor</p>
                     <div class="contact-row">
                         <div class="contact-item">
                             <i class="fas fa-envelope"></i>
@@ -588,11 +809,7 @@
                         <i class="fas fa-user"></i> About Me
                     </h2>
                     <p class="about-text">
-                        A passionate Computer Science & Engineering student with a strong foundation in web development 
-                        and programming. Eager to learn new technologies and apply academic knowledge to real-world 
-                        projects. Currently pursuing my degree while building practical skills through personal projects 
-                        and continuous learning. Committed to writing clean, efficient code and creating user-friendly 
-                        digital experiences.
+                      I am a dedicated Computer Science & Engineering student at the Green University of Bangladesh with a strong passion for technology and web development. Currently serving as a Student Mentor in the Department of CSE, I support and guide fellow students in their academic and technical development. I am interested in leadership, teamwork, and contributing to the growth of the student tech community.
                     </p>
                 </div>
 
@@ -711,7 +928,6 @@
                         <span class="tech-badge">Data Structures</span>
                     </div>
                 </div>
-
 
                 <div class="project-item">
                     <h3 class="project-name">
@@ -873,6 +1089,16 @@
                     </div>
                 </div>
 
+                <!-- Student Mentor -->
+                <div class="cert-item">
+                    <div class="cert-icon">
+                        <i class="fas fa-chalkboard-teacher"></i>
+                    </div>
+                    <div class="cert-info">
+                        <h4>Student Mentor</h4>
+                        <p>Department of CSE • Green University of Bangladesh</p>
+                    </div>
+                </div>
                 
                 <!-- University Programming Club -->
                 <div class="cert-item">
@@ -903,7 +1129,7 @@
                     </div>
                     <div class="cert-info">
                         <h4>Technical Head (Past)</h4>
-                        <p>Photographic Club </p>
+                        <p>BAF Shaheen College Dhaka • Photographic Club </p>
                     </div>
                 </div>
                 
@@ -1012,6 +1238,22 @@
     </div>
 
     <script>
+        function setTheme(theme) {
+            const body = document.body;
+            const darkBtn = document.querySelector('.theme-btn.dark');
+            const lightBtn = document.querySelector('.theme-btn.light');
+            
+            if (theme === 'light') {
+                body.classList.add('light-theme');
+                lightBtn.classList.add('active');
+                darkBtn.classList.remove('active');
+            } else {
+                body.classList.remove('light-theme');
+                darkBtn.classList.add('active');
+                lightBtn.classList.remove('active');
+            }
+        }
+
         function downloadCV() {
             // Open print dialog for PDF
             window.print();
