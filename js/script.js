@@ -612,7 +612,7 @@ function typeWriter(element, texts, speed = 100) {
 document.addEventListener('DOMContentLoaded', function() {
     const typingElement = document.querySelector('.typing-text');
     if (typingElement) {
-        const texts = ['Web Developer', 'UI/UX Designer', 'Creative Thinker'];
+        const texts = ['Vice President (GUCC)', 'Student Mentor', 'Creative Web Developer', 'Creative UI/UX Designer', 'Creative Thinker'];
         typeWriter(typingElement, texts, 100);
     }
 });
