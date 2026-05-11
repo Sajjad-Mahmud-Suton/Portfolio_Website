@@ -918,7 +918,416 @@ const courseResources = {
              featured: true
          },
 
-    ]
+    ],
+    '1-math': [
+        {
+            category: 'assignment',
+            title: 'Mathematics Assignment',
+            description: 'Assignment problems and exercises.',
+            fileType: 'PDF',
+            meta: 'May 12, 2026',
+            previewUrl: 'https://drive.google.com/file/d/1FC_GJJz7QLE6GkucDzNU9AvF9LSFdSsb/view?usp=sharing',
+            downloadUrl: 'https://drive.google.com/file/d/1FC_GJJz7QLE6GkucDzNU9AvF9LSFdSsb/view?usp=sharing',
+            featured: true
+        },
+        {
+            category: 'book',
+            title: 'Calculus Book',
+            description: 'Book covering calculus topics relevant to the course.',
+            fileType: 'PDF',
+            meta: 'May 12, 2026',
+            previewUrl: 'https://drive.google.com/file/d/1MPgQ7Jqi3rLfKwEkJFVfu_mmMCI2AKkk/view?usp=sharing',
+            downloadUrl: 'https://drive.google.com/file/d/1MPgQ7Jqi3rLfKwEkJFVfu_mmMCI2AKkk/view?usp=sharing',
+            featured: true
+        },
+        {
+            category: 'course-outline',
+            title: 'Calculus Course Outline',
+            description: 'Outline for the Calculus course.',
+            fileType: 'PDF',
+            meta: 'May 12, 2026',
+            previewUrl: 'https://drive.google.com/file/d/1GjL3KXiFNlEusPvWZgYAAX3K7dq3oAk-/view?usp=sharing',
+            downloadUrl: 'https://drive.google.com/file/d/1GjL3KXiFNlEusPvWZgYAAX3K7dq3oAk-/view?usp=sharing',
+            featured: true
+        },
+        {
+            category: 'ppt',
+            title: 'Calculus Course Slides',
+            description: 'Slides for the Calculus course.',
+            fileType: 'PDF',
+            meta: 'May 12, 2026',
+            previewUrl: 'https://drive.google.com/drive/folders/1GSgxuHbCstT-QnLo6d9wkScogc2u8CvR?usp=sharing',
+            downloadUrl: 'https://drive.google.com/drive/folders/1GSgxuHbCstT-QnLo6d9wkScogc2u8CvR?usp=sharing',
+            featured: true
+        },
+        {
+            category: 'ppt',
+            title: 'Presentation Slide',
+            description: 'Presentation slide for the Calculus course.',
+            fileType: 'PPTX',
+            meta: 'May 12, 2026',
+            previewUrl: 'https://docs.google.com/presentation/d/1JGoZVclkafIIWp2lfEqrkd_ndy46YASo/edit?usp=sharing&ouid=108140212801946690894&rtpof=true&sd=true',
+            downloadUrl: 'https://docs.google.com/presentation/d/1JGoZVclkafIIWp2lfEqrkd_ndy46YASo/edit?usp=sharing&ouid=108140212801946690894&rtpof=true&sd=true',
+            featured: true
+        },
+        {
+            category: 'question',
+            title: 'Calculus Questions',
+            description: 'Questions for the Calculus course.',
+            fileType: 'PDF',
+            meta: 'May 12, 2026',
+            previewUrl: 'https://drive.google.com/drive/folders/1z0_W8Z1owmR9306wWuNG4uxkQbpST2ZB?usp=sharing',
+            downloadUrl: 'https://drive.google.com/drive/folders/1z0_W8Z1owmR9306wWuNG4uxkQbpST2ZB?usp=sharing',
+            featured: true
+        },
+
+    ],
+    '1-chemistry': [
+        {
+            category: 'assignment',
+            title: 'Chemistry Assignment',
+            description: 'Assignment problems and exercises.',
+            fileType: 'PDF',
+            meta: 'May 12, 2026',
+            previewUrl: 'https://drive.google.com/file/d/1d-Ftcor1-8NZSSCXasTLAWZzoz0lCmMY/view?usp=sharing',
+            downloadUrl: 'https://drive.google.com/file/d/1d-Ftcor1-8NZSSCXasTLAWZzoz0lCmMY/view?usp=sharing',
+            featured: true
+        },
+        {
+            category: 'course-outline',
+            title: 'Chemistry Course Outline',
+            description: 'Outline for the Chemistry course.',
+            fileType: 'PDF',
+            meta: 'May 12, 2026',
+            previewUrl: 'https://drive.google.com/file/d/1CZwzgtM4VRPQeK_QxM2_El7NX2f6XkTw/view?usp=sharing',
+            downloadUrl: 'https://drive.google.com/file/d/1CZwzgtM4VRPQeK_QxM2_El7NX2f6XkTw/view?usp=sharing',
+            featured: true
+        },
+        {
+            category: 'ppt',
+            title: 'Presentation Slide',
+            description: 'Presentation slides for the Chemistry course.',
+            fileType: 'PPT',
+            meta: 'May 12, 2026',
+            previewUrl: 'https://docs.google.com/presentation/d/1JswDE9M1qA07y4kFFUIVTdGabeu69INi/edit?usp=sharing&ouid=108140212801946690894&rtpof=true&sd=true',
+            downloadUrl: 'https://docs.google.com/presentation/d/1JswDE9M1qA07y4kFFUIVTdGabeu69INi/edit?usp=sharing&ouid=108140212801946690894&rtpof=true&sd=true',
+            featured: true
+        },
+        {
+            category: 'ppt',
+            title: 'Slides for Chemistry Course',
+            description: 'Chemistry course slides.',
+            fileType: 'PPT',
+            meta: 'May 12, 2026',
+            previewUrl: 'https://drive.google.com/drive/folders/1NldYGAEvDdMqNrIpX_JfBcpsJX8Px_RW?usp=sharing',
+            downloadUrl: 'https://drive.google.com/drive/folders/1NldYGAEvDdMqNrIpX_JfBcpsJX8Px_RW?usp=sharing',
+            featured: true
+        },
+    ],
+        '1-english': [
+            {
+            category: 'course-outline',
+            title: 'Chemistry Lab Course Outline',
+            description: 'Outline for the Chemistry Lab course.',
+            fileType: 'PDF',
+            meta: 'May 12, 2026',
+            previewUrl: 'https://drive.google.com/file/d/1hI07lYoUITcJsh2h98Tw3Vl9XEJUWmAc/view?usp=sharing',
+            downloadUrl: 'https://drive.google.com/file/d/1hI07lYoUITcJsh2h98Tw3Vl9XEJUWmAc/view?usp=sharing',
+            featured: true
+        },
+          {
+            category: 'ppt',
+            title: 'Chemistry Lab Manuals',
+            description: 'Manuals for the Chemistry Lab course.',
+            fileType: 'PDF',
+            meta: 'May 12, 2026',
+            previewUrl: 'https://drive.google.com/drive/folders/1koBbS5yqmoltZlUvG6BI614q6gAdbwqP?usp=sharing',
+            downloadUrl: 'https://drive.google.com/drive/folders/1koBbS5yqmoltZlUvG6BI614q6gAdbwqP?usp=sharing',
+            featured: true
+        },
+
+        ],
+        '1-physics': [
+            {
+            category: 'assignment',
+            title: 'Physics Assignment',
+            description: 'Assignment problems and exercises.',
+            fileType: 'PDF',
+            meta: 'May 12, 2026',
+            previewUrl: 'https://drive.google.com/file/d/1l7hsXL0Xzi2rqmhoymIrbJLKx1AsElxs/view?usp=sharing',
+            downloadUrl: 'https://drive.google.com/file/d/1l7hsXL0Xzi2rqmhoymIrbJLKx1AsElxs/view?usp=sharing',
+            featured: true
+        },
+        {
+            category: 'book',
+            title: 'Physics for Engineers',
+            description: 'Textbook for the Physics course.',
+            fileType: 'PDF',
+            meta: 'May 12, 2026',
+            previewUrl: 'https://drive.google.com/file/d/1VTatlfn1-lLIrLly3iPo1-QFFjQlfYd7/view?usp=sharing',
+            downloadUrl: 'https://drive.google.com/file/d/1VTatlfn1-lLIrLly3iPo1-QFFjQlfYd7/view?usp=sharing',
+            featured: true
+        },
+        {
+            category: 'question',
+            title: 'Midterm Exam Assignment Questions',
+            description: 'Practice questions for the Physics course.',
+            fileType: 'PDF',
+            meta: 'May 12, 2026',
+            previewUrl: 'https://drive.google.com/file/d/13Jy3aqVtf_dbOh7rqPW8v7g9T0Hhs4r1/view?usp=sharing',
+            downloadUrl: 'https://drive.google.com/file/d/13Jy3aqVtf_dbOh7rqPW8v7g9T0Hhs4r1/view?usp=sharing',
+            featured: true
+        },
+        {
+            category: 'question',
+            title: 'Final Exam Assignment Questions',
+            description: 'Practice questions for the Physics course. (Final Exam)',
+            fileType: 'PDF',
+            meta: 'May 12, 2026',
+            previewUrl: 'https://drive.google.com/file/d/1OGqFl6lALWoLd1Ttt7d5In8z7kf17vLS/view?usp=sharing',
+            downloadUrl: 'https://drive.google.com/file/d/1OGqFl6lALWoLd1Ttt7d5In8z7kf17vLS/view?usp=sharing',
+            featured: true
+        },
+        {
+            category: 'ppt',
+            title: 'Physics Slides (All)',
+            description: 'Lecture slides for the Physics course.',
+            fileType: 'PPT',
+            meta: 'May 12, 2026',
+            previewUrl: 'https://drive.google.com/drive/folders/14bcmXR3uLhbEkrhwEJHBAxMktwbPIwnh?usp=sharing',
+            downloadUrl: 'https://drive.google.com/drive/folders/14bcmXR3uLhbEkrhwEJHBAxMktwbPIwnh?usp=sharing',
+            featured: true
+        },
+
+        ],
+        '2-bengali': [
+            {
+            category: 'notes',
+            title: 'Suggestions for Functional Bengali Course',
+            description: 'Sugggestions',
+            fileType: 'TEXT',
+            meta: 'May 12, 2026',
+            previewUrl: 'https://drive.google.com/file/d/18IfscYw-gg778xJD7-5HwakkrP3oOe2t/view?usp=sharing',
+            downloadUrl: 'https://drive.google.com/file/d/18IfscYw-gg778xJD7-5HwakkrP3oOe2t/view?usp=sharing',
+            featured: true
+        }
+        ],
+        '2-eee': [
+            {
+            category: 'book',
+            title: 'fundamentals-of-electric-circuits-5th-Edition',
+            description: 'Book-1',
+            fileType: 'TEXT',
+            meta: 'May 12, 2026',
+            previewUrl: 'https://drive.google.com/file/d/1DU1XVumV132HiEywlw-TnJ_MUEXxbgzb/view?usp=sharing',
+            downloadUrl: 'https://drive.google.com/file/d/1DU1XVumV132HiEywlw-TnJ_MUEXxbgzb/view?usp=sharing',
+            featured: true
+        },
+        {
+            category: 'book',
+            title: 'Sadiku Solutions',
+            description: 'Book-2',
+            fileType: 'TEXT',
+            meta: 'May 12, 2026',
+            previewUrl: 'https://drive.google.com/file/d/123cgULg6DjjlLHk17V96XZf1hY3q7GFf/view?usp=sharing',
+            downloadUrl: 'https://drive.google.com/file/d/123cgULg6DjjlLHk17V96XZf1hY3q7GFf/view?usp=sharing',
+            featured: true
+        },
+        {
+            category: 'ppt',
+            title: 'Presesentation slide for EEE',
+            description: 'Presentation slides for the EEE course.',
+            fileType: 'PPT',
+            meta: 'May 12, 2026',
+            previewUrl: 'https://docs.google.com/presentation/d/19C251k7z0O7sbh66b9T3EUAtouufSpOY/edit?usp=sharing&ouid=108140212801946690894&rtpof=true&sd=true',
+            downloadUrl: 'https://docs.google.com/presentation/d/19C251k7z0O7sbh66b9T3EUAtouufSpOY/edit?usp=sharing&ouid=108140212801946690894&rtpof=true&sd=true',
+            featured: true
+        },
+        {
+            category: 'ppt',
+            title: 'Lecture Slides for EEE',
+            description: 'All Slides.',
+            fileType: 'PPT',
+            meta: 'May 12, 2026',
+            previewUrl: 'https://drive.google.com/drive/folders/1OKAcYPJMx31R9KCJAf-0fis8pNRYOLse?usp=sharing',
+            downloadUrl: 'https://drive.google.com/drive/folders/1OKAcYPJMx31R9KCJAf-0fis8pNRYOLse?usp=sharing',
+            featured: true
+        },
+         {
+            category: 'assignment',
+            title: 'Assignment for EEE',
+            description: 'KSA-1',
+            fileType: 'PDF',
+            meta: 'May 12, 2026',
+            previewUrl: 'https://drive.google.com/file/d/1K7nUFGE9N606EokX2Qek-6VCTXqZ09fV/view?usp=sharing',
+            downloadUrl: 'https://drive.google.com/file/d/1K7nUFGE9N606EokX2Qek-6VCTXqZ09fV/view?usp=sharing',
+            featured: true
+        }
+        ],
+        '2-linear-algebra': [
+            {
+            category: 'assignment',
+            title: 'Assignment for Linear Algebra',
+            description: 'KSA-1',
+            fileType: 'PDF',
+            meta: 'May 12, 2026',
+            previewUrl: 'https://drive.google.com/drive/folders/15jgj_DcOjxCmRU0Q-AP42XICLzV03Hpo?usp=sharing',
+            downloadUrl: 'https://drive.google.com/drive/folders/15jgj_DcOjxCmRU0Q-AP42XICLzV03Hpo?usp=sharing',
+            featured: true
+        },
+        {
+            category: 'course-outline',
+            title: 'Linear Algebra Course Outline',
+            description: 'Outline for the Linear Algebra course.',
+            fileType: 'PDF',
+            meta: 'May 12, 2026',
+            previewUrl: 'https://drive.google.com/file/d/1PU57Y8LaG4Cs7vzhqRfB8OBoCOLfrRnx/view?usp=sharing',
+            downloadUrl: 'https://drive.google.com/file/d/1PU57Y8LaG4Cs7vzhqRfB8OBoCOLfrRnx/view?usp=sharing',
+            featured: true
+        },
+        {
+            category: 'ppt',
+            title: 'Presentation Slide for Linear Algebra',
+            description: 'KSA (Presentation)',
+            fileType: 'PPT',
+            meta: 'May 12, 2026',
+            previewUrl: 'https://docs.google.com/presentation/d/1DiO7wJE2HsIocrZmEOzTgkfu0i4cB5xF/edit?usp=sharing&ouid=108140212801946690894&rtpof=true&sd=true',
+            downloadUrl: 'https://docs.google.com/presentation/d/1DiO7wJE2HsIocrZmEOzTgkfu0i4cB5xF/edit?usp=sharing&ouid=108140212801946690894&rtpof=true&sd=true',
+            featured: true
+        },
+        ],
+        '2-physics-lab': [
+                {
+                    category: 'book',
+                    title: 'Physics Lab Book',
+                    description: 'Practice Book.',
+                    fileType: 'PDF',
+                    meta: 'May 12, 2026',
+                    previewUrl: 'https://drive.google.com/file/d/1lOYNivMBXSJ9nUmwOMOOmaRn31jQJam-/view?usp=sharing',
+                    downloadUrl: 'https://drive.google.com/file/d/1lOYNivMBXSJ9nUmwOMOOmaRn31jQJam-/view?usp=sharing',
+                    featured: true
+                },
+                {
+                    category: 'lab-manuals',
+                    title: 'Physics Lab Manuals',
+                    description: 'Collection of lab manuals for physics experiments .',
+                    fileType: 'PDF',
+                    meta: 'May 12, 2026',
+                    previewUrl: 'https://drive.google.com/drive/folders/1nsZP3k-vJWx7IQC9LQgmaw16bky2ihpf?usp=sharing',
+                    downloadUrl: 'https://drive.google.com/drive/folders/1nsZP3k-vJWx7IQC9LQgmaw16bky2ihpf?usp=sharing',
+                    featured: true
+                }
+        ],
+        '2-sp-lab': [
+             {
+                    category: 'lab-manuals',
+                    title: 'Structured Programming Lab Manuals',
+                    description: 'Collection of lab manuals for structured programming experiments .',
+                    fileType: 'PDF',
+                    meta: 'May 12, 2026',
+                    previewUrl: 'https://drive.google.com/drive/folders/1FSZwEzEl5I2A3Y18czrzkhCe_TlBM_oc?usp=sharing',
+                    downloadUrl: 'https://drive.google.com/drive/folders/1FSZwEzEl5I2A3Y18czrzkhCe_TlBM_oc?usp=sharing',
+                    featured: true
+                },
+                {
+                    category: 'course-outline',
+                    title: 'Structured Programming Lab Course Outline',
+                    description: 'Outline for the Structured Programming Lab course.',
+                    fileType: 'PDF',
+                    meta: 'May 12, 2026',
+                    previewUrl: 'https://drive.google.com/file/d/1UN2ArMe99wAO-Iya888kdnWPP-vOgihz/view?usp=sharing',
+                    downloadUrl: 'https://drive.google.com/file/d/1UN2ArMe99wAO-Iya888kdnWPP-vOgihz/view?usp=sharing',
+                    featured: true
+                },
+                {
+                    category: 'project-report',
+                    title: 'Structured Programming Lab Project Report',
+                    description: 'Project report for the Structured Programming Lab course.',
+                    fileType: 'PDF',
+                    meta: 'May 12, 2026',
+                    previewUrl: 'https://drive.google.com/file/d/1gtSmI_lJgRhwNGTR9kUyXEUV7z7RbzaJ/view?usp=sharing',
+                    downloadUrl: 'https://drive.google.com/file/d/1gtSmI_lJgRhwNGTR9kUyXEUV7z7RbzaJ/view?usp=sharing',
+                    featured: true
+                }
+
+
+        ],
+        '2-sp': [
+                {
+                    category: 'course-outline',
+                    title: 'Structured Programming Course Outline',
+                    description: 'Outline for the Structured Programming course.',
+                    fileType: 'PDF',
+                    meta: 'May 12, 2026',
+                    previewUrl: 'https://drive.google.com/file/d/1tlPF0ce4t3qOoz8h_5aXPfBzM7UKnLSp/view?usp=sharing',
+                    downloadUrl: 'https://drive.google.com/file/d/1tlPF0ce4t3qOoz8h_5aXPfBzM7UKnLSp/view?usp=sharing',
+                    featured: true
+                },
+                {
+                    category: 'assignment',
+                    title: 'Structured Programming Assignment',
+                    description: 'Assignment for the Structured Programming course.',
+                    fileType: 'PDF',
+                    meta: 'May 12, 2026',
+                    previewUrl: 'https://drive.google.com/drive/folders/1mmhB0fjcuovjD-CNRouiJC0UZS2-1LBw?usp=sharing',
+                    downloadUrl: 'https://drive.google.com/drive/folders/1mmhB0fjcuovjD-CNRouiJC0UZS2-1LBw?usp=sharing',
+                    featured: true
+                },
+                {
+                    category: 'book',
+                    title: 'Structured Programming Book',
+                    description: 'Textbook for the Structured Programming course.',
+                    fileType: 'PDF',
+                    meta: 'May 12, 2026',
+                    previewUrl: 'https://drive.google.com/drive/folders/1Oc1ONHPX5FcGDE3NVTH6RmFS3AiZqI8M?usp=sharing',
+                    downloadUrl: 'https://drive.google.com/drive/folders/1Oc1ONHPX5FcGDE3NVTH6RmFS3AiZqI8M?usp=sharing',
+                    featured: true
+                },
+                {
+                    category: 'PPT',
+                    title: 'Presentation Slide',
+                    description: 'Presentation Slides for the Structured Programming course.',
+                    fileType: 'PDF',
+                    meta: 'May 12, 2026',
+                    previewUrl: 'https://docs.google.com/presentation/d/1Ro331ed8sYfsXDVdFA_UYQW0q09Nh6rX/edit?usp=sharing&ouid=108140212801946690894&rtpof=true&sd=true',
+                    downloadUrl: 'https://docs.google.com/presentation/d/1Ro331ed8sYfsXDVdFA_UYQW0q09Nh6rX/edit?usp=sharing&ouid=108140212801946690894&rtpof=true&sd=true',
+                    featured: true
+                },
+                {
+                    category: 'ppt',
+                    title: 'Lecture Slide',
+                    description: 'Lecture Slides for the Structured Programming course.',
+                    fileType: 'PDF',
+                    meta: 'May 12, 2026',
+                    previewUrl: 'https://drive.google.com/drive/folders/1urlANdG4_hsbhYZIKf-BwYOP90Q-BlIC?usp=sharing',
+                    downloadUrl: 'https://drive.google.com/drive/folders/1urlANdG4_hsbhYZIKf-BwYOP90Q-BlIC?usp=sharing',
+                    featured: true
+                }
+        ],
+        '2-physics2': [
+                {
+                    category: 'assignment',
+                    title: 'Physics II Assignment',
+                    description: 'Assignment for the Physics II course.',
+                    fileType: 'PDF',
+                    meta: 'May 12, 2026',
+                    previewUrl: 'https://drive.google.com/drive/folders/102z3mwgYsHszGYXr_cSB-b8cNme-NPNv?usp=sharing',
+                    downloadUrl: 'https://drive.google.com/drive/folders/102z3mwgYsHszGYXr_cSB-b8cNme-NPNv?usp=sharing',
+                    featured: true
+                },
+                {
+                    category: 'ppt',
+                    title: 'Lecture Slide',
+                    description: 'Lecture Slides for the Physics II course.',
+                    fileType: 'PPT',
+                    meta: 'May 12, 2026',
+                    previewUrl: 'https://drive.google.com/drive/folders/1ahAahetxZoLws-UOxezR7beg382WGbE0?usp=sharing',
+                    downloadUrl: 'https://drive.google.com/drive/folders/1ahAahetxZoLws-UOxezR7beg382WGbE0?usp=sharing',
+                    featured: true
+                },
+               
+
+        ]
 };
 
 
