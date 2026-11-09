@@ -1,0 +1,1263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="../src/image/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../src/image/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../src/image//favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    
+    <title>CV - Md. Sajjad Mahmud Suton</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-gradient: linear-gradient(135deg, #14b8a6, #a855f7);
+            --teal: #14b8a6;
+            --purple: #a855f7;
+            --dark-bg: #0f172a;
+            --card-bg: #1e293b;
+            --text-primary: #f1f5f9;
+            --text-secondary: #94a3b8;
+            --border-color: #334155;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: var(--dark-bg);
+            color: var(--text-primary);
+            line-height: 1.6;
+        }
+
+        .cv-container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: var(--dark-bg);
+            box-shadow: 0 25px 80px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Header Section */
+        .cv-header {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
+            padding: 50px 40px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cv-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--primary-gradient);
+        }
+
+        .cv-header::after {
+            content: '';
+            position: absolute;
+            top: -100px;
+            right: -100px;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(20, 184, 166, 0.1) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .header-content {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .profile-photo {
+            width: 150px;
+            height: 150px;
+            border-radius: 20px;
+            object-fit: cover;
+            border: 4px solid transparent;
+            background: linear-gradient(var(--card-bg), var(--card-bg)) padding-box,
+                        var(--primary-gradient) border-box;
+            box-shadow: 0 20px 50px rgba(20, 184, 166, 0.3);
+        }
+
+        .header-info h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            background: var(--primary-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 5px;
+        }
+
+        .header-info .subtitle {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            margin-bottom: 15px;
+        }
+
+        .contact-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 15px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        .contact-item i {
+            color: var(--teal);
+            width: 18px;
+        }
+
+        .contact-item a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .contact-item a:hover {
+            color: var(--teal);
+        }
+
+        /* Main Content */
+        .cv-main {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0;
+        }
+
+        .cv-left {
+            background: var(--card-bg);
+            padding: 40px;
+        }
+
+        .cv-right {
+            background: var(--dark-bg);
+            padding: 40px;
+        }
+
+        /* Section Styles */
+        .section {
+            margin-bottom: 35px;
+        }
+
+        .section:last-child {
+            margin-bottom: 0;
+        }
+
+        .section-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--teal);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-title i {
+            color: var(--teal);
+        }
+
+        /* About Section */
+        .about-text {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.8;
+        }
+
+        /* Education */
+        .education-item {
+            margin-bottom: 25px;
+            padding-left: 20px;
+            border-left: 3px solid var(--teal);
+            position: relative;
+        }
+
+        .education-item::before {
+            content: '';
+            position: absolute;
+            left: -8px;
+            top: 5px;
+            width: 12px;
+            height: 12px;
+            background: var(--teal);
+            border-radius: 50%;
+        }
+
+        .education-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .edu-degree {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 3px;
+        }
+
+        .edu-institution {
+            font-size: 0.9rem;
+            color: var(--purple);
+            margin-bottom: 3px;
+        }
+
+        .edu-year {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .edu-year i {
+            font-size: 0.8rem;
+        }
+
+        .edu-details {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin-top: 5px;
+        }
+
+        /* Skills */
+        .skills-grid {
+            display: grid;
+            gap: 15px;
+        }
+
+        .skill-category {
+            margin-bottom: 15px;
+        }
+
+        .skill-category-title {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .skill-category-title i {
+            color: var(--purple);
+            font-size: 0.85rem;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .skill-tag {
+            background: linear-gradient(135deg, rgba(20, 184, 166, 0.15), rgba(168, 85, 247, 0.15));
+            border: 1px solid rgba(20, 184, 166, 0.3);
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            color: var(--text-primary);
+            transition: all 0.3s ease;
+        }
+
+        /* Projects */
+        .project-item {
+            background: rgba(20, 184, 166, 0.05);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 15px;
+            border: 1px solid rgba(20, 184, 166, 0.1);
+        }
+
+        .project-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .project-name {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .project-name i {
+            color: var(--teal);
+            font-size: 0.9rem;
+        }
+
+        .project-desc {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-top: 10px;
+        }
+
+        .tech-badge {
+            background: var(--dark-bg);
+            padding: 4px 10px;
+            border-radius: 15px;
+            font-size: 0.75rem;
+            color: var(--teal);
+        }
+
+        /* Languages */
+        .language-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .language-item:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+
+        .language-name {
+            font-size: 0.95rem;
+            color: var(--text-primary);
+        }
+
+        .language-level {
+            font-size: 0.85rem;
+            color: var(--teal);
+            background: rgba(20, 184, 166, 0.1);
+            padding: 3px 12px;
+            border-radius: 15px;
+        }
+
+        /* Interests */
+        .interests-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .interest-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--dark-bg);
+            padding: 10px 16px;
+            border-radius: 10px;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        .interest-item i {
+            color: var(--purple);
+        }
+
+        /* Certifications */
+        .cert-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px dashed var(--border-color);
+        }
+
+        .cert-item:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+
+        .cert-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--primary-gradient);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .cert-icon i {
+            color: white;
+            font-size: 1rem;
+        }
+
+        .cert-info h4 {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 3px;
+        }
+
+        .cert-info p {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+
+        /* Footer */
+        .cv-footer {
+            background: var(--card-bg);
+            padding: 25px 40px;
+            text-align: center;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 15px;
+        }
+
+        .social-link {
+            width: 45px;
+            height: 45px;
+            background: var(--dark-bg);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .social-link:hover {
+            background: var(--primary-gradient);
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        .cv-footer p {
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+        }
+
+        /* Print Styles */
+        @media print {
+            body {
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+                background: var(--dark-bg) !important;
+            }
+
+            .cv-container {
+                box-shadow: none;
+                max-width: 100%;
+            }
+
+            .no-print {
+                display: none !important;
+            }
+        }
+
+        /* Download Button */
+        .download-btn {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: var(--primary-gradient);
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 10px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 0.95rem;
+            font-weight: 500;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 0 10px 30px rgba(20, 184, 166, 0.3);
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+
+        .download-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(20, 184, 166, 0.4);
+        }
+
+        /* Theme Toggle Buttons */
+        .theme-toggle-container {
+            position: fixed;
+            top: 20px;
+            right: 180px;
+            display: flex;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .theme-btn {
+            padding: 10px 18px;
+            border: none;
+            border-radius: 8px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 500;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            transition: all 0.3s ease;
+        }
+
+        .theme-btn.dark {
+            background: var(--card-bg);
+            color: var(--text-primary);
+            border: 2px solid var(--teal);
+        }
+
+        .theme-btn.light {
+            background: #f8fafc;
+            color: #1e293b;
+            border: 2px solid #cbd5e1;
+        }
+
+        .theme-btn.active {
+            box-shadow: 0 0 15px rgba(20, 184, 166, 0.5);
+            transform: scale(1.05);
+        }
+
+        .theme-btn:hover {
+            transform: translateY(-2px);
+        }
+
+        /* Light Theme Styles */
+        body.light-theme {
+            background: #f8fafc;
+            color: #1e293b;
+        }
+
+        body.light-theme .cv-container {
+            background: #ffffff;
+            box-shadow: 0 25px 80px rgba(0, 0, 0, 0.1);
+        }
+
+        body.light-theme .cv-header {
+            background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 50%, #f1f5f9 100%);
+        }
+
+        body.light-theme .header-info h1 {
+            background: linear-gradient(135deg, #0f766e, #7c3aed);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        body.light-theme .header-info .subtitle {
+            color: #475569;
+        }
+
+        body.light-theme .contact-item {
+            color: #475569;
+        }
+
+        body.light-theme .contact-item a {
+            color: #475569;
+        }
+
+        body.light-theme .cv-left {
+            background: #f1f5f9;
+        }
+
+        body.light-theme .cv-right {
+            background: #ffffff;
+        }
+
+        body.light-theme .section-title {
+            color: #1e293b;
+            border-bottom-color: #0f766e;
+        }
+
+        body.light-theme .about-text {
+            color: #475569;
+        }
+
+        body.light-theme .education-item {
+            border-left-color: #0f766e;
+        }
+
+        body.light-theme .education-item::before {
+            background: #0f766e;
+        }
+
+        body.light-theme .edu-degree {
+            color: #1e293b;
+        }
+
+        body.light-theme .edu-institution {
+            color: #7c3aed;
+        }
+
+        body.light-theme .edu-year,
+        body.light-theme .edu-details {
+            color: #64748b;
+        }
+
+        body.light-theme .project-item {
+            background: rgba(15, 118, 110, 0.05);
+            border-color: rgba(15, 118, 110, 0.15);
+        }
+
+        body.light-theme .project-name {
+            color: #1e293b;
+        }
+
+        body.light-theme .project-desc {
+            color: #475569;
+        }
+
+        body.light-theme .tech-badge {
+            background: #e2e8f0;
+            color: #0f766e;
+        }
+
+        body.light-theme .skill-tag {
+            background: linear-gradient(135deg, rgba(15, 118, 110, 0.1), rgba(124, 58, 237, 0.1));
+            border-color: rgba(15, 118, 110, 0.3);
+            color: #1e293b;
+        }
+
+        body.light-theme .skill-category-title {
+            color: #1e293b;
+        }
+
+        body.light-theme .cert-icon {
+            background: linear-gradient(135deg, #0f766e, #7c3aed);
+        }
+
+        body.light-theme .cert-info h4 {
+            color: #1e293b;
+        }
+
+        body.light-theme .cert-info p {
+            color: #64748b;
+        }
+
+        body.light-theme .cert-item {
+            border-bottom-color: #e2e8f0;
+        }
+
+        body.light-theme .interest-item {
+            background: #f1f5f9;
+            color: #475569;
+        }
+
+        body.light-theme .language-item {
+            border-bottom-color: #e2e8f0;
+        }
+
+        body.light-theme .language-name {
+            color: #1e293b;
+        }
+
+        body.light-theme .language-level {
+            background: rgba(15, 118, 110, 0.1);
+            color: #0f766e;
+        }
+
+        body.light-theme .cv-footer {
+            background: #f1f5f9;
+            border-top-color: #e2e8f0;
+        }
+
+        body.light-theme .cv-footer p {
+            color: #64748b;
+        }
+
+        body.light-theme .social-link {
+            background: #e2e8f0;
+            color: #475569;
+        }
+
+        body.light-theme .social-link:hover {
+            background: linear-gradient(135deg, #0f766e, #7c3aed);
+            color: white;
+        }
+
+        body.light-theme .profile-photo {
+            background: linear-gradient(#f1f5f9, #f1f5f9) padding-box,
+                        linear-gradient(135deg, #0f766e, #7c3aed) border-box;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .theme-toggle-container {
+                top: 70px;
+                right: 20px;
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .contact-row {
+                justify-content: center;
+            }
+
+            .cv-main {
+                grid-template-columns: 1fr;
+            }
+
+            .cv-header, .cv-left, .cv-right, .cv-footer {
+                padding: 30px 25px;
+            }
+
+            .header-info h1 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Theme Toggle Buttons -->
+    <div class="theme-toggle-container no-print">
+        <button class="theme-btn dark active" onclick="setTheme('dark')">
+            <i class="fas fa-moon"></i> Dark
+        </button>
+        <button class="theme-btn light" onclick="setTheme('light')">
+            <i class="fas fa-sun"></i> Light
+        </button>
+    </div>
+
+    <!-- Download Button -->
+    <button class="download-btn no-print" onclick="downloadCV()">
+        <i class="fas fa-download"></i> Download PDF
+    </button>
+
+    <div class="cv-container" id="cv-content">
+        <!-- Header Section -->
+        <header class="cv-header">
+            <div class="header-content">
+                <img src="../src/image/Sajjad_Mahmud.png" alt="Md. Sajjad Mahmud Suton" class="profile-photo">
+                <div class="header-info">
+                    <h1>Md. Sajjad Mahmud Suton</h1>
+                    <p align="center" class="subtitle">Computer Science & Engineering Student | Vice President (GUCC) & Student Mentor</p>
+                    <div class="contact-row">
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <a href="mailto:sajjadmahmudsuton@gmail.com">sajjadmahmudsuton@gmail.com</a>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <span>+880 1968-1614XX</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Dhaka, Bangladesh</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fab fa-github"></i>
+                            <a href="https://github.com/Sajjad-Mahmud-Suton" target="_blank">github.com/Sajjad-Mahmud-Suton</a>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fab fa-linkedin"></i>
+                            <a href="https://www.linkedin.com/in/md-sajjad-mahmud-suton-344a802a7/" target="_blank">linkedin.com/in/md-sajjad-mahmud-suton-344a802a7</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="cv-main">
+            <!-- Left Column -->
+            <div class="cv-left">
+                <!-- About Me -->
+                <div class="section">
+                    <h2 class="section-title">
+                        <i class="fas fa-user"></i> About Me
+                    </h2>
+                    <p class="about-text">
+                      I am a dedicated Computer Science & Engineering student at the Green University of Bangladesh with a strong passion for technology and web development. Currently serving as a <b>Student Mentor</b> in the Department of CSE and <b>Vice President</b> of the Green University Computer Club, I support and guide fellow students in their academic and technical development while contributing to the growth of the student tech community. I am passionate about leadership, teamwork, and creating opportunities for learning, collaboration, and innovation.
+                    </p>
+                </div>
+
+                <!-- Education -->
+                <div class="section">
+                    <h2 class="section-title">
+                        <i class="fas fa-graduation-cap"></i> Education
+                    </h2>
+                    
+                    <div class="education-item">
+                        <h3 class="edu-degree">B.Sc. in Computer Science & Engineering</h3>
+                        <p class="edu-institution">
+                            Green University of Bangladesh
+                        </p>
+                        <p class="edu-year">
+                            <i class="far fa-calendar-alt"></i> 2022 - Present (Expected 2026)
+                        </p>
+                        <p class="edu-details">
+                            Currently in 3rd year, focusing on web development, programming, and practical projects.
+                        </p>
+                    </div>
+
+                    
+                   <div class="education-item">
+                        <h3 class="edu-degree">Higher Secondary Certificate (HSC)</h3>
+                        <p class="edu-institution">
+                            BAF Shaheen College Dhaka
+                        </p>
+                        <p class="edu-year">
+                            <i class="far fa-calendar-alt"></i> 2020 - 2021
+                        </p>
+                        <p class="edu-details">
+                            Science Group • Focused on Mathematics, Physics, and Computer Science subjects
+                        </p>
+                    </div>
+
+                    
+                    <div class="education-item">
+                        <h3 class="edu-degree">Secondary School Certificate (SSC)</h3>
+                        <p class="edu-institution">
+                            Nabarun Public School
+                        </p>
+                        <p class="edu-year">
+                            <i class="far fa-calendar-alt"></i> 2010 - 2019
+                        </p>
+                        <p class="edu-details">
+                            Science Group • Focused on Mathematics, Physics, and Computer Science fundamentals
+                        </p>
+                    </div>
+
+                </div>
+
+                <!-- Projects -->
+                <div class="section">
+                    <h2 class="section-title">
+                        <i class="fas fa-code-branch"></i> Projects
+                    </h2>
+                    
+                    <div class="project-item">
+                        <h3 class="project-name">
+                            <i class="fas fa-laptop-code"></i> Green Bites
+                        </h3>
+                        <p class="project-desc">
+                            A full-featured online food ordering platform with cart, checkout, and payment integration.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-badge">PHP</span>
+                            <span class="tech-badge">MYSQL</span>
+                            <span class="tech-badge">CSS</span>
+                            <span class="tech-badge">JavaScript</span>
+                        </div>
+                    </div>
+                    
+                    <div class="project-item">
+                        <h3 class="project-name">
+                            <i class="fas fa-book-reader"></i> Green Guardian
+                        </h3>
+                        <p class="project-desc">
+                            A comprehensive platform organizing academic resources including lab reports, notes, 
+                            and projects by semester for easy access.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-badge">HTML5</span>
+                            <span class="tech-badge">CSS3</span>
+                            <span class="tech-badge">JavaScript</span>
+                        </div>
+                    </div>
+                    
+                    <div class="project-item">
+                        <h3 class="project-name">
+                            <i class="fas fa-laptop-code"></i> Personal Portfolio Website
+                        </h3>
+                        <p class="project-desc">
+                            A modern, responsive portfolio website showcasing my projects, skills, and academic journey 
+                            with dark theme and interactive animations.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-badge">HTML5</span>
+                            <span class="tech-badge">CSS3</span>
+                            <span class="tech-badge">JavaScript</span>
+                        </div>
+                    </div>
+
+                    <div class="project-item">
+                    <h3 class="project-name">
+                        <i class="fas fa-laptop-code"></i> Student Management System
+                    </h3>
+                    <p class="project-desc">
+                        A console-based Student Management System built in C language. 
+                        Allows adding, updating, searching, and deleting student records efficiently. 
+                        Focused on basic file handling, data structures, and algorithmic problem solving.
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-badge">C Language</span>
+                        <span class="tech-badge">File Handling</span>
+                        <span class="tech-badge">Data Structures</span>
+                    </div>
+                </div>
+
+                <div class="project-item">
+                    <h3 class="project-name">
+                        <i class="fas fa-microchip"></i> Mini ATM System
+                    </h3>
+                    <p class="project-desc">
+                        Developed a Mini ATM simulation using Assembly language as part of the Microprocessor course. 
+                        Implemented basic banking functionalities such as PIN verification, balance checking, 
+                        and cash withdrawal. Focused on low-level programming, register management, and algorithmic logic.
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-badge">Assembly Language</span>
+                        <span class="tech-badge">Microprocessor</span>
+                        <span class="tech-badge">Low-Level Programming</span>
+                    </div>
+                </div>
+
+                </div>
+            </div>
+
+            <!-- Right Column -->
+            <div class="cv-right">
+                <!-- Skills -->
+                <div class="section">
+                    <h2 class="section-title">
+                        <i class="fas fa-cogs"></i> Skills
+                    </h2>
+                    
+                    <div class="skill-category">
+                        <h4 class="skill-category-title">
+                            <i class="fas fa-code"></i> Programming Languages
+                        </h4>
+                        <div class="skill-tags">
+                            <span class="skill-tag">C</span>
+                            <span class="skill-tag">C++</span>
+                            <span class="skill-tag">Python</span>
+                            <span class="skill-tag">JavaScript</span>
+                            <span class="skill-tag">Java</span>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-category">
+                        <h4 class="skill-category-title">
+                            <i class="fas fa-globe"></i> Web Technologies
+                        </h4>
+                        <div class="skill-tags">
+                            <span class="skill-tag">HTML5</span>
+                            <span class="skill-tag">CSS3</span>
+                            <span class="skill-tag">React.js</span>
+                            <span class="skill-tag">Node.js</span>
+                            <span class="skill-tag">Bootstrap</span>
+                            <span class="skill-tag">Tailwind CSS</span>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-category">
+                        <h4 class="skill-category-title">
+                            <i class="fas fa-database"></i> Database & Tools
+                        </h4>
+                        <div class="skill-tags">
+                            <span class="skill-tag">MySQL</span>
+                            <span class="skill-tag">MongoDB</span>
+                            <span class="skill-tag">Git</span>
+                            <span class="skill-tag">GitHub</span>
+                            <span class="skill-tag">VS Code</span>
+                            <span class="skill-tag">Figma</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Certifications -->
+                <div class="section">
+                    <h2 class="section-title">
+                        <i class="fas fa-certificate"></i> Achievements & Contributions
+                    </h2>
+                    
+                    <!-- Online Certifications -->
+                    
+
+                    <!-- University & Project Contributions -->
+                    <div class="cert-item">
+                        <div class="cert-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="cert-info">
+                            <h4>Green Guardian</h4>
+                            <p>Contributor & Leader • Ongoing</p>
+                        </div>
+                    </div>
+
+                    <div class="cert-item">
+                        <div class="cert-icon">
+                            <i class="fas fa-laptop-code"></i>
+                        </div>
+                        <div class="cert-info">
+                            <h4>Student Management System</h4>
+                            <p>C Language • Academic Project</p>
+                        </div>
+                    </div>
+
+                    <div class="cert-item">
+                        <div class="cert-icon">
+                            <i class="fas fa-store"></i>
+                        </div>
+                        <div class="cert-info">
+                            <h4>Green Bites</h4>
+                            <p>Canteen Management Website • HTML, CSS, JS</p>
+                        </div>
+                    </div>
+
+                    <!-- Volunteer Work -->
+                    <div class="cert-item">
+                        <div class="cert-icon">
+                            <i class="fas fa-hand-holding-heart"></i>
+                        </div>
+                        <div class="cert-info">
+                            <h4>5th Convocation Volunteer</h4>
+                            <p>Green University of Bangladesh • Certificate Received</p>
+                        </div>
+                    </div>
+
+                    <div class="cert-item">
+                        <div class="cert-icon">
+                            <i class="fas fa-hand-holding-heart"></i>
+                        </div>
+                        <div class="cert-info">
+                            <h4>7th STI Volunteer</h4>
+                            <p>Green University of Bangladesh • Certificate Received</p>
+                        </div>
+                    </div>
+
+                    <div class="cert-item">
+                        <div class="cert-icon">
+                            <i class="fas fa-hand-holding-heart"></i>
+                        </div>
+                        <div class="cert-info">
+                            <h4>6th STI Volunteer</h4>
+                            <p>Green University of Bangladesh • Certificate Received</p>
+                        </div>
+                    </div>
+
+                
+
+                    
+                </div>
+                <!-- Activities -->
+                 <div class="section">
+                <h2 class="section-title">
+                    <i class="fas fa-award"></i> Activities
+                </h2>
+                <!-- BNCC Platoon -->
+                <div class="cert-item">
+                    <div class="cert-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <div class="cert-info">
+                        <h4>Lance Corporal</h4>
+                        <p>BNCC Platoon • Green University of Bangladesh</p>
+                    </div>
+                </div>
+
+                <!-- Student Mentor -->
+                <div class="cert-item">
+                    <div class="cert-icon">
+                        <i class="fas fa-chalkboard-teacher"></i>
+                    </div>
+                    <div class="cert-info">
+                        <h4>Student Mentor</h4>
+                        <p>Department of CSE • Green University of Bangladesh</p>
+                    </div>
+                </div>
+                
+                <!-- University Programming Club -->
+                <div class="cert-item">
+                    <div class="cert-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div class="cert-info">
+                        <h4>Club Member</h4>
+                        <p>Green University Computer Club • 2023 - Present</p>
+                    </div>
+                </div>
+                
+                <!-- Competitive Programming -->
+                <div class="cert-item">
+                    <div class="cert-icon">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <div class="cert-info">
+                        <h4>Competitive Programming (GUB)</h4>
+                        <p>Participated in coding contests</p>
+                    </div>
+                </div>
+                
+                <!-- Photographic Club (Past Role) -->
+                <div class="cert-item">
+                    <div class="cert-icon">
+                        <i class="fas fa-camera-retro"></i>
+                    </div>
+                    <div class="cert-info">
+                        <h4>Technical Head (Past)</h4>
+                        <p>BAF Shaheen College Dhaka • Photographic Club </p>
+                    </div>
+                </div>
+                
+                
+
+                <!-- Math Olympiad -->
+                <div class="cert-item">
+                    <div class="cert-icon">
+                        <i class="fas fa-calculator"></i>
+                    </div>
+                    <div class="cert-info">
+                        <h4>Math Olympiad Participant</h4>
+                        <p>Green University mathematics competitions</p>
+                    </div>
+                </div>
+
+                <!-- Air Rover Scout (College) -->
+                <div class="cert-item">
+                    <div class="cert-icon">
+                        <i class="fas fa-compass"></i>
+                    </div>
+                    <div class="cert-info">
+                        <h4>Air Rover Scout</h4>
+                        <p>BAF Shaheen College • Participated in leadership and community activities</p>
+                    </div>
+                </div>
+            </div>
+
+                
+
+                <!-- Interests -->
+                <div class="section">
+                    <h2 class="section-title">
+                        <i class="fas fa-heart"></i> Interests
+                    </h2>
+                    <div class="interests-grid">
+                        <div class="interest-item">
+                            <i class="fas fa-code"></i>
+                            <span>Coding</span>
+                        </div>
+                        <div class="interest-item">
+                            <i class="fas fa-robot"></i>
+                            <span>AI & ML</span>
+                        </div>
+                        <div class="interest-item">
+                            <i class="fas fa-palette"></i>
+                            <span>UI/UX Design</span>
+                        </div>
+                        <div class="interest-item">
+                            <i class="fas fa-gamepad"></i>
+                            <span>Gaming</span>
+                        </div>
+                        <div class="interest-item">
+                            <i class="fas fa-music"></i>
+                            <span>Music</span>
+                        </div>
+                        <div class="interest-item">
+                            <i class="fas fa-camera"></i>
+                            <span>Photography</span>
+                        </div>
+                    </div>
+                </div>
+
+              
+                <!-- Languages -->
+                <div class="section">
+                    <h2 class="section-title">
+                        <i class="fas fa-language"></i> Languages
+                    </h2>
+                    
+                    <div class="language-item">
+                        <span class="language-name">Bengali</span>
+                        <span class="language-level">Native</span>
+                    </div>
+                    <div class="language-item">
+                        <span class="language-name">English</span>
+                        <span class="language-level">Proficient</span>
+                    </div>
+                    <div class="language-item">
+                        <span class="language-name">Hindi</span>
+                        <span class="language-level">Conversational</span>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="cv-footer">
+            <div class="social-links">
+                <a href="https://github.com/Sajjad-Mahmud-Suton" class="social-link" target="_blank">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/md-sajjad-mahmud-suton-344a802a7/" class="social-link" target="_blank">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="https://facebook.com/sajjadmahmudsuton.suton" class="social-link" target="_blank">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="mailto:sajjadmahmudsuton@gmail.com" class="social-link">
+                    <i class="fas fa-envelope"></i>
+                </a>
+            </div>
+            <p>© 2025-2026 Md. Sajjad Mahmud Suton | All Rights Reserved</p>
+        </footer>
+    </div>
+
+    <script>
+        function setTheme(theme) {
+            const body = document.body;
+            const darkBtn = document.querySelector('.theme-btn.dark');
+            const lightBtn = document.querySelector('.theme-btn.light');
+            
+            if (theme === 'light') {
+                body.classList.add('light-theme');
+                lightBtn.classList.add('active');
+                darkBtn.classList.remove('active');
+            } else {
+                body.classList.remove('light-theme');
+                darkBtn.classList.add('active');
+                lightBtn.classList.remove('active');
+            }
+        }
+
+        function downloadCV() {
+            // Open print dialog for PDF
+            window.print();
+        }
+    </script>
+</body>
+</html>

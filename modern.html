@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sajjad Mahmud® — Creative Developer & Frontend Architect</title>
+  <meta name="description" content="Award-winning Creative Developer, Web Developer, and Problem Solver crafting cinematic, high-performance digital experiences.">
+  <meta name="keywords" content="Creative Developer, Frontend Architect, Sajjad Mahmud, Three.js, GSAP, WebGL, Full-Stack, UI/UX">
+  <meta name="author" content="Sajjad Mahmud">
+
+  <!-- Favicons -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/src/image/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/src/image/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/src/image/favicon-16x16.png">
+
+  <!-- Google Fonts: Syne, Plus Jakarta Sans, Space Grotesk -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=Syne:wght@500;700;800&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Modern Styling -->
+  <link rel="stylesheet" href="/modern/css/modern.css">
+
+  <!-- EmailJS SDK -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+  <!-- Three.js & GSAP -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+</head>
+<body>
+
+  <!-- Grain Overlay & Ambient Glow -->
+  <div class="grain-overlay"></div>
+  <div class="ambient-glow ambient-glow-1"></div>
+  <div class="ambient-glow ambient-glow-2"></div>
+
+  <!-- Custom Cursor -->
+  <div class="cursor-dot"></div>
+  <div class="cursor-follower"></div>
+
+  <!-- Preloader -->
+  <div id="preloader">
+    <div class="preloader-header">
+      <span>SAJJAD MAHMUD® / CREATIVE DEVELOPER</span>
+      <span>EDITION 2026</span>
+    </div>
+    <div class="preloader-center">
+      <div class="preloader-monogram">SM®</div>
+      <div class="preloader-tagline">ARCHITECTING CINEMATIC EXPERIENCES</div>
+    </div>
+    <div class="preloader-footer">
+      <div class="preloader-counter" id="preloader-counter">00%</div>
+      <div class="preloader-bar-wrap">
+        <div class="preloader-bar" id="preloader-bar"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Navigation Bar -->
+  <header class="modern-nav">
+    <a href="#hero" class="nav-brand">
+      <span class="nav-logo">SAJJAD MAHMUD<span class="nav-logo-badge">®</span></span>
+    </a>
+
+    <nav class="nav-links">
+      <a href="#about" class="nav-link">About</a>
+      <a href="#skills" class="nav-link">Skills</a>
+      <a href="#projects" class="nav-link">Projects</a>
+      <a href="#experience" class="nav-link">Experience</a>
+      <a href="#blog" class="nav-link">Blog</a>
+      <a href="#contact" class="nav-link">Contact</a>
+    </nav>
+
+    <div class="nav-right">
+      <!-- Master Version Switcher -->
+      <div class="version-switcher" title="Switch between Classic and Modern Portfolio">
+        <a href="/classic.html?version=classic" class="version-btn" id="switch-to-classic" onclick="localStorage.setItem('sm_portfolio_version', 'classic')">
+          <i class="fas fa-history"></i> Classic
+        </a>
+        <span class="version-btn active">
+          <i class="fas fa-sparkles"></i> Modern
+        </span>
+      </div>
+
+      <a href="/admin.html" class="nav-link" style="font-size: 11px; opacity: 0.6;" title="Admin Console">
+        <i class="fas fa-lock"></i>
+      </a>
+
+      <button class="mobile-menu-btn" aria-label="Toggle Navigation Menu">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="mobile-nav-drawer">
+    <div class="mobile-nav-links">
+      <a href="#about" class="mobile-nav-link">About</a>
+      <a href="#skills" class="mobile-nav-link">Skills</a>
+      <a href="#projects" class="mobile-nav-link">Projects</a>
+      <a href="#experience" class="mobile-nav-link">Experience</a>
+      <a href="#blog" class="mobile-nav-link">Blog</a>
+      <a href="#contact" class="mobile-nav-link">Contact</a>
+    </div>
+    <div style="margin-top: 20px;">
+      <a href="/classic.html" class="btn-secondary" style="width: 100%; justify-content: center;">
+        <i class="fas fa-history"></i> Open Classic Portfolio
+      </a>
+    </div>
+  </div>
+
+  <!-- Hero Section -->
+  <section class="hero-section" id="hero">
+    <div id="three-canvas-container">
+      <canvas id="three-canvas"></canvas>
+    </div>
+
+    <div class="hero-container">
+      <div class="hero-content">
+        <div class="status-pill">
+          <span class="status-dot"></span>
+          <span>AVAILABLE FOR SELECT CONTRACTS & FULL-TIME ROLES</span>
+        </div>
+
+        <h1 class="hero-title">
+          I BUILD DIGITAL <span class="outline-text">EXPERIENCES</span> THAT MATTER.
+        </h1>
+
+        <p class="hero-subtitle">
+          Hi, I'm <strong>Md. Sajjad Mahmud Suton</strong> — Creative Developer, Vice President of GUCC & Student Mentor. Bridging aesthetic intuition with robust software architecture.
+        </p>
+
+        <div class="hero-cta-group">
+          <a href="#projects" class="btn-primary" data-magnetic>
+            <span>Explore Work</span>
+            <i class="fas fa-arrow-down"></i>
+          </a>
+          <a href="#contact" class="btn-secondary" data-magnetic>
+            <span>Initiate Contact</span>
+            <i class="fas fa-paper-plane"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-scroll-indicator">
+      <span>SCROLL TO DISCOVER</span>
+      <div class="scroll-track">
+        <div class="scroll-thumb"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tech Marquee Strip -->
+  <div class="marquee-container">
+    <div class="marquee-track">
+      <div class="marquee-item"><span>React.js</span><span class="marquee-dot"></span></div>
+      <div class="marquee-item"><span>Three.js WebGL</span><span class="marquee-dot"></span></div>
+      <div class="marquee-item"><span>TypeScript</span><span class="marquee-dot"></span></div>
+      <div class="marquee-item"><span>GSAP Motion</span><span class="marquee-dot"></span></div>
+      <div class="marquee-item"><span>Node.js & Express</span><span class="marquee-dot"></span></div>
+      <div class="marquee-item"><span>Cloud Firestore</span><span class="marquee-dot"></span></div>
+      <div class="marquee-item"><span>Tailwind CSS</span><span class="marquee-dot"></span></div>
+      <div class="marquee-item"><span>PHP & MySQL</span><span class="marquee-dot"></span></div>
+      <div class="marquee-item"><span>C / C++ Algorithms</span><span class="marquee-dot"></span></div>
+      <div class="marquee-item"><span>x86 Assembly</span><span class="marquee-dot"></span></div>
+      <!-- Duplicate for seamless infinite loop -->
+      <div class="marquee-item"><span>React.js</span><span class="marquee-dot"></span></div>
+      <div class="marquee-item"><span>Three.js WebGL</span><span class="marquee-dot"></span></div>
+      <div class="marquee-item"><span>TypeScript</span><span class="marquee-dot"></span></div>
+      <div class="marquee-item"><span>GSAP Motion</span><span class="marquee-dot"></span></div>
+      <div class="marquee-item"><span>Node.js & Express</span><span class="marquee-dot"></span></div>
+      <div class="marquee-item"><span>Cloud Firestore</span><span class="marquee-dot"></span></div>
+    </div>
+  </div>
+
+  <!-- About Section -->
+  <section class="section" id="about">
+    <div class="section-head">
+      <span class="section-label"><i class="fas fa-circle-nodes"></i> Discovery & Philosophy</span>
+      <h2 class="section-title">ENGINEERING WITH PURPOSE & EMOTION.</h2>
+    </div>
+
+    <div class="about-grid">
+      <div class="about-visual">
+        <div class="about-image-card">
+          <img src="/src/image/Sajjad_Mahmud.png" alt="Md. Sajjad Mahmud Suton" class="about-image">
+        </div>
+        <div class="about-badge-floating">
+          <div class="about-badge-number">3+</div>
+          <div class="about-badge-label">Years Crafting Software</div>
+        </div>
+      </div>
+
+      <div class="about-narrative">
+        <p>
+          I am a passionate creative developer and 3rd-year <strong>Computer Science & Engineering</strong> student at <strong>Green University of Bangladesh</strong>. I engineer web platforms where cinematic visual design meets reliable, maintainable codebases.
+        </p>
+        <p>
+          Beyond writing code, I actively empower the developer community. As <strong>Vice President of the Green University Computer Club (GUCC)</strong> and a departmental <strong>Student Mentor</strong>, I conduct mentoring sessions, lead tech workshops, and guide junior peers through algorithms, web design, and collaborative version control.
+        </p>
+        <p>
+          My focus centers on high-impact full-stack web applications, fluid micro-interactions, and accessible, responsive systems that perform flawlessly under any bandwidth condition.
+        </p>
+
+        <div class="about-metrics">
+          <div class="metric-item">
+            <div class="metric-number">15<span class="accent">+</span></div>
+            <div class="metric-label">Completed Systems</div>
+          </div>
+          <div class="metric-item">
+            <div class="metric-number">100<span class="accent">+</span></div>
+            <div class="metric-label">Students Mentored</div>
+          </div>
+          <div class="metric-item">
+            <div class="metric-number">100<span class="accent">%</span></div>
+            <div class="metric-label">Free & Open Solutions</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Matrix Section -->
+  <section class="section" id="skills" style="background: var(--bg-surface); border-top: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle);">
+    <div class="section-head">
+      <span class="section-label"><i class="fas fa-microchip"></i> Technology Matrix</span>
+      <h2 class="section-title">PRECISION CRAFT & TOOLING.</h2>
+      <p class="section-desc">Authentic capabilities proven through production projects and academic systems.</p>
+    </div>
+
+    <div class="skills-grid">
+      <div class="skill-card">
+        <div class="skill-icon-wrap"><i class="fas fa-code"></i></div>
+        <h3 class="skill-card-title">Frontend Engineering</h3>
+        <p class="skill-card-desc">Modern component architectures, fluid styling, responsive viewports, and reactive state.</p>
+        <div class="skill-tags">
+          <span class="skill-tag">HTML5</span>
+          <span class="skill-tag">CSS3 / SASS</span>
+          <span class="skill-tag">JavaScript (ES6+)</span>
+          <span class="skill-tag">React.js</span>
+          <span class="skill-tag">TypeScript</span>
+          <span class="skill-tag">Tailwind CSS</span>
+        </div>
+      </div>
+
+      <div class="skill-card">
+        <div class="skill-icon-wrap"><i class="fas fa-cubes"></i></div>
+        <h3 class="skill-card-title">Creative & Motion</h3>
+        <p class="skill-card-desc">Cinematic WebGL canvas rendering, physics-based springs, and scroll-orchestrated storytelling.</p>
+        <div class="skill-tags">
+          <span class="skill-tag">Three.js</span>
+          <span class="skill-tag">WebGL</span>
+          <span class="skill-tag">GSAP ScrollTrigger</span>
+          <span class="skill-tag">Figma Prototyping</span>
+          <span class="skill-tag">UI/UX Systems</span>
+        </div>
+      </div>
+
+      <div class="skill-card">
+        <div class="skill-icon-wrap"><i class="fas fa-server"></i></div>
+        <h3 class="skill-card-title">Backend & Systems</h3>
+        <p class="skill-card-desc">Scalable RESTful service endpoints, structured authentication, session logic, and algorithms.</p>
+        <div class="skill-tags">
+          <span class="skill-tag">Node.js</span>
+          <span class="skill-tag">Express</span>
+          <span class="skill-tag">PHP</span>
+          <span class="skill-tag">Python</span>
+          <span class="skill-tag">C / C++</span>
+          <span class="skill-tag">x86 Assembly</span>
+        </div>
+      </div>
+
+      <div class="skill-card">
+        <div class="skill-icon-wrap"><i class="fas fa-database"></i></div>
+        <h3 class="skill-card-title">Cloud & Databases</h3>
+        <p class="skill-card-desc">Relational schemas, NoSQL document collections, real-time sync, and distributed hosting.</p>
+        <div class="skill-tags">
+          <span class="skill-tag">Cloud Firestore</span>
+          <span class="skill-tag">Firebase Auth</span>
+          <span class="skill-tag">MySQL</span>
+          <span class="skill-tag">MongoDB</span>
+          <span class="skill-tag">Git / GitHub</span>
+          <span class="skill-tag">Linux</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Project Showcase Section -->
+  <section class="section" id="projects">
+    <div class="section-head">
+      <span class="section-label"><i class="fas fa-layer-group"></i> Curated Works</span>
+      <h2 class="section-title">AUTHENTIC ARCHITECTURE IN ACTION.</h2>
+      <p class="section-desc">Explore flagship software systems built with real code, functional databases, and live deployments.</p>
+    </div>
+
+    <div class="projects-container">
+      <!-- Project 1: Green Bites -->
+      <article class="project-item">
+        <div class="project-media-wrapper" data-tilt>
+          <img src="/src/image/Green_Bites.PNG" alt="Green Bites Platform" class="project-image" loading="lazy">
+        </div>
+        <div class="project-info">
+          <span class="project-index">01 / E-COMMERCE & FOOD PLATFORM</span>
+          <h3 class="project-title">Green Bites</h3>
+          <p class="project-description">
+            A comprehensive web application for university canteen automation. Features dynamic category menus, real-time cart state management, checkout confirmation, and database-backed order management.
+          </p>
+          <div class="project-tech-stack">
+            <span class="tech-pill">PHP</span>
+            <span class="tech-pill">MySQL</span>
+            <span class="tech-pill">JavaScript</span>
+            <span class="tech-pill">CSS3</span>
+            <span class="tech-pill">Responsive Design</span>
+          </div>
+          <div class="project-action-links">
+            <a href="https://greenbites.free.nf/" target="_blank" rel="noopener noreferrer" class="btn-primary" onclick="SajjadAnalytics.logProjectClick('green-bites')">
+              <span>Live Demonstration</span>
+              <i class="fas fa-arrow-up-right-from-square"></i>
+            </a>
+            <a href="https://github.com/Sajjad-Mahmud-Suton/Green-Bites" target="_blank" rel="noopener noreferrer" class="project-btn-icon">
+              <i class="fab fa-github"></i>
+              <span>Source Repository</span>
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Project 2: Green Guardian -->
+      <article class="project-item">
+        <div class="project-media-wrapper" data-tilt>
+          <img src="/src/image/GreenGuardian.png" alt="Green Guardian Platform" class="project-image" loading="lazy">
+        </div>
+        <div class="project-info">
+          <span class="project-index">02 / EXAM INTEGRITY & ACADEMIC HUB</span>
+          <h3 class="project-title">Green Guardian</h3>
+          <p class="project-description">
+            An online exam monitoring and academic platform designed to safeguard testing integrity during remote examinations while organizing verified course materials.
+          </p>
+          <div class="project-tech-stack">
+            <span class="tech-pill">TypeScript</span>
+            <span class="tech-pill">React JSX</span>
+            <span class="tech-pill">Firebase Hosting</span>
+            <span class="tech-pill">Cloud Firestore</span>
+          </div>
+          <div class="project-action-links">
+            <a href="https://green--guardian.web.app/" target="_blank" rel="noopener noreferrer" class="btn-primary" onclick="SajjadAnalytics.logProjectClick('green-guardian')">
+              <span>Live Demonstration</span>
+              <i class="fas fa-arrow-up-right-from-square"></i>
+            </a>
+            <a href="https://github.com/Sajjad-Mahmud-Suton/Green-Guardian" target="_blank" rel="noopener noreferrer" class="project-btn-icon">
+              <i class="fab fa-github"></i>
+              <span>Source Repository</span>
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Project 3: Creative Portfolio -->
+      <article class="project-item">
+        <div class="project-media-wrapper" data-tilt>
+          <img src="/src/image/Portfolio1.PNG" alt="Creative Developer Portfolio" class="project-image" loading="lazy">
+        </div>
+        <div class="project-info">
+          <span class="project-index">03 / CREATIVE DIGITAL IDENTITY</span>
+          <h3 class="project-title">Creative Developer Portfolio</h3>
+          <p class="project-description">
+            Next-generation portfolio engineered with Three.js WebGL, GSAP ScrollTrigger, client-side semantic vector AI, and dark luxury aesthetic with seamless classic/modern version switching.
+          </p>
+          <div class="project-tech-stack">
+            <span class="tech-pill">Three.js</span>
+            <span class="tech-pill">GSAP 3</span>
+            <span class="tech-pill">WebGL</span>
+            <span class="tech-pill">Cloud Firestore</span>
+            <span class="tech-pill">Client Vector AI</span>
+          </div>
+          <div class="project-action-links">
+            <a href="#hero" class="btn-primary">
+              <span>Current Experience</span>
+              <i class="fas fa-check"></i>
+            </a>
+            <a href="https://github.com/Sajjad-Mahmud-Suton/Portfolio_Website" target="_blank" rel="noopener noreferrer" class="project-btn-icon">
+              <i class="fab fa-github"></i>
+              <span>Source Repository</span>
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Project 4: Student Management System -->
+      <article class="project-item">
+        <div class="project-media-wrapper" data-tilt>
+          <img src="/src/image/student-management-system.png" alt="Student Management System" class="project-image" loading="lazy">
+        </div>
+        <div class="project-info">
+          <span class="project-index">04 / ALGORITHMIC SYSTEM IN C</span>
+          <h3 class="project-title">Student Management System</h3>
+          <p class="project-description">
+            Console-based high-performance data processing engine built in C. Implements file persistence, structured records, multi-parameter student search, and fast sorting algorithms.
+          </p>
+          <div class="project-tech-stack">
+            <span class="tech-pill">C Language</span>
+            <span class="tech-pill">File I/O</span>
+            <span class="tech-pill">Data Structures</span>
+            <span class="tech-pill">Algorithms</span>
+          </div>
+          <div class="project-action-links">
+            <a href="https://github.com/Sajjad-Mahmud-Suton" target="_blank" rel="noopener noreferrer" class="project-btn-icon">
+              <i class="fab fa-github"></i>
+              <span>Explore on GitHub</span>
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Project 5: Mini ATM Simulation -->
+      <article class="project-item">
+        <div class="project-media-wrapper" data-tilt>
+          <img src="/src/image/mini-atm.jfif" alt="Mini ATM Assembly System" class="project-image" loading="lazy">
+        </div>
+        <div class="project-info">
+          <span class="project-index">05 / LOW-LEVEL MICROPROCESSOR LOGIC</span>
+          <h3 class="project-title">Mini ATM Banking System</h3>
+          <p class="project-description">
+            Engineered low-level microprocessor simulation in x86 Assembly. Implements register manipulation, PIN verification interrupts, balance computation, and withdrawal verification.
+          </p>
+          <div class="project-tech-stack">
+            <span class="tech-pill">x86 Assembly</span>
+            <span class="tech-pill">Microprocessors</span>
+            <span class="tech-pill">Register Management</span>
+            <span class="tech-pill">Hardware Logic</span>
+          </div>
+          <div class="project-action-links">
+            <a href="https://github.com/Sajjad-Mahmud-Suton" target="_blank" rel="noopener noreferrer" class="project-btn-icon">
+              <i class="fab fa-github"></i>
+              <span>Explore on GitHub</span>
+            </a>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- Experience & Achievements Timeline -->
+  <section class="section" id="experience" style="background: var(--bg-surface); border-top: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle);">
+    <div class="section-head">
+      <span class="section-label"><i class="fas fa-award"></i> Trajectory & Recognition</span>
+      <h2 class="section-title">LEADERSHIP, MENTORSHIP & HONORS.</h2>
+    </div>
+
+    <div class="timeline-grid">
+      <div class="timeline-card">
+        <div class="timeline-period">2023 — PRESENT</div>
+        <div>
+          <h3 class="timeline-role">Vice President</h3>
+          <p class="timeline-org">Green University Computer Club (GUCC)</p>
+          <p style="font-size: 0.9rem; color: var(--text-dim); margin-top: 6px;">
+            Leading executive decisions, organizing programming workshops, competitive coding rounds, and technological initiatives across the university.
+          </p>
+        </div>
+        <span class="timeline-badge">Leadership</span>
+      </div>
+
+      <div class="timeline-card">
+        <div class="timeline-period">2023 — PRESENT</div>
+        <div>
+          <h3 class="timeline-role">Department Student Mentor</h3>
+          <p class="timeline-org">Department of CSE • Green University of Bangladesh</p>
+          <p style="font-size: 0.9rem; color: var(--text-dim); margin-top: 6px;">
+            Guiding 100+ undergraduate peers in core programming paradigms, discrete mathematics, and web development fundamentals.
+          </p>
+        </div>
+        <span class="timeline-badge">Mentorship</span>
+      </div>
+
+      <div class="timeline-card">
+        <div class="timeline-period">DECEMBER 2025</div>
+        <div>
+          <h3 class="timeline-role">Official Volunteer & Certificate Recipient</h3>
+          <p class="timeline-org">7th Sustainable Technology Initiative (STI 2025)</p>
+          <p style="font-size: 0.9rem; color: var(--text-dim); margin-top: 6px;">
+            Coordinated international research tracks and keynote logistics on sustainable engineering for Industry 5.0.
+          </p>
+        </div>
+        <span class="timeline-badge">Honor</span>
+      </div>
+
+      <div class="timeline-card">
+        <div class="timeline-period">DECEMBER 2024</div>
+        <div>
+          <h3 class="timeline-role">Official Volunteer & Certificate Recipient</h3>
+          <p class="timeline-org">6th Sustainable Technology Initiative (STI 2024)</p>
+          <p style="font-size: 0.9rem; color: var(--text-dim); margin-top: 6px;">
+            Assisted event proceedings, participant registrations, and technical presentations.
+          </p>
+        </div>
+        <span class="timeline-badge">Honor</span>
+      </div>
+
+      <div class="timeline-card">
+        <div class="timeline-period">2023</div>
+        <div>
+          <h3 class="timeline-role">Convocation Organizing Volunteer</h3>
+          <p class="timeline-org">5th Convocation • Green University of Bangladesh</p>
+        </div>
+        <span class="timeline-badge">Volunteer</span>
+      </div>
+
+      <div class="timeline-card">
+        <div class="timeline-period">PAST ROLE</div>
+        <div>
+          <h3 class="timeline-role">Technical Head</h3>
+          <p class="timeline-org">Photographic Club • BAF Shaheen College Dhaka</p>
+        </div>
+        <span class="timeline-badge">Executive</span>
+      </div>
+
+      <div class="timeline-card">
+        <div class="timeline-period">SERVICE</div>
+        <div>
+          <h3 class="timeline-role">Lance Corporal</h3>
+          <p class="timeline-org">BNCC Platoon • Green University of Bangladesh</p>
+        </div>
+        <span class="timeline-badge">Discipline & Leadership</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Dynamic Blog Section -->
+  <section class="section" id="blog">
+    <div class="section-head">
+      <span class="section-label"><i class="fas fa-newspaper"></i> Editorial & Insights</span>
+      <h2 class="section-title">THOUGHTS, TECH & PERSPECTIVES.</h2>
+      <p class="section-desc">In-depth technical articles and reflections on technology, research, and engineering.</p>
+    </div>
+
+    <div class="blog-controls">
+      <div class="skills-nav-tabs" style="margin-bottom: 0;">
+        <button class="skill-tab-btn blog-cat-tab active" data-cat="all">All Articles</button>
+        <button class="skill-tab-btn blog-cat-tab" data-cat="Research">Research & EV</button>
+        <button class="skill-tab-btn blog-cat-tab" data-cat="Conference">Conferences</button>
+        <button class="skill-tab-btn blog-cat-tab" data-cat="Web Development">Frontend</button>
+        <button class="skill-tab-btn blog-cat-tab" data-cat="Backend">Backend</button>
+      </div>
+
+      <div class="blog-search-box">
+        <i class="fas fa-search" style="color: var(--text-dim); font-size: 13px;"></i>
+        <input type="text" id="blog-search-input" placeholder="Search insights & tutorials...">
+      </div>
+    </div>
+
+    <div class="blog-grid" id="blog-grid">
+      <!-- Populated via modern/js/blog.js -->
+    </div>
+  </section>
+
+  <!-- Article Modal Reader -->
+  <div class="article-modal" id="article-modal">
+    <div class="article-modal-sheet">
+      <button class="article-modal-close" id="article-modal-close" aria-label="Close article">
+        <i class="fas fa-times"></i>
+      </button>
+      <div class="article-modal-content" id="article-modal-body">
+        <!-- Injected via blog.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Contact Section -->
+  <section class="section" id="contact" style="background: var(--bg-surface); border-top: 1px solid var(--border-subtle);">
+    <div class="section-head">
+      <span class="section-label"><i class="fas fa-terminal"></i> Direct Connection</span>
+      <h2 class="section-title">LET'S BUILD SOMETHING EXTRAORDINARY.</h2>
+      <p class="section-desc">Have a creative project or engineering opportunity? Transmit a message below.</p>
+    </div>
+
+    <div class="contact-wrapper">
+      <div class="contact-direct">
+        <div class="contact-card-info">
+          <div style="font-family: var(--font-mono); font-size: 11px; color: var(--accent-lime); text-transform: uppercase; margin-bottom: 8px;">
+            PRIMARY INBOX
+          </div>
+          <h3 style="font-family: var(--font-display); font-size: 1.5rem; margin-bottom: 6px;">sajjadmahmudsuton@gmail.com</h3>
+          <p style="font-size: 0.95rem; color: var(--text-muted);">
+            Direct inbox for project contracts, technical inquiries, and collaborations.
+          </p>
+
+          <button class="copy-email-btn" id="copy-email-trigger" type="button">
+            <span>Copy Email to Clipboard</span>
+            <i class="far fa-copy"></i>
+          </button>
+        </div>
+
+        <div class="contact-card-info">
+          <div style="font-family: var(--font-mono); font-size: 11px; color: var(--accent-lime); text-transform: uppercase; margin-bottom: 8px;">
+            LOCALITY & AVAILABILITY
+          </div>
+          <h4 style="font-size: 1.15rem; margin-bottom: 4px;">Dhaka, Bangladesh</h4>
+          <p style="font-family: var(--font-mono); font-size: 13px; color: var(--text-dim);" id="live-dhaka-time">
+            Loading local time...
+          </p>
+        </div>
+
+        <div class="contact-card-info">
+          <div style="font-family: var(--font-mono); font-size: 11px; color: var(--accent-lime); text-transform: uppercase; margin-bottom: 12px;">
+            NETWORK PROFILES
+          </div>
+          <div style="display: flex; gap: 16px;">
+            <a href="https://github.com/Sajjad-Mahmud-Suton" target="_blank" rel="noopener noreferrer" class="btn-secondary" style="padding: 10px 18px; font-size: 12px;">
+              <i class="fab fa-github"></i> GitHub
+            </a>
+            <a href="https://www.linkedin.com/in/md-sajjad-mahmud-suton-344a802a7/" target="_blank" rel="noopener noreferrer" class="btn-secondary" style="padding: 10px 18px; font-size: 12px;">
+              <i class="fab fa-linkedin-in"></i> LinkedIn
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Live Contact Form -->
+      <form class="contact-form" id="modern-contact-form">
+        <div class="form-group">
+          <label class="form-label" for="form-name">Your Full Name</label>
+          <input type="text" id="form-name" class="form-input" placeholder="e.g. Elena Vance" required>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="form-email">Your Email Address</label>
+          <input type="email" id="form-email" class="form-input" placeholder="elena@company.com" required>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="form-subject">Subject / Scope</label>
+          <input type="text" id="form-subject" class="form-input" placeholder="Web Platform Collaboration / Job Opportunity">
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="form-message">Detailed Message</label>
+          <textarea id="form-message" class="form-textarea" placeholder="Describe project parameters, timelines, and goals..." required></textarea>
+        </div>
+
+        <button type="submit" class="btn-primary" style="justify-content: center; width: 100%;">
+          <span>Transmit Message</span>
+          <i class="fas fa-arrow-right"></i>
+        </button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Modern Footer -->
+  <footer class="modern-footer">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <h2>SAJJAD MAHMUD®</h2>
+        <p style="color: var(--text-muted); max-width: 480px; font-size: 0.95rem;">
+          Creative Developer & CSE Engineer crafting digital experiences with purpose, high aesthetic integrity, and rigorous code quality.
+        </p>
+      </div>
+
+      <div>
+        <div style="font-family: var(--font-mono); font-size: 11px; color: var(--accent-lime); text-transform: uppercase; margin-bottom: 12px;">
+          EXPERIENCE SELECTION
+        </div>
+        <div class="version-switcher">
+          <a href="/classic.html?version=classic" class="version-btn" onclick="localStorage.setItem('sm_portfolio_version', 'classic')">
+            <i class="fas fa-history"></i> Classic Version
+          </a>
+          <span class="version-btn active">
+            <i class="fas fa-sparkles"></i> Modern Version
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>&copy; 2026 Md. Sajjad Mahmud Suton. All Rights Reserved.</span>
+      <div style="display: flex; gap: 20px;">
+        <a href="https://github.com/Sajjad-Mahmud-Suton" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="https://www.linkedin.com/in/md-sajjad-mahmud-suton-344a802a7/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="/admin.html">Admin Console</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Strictly 100% Free AI Chatbot: "Ask Sajjad AI" -->
+  <button class="chatbot-trigger" id="chatbot-trigger" aria-label="Open Ask Sajjad AI Assistant">
+    <div class="chatbot-avatar">AI</div>
+    <span style="font-family: var(--font-mono); font-size: 12px; font-weight: 700; color: #FFFFFF;">ASK SAJJAD AI</span>
+  </button>
+
+  <div class="chatbot-drawer" id="chatbot-drawer">
+    <div class="chatbot-header">
+      <div style="display: flex; align-items: center; gap: 10px;">
+        <div class="chatbot-avatar">SM</div>
+        <div>
+          <div style="font-family: var(--font-display); font-size: 14px; font-weight: 700;">Ask Sajjad AI</div>
+          <div style="font-family: var(--font-mono); font-size: 10px; color: var(--accent-lime);">100% Free Knowledge Engine</div>
+        </div>
+      </div>
+      <button id="chatbot-close" style="color: var(--text-muted); font-size: 16px;" aria-label="Close Chatbot">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+
+    <div class="chatbot-messages" id="chatbot-messages">
+      <div class="chat-bubble bot">
+        Hello! I am Sajjad's portfolio intelligence assistant. Ask me anything regarding his <strong>projects</strong>, <strong>skills</strong>, <strong>leadership at GUCC</strong>, or <strong>how to get in touch</strong>!
+      </div>
+    </div>
+
+    <div class="chatbot-quick-chips">
+      <button class="chat-chip" data-prompt="Who is Sajjad Mahmud?">Who is Sajjad?</button>
+      <button class="chat-chip" data-prompt="Show his top projects">Top Projects</button>
+      <button class="chat-chip" data-prompt="What is his technical stack?">Tech Stack</button>
+      <button class="chat-chip" data-prompt="Tell me about his leadership in GUCC">Leadership</button>
+      <button class="chat-chip" data-prompt="How can I contact Sajjad?">Contact Sajjad</button>
+    </div>
+
+    <div class="chatbot-input-bar">
+      <input type="text" id="chatbot-input" placeholder="Ask about projects, skills, or experience...">
+      <button id="chatbot-send" style="color: var(--accent-lime); font-size: 16px;" aria-label="Send Message">
+        <i class="fas fa-paper-plane"></i>
+      </button>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="/modern/js/analytics.js"></script>
+  <script src="/modern/js/three-scene.js"></script>
+  <script src="/modern/js/chatbot.js"></script>
+  <script src="/modern/js/blog.js"></script>
+  <script src="/modern/js/app.js"></script>
+</body>
+</html>

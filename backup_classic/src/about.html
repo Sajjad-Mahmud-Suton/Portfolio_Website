@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- ============================================
+         ABOUT PAGE - Personal Portfolio Website
+         About me, skills, and experience sections
+         ============================================ -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Learn more about me, my skills, experience, and what drives my passion for web development.">
+    <meta name="keywords" content="about, developer, skills, experience, background">
+    <meta name="author" content="Sajjad Mahmud">
+    <link rel="apple-touch-icon" sizes="180x180" href="../src/image/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../src/image/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../src/image//favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <title>About Me | Sajjad  - Web Developer</title>
+    
+    <!-- Google Fonts - Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Main Stylesheet -->
+   <link rel="stylesheet" href="/css/style.css">
+
+</head>
+<body>
+    <!-- ==========================================
+         NAVIGATION BAR
+         ========================================== -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="../index.html" class="nav-logo">SAJJAD MAHMUD</a>
+            
+            <ul class="nav-menu">
+                <li><a href="../index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link active">About</a></li>
+                <li><a href="education.html" class="nav-link">Education</a></li>
+                <li><a href="projects.html" class="nav-link">Projects</a></li>
+                <li><a href="blog.html" class="nav-link">Blog</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+               <li><a href="cv.html" class="btn  btn-cv-download" target="_blank"><i class="fas fa-download"></i>Download CV</a></li>
+            </ul>
+            
+            <!-- Theme Toggle Button -->
+            <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+                <i class="fas fa-moon"></i>
+            </button>
+            
+            <div class="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ==========================================
+         PAGE HEADER
+         ========================================== -->
+    <section class="section" style="padding-top: 150px; padding-bottom: 60px;">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2>About <span class="gradient-text">Me</span></h2>
+                <p>Get to know my background, skills, and what drives my passion for creating digital experiences.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         ABOUT CONTENT - Bio and Image
+         ========================================== -->
+    <section class="section" style="padding-top: 0;">
+        <div class="container">
+            <div class="about-content">
+                <!-- Profile Image -->
+                <div class="about-image slide-in-left">
+                    <!-- Replace with your photo -->
+                    <img src="../src/image/Sajjad_Mahmud.png" alt="Sajjad Mahmud">
+                </div>
+                
+                <!-- About Text -->
+                <div class="about-text slide-in-right">
+                    <h2>Hi there! I'm <span class="gradient-text">Sajjad Mahmud Suton</span></h2>
+                    
+                    <p>
+                        I am a passionate web developer and designer, currently a 3rd-year <strong>Computer Science and Engineering</strong> student at <strong>Green University of Bangladesh</strong>. I enjoy building clean, responsive, and user-friendly websites that focus on both functionality and visual appeal.
+                    </p>
+                    
+                    <p>
+                       My journey in web development began during my early university years, where I developed a strong interest in turning ideas into real-world digital solutions. Since then, I have been continuously improving my skills by working on academic projects, personal portfolios, and practice-based web applications.
+                    </p>
+                    
+                    <p>
+                        I believe that good design is not only about how a website looks, but also about how smoothly it works and how effectively it communicates with users. I am always eager to learn new technologies, explore modern web trends, and enhance my problem-solving abilities.
+                    </p>
+                    <p>
+                        In my free time, I enjoy experimenting with new tools, improving my coding skills, and staying updated with the latest developments in web technology.
+                    </p>
+                    
+                    <!-- Personal Info -->
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-top: 30px;">
+                        <p style="margin: 0;"><strong>Name:</strong> Md. Sajjad Mahmud Suton</p>
+                        <p style="margin: 0;"><strong>Email:</strong><a href="mailto:sajjadmahmudsuton@gmail.com">sajjadmahmudsuton@gmail.com</a></p>
+                        <p style="margin: 0;"><strong>Location:</strong> Dhaka, Bangladesh</p>
+                        <p style="margin: 0;"><strong>Availability:</strong> Open to work</p>
+                    </div>
+                    
+                    <!-- Buttons -->
+                    <div class="hero-buttons" style="margin-top: 30px;">
+                        <a href="cv.html" class="btn  btn-cv-download" target="_blank"><i class="fas fa-download"></i>Download CV</a>
+                        <a href="contact.html" class="btn btn-secondary">
+                            <i class="fas fa-envelope"></i> Contact Me
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         SKILLS SECTION
+         ========================================== -->
+    <section class="section" style="background: var(--bg-secondary);">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2>My <span class="gradient-text">Skills</span></h2>
+                <p>Technologies and tools I use to bring ideas to life.</p>
+            </div>
+            
+            <div class="skills-grid">
+                <!-- Skill Card 1 - Frontend -->
+                <div class="card skill-card fade-in">
+                    <div class="skill-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h4>Frontend Development</h4>
+                    <p>HTML5, CSS3, JavaScript, React, Vue.js, TypeScript, Tailwind CSS, SASS</p>
+                </div>
+                
+                <!-- Skill Card 2 - Backend -->
+                <div class="card skill-card fade-in fade-in-delay-1">
+                    <div class="skill-icon">
+                        <i class="fas fa-server"></i>
+                    </div>
+                    <h4>Backend Development</h4>
+                    <p>Node.js, Express, Python, Django, PHP, Laravel, RESTful APIs, GraphQL</p>
+                </div>
+                
+                <!-- Skill Card 3 - Database -->
+                <div class="card skill-card fade-in fade-in-delay-2">
+                    <div class="skill-icon">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <h4>Database Management</h4>
+                    <p>MySQL, PostgreSQL, MongoDB, Firebase, Redis, Prisma ORM</p>
+                </div>
+                
+                <!-- Skill Card 4 - Design -->
+                <div class="card skill-card fade-in fade-in-delay-3">
+                    <div class="skill-icon">
+                        <i class="fas fa-paint-brush"></i>
+                    </div>
+                    <h4>UI/UX Design</h4>
+                    <p>Figma, Adobe XD, Photoshop, Illustrator, Prototyping, Wireframing</p>
+                </div>
+                
+                <!-- Skill Card 5 - DevOps -->
+                <div class="card skill-card fade-in">
+                    <div class="skill-icon">
+                        <i class="fas fa-cloud"></i>
+                    </div>
+                    <h4>DevOps & Cloud</h4>
+                    <p>Git, Docker, AWS, Vercel, Netlify, CI/CD, Linux</p>
+                </div>
+                
+                <!-- Skill Card 6 - Mobile -->
+                <div class="card skill-card fade-in fade-in-delay-1">
+                    <div class="skill-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h4>Mobile Development</h4>
+                    <p>React Native, Flutter, Progressive Web Apps (PWA)</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         EXPERIENCE & EDUCATION TIMELINE
+         ========================================== -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2>Experience & <span class="gradient-text">Education</span></h2>
+                <p>My professional journey and educational background.</p>
+            </div>
+            
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 60px;">
+                <!-- Work Experience -->
+                <div class="fade-in">
+                    <h3 style="margin-bottom: 30px;">
+                        <i class="fas fa-briefcase" style="color: var(--gradient-teal);"></i> Work Experience
+                    </h3>
+                    
+                    <div class="timeline">
+                       <!-- Experience 1 -->
+                        <div class="timeline-item">
+                            <span class="timeline-date">2023 - Present</span>
+                            <h4>Web Development Projects</h4>
+                            <h5>Academic & Personal Projects</h5>
+                            <p>
+                                Developed responsive websites and web applications as part of university coursework and personal practice. Focused on clean UI, basic backend logic, and usability.
+                            </p>
+                        </div>
+
+                                                
+                                                <!-- Experience 2 -->
+                        <div class="timeline-item">
+                            <span class="timeline-date">2022 - Present</span>
+                            <h4>Self-Learning Web Developer</h4>
+                            <h5>Online Resources & Practice</h5>
+                            <p>
+                                Continuously learning web development through tutorials, documentation, and hands-on practice. Improving skills in frontend design and problem-solving.
+                            </p>
+                        </div>
+
+                                                
+                                                <!-- Experience 3 -->
+                        <div class="timeline-item">
+                            <span class="timeline-date">2022 - Present</span>
+                            <h4>Team-Based Academic Work</h4>
+                            <h5>Green University of Bangladesh</h5>
+                            <p>
+                                Collaborated with classmates on group projects, gaining experience in teamwork, project planning, and basic software development practices.
+                            </p>
+                        </div>
+
+                    </div>
+                </div>
+                
+                <!-- Education -->
+                <div class="fade-in fade-in-delay-2">
+                    <h3 style="margin-bottom: 30px;">
+                        <i class="fas fa-graduation-cap" style="color: var(--gradient-purple);"></i> Education
+                    </h3>
+                    
+                    <div class="timeline">
+                                        <!-- Education -->
+                <div class="timeline-item">
+                    <span class="timeline-date">2022 - Present</span>
+                    <h4>Bachelor of Science in Computer Science & Engineering</h4>
+                    <h5>
+                        <a href="https://www.green.edu.bd/" target="_blank">
+                            Green University of Bangladesh
+                        </a>
+                    </h5>
+                    <p>
+                        Currently a 3rd-year student, focusing on web development, software engineering, and problem-solving skills through academic and personal projects.
+                    </p>
+                </div>
+
+                                        
+                                        <!-- Education 2 -->
+                <div class="timeline-item">
+                    <span class="timeline-date">2024 - Present</span>
+                    <h4>Web Development (Self-Learning)</h4>
+                    <h5>Online Platforms & Practice</h5>
+                    <p>
+                        Learning and practicing HTML, CSS, JavaScript, and backend concepts through online resources, academic projects, and personal practice.
+                    </p>
+                </div>
+
+                        
+                                            <!-- Education 3 -->
+                        <div class="timeline-item">
+                            <span class="timeline-date">Ongoing</span>
+                            <h4>Frontend & Backend Development</h4>
+                            <h5>Personal & Academic Projects</h5>
+                            <p>
+                                Gaining hands-on experience by building small projects, portfolio websites, and academic applications.
+                            </p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         FUN FACTS / INTERESTS
+         ========================================== -->
+    <section class="section" style="background: var(--bg-secondary);">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2>Fun <span class="gradient-text">Facts</span></h2>
+                <p>A few things about me beyond the code.</p>
+            </div>
+            
+            <div class="projects-grid" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));">
+                <!-- Fact 1 -->
+                <div class="card text-center fade-in">
+                    <div class="skill-icon" style="margin-bottom: 20px;">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <h4>Countries Visited</h4>
+                    <p class="gradient-text" style="font-size: 2rem; font-weight: 700;">12+</p>
+                </div>
+                
+                <!-- Fact 2 -->
+                <div class="card text-center fade-in fade-in-delay-1">
+                    <div class="skill-icon" style="margin-bottom: 20px;">
+                        <i class="fas fa-book"></i>
+                    </div>
+                    <h4>Books Read Yearly</h4>
+                    <p class="gradient-text" style="font-size: 2rem; font-weight: 700;">20+</p>
+                </div>
+                
+                <!-- Fact 3 -->
+                <div class="card text-center fade-in fade-in-delay-2">
+                    <div class="skill-icon" style="margin-bottom: 20px;">
+                        <i class="fas fa-music"></i>
+                    </div>
+                    <h4>Favorite Genre</h4>
+                    <p class="gradient-text" style="font-size: 1.5rem; font-weight: 700;">Lo-Fi Beats</p>
+                </div>
+                
+                <!-- Fact 4 -->
+                <div class="card text-center fade-in fade-in-delay-3">
+                    <div class="skill-icon" style="margin-bottom: 20px;">
+                        <i class="fas fa-gamepad"></i>
+                    </div>
+                    <h4>Hobby</h4>
+                    <p class="gradient-text" style="font-size: 1.5rem; font-weight: 700;">Gaming</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         CALL TO ACTION
+         ========================================== -->
+    <section class="section">
+        <div class="container">
+            <div class="text-center fade-in">
+                <h2>Let's Work <span class="gradient-text">Together</span></h2>
+                <p style="max-width: 600px; margin: 20px auto 30px;">
+                    I'm always excited to take on new challenges and collaborate on interesting projects.
+                </p>
+                <a href="contact.html" class="btn btn-primary">
+                    <i class="fas fa-paper-plane"></i> Get In Touch
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==========================================
+         FOOTER
+         ========================================== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <!-- Brand Section -->
+                <div class="footer-brand">
+                    <h3>SAJJAD MAHMUD</h3>
+                    <p>
+                        Building digital experiences that make a difference. 
+                        Let's create something amazing together.
+                    </p>
+                    <div class="social-links">
+                        <a href="https://github.com/Sajjad-Mahmud-Suton" target="_blank" class="social-link" aria-label="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/md-sajjad-mahmud-suton-344a802a7/" target="_blank" class="social-link" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Twitter">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Dribbble">
+                            <i class="fab fa-dribbble"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Quick Links -->
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Me</a></li>
+                        <li><a href="projects.html">Projects</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Services -->
+                <div class="footer-links">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="#">Web Development</a></li>
+                        <li><a href="#">UI/UX Design</a></li>
+                        <li><a href="#">Mobile Apps</a></li>
+                        <li><a href="#">Consulting</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Contact Info -->
+                <div class="footer-links">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><a href="mailto:sajjadmahmudsuton@gmail.com">sajjadmahmudsuton@gmail.com</a></li>
+                        <li><a href="tel:+8801968161494">+880 1968 161 4XX</a></li>
+                        <li><a href="#">Dhaka,Bangladeh</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Compact Date Time Widget with Popup Calendar -->
+            <div class="datetime-compact">
+                <div class="datetime-mini">
+                    <div class="time-mini">
+                        <i class="far fa-clock"></i>
+                        <span id="hours">00</span>:<span id="minutes">00</span>:<span id="seconds">00</span>
+                        <span class="ampm-mini" id="ampm">AM</span>
+                    </div>
+                    <div class="date-mini" id="dateToggle">
+                        <i class="far fa-calendar-alt"></i>
+                        <span id="dayNum">01</span>
+                        <span id="monthName">Jan</span>
+                        <span id="year">2026</span>
+                        <span class="date-day-mini" id="dayName">(Mon)</span>
+                        <i class="fas fa-chevron-down calendar-arrow"></i>
+                    </div>
+                </div>
+                <!-- Popup Calendar -->
+                <div class="calendar-popup" id="calendarPopup">
+                    <div class="calendar-popup-header">
+                        <button class="calendar-nav" id="prevMonth"><i class="fas fa-chevron-left"></i></button>
+                        <span id="calendarMonth">January 2026</span>
+                        <button class="calendar-nav" id="nextMonth"><i class="fas fa-chevron-right"></i></button>
+                    </div>
+                    <div class="calendar-weekdays">
+                        <span>Su</span><span>Mo</span><span>Tu</span><span>We</span><span>Th</span><span>Fr</span><span>Sa</span>
+                    </div>
+                    <div class="calendar-days" id="calendarDays"></div>
+                </div>
+            </div>
+
+            <!-- Footer Bottom -->
+            <div class="footer-bottom">
+                <p>&copy; 2025-2026 Sajjad Mahmud. All rights reserved.</p>
+                <div class="footer-social">
+                    <a href="https://github.com/Sajjad-Mahmud-Suton" target="_blank" class="social-link" aria-label="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/md-sajjad-mahmud-suton-344a802a7/" target="_blank" class="social-link" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Main JavaScript -->
+    <script src="/js/script.js"></script>
+</body>
+</html>

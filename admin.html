@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Console — Sajjad Mahmud® Portfolio</title>
+  <meta name="robots" content="noindex, nofollow">
+
+  <!-- Favicons -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/src/image/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/src/image/favicon-32x32.png">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Admin Stylesheet -->
+  <link rel="stylesheet" href="/admin/css/admin.css">
+</head>
+<body>
+
+  <!-- Authentication Screen -->
+  <div class="auth-wrapper" id="auth-wrapper">
+    <div class="auth-card">
+      <div class="auth-logo">SAJJAD MAHMUD<span style="color: var(--admin-lime);">.</span></div>
+      <p class="auth-sub">Secure Portfolio Control Console</p>
+
+      <form class="auth-form" id="admin-login-form">
+        <div>
+          <label style="font-family: var(--font-mono); font-size: 11px; color: var(--admin-muted); display: block; margin-bottom: 6px;">ADMIN IDENTIFIER</label>
+          <input type="text" id="login-email" class="auth-input" value="sajjadmahmudsuton@gmail.com" required>
+        </div>
+
+        <div>
+          <label style="font-family: var(--font-mono); font-size: 11px; color: var(--admin-muted); display: block; margin-bottom: 6px;">SECURITY PASSCODE</label>
+          <input type="password" id="login-pass" class="auth-input" placeholder="Enter security passcode" value="sajjad2026" required>
+        </div>
+
+        <button type="submit" class="btn-admin-primary">
+          <i class="fas fa-lock-open"></i>
+          <span>Authenticate Session</span>
+        </button>
+
+        <p style="font-size: 11px; color: var(--admin-muted); text-align: center; margin-top: 10px;">
+          (Demo credentials pre-filled for direct review)
+        </p>
+      </form>
+    </div>
+  </div>
+
+  <!-- Sidebar -->
+  <aside class="admin-sidebar">
+    <div>
+      <div class="sidebar-brand">
+        <i class="fas fa-shield-halved" style="color: var(--admin-lime);"></i>
+        <span>SM CONSOLE</span>
+      </div>
+
+      <nav class="sidebar-menu">
+        <a class="sidebar-link active" data-tab="overview">
+          <i class="fas fa-chart-pie"></i>
+          <span>Overview</span>
+        </a>
+        <a class="sidebar-link" data-tab="projects">
+          <i class="fas fa-layer-group"></i>
+          <span>Projects</span>
+        </a>
+        <a class="sidebar-link" data-tab="blogs">
+          <i class="fas fa-newspaper"></i>
+          <span>Blog Posts</span>
+        </a>
+        <a class="sidebar-link" data-tab="messages">
+          <i class="fas fa-envelope"></i>
+          <span>Messages</span>
+        </a>
+        <a class="sidebar-link" data-tab="chatbot">
+          <i class="fas fa-robot"></i>
+          <span>AI Chatbot</span>
+        </a>
+      </nav>
+    </div>
+
+    <div>
+      <div style="display: flex; flex-direction: column; gap: 10px; margin-bottom: 20px;">
+        <a href="/index.html?version=modern" class="sidebar-link" style="color: var(--admin-lime); padding: 8px 12px; font-size: 12px;">
+          <i class="fas fa-eye"></i> View Modern Site
+        </a>
+        <a href="/classic.html" class="sidebar-link" style="padding: 8px 12px; font-size: 12px;">
+          <i class="fas fa-history"></i> View Classic Site
+        </a>
+      </div>
+
+      <button id="admin-logout-btn" class="sidebar-link" style="width: 100%; border: none; background: none; color: var(--admin-danger);">
+        <i class="fas fa-arrow-right-from-bracket"></i>
+        <span>Sign Out</span>
+      </button>
+    </div>
+  </aside>
+
+  <!-- Main Content Area -->
+  <main class="admin-main">
+    <header class="admin-header">
+      <div>
+        <h1 class="admin-title">Operational Overview</h1>
+        <p style="font-size: 13px; color: var(--admin-muted);">Live status of Md. Sajjad Mahmud's creative developer portfolio.</p>
+      </div>
+
+      <div style="display: flex; align-items: center; gap: 12px;">
+        <span style="display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: var(--admin-lime); box-shadow: 0 0 10px var(--admin-lime);"></span>
+        <span style="font-family: var(--font-mono); font-size: 12px; color: var(--admin-lime);">SYSTEM ONLINE</span>
+      </div>
+    </header>
+
+    <!-- Tab 1: Overview -->
+    <div class="tab-panel active" id="tab-overview">
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-label">Total Visits</div>
+          <div class="stat-value" id="stat-total-views">0</div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-label">Modern Portfolio Traffic</div>
+          <div class="stat-value" id="stat-modern-views" style="color: #2EE6D6;">0</div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-label">Classic Portfolio Traffic</div>
+          <div class="stat-value" id="stat-classic-views" style="color: #A855F7;">0</div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-label">Inbound Contact Messages</div>
+          <div class="stat-value" id="stat-contact-count">0</div>
+        </div>
+      </div>
+
+      <div class="manage-card">
+        <div class="manage-head">
+          <h3 style="font-family: var(--font-display); font-size: 1.3rem;">Hosting & Architecture Environment</h3>
+        </div>
+        <div style="font-size: 13.5px; line-height: 1.8; color: var(--admin-muted);">
+          <p>• <strong>Primary Domain:</strong> sajjad-mahmud.web.app</p>
+          <p>• <strong>Routing Strategy:</strong> Dual-Engine Architecture (Modern WebGL at <code>/modern</code> and original academic portfolio at <code>/classic</code>)</p>
+          <p>• <strong>Email Integration:</strong> EmailJS Free Service (Active service: <code>service_sajjad</code>)</p>
+          <p>• <strong>AI Assistant:</strong> "Ask Sajjad AI" (In-browser Vector Knowledge Engine, $0 operational overhead)</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tab 2: Projects Management -->
+    <div class="tab-panel" id="tab-projects">
+      <div class="manage-card">
+        <div class="manage-head">
+          <h3 style="font-family: var(--font-display); font-size: 1.3rem;">Projects Showcase Registry</h3>
+          <button class="btn-admin-primary" id="open-add-proj-modal" style="padding: 8px 16px; font-size: 11px;">
+            <i class="fas fa-plus"></i> Add New Project
+          </button>
+        </div>
+
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Project Title</th>
+              <th>Tech Stack</th>
+              <th>Live Preview</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="projects-table-body">
+            <!-- Dynamically populated -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Tab 3: Blog Posts Management -->
+    <div class="tab-panel" id="tab-blogs">
+      <div class="manage-card">
+        <div class="manage-head">
+          <h3 style="font-family: var(--font-display); font-size: 1.3rem;">Editorial Articles</h3>
+        </div>
+
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Article Title</th>
+              <th>Category</th>
+              <th>Published Date</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="blogs-table-body">
+            <!-- Dynamically populated -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Tab 4: Messages Inbox -->
+    <div class="tab-panel" id="tab-messages">
+      <div class="manage-card">
+        <div class="manage-head">
+          <h3 style="font-family: var(--font-display); font-size: 1.3rem;">Received Inquiries</h3>
+        </div>
+
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>Sender</th>
+              <th>Subject</th>
+              <th>Message Excerpt</th>
+            </tr>
+          </thead>
+          <tbody id="messages-table-body">
+            <!-- Dynamically populated -->
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Tab 5: AI Chatbot Settings -->
+    <div class="tab-panel" id="tab-chatbot">
+      <div class="manage-card">
+        <div class="manage-head">
+          <h3 style="font-family: var(--font-display); font-size: 1.3rem;">Ask Sajjad AI Knowledge Tuning</h3>
+        </div>
+        <p style="font-size: 13.5px; color: var(--admin-muted); margin-bottom: 20px;">
+          The assistant answers questions about Sajjad's authentic skills, projects, and contact info without incurring external API bills.
+        </p>
+
+        <div style="background: var(--admin-surface); border: 1px solid var(--admin-border); border-radius: 8px; padding: 20px;">
+          <h4 style="font-size: 14px; margin-bottom: 8px; color: var(--admin-lime);">Active System Directives:</h4>
+          <p style="font-family: var(--font-mono); font-size: 12px; color: var(--admin-muted); line-height: 1.6;">
+            1. Strict Truthfulness: Never hallucinate unverified roles or credentials.<br>
+            2. Privacy First: No personal home addresses or confidential keys.<br>
+            3. Fallback: Provide direct contact email (sajjadmahmudsuton@gmail.com) when queries fall outside the index.
+          </p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Add Project Modal -->
+  <div class="admin-modal" id="proj-modal">
+    <div class="admin-modal-card">
+      <h3 style="font-family: var(--font-display); font-size: 1.4rem; margin-bottom: 20px;">Add New Portfolio Project</h3>
+
+      <form id="add-proj-form" style="display: flex; flex-direction: column; gap: 16px;">
+        <div>
+          <label style="font-family: var(--font-mono); font-size: 11px; color: var(--admin-muted); display: block; margin-bottom: 6px;">PROJECT TITLE</label>
+          <input type="text" id="modal-proj-title" class="auth-input" placeholder="e.g. AI Workflow Automator" required>
+        </div>
+
+        <div>
+          <label style="font-family: var(--font-mono); font-size: 11px; color: var(--admin-muted); display: block; margin-bottom: 6px;">TECHNOLOGIES (COMMA SEPARATED)</label>
+          <input type="text" id="modal-proj-tech" class="auth-input" placeholder="React, Node.js, WebGL" required>
+        </div>
+
+        <div>
+          <label style="font-family: var(--font-mono); font-size: 11px; color: var(--admin-muted); display: block; margin-bottom: 6px;">LIVE DEMO LINK</label>
+          <input type="url" id="modal-proj-link" class="auth-input" placeholder="https://...">
+        </div>
+
+        <div>
+          <label style="font-family: var(--font-mono); font-size: 11px; color: var(--admin-muted); display: block; margin-bottom: 6px;">GITHUB REPOSITORY LINK</label>
+          <input type="url" id="modal-proj-repo" class="auth-input" placeholder="https://github.com/...">
+        </div>
+
+        <div style="display: flex; justify-content: flex-end; gap: 12px; margin-top: 10px;">
+          <button type="button" class="btn-sm-action" id="proj-modal-close">Cancel</button>
+          <button type="submit" class="btn-admin-primary" style="padding: 8px 20px;">Save Project</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="/admin/js/admin.js"></script>
+</body>
+</html>
+

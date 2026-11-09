@@ -1,0 +1,1548 @@
+/* ============================================
+   COURSE DATA & RESOURCES - CENTRAL DATA FILE
+   ============================================
+   
+   এই ফাইলে সব course এর information এবং resources আছে।
+   নতুন course বা resource add করতে এখানে edit করুন।
+   
+   Documentation: README-COURSES.md দেখুন
+   ============================================ */
+
+// ==========================================
+// COURSE METADATA (Course Information)
+// ==========================================
+// এখানে প্রতিটা course এর basic info আছে
+// Key format: 'course-key' (URL এ যেটা ব্যবহার হবে)
+
+const courseMetadata = {
+    // ========== SEMESTER 1 ==========
+    'physics': {
+        semester: 1,
+        title: '	Physics I',
+        code: 'PHY-101',
+        credits: 3,
+        description: 'Fundamental principles of mechanics, waves, and physical phenomena.',
+        icon: 'fas fa-atom',
+        color: '#14b8a6'
+    },
+    'math': {
+        semester: 1,
+        title: 'Calculus for Computing',
+        code: 'MAT-101',
+        credits: 3,
+        description: 'Calculus fundamentals applied to computing and problem-solving.',
+        icon: 'fas fa-square-root-alt',
+        color: '#a855f7'
+    },
+    'programming': {
+        semester: 1,
+        title: 'Discrete Mathematics',
+        code: 'CSE-101',
+        credits: 3,
+        description: 'Study of logic, sets, relations, and discrete mathematical structures.',
+        icon: 'fas fa-code',
+        color: '#38bdf8'
+    },
+    'chemistry': {
+        semester: 1,
+        title: 'Chemistry',
+        code: 'CHE-101',
+        credits: 3,
+        description: 'Fundamental principles of chemistry and their applications.',
+        icon: 'fas fa-vial',
+        color: '#f472b6'
+    },
+    'english': {
+        semester: 1,
+        title: 'Chemistry Lab',
+        code: 'CHE-102',
+        credits: 1,
+        description: 'Hands-on experiments and analysis of basic chemistry concepts.',
+        icon: 'fas fa-language',
+        color: '#fb923c'
+    },
+    'electrical': {
+        semester: 1,
+        title: 'Computational Thinking and Problem Solving',
+        code: 'CSE-100',
+        credits: 1.5,
+        description: 'Developing logical and structured approaches to solve problems using computational methods.',
+        icon: 'fas fa-bolt',
+        color: '#4ade80'
+    },
+
+    'ENG': {
+        semester: 1,
+        title: 'Academic English I',
+        code: 'ESP-101',
+        credits: 3,
+        description: 'Development of reading, writing, and communication skills for academic purposes.',
+        icon: 'fas fa-bolt',
+        color: '#45f0d3ff'
+    },
+    
+    // ========== SEMESTER 2 (241) ==========
+    'eee-lab': {
+        semester: 2,
+        title: 'Introduction to Electrical Engineering Lab',
+        code: 'EEE-102',
+        credits: 1,
+        description: 'Practical experiments on basic electrical circuits, measurements, and instruments.',
+        icon: 'fas fa-plug',
+        color: '#f472b6'
+    },
+    'sp-lab': {
+        semester: 2,
+        title: 'Structured Programming Lab',
+        code: 'CSE-104',
+        credits: 1.5,
+        description: 'Hands-on programming exercises using C language to implement algorithms.',
+        icon: 'fas fa-laptop-code',
+        color: '#38bdf8'
+    },
+    'bengali': {
+        semester: 2,
+        title: 'Functional Bengali',
+        code: 'GED-103',
+        credits: 2,
+        description: 'Development of Bengali language skills for professional communication.',
+        icon: 'fas fa-book-open',
+        color: '#a855f7'
+    },
+    'linear-algebra': {
+        semester: 2,
+        title: 'Linear Algebra and Vector Analysis',
+        code: 'MAT-103',
+        credits: 3,
+        description: 'Study of matrices, vectors, linear transformations, and their applications.',
+        icon: 'fas fa-vector-square',
+        color: '#14b8a6'
+    },
+    'physics2': {
+        semester: 2,
+        title: 'Physics II',
+        code: 'PHY-103',
+        credits: 3,
+        description: 'Electromagnetic theory, optics, and modern physics concepts.',
+        icon: 'fas fa-wave-square',
+        color: '#fb923c'
+    },
+    'physics-lab': {
+        semester: 2,
+        title: 'Physics Lab',
+        code: 'PHY-104',
+        credits: 1.5,
+        description: 'Practical experiments in physics covering mechanics, optics, and electricity.',
+        icon: 'fas fa-flask',
+        color: '#4ade80'
+    },
+    'sp': {
+        semester: 2,
+        title: 'Structured Programming',
+        code: 'CSE-103',
+        credits: 3,
+        description: 'Fundamentals of C programming, control structures, functions, and arrays.',
+        icon: 'fas fa-code',
+        color: '#e879f9'
+    },
+    'eee': {
+        semester: 2,
+        title: 'Introduction to Electrical Engineering',
+        code: 'EEE-101',
+        credits: 3,
+        description: 'Basic electrical circuits, components, and fundamental electrical concepts.',
+        icon: 'fas fa-bolt',
+        color: '#facc15'
+    },
+    
+    // ========== SEMESTER 3 (242) ==========
+    'oop': {
+        semester: 3,
+        title: 'Object Oriented Programming',
+        code: 'CSE-201',
+        credits: 3,
+        description: 'OOP concepts including classes, inheritance, polymorphism, and encapsulation using C++/Java.',
+        icon: 'fas fa-cubes',
+        color: '#a855f7'
+    },
+    'oop-lab': {
+        semester: 3,
+        title: 'Object Oriented Programming Lab',
+        code: 'CSE-202',
+        credits: 1.5,
+        description: 'Practical implementation of OOP concepts through programming exercises.',
+        icon: 'fas fa-laptop-code',
+        color: '#38bdf8'
+    },
+    'dld': {
+        semester: 3,
+        title: 'Digital Logic Design',
+        code: 'CSE-203',
+        credits: 3,
+        description: 'Boolean algebra, logic gates, combinational and sequential circuits design.',
+        icon: 'fas fa-microchip',
+        color: '#14b8a6'
+    },
+    'dld-lab': {
+        semester: 3,
+        title: 'Digital Logic Design Lab',
+        code: 'CSE-204',
+        credits: 1,
+        description: 'Hands-on experiments with logic gates, flip-flops, and digital circuits.',
+        icon: 'fas fa-tools',
+        color: '#f472b6'
+    },
+    'ds': {
+        semester: 3,
+        title: 'Data Structures',
+        code: 'CSE-205',
+        credits: 3,
+        description: 'Arrays, linked lists, stacks, queues, trees, graphs, and hash tables.',
+        icon: 'fas fa-layer-group',
+        color: '#fb923c'
+    },
+    'ds-lab': {
+        semester: 3,
+        title: 'Data Structures Lab',
+        code: 'CSE-206',
+        credits: 1.5,
+        description: 'Implementation of data structures and algorithms in programming.',
+        icon: 'fas fa-laptop-code',
+        color: '#4ade80'
+    },
+    'diff-eq': {
+        semester: 3,
+        title: 'Differential Equations and Coordinate Geometry',
+        code: 'MAT-201',
+        credits: 3,
+        description: 'Study of differential equations and coordinate geometry concepts.',
+        icon: 'fas fa-superscript',
+        color: '#e879f9'
+    },
+    
+    // ========== SEMESTER 4 (250) ==========
+    'probability': {
+        semester: 4,
+        title: 'Probability and Statistics for Computing',
+        code: 'MAT-203',
+        credits: 3,
+        description: 'Probability theory, statistical distributions, hypothesis testing, and data analysis.',
+        icon: 'fas fa-chart-bar',
+        color: '#a855f7'
+    },
+    'database': {
+        semester: 4,
+        title: 'Database',
+        code: 'CSE-209',
+        credits: 3,
+        description: 'Database concepts, SQL, ER models, normalization, and query optimization.',
+        icon: 'fas fa-database',
+        color: '#14b8a6'
+    },
+    'database-lab': {
+        semester: 4,
+        title: 'Database Lab',
+        code: 'CSE-210',
+        credits: 1.5,
+        description: 'Practical SQL queries, database design, and implementation exercises.',
+        icon: 'fas fa-laptop-code',
+        color: '#38bdf8'
+    },
+    
+    // ========== SEMESTER 5 ==========
+    'software-eng': {
+        semester: 5,
+        title: 'Computer Architecture',
+        code: 'CSE-211',
+        credits: 3,
+        description: 'CPU organization, memory structure, and how hardware executes programs.',
+        icon: 'fas fa-project-diagram',
+        color: '#fb923c'
+    },
+    'adv-database': {
+        semester: 5,
+        title: 'Algorithms',
+        code: 'CSE-207',
+        credits: 3,
+        description: 'Design and analysis of efficient problem-solving methods.',
+        icon: 'fas fa-server',
+        color: '#a855f7'
+    },
+    'web-dev': {
+        semester: 5,
+        title: 'Algorithms Lab',
+        code: 'CSE-208',
+        credits: 1.5,
+        description: 'Hands-on implementation and testing of algorithms.',
+        icon: 'fas fa-globe',
+        color: '#38bdf8'
+    },
+    'compiler': {
+        semester: 5,
+        title: 'Electronic Devices, Circuits and Pulse Techniques',
+        code: 'EEE-201',
+        credits: 3,
+        description: 'Study of electronic devices, circuit behavior, and pulse generation techniques.',
+        icon: 'fas fa-code-branch',
+        color: '#14b8a6'
+    },
+    'graphics': {
+        semester: 5,
+        title: 'Electronic Devices, Circuits and Pulse Techniques Lab',
+        code: 'EEE-202',
+        credits: 1,
+        description: 'Hands-on analysis and implementation of electronic devices and pulse circuits.',
+        icon: 'fas fa-cube',
+        color: '#f472b6'
+    },
+    'management': {
+        semester: 5,
+        title: 'Financial and Managerial Accounting',
+        code: 'GED-201',
+        credits: 3,
+        description: 'Principles of financial reporting and managerial decision-making.',
+        icon: 'fas fa-users-cog',
+        color: '#4ade80'
+    },
+    
+    // ========== SEMESTER 6 ==========
+    'ai': {
+        semester: 6,
+        title: 'Web Programming',
+        code: 'CSE-301',
+        credits: 3,
+        description: 'Core Concepts of Web Development.',
+        icon: 'fas fa-robot',
+        color: '#4ade80'
+    },
+    'ml': {
+        semester: 6,
+        title: 'Web Programming Lab',
+        code: 'CSE-302',
+        credits: 1.5,
+        description: 'From Logic to Web Apps.',
+        icon: 'fas fa-brain',
+        color: '#a855f7'
+    },
+    'adv-web': {
+        semester: 6,
+        title: 'Microprocessors, Microcontrollers and Embedded Systems',
+        code: 'CSE-303',
+        credits: 3,
+        description: 'Processor Architecture & Interfacing.',
+        icon: 'fas fa-laptop-code',
+        color: '#38bdf8'
+    },
+    'image-processing': {
+        semester: 6,
+        title: 'Microprocessors, Microcontrollers and Embedded Systems Lab',
+        code: 'CSE-304',
+        credits: 1,
+        description: 'Microcontroller Architecture & Programming.',
+        icon: 'fas fa-image',
+        color: '#14b8a6'
+    },
+    'mobile-dev': {
+        semester: 6,
+        title: 'Information System Design',
+        code: 'CSE-305',
+        credits: 3,
+        description: 'System Analysis & Design.',
+        icon: 'fas fa-mobile-alt',
+        color: '#f472b6'
+    },
+    'info-security': {
+        semester: 6,
+        title: 'Design Project I',
+        code: 'CSE-308',
+        credits: 1.5,
+        description: 'Project Planning & Design.',
+        icon: 'fas fa-lock',
+        color: '#fb923c'
+    },
+    'entrepreneurship': {
+        semester: 6,
+        title: 'Electrical Drives and Instrumentation',
+        code: 'EEE-301',
+        credits: 3,
+        description: 'Electric Motor Drives & Applications.',
+        icon: 'fas fa-lightbulb',
+        color: '#facc15'
+    },
+    
+    // ========== SEMESTER 7 ==========
+    'cloud-computing': {
+        semester: 7,
+        title: 'Software Engineering',
+        code: 'CSE-313',
+        credits: 3,
+        description: 'Scalable Software Systems, Architecture & Best Practices',
+        icon: 'fas fa-cloud',
+        color: '#14b8a6'
+    },
+    'cybersecurity': {
+        semester: 7,
+        title: 'Artificial Intelligence',
+        code: 'CSE-315',
+        credits: 3,
+        description: 'Intelligent Systems, Machine Learning & Data-Driven Models',
+        icon: 'fas fa-shield-alt',
+        color: '#a855f7'
+    },
+    'distributed-systems': {
+        semester: 7,
+        title: 'Artificial Intelligence Lab',
+        code: 'CSE-316',
+        credits: 1.5,
+        description: 'Machine Learning Models, AI Algorithms & Practical Implementation.',
+        icon: 'fas fa-network-wired',
+        color: '#38bdf8'
+    },
+    'big-data': {
+        semester: 7,
+        title: 'Computer Networking',
+        code: 'CSE-317',
+        credits: 3,
+        description: 'Network Fundamentals, Protocols & Communication Systems.',
+        icon: 'fas fa-database',
+        color: '#f472b6'
+    },
+    'iot': {
+        semester: 7,
+        title: 'Computer Networking Lab',
+        code: 'CSE-318',
+        credits: 1.5,
+        description: 'Network Configuration, Protocol Analysis & Practical Implementation.',
+        icon: 'fas fa-microchip',
+        color: '#fb923c'
+    },
+    'ethics': {
+        semester: 7,
+        title: 'Professional Ethics',
+        code: 'HUM-701',
+        credits: 2,
+        description: 'Ethics in computing, IT law, intellectual property, and professional responsibility.',
+        icon: 'fas fa-balance-scale',
+        color: '#4ade80'
+    },
+    
+    // ========== SEMESTER 8 ==========
+    'final-project': {
+        semester: 8,
+        title: 'Final Year Project',
+        code: 'CSE-800',
+        credits: 6,
+        description: 'Capstone project with complete software solution, documentation, and presentation.',
+        icon: 'fas fa-project-diagram',
+        color: '#14b8a6'
+    },
+    'internship': {
+        semester: 8,
+        title: 'Industrial Internship',
+        code: 'CSE-801',
+        credits: 3,
+        description: 'Hands-on industry experience at a technology company.',
+        icon: 'fas fa-building',
+        color: '#a855f7'
+    },
+    'seminar': {
+        semester: 8,
+        title: 'Technical Seminar',
+        code: 'CSE-802',
+        credits: 2,
+        description: 'Research presentation on emerging technologies and trends.',
+        icon: 'fas fa-chalkboard-teacher',
+        color: '#38bdf8'
+    },
+    'career': {
+        semester: 8,
+        title: 'Career Development',
+        code: 'HUM-801',
+        credits: 1,
+        description: 'Interview preparation, resume building, and soft skills development.',
+        icon: 'fas fa-briefcase',
+        color: '#fbbf24'
+    }
+};
+
+
+// ==========================================
+// COURSE RESOURCES (Materials for each course)
+// ==========================================
+// Key format: 'semester-coursekey' (যেমন: '1-physics', '2-oop')
+// 
+// Resource categories:
+// - 'lab-report' : Lab Reports
+// - 'notes'      : Lecture Notes
+// - 'ppt'        : PowerPoint Presentations
+// - 'assignment' : Assignments
+// - 'project'    : Projects
+// - 'project-report' : Project Reports
+// - 'book'       : Books/PDFs
+
+const courseResources = {
+    // ========================================================
+    // ADD YOUR COURSE RESOURCES HERE
+    // Format: 'semester-coursekey': [ array of resources ]
+    // ========================================================
+    // 
+    // Example:
+    // '1-programming': [
+    //     {
+    //         category: 'lab-report',
+    //         title: 'Lab 01: Introduction to C',
+    //         description: 'Basic input/output operations.',
+    //         fileType: 'PDF',
+    //         meta: 'Jan 15, 2024',
+    //         previewUrl: 'your-link',
+    //         downloadUrl: 'your-link',
+    //         featured: false
+    //     }
+    // ],
+    //
+    // Categories: 'lab-report', 'notes', 'ppt', 'slides', 'assignment', 'project', 'project-report', 'book'
+    // ========================================================
+
+
+    // ========================================================
+    // ========================================================
+                    //6th Semester Courses Materials
+    // ========================================================
+    // ========================================================
+
+    '6-ai': [
+        {
+            category: 'ppt',
+            title: 'Web Programming PPT ',
+            description: 'Midterm Slides.',
+            fileType: 'PDF',
+            meta: 'July 10, 2025',
+            previewUrl: 'https://drive.google.com/drive/folders/1ajlx6nEaB2zga23qLbeXoDTxH1qOHA_t?usp=sharing',
+            downloadUrl: 'https://drive.google.com/drive/folders/1ajlx6nEaB2zga23qLbeXoDTxH1qOHA_t?usp=sharing1',
+            featured: true
+        },
+         {
+            category: 'ppt',
+            title: 'Web Programming PPT ',
+            description: 'Final Slides.',
+            fileType: 'PDF',
+            meta: 'July 10, 2025',
+            previewUrl: 'https://drive.google.com/drive/folders/1DE9rxJJiRf66sSWvuZe4VWhb3ZtoUxtQ?usp=sharing',
+            downloadUrl: 'https://drive.google.com/drive/folders/1DE9rxJJiRf66sSWvuZe4VWhb3ZtoUxtQ?usp=sharing',
+            featured: true
+        },
+        {
+            category: 'notes',
+            title: 'Notes ',
+            description: 'Session & Cookies Notes.',
+            fileType: 'PDF',
+            meta: 'July 10, 2025',
+            previewUrl: 'https://drive.google.com/drive/folders/1raoZwslVT9BO5MEWw1hCdKFo_9lbG1kL?usp=sharing',
+            downloadUrl: 'https://drive.google.com/drive/folders/1raoZwslVT9BO5MEWw1hCdKFo_9lbG1kL?usp=sharing',
+            featured: true
+        },
+        {
+            category: 'assignment',
+            title: 'Paper Summary ',
+            description: 'Two Paper Summary Assignment.',
+            fileType: 'PDF',
+            meta: 'July 10, 2025',
+            previewUrl: 'https://drive.google.com/drive/folders/134LsXsxSR4o-epSjtFdbxuFCDj6Yz83y?usp=sharing',
+            downloadUrl: 'https://drive.google.com/drive/folders/134LsXsxSR4o-epSjtFdbxuFCDj6Yz83y?usp=sharing',
+            featured: true
+        },
+        {
+            category: 'question',
+            title: 'Questions ',
+            description: 'Class Test Questions.',
+            fileType: 'PDF',
+            meta: 'July 10, 2025',
+            previewUrl: 'https://drive.google.com/drive/folders/1BhP5u4pHqJQp522frShWw07_aIQncJI5?usp=sharing',
+            downloadUrl: 'https://drive.google.com/drive/folders/1BhP5u4pHqJQp522frShWw07_aIQncJI5?usp=sharing',
+            featured: true
+        },
+        {
+            category: 'course-outline',
+            title: 'Course Outline ',
+            description: 'Web Programming Course Outline.',
+            fileType: 'PDF',
+            meta: 'July 10, 2025',
+            previewUrl: 'https://drive.google.com/file/d/1sBjqsgoH8n5hWanQaaoHpbiBaHmtBInQ/view?usp=sharing',
+            downloadUrl: 'https://drive.google.com/file/d/1sBjqsgoH8n5hWanQaaoHpbiBaHmtBInQ/view?usp=sharing',
+            featured: true
+        }
+    ],
+    '6-info-security': [
+        {
+            category: 'ppt',
+            title: 'Lab Manuals',
+            description: 'Design Project Course Lab Manuals.',
+            fileType: 'PDF',
+            meta: 'Feb 13, 2026',
+            previewUrl: 'https://drive.google.com/drive/folders/1jzUD7LzOkfMasTlGwV2IUjnyztRZ71VI?usp=sharing',
+            downloadUrl: 'https://drive.google.com/drive/folders/1jzUD7LzOkfMasTlGwV2IUjnyztRZ71VI?usp=sharing',
+            featured: true
+        },
+        {
+            category: 'lab-report',
+            title: 'Lab Reports',
+            description: 'Design Project Course Lab Reports.',
+            fileType: 'PDF',
+            meta: 'Feb 13, 2026',
+            previewUrl: 'https://drive.google.com/drive/folders/1q51LHbqN18OHM9esqWvhvid1_BfWkn7B?usp=sharing',
+            downloadUrl: 'https://drive.google.com/drive/folders/1q51LHbqN18OHM9esqWvhvid1_BfWkn7B?usp=sharing',
+            featured: true
+        },
+        {
+            category: 'project',
+            title: 'POSTER',
+            description: 'Design Project Course Poster.',
+            fileType: 'PDF',
+            meta: 'Feb 13, 2026',
+            previewUrl: 'https://drive.google.com/drive/folders/1vy5hCfEW05nksgEeAoqCeD7lF0Nf0CU3?usp=sharing',
+            downloadUrl: 'https://drive.google.com/drive/folders/1vy5hCfEW05nksgEeAoqCeD7lF0Nf0CU3?usp=sharing',
+            featured: true
+        },
+        {
+            category: 'project',
+            title: 'Live Project ',
+            description: 'Design Project Course Live Project.',
+            fileType: 'PDF',
+            meta: 'Feb 13, 2026',
+            previewUrl: 'https://drive.google.com/drive/folders/1Z4agfbQhHDJpQth00nTVQtExYWq_u-Mm?usp=sharing',
+            downloadUrl: 'https://drive.google.com/drive/folders/1Z4agfbQhHDJpQth00nTVQtExYWq_u-Mm?usp=sharing',
+            featured: true
+        },
+        {
+            category: 'assignment',
+            title: 'Project Proposal ',
+            description: 'Green Guardian Project Proposal.',
+            fileType: 'PDF',
+            meta: 'Feb 13, 2026',
+            previewUrl: 'https://drive.google.com/drive/folders/1uvE1w_C4JdPsnZqx9-gJyWxWKFIR1zB5?usp=sharing',
+            downloadUrl: 'https://drive.google.com/drive/folders/1uvE1w_C4JdPsnZqx9-gJyWxWKFIR1zB5?usp=sharing',
+            featured: true
+        },
+        {
+            category: 'project-report',
+            title: 'Project Report ',
+            description: 'Green Guardian Project Report.',
+            fileType: 'PDF',
+            meta: 'Feb 13, 2026',
+            previewUrl: 'https://drive.google.com/drive/folders/1r9R8cjENW4n8SRcWaaJtP2ko7Q09_rVk?usp=sharing',
+            downloadUrl: 'https://drive.google.com/drive/folders/1r9R8cjENW4n8SRcWaaJtP2ko7Q09_rVk?usp=sharing',
+            featured: true
+        }
+    ],
+
+
+    // ========================================================
+    // ========================================================
+                    //7th Semester Courses Materials
+    // ========================================================
+    // ========================================================
+
+    '7-cloud-computing': [
+        {
+            category: 'ppt',
+             title: 'Midterm PPT ',
+             description: 'All Slides.',
+            fileType: 'PPTX',
+             meta: 'Feb 13, 2026',
+             previewUrl: 'https://drive.google.com/drive/folders/1WCJSuai4CpIfW4GQ46H7gkzhuZTYD5Cx?usp=sharing',
+             downloadUrl: 'https://drive.google.com/drive/folders/1WCJSuai4CpIfW4GQ46H7gkzhuZTYD5Cx?usp=sharing',
+             featured: true
+        },
+        {
+            category: 'course-outline',
+             title: 'Course Outline ',
+             description: 'Course Outline of Software Engineering.',
+            fileType: 'PDF',
+             meta: 'Feb 13, 2026',
+             previewUrl: 'https://drive.google.com/file/d/1IPnfdZI85FBkL1K1wroJLS8sRKy0iDos/view?usp=sharing',
+             downloadUrl: 'https://drive.google.com/file/d/1IPnfdZI85FBkL1K1wroJLS8sRKy0iDos/view?usp=sharing',
+             featured: true
+        },
+        {
+            category: 'book',
+             title: 'Sommerville-Software-Engineering-10ed ',
+             description: 'Software Engineering Book by Sommerville.',
+            fileType: 'PDF',
+             meta: 'Feb 13, 2026',
+             previewUrl: 'https://drive.google.com/file/d/1SrEfIJMO5xotj2-6VyDDrIsUGYseh3Ok/view?usp=sharing',
+             downloadUrl: 'https://drive.google.com/file/d/1SrEfIJMO5xotj2-6VyDDrIsUGYseh3Ok/view?usp=sharing',
+             featured: true
+        },
+
+
+    ],
+     '7-cybersecurity': [
+       {
+            category: 'ppt',
+             title: 'Slide 01: Introduction ',
+             description: 'Basic information.',
+            fileType: 'PPTX',
+             meta: 'Feb 01, 2026',
+             previewUrl: 'https://docs.google.com/presentation/d/18-g3T7g469W4DT9XCzJ9TMcPWBUwhlnk/edit?usp=sharing&ouid=108140212801946690894&rtpof=true&sd=true',
+             downloadUrl: 'https://docs.google.com/presentation/d/18-g3T7g469W4DT9XCzJ9TMcPWBUwhlnk/edit?usp=sharing&ouid=108140212801946690894&rtpof=true&sd=true',
+             featured: true
+         },
+         {
+            category: 'ppt',
+             title: 'Slide 02: Uniformed Search ',
+             description: 'About Uniformed Search.',
+            fileType: 'PPTX',
+             meta: 'Feb 13, 2026',
+             previewUrl: 'https://docs.google.com/presentation/d/1X0Bi-cQOJZyZHAfDS08vTY2JTl1_DioT/edit?usp=sharing&ouid=108140212801946690894&rtpof=true&sd=true',
+             downloadUrl: 'https://docs.google.com/presentation/d/1X0Bi-cQOJZyZHAfDS08vTY2JTl1_DioT/edit?usp=sharing&ouid=108140212801946690894&rtpof=true&sd=true',
+             featured: true
+         },
+          {
+            category: 'ppt',
+             title: 'Slide 03: Informed Search ',
+             description: 'About Informed Search.',
+            fileType: 'PPTX',
+             meta: 'Feb 13, 2026',
+             previewUrl: 'https://docs.google.com/presentation/d/1VC-UJEG6lkynk4QLMv5h9zu-ubO-Vpde/edit?usp=sharing&ouid=108140212801946690894&rtpof=true&sd=true',
+             downloadUrl: 'https://docs.google.com/presentation/d/1VC-UJEG6lkynk4QLMv5h9zu-ubO-Vpde/edit?usp=sharing&ouid=108140212801946690894&rtpof=true&sd=true',
+             featured: true
+         },
+         {
+            category: 'ppt',
+             title: 'Slide 04: Constraint Satisfaction Problems I',
+             description: 'About Constraint Satisfaction Problems I.',
+            fileType: 'PPTX',
+             meta: 'Feb 13, 2026',
+             previewUrl: 'https://docs.google.com/presentation/d/1STUK5fXxiYiWzwMFuiS4hqrCLwQW3HvV/edit?usp=sharing&ouid=108140212801946690894&rtpof=true&sd=true',
+             downloadUrl: 'https://docs.google.com/presentation/d/1STUK5fXxiYiWzwMFuiS4hqrCLwQW3HvV/edit?usp=sharing&ouid=108140212801946690894&rtpof=true&sd=true',
+             featured: true
+         },
+         {
+            category: 'ppt',
+             title: 'Slide 05: Constraint Satisfaction Problems II ',
+             description: 'About Constraint Satisfaction Problems II.',
+            fileType: 'PPTX',
+             meta: 'Feb 13, 2026',
+             previewUrl: 'https://docs.google.com/presentation/d/1oxXxxjnK-hM97z4uHM_PBJjuWAoSR5v-/edit?usp=sharing&ouid=108140212801946690894&rtpof=true&sd=true',
+             downloadUrl: 'https://docs.google.com/presentation/d/1oxXxxjnK-hM97z4uHM_PBJjuWAoSR5v-/edit?usp=sharing&ouid=108140212801946690894&rtpof=true&sd=true',
+             featured: true
+         },
+         {
+            category: 'ppt',
+             title: 'Slide 06: Local Search ',
+             description: 'About Local Search.',
+            fileType: 'PPTX',
+             meta: 'Feb 13, 2026',
+             previewUrl: 'https://docs.google.com/presentation/d/1KxXgbxZqvyUTJuUmaNAuJrtDVhSA6ecb/edit?usp=sharing&ouid=108140212801946690894&rtpof=true&sd=true',
+             downloadUrl: 'https://docs.google.com/presentation/d/1KxXgbxZqvyUTJuUmaNAuJrtDVhSA6ecb/edit?usp=sharing&ouid=108140212801946690894&rtpof=true&sd=true',
+             featured: true
+         },
+         {
+            category: 'book',
+             title: 'Artificial Intelligence by Stuart Russel and Peter Norvig ',
+             description: 'Book.',
+            fileType: 'PDF',
+             meta: 'Feb 01, 2026',
+             previewUrl: 'https://drive.google.com/file/d/1LouE_SRsfaAuqW_QtHZWQlOmEsqGWGDM/view?usp=sharing',
+             downloadUrl: 'https://drive.google.com/file/d/1LouE_SRsfaAuqW_QtHZWQlOmEsqGWGDM/view?usp=sharing',
+             featured: true
+         }
+    ],
+
+    '7-distributed-systems': [
+       
+            {
+            category: 'ppt',
+             title: 'Lab Manuals ',
+             description: 'All Lab Manual .',
+            fileType: 'PDF',
+             meta: 'Feb 13, 2026',
+             previewUrl: 'https://drive.google.com/drive/folders/19NC-Z9vRTZt_g1BdIr8-djm6TfBkpAWs?usp=sharing',
+             downloadUrl: 'https://drive.google.com/drive/folders/19NC-Z9vRTZt_g1BdIr8-djm6TfBkpAWs?usp=sharing',
+             featured: true
+            },
+            {
+            category: 'lab-report',
+             title: 'Introduction to Basic Operations on Python',
+             description: 'Lab Report NO 01.',
+            fileType: 'PDF',
+             meta: 'Feb 13, 2026',
+             previewUrl: 'https://drive.google.com/file/d/1gKykZnO-HcRccvhiLrxKLwWKzdRcFQ8O/view?usp=sharing',
+             downloadUrl: 'https://drive.google.com/file/d/1gKykZnO-HcRccvhiLrxKLwWKzdRcFQ8O/view?usp=sharing',
+             featured: true
+            },
+            {
+            category: 'question',
+             title: 'Introduction to Basic Operations on Python',
+             description: 'Lab Report NO 01 Questions.',
+            fileType: 'PDF',
+             meta: 'Feb 13, 2026',
+             previewUrl: 'https://drive.google.com/file/d/16ZvGcpcZceGEE-l2sGuY_xR5eKPABj_R/view?usp=sharing',
+             downloadUrl: 'https://drive.google.com/file/d/16ZvGcpcZceGEE-l2sGuY_xR5eKPABj_R/view?usp=sharing',
+             featured: true
+            },
+            {
+            category: 'lab-report',
+             title: 'Implementation of Depth-First Search and Breadth-First Search Traversal',
+             description: 'Lab Report NO 02.',
+            fileType: 'PDF',
+             meta: 'Mar 02, 2026',
+             previewUrl: 'https://drive.google.com/file/d/13eojARLGovrJOr0QEbxhaewyKSG9pICt/view?usp=sharing',
+             downloadUrl: 'https://drive.google.com/file/d/13eojARLGovrJOr0QEbxhaewyKSG9pICt/view?usp=sharing',
+             featured: true
+            },
+            {
+            category: 'question',
+             title: 'Implementation of Depth-First Search and Breadth-First Search Traversal',
+             description: 'Lab Report NO 02 Questions.',
+            fileType: 'PDF',
+             meta: 'Mar 02, 2026',
+             previewUrl: 'https://drive.google.com/file/d/1qu8Gt4_FS8WSebTtL3TMxvP7riiJQYzw/view?usp=sharing',
+             downloadUrl: 'https://drive.google.com/file/d/1qu8Gt4_FS8WSebTtL3TMxvP7riiJQYzw/view?usp=sharing',
+             featured: true
+            }
+    ],
+
+        '7-big-data': [
+       {
+            category: 'ppt',
+             title: 'Midterm Slides ',
+             description: 'All Slides for Midterm.',
+            fileType: 'PPTX',
+             meta: 'Feb 22, 2026',
+             previewUrl: 'https://drive.google.com/drive/folders/1yyhGsaTrZEId8NEr7L5agdFQDnQeaMWf?usp=sharing',
+             downloadUrl: 'https://drive.google.com/drive/folders/1yyhGsaTrZEId8NEr7L5agdFQDnQeaMWf?usp=sharing',
+             featured: true
+         },
+         {
+            category: 'course-outline',
+             title: 'Course Outline ',
+             description: 'Computer Networking Course Outline.',
+            fileType: 'PPTX',
+             meta: 'Feb 22, 2026',
+             previewUrl: 'https://drive.google.com/file/d/1W5GZpaCTnK6LHhziNZTshgGuSdFpmNxN/view?usp=drive_link',
+             downloadUrl: 'https://drive.google.com/file/d/1W5GZpaCTnK6LHhziNZTshgGuSdFpmNxN/view?usp=drive_link',
+             featured: true
+         },
+                  {
+            category: 'book',
+             title: 'Book_8th_Edition_Ross,Kurose_Top-Down Approach',
+             description: 'Computer Networking Book.',
+            fileType: 'PDF',
+             meta: 'Feb 22, 2026',
+             previewUrl: 'https://drive.google.com/file/d/1hI4MLUNY72IJpFahNGeqN1QMKT5uLtav/view?usp=sharing',
+             downloadUrl: 'https://drive.google.com/file/d/1hI4MLUNY72IJpFahNGeqN1QMKT5uLtav/view?usp=sharing',
+             featured: true
+         },
+               
+    ],
+    '7-iot': [
+        {
+            category: 'ppt',
+             title: 'Basic Ping and Traceroute commands',
+             description: 'Lab sheet 01',
+            fileType: 'PDF',
+             meta: 'Feb 20, 2026',
+             previewUrl: 'https://drive.google.com/file/d/18xQ0_GDf6BYFVrbcr3fQUi8np-ZMN1ab/view?usp=sharing',
+             downloadUrl: 'https://drive.google.com/file/d/18xQ0_GDf6BYFVrbcr3fQUi8np-ZMN1ab/view?usp=sharing',
+             featured: true
+         },
+        {
+            category: 'ppt',
+             title: 'Implementation of HTTP POST and GET methods ',
+             description: 'Lab sheet 02.',
+            fileType: 'PDF',
+             meta: 'Feb 01, 2026',
+             previewUrl: 'https://drive.google.com/file/d/1WS3Rl5EEGq6pTijNfQdoK5qLcLBl7spg/view?usp=sharing',
+             downloadUrl: 'https://drive.google.com/file/d/1WS3Rl5EEGq6pTijNfQdoK5qLcLBl7spg/view?usp=sharing',
+             featured: true
+         },
+         {
+            category: 'ppt',
+             title: ' Configuration of SMTP Server ',
+             description: 'Lab sheet 03.',
+            fileType: 'PDF',
+             meta: 'Feb 13, 2026',
+             previewUrl: 'https://drive.google.com/file/d/10szY7IslNdhJVLktDec4kgH1kxyb6xRd/view?usp=sharing',
+             downloadUrl: 'https://drive.google.com/file/d/10szY7IslNdhJVLktDec4kgH1kxyb6xRd/view?usp=sharing',
+             featured: true
+         },
+         {
+            category: 'ppt',
+             title: ' Configuration of FTP Server ',
+             description: 'Lab sheet 04',
+            fileType: 'PDF',
+             meta: 'Feb 20, 2026',
+             previewUrl: 'https://drive.google.com/file/d/1K74Rs4sNeF2csKri7AB4pKQAVeVL3I3Z/view?usp=sharing',
+             downloadUrl: 'https://drive.google.com/file/d/1K74Rs4sNeF2csKri7AB4pKQAVeVL3I3Z/view?usp=sharing',
+             featured: true
+         },
+         {
+            category: 'ppt',
+             title: ' Distributed Database Management and Implementation of Iterative and Recursive Queries of DNS Records',
+             description: 'Lab sheet 05',
+            fileType: 'PDF',
+             meta: 'Feb 21, 2026',
+             previewUrl: 'https://drive.google.com/file/d/1Y5HuBsXsl34_2nM_T0RvJJQoFMq63r7Z/view?usp=sharing',
+             downloadUrl: 'https://drive.google.com/file/d/1Y5HuBsXsl34_2nM_T0RvJJQoFMq63r7Z/view?usp=sharing',
+             featured: true
+         },
+         {
+            category: 'project-report',
+             title: ' Secure Hotel Management Network Using Cisco Packet Tracer ',
+             description: 'Project Proposal.',
+            fileType: 'PDF',
+             meta: 'Feb 20, 2026',
+             previewUrl: 'https://drive.google.com/file/d/19DxUcsjgoHe8eVx7FNk0g1ArjSbwhBSz/view?usp=sharing',
+             downloadUrl: 'https://drive.google.com/file/d/19DxUcsjgoHe8eVx7FNk0g1ArjSbwhBSz/view?usp=sharing',
+             featured: true
+         },
+         {
+            category: 'lab-report',
+             title: ' Network Connectivity Testing (Ping & Traceroute) and Implementation of HTTP Methods (GET & POST) using Java. ',
+             description: 'Lab Report-1',
+            fileType: 'PDF',
+             meta: 'Feb 21, 2026',
+             previewUrl: 'https://drive.google.com/file/d/1vRQOh24AzN1hVaSfcSEQpfSIUPJdaews/view?usp=sharing',
+             downloadUrl: 'https://drive.google.com/file/d/1vRQOh24AzN1hVaSfcSEQpfSIUPJdaews/view?usp=sharing',
+             featured: true
+         },
+         {
+            category: 'lab-report',
+             title: ' Configuration of SMTP and FTP Server for the Given Network Using Cisco Packet Tracer. ',
+             description: 'Lab Report-2',
+            fileType: 'PDF',
+             meta: 'Feb 26, 2026',
+             previewUrl: 'https://drive.google.com/file/d/1t-yxktBxWXLWLPu8A9gwyvEhom7aQYdd/view?usp=sharing',
+             downloadUrl: 'https://drive.google.com/file/d/1t-yxktBxWXLWLPu8A9gwyvEhom7aQYdd/view?usp=sharing',
+             featured: true
+         },
+
+    ],
+    '1-math': [
+        {
+            category: 'assignment',
+            title: 'Mathematics Assignment',
+            description: 'Assignment problems and exercises.',
+            fileType: 'PDF',
+            meta: 'May 12, 2026',
+            previewUrl: 'https://drive.google.com/file/d/1FC_GJJz7QLE6GkucDzNU9AvF9LSFdSsb/view?usp=sharing',
+            downloadUrl: 'https://drive.google.com/file/d/1FC_GJJz7QLE6GkucDzNU9AvF9LSFdSsb/view?usp=sharing',
+            featured: true
+        },
+        {
+            category: 'book',
+            title: 'Calculus Book',
+            description: 'Book covering calculus topics relevant to the course.',
+            fileType: 'PDF',
+            meta: 'May 12, 2026',
+            previewUrl: 'https://drive.google.com/file/d/1MPgQ7Jqi3rLfKwEkJFVfu_mmMCI2AKkk/view?usp=sharing',
+            downloadUrl: 'https://drive.google.com/file/d/1MPgQ7Jqi3rLfKwEkJFVfu_mmMCI2AKkk/view?usp=sharing',
+            featured: true
+        },
+        {
+            category: 'course-outline',
+            title: 'Calculus Course Outline',
+            description: 'Outline for the Calculus course.',
+            fileType: 'PDF',
+            meta: 'May 12, 2026',
+            previewUrl: 'https://drive.google.com/file/d/1GjL3KXiFNlEusPvWZgYAAX3K7dq3oAk-/view?usp=sharing',
+            downloadUrl: 'https://drive.google.com/file/d/1GjL3KXiFNlEusPvWZgYAAX3K7dq3oAk-/view?usp=sharing',
+            featured: true
+        },
+        {
+            category: 'ppt',
+            title: 'Calculus Course Slides',
+            description: 'Slides for the Calculus course.',
+            fileType: 'PDF',
+            meta: 'May 12, 2026',
+            previewUrl: 'https://drive.google.com/drive/folders/1GSgxuHbCstT-QnLo6d9wkScogc2u8CvR?usp=sharing',
+            downloadUrl: 'https://drive.google.com/drive/folders/1GSgxuHbCstT-QnLo6d9wkScogc2u8CvR?usp=sharing',
+            featured: true
+        },
+        {
+            category: 'ppt',
+            title: 'Presentation Slide',
+            description: 'Presentation slide for the Calculus course.',
+            fileType: 'PPTX',
+            meta: 'May 12, 2026',
+            previewUrl: 'https://docs.google.com/presentation/d/1JGoZVclkafIIWp2lfEqrkd_ndy46YASo/edit?usp=sharing&ouid=108140212801946690894&rtpof=true&sd=true',
+            downloadUrl: 'https://docs.google.com/presentation/d/1JGoZVclkafIIWp2lfEqrkd_ndy46YASo/edit?usp=sharing&ouid=108140212801946690894&rtpof=true&sd=true',
+            featured: true
+        },
+        {
+            category: 'question',
+            title: 'Calculus Questions',
+            description: 'Questions for the Calculus course.',
+            fileType: 'PDF',
+            meta: 'May 12, 2026',
+            previewUrl: 'https://drive.google.com/drive/folders/1z0_W8Z1owmR9306wWuNG4uxkQbpST2ZB?usp=sharing',
+            downloadUrl: 'https://drive.google.com/drive/folders/1z0_W8Z1owmR9306wWuNG4uxkQbpST2ZB?usp=sharing',
+            featured: true
+        },
+
+    ],
+    '1-chemistry': [
+        {
+            category: 'assignment',
+            title: 'Chemistry Assignment',
+            description: 'Assignment problems and exercises.',
+            fileType: 'PDF',
+            meta: 'May 12, 2026',
+            previewUrl: 'https://drive.google.com/file/d/1d-Ftcor1-8NZSSCXasTLAWZzoz0lCmMY/view?usp=sharing',
+            downloadUrl: 'https://drive.google.com/file/d/1d-Ftcor1-8NZSSCXasTLAWZzoz0lCmMY/view?usp=sharing',
+            featured: true
+        },
+        {
+            category: 'course-outline',
+            title: 'Chemistry Course Outline',
+            description: 'Outline for the Chemistry course.',
+            fileType: 'PDF',
+            meta: 'May 12, 2026',
+            previewUrl: 'https://drive.google.com/file/d/1CZwzgtM4VRPQeK_QxM2_El7NX2f6XkTw/view?usp=sharing',
+            downloadUrl: 'https://drive.google.com/file/d/1CZwzgtM4VRPQeK_QxM2_El7NX2f6XkTw/view?usp=sharing',
+            featured: true
+        },
+        {
+            category: 'ppt',
+            title: 'Presentation Slide',
+            description: 'Presentation slides for the Chemistry course.',
+            fileType: 'PPT',
+            meta: 'May 12, 2026',
+            previewUrl: 'https://docs.google.com/presentation/d/1JswDE9M1qA07y4kFFUIVTdGabeu69INi/edit?usp=sharing&ouid=108140212801946690894&rtpof=true&sd=true',
+            downloadUrl: 'https://docs.google.com/presentation/d/1JswDE9M1qA07y4kFFUIVTdGabeu69INi/edit?usp=sharing&ouid=108140212801946690894&rtpof=true&sd=true',
+            featured: true
+        },
+        {
+            category: 'ppt',
+            title: 'Slides for Chemistry Course',
+            description: 'Chemistry course slides.',
+            fileType: 'PPT',
+            meta: 'May 12, 2026',
+            previewUrl: 'https://drive.google.com/drive/folders/1NldYGAEvDdMqNrIpX_JfBcpsJX8Px_RW?usp=sharing',
+            downloadUrl: 'https://drive.google.com/drive/folders/1NldYGAEvDdMqNrIpX_JfBcpsJX8Px_RW?usp=sharing',
+            featured: true
+        },
+    ],
+        '1-english': [
+            {
+            category: 'course-outline',
+            title: 'Chemistry Lab Course Outline',
+            description: 'Outline for the Chemistry Lab course.',
+            fileType: 'PDF',
+            meta: 'May 12, 2026',
+            previewUrl: 'https://drive.google.com/file/d/1hI07lYoUITcJsh2h98Tw3Vl9XEJUWmAc/view?usp=sharing',
+            downloadUrl: 'https://drive.google.com/file/d/1hI07lYoUITcJsh2h98Tw3Vl9XEJUWmAc/view?usp=sharing',
+            featured: true
+        },
+          {
+            category: 'ppt',
+            title: 'Chemistry Lab Manuals',
+            description: 'Manuals for the Chemistry Lab course.',
+            fileType: 'PDF',
+            meta: 'May 12, 2026',
+            previewUrl: 'https://drive.google.com/drive/folders/1koBbS5yqmoltZlUvG6BI614q6gAdbwqP?usp=sharing',
+            downloadUrl: 'https://drive.google.com/drive/folders/1koBbS5yqmoltZlUvG6BI614q6gAdbwqP?usp=sharing',
+            featured: true
+        },
+
+        ],
+        '1-physics': [
+            {
+            category: 'assignment',
+            title: 'Physics Assignment',
+            description: 'Assignment problems and exercises.',
+            fileType: 'PDF',
+            meta: 'May 12, 2026',
+            previewUrl: 'https://drive.google.com/file/d/1l7hsXL0Xzi2rqmhoymIrbJLKx1AsElxs/view?usp=sharing',
+            downloadUrl: 'https://drive.google.com/file/d/1l7hsXL0Xzi2rqmhoymIrbJLKx1AsElxs/view?usp=sharing',
+            featured: true
+        },
+        {
+            category: 'book',
+            title: 'Physics for Engineers',
+            description: 'Textbook for the Physics course.',
+            fileType: 'PDF',
+            meta: 'May 12, 2026',
+            previewUrl: 'https://drive.google.com/file/d/1VTatlfn1-lLIrLly3iPo1-QFFjQlfYd7/view?usp=sharing',
+            downloadUrl: 'https://drive.google.com/file/d/1VTatlfn1-lLIrLly3iPo1-QFFjQlfYd7/view?usp=sharing',
+            featured: true
+        },
+        {
+            category: 'question',
+            title: 'Midterm Exam Assignment Questions',
+            description: 'Practice questions for the Physics course.',
+            fileType: 'PDF',
+            meta: 'May 12, 2026',
+            previewUrl: 'https://drive.google.com/file/d/13Jy3aqVtf_dbOh7rqPW8v7g9T0Hhs4r1/view?usp=sharing',
+            downloadUrl: 'https://drive.google.com/file/d/13Jy3aqVtf_dbOh7rqPW8v7g9T0Hhs4r1/view?usp=sharing',
+            featured: true
+        },
+        {
+            category: 'question',
+            title: 'Final Exam Assignment Questions',
+            description: 'Practice questions for the Physics course. (Final Exam)',
+            fileType: 'PDF',
+            meta: 'May 12, 2026',
+            previewUrl: 'https://drive.google.com/file/d/1OGqFl6lALWoLd1Ttt7d5In8z7kf17vLS/view?usp=sharing',
+            downloadUrl: 'https://drive.google.com/file/d/1OGqFl6lALWoLd1Ttt7d5In8z7kf17vLS/view?usp=sharing',
+            featured: true
+        },
+        {
+            category: 'ppt',
+            title: 'Physics Slides (All)',
+            description: 'Lecture slides for the Physics course.',
+            fileType: 'PPT',
+            meta: 'May 12, 2026',
+            previewUrl: 'https://drive.google.com/drive/folders/14bcmXR3uLhbEkrhwEJHBAxMktwbPIwnh?usp=sharing',
+            downloadUrl: 'https://drive.google.com/drive/folders/14bcmXR3uLhbEkrhwEJHBAxMktwbPIwnh?usp=sharing',
+            featured: true
+        },
+
+        ],
+        '2-bengali': [
+            {
+            category: 'notes',
+            title: 'Suggestions for Functional Bengali Course',
+            description: 'Sugggestions',
+            fileType: 'TEXT',
+            meta: 'May 12, 2026',
+            previewUrl: 'https://drive.google.com/file/d/18IfscYw-gg778xJD7-5HwakkrP3oOe2t/view?usp=sharing',
+            downloadUrl: 'https://drive.google.com/file/d/18IfscYw-gg778xJD7-5HwakkrP3oOe2t/view?usp=sharing',
+            featured: true
+        }
+        ],
+        '2-eee': [
+            {
+            category: 'book',
+            title: 'fundamentals-of-electric-circuits-5th-Edition',
+            description: 'Book-1',
+            fileType: 'TEXT',
+            meta: 'May 12, 2026',
+            previewUrl: 'https://drive.google.com/file/d/1DU1XVumV132HiEywlw-TnJ_MUEXxbgzb/view?usp=sharing',
+            downloadUrl: 'https://drive.google.com/file/d/1DU1XVumV132HiEywlw-TnJ_MUEXxbgzb/view?usp=sharing',
+            featured: true
+        },
+        {
+            category: 'book',
+            title: 'Sadiku Solutions',
+            description: 'Book-2',
+            fileType: 'TEXT',
+            meta: 'May 12, 2026',
+            previewUrl: 'https://drive.google.com/file/d/123cgULg6DjjlLHk17V96XZf1hY3q7GFf/view?usp=sharing',
+            downloadUrl: 'https://drive.google.com/file/d/123cgULg6DjjlLHk17V96XZf1hY3q7GFf/view?usp=sharing',
+            featured: true
+        },
+        {
+            category: 'ppt',
+            title: 'Presesentation slide for EEE',
+            description: 'Presentation slides for the EEE course.',
+            fileType: 'PPT',
+            meta: 'May 12, 2026',
+            previewUrl: 'https://docs.google.com/presentation/d/19C251k7z0O7sbh66b9T3EUAtouufSpOY/edit?usp=sharing&ouid=108140212801946690894&rtpof=true&sd=true',
+            downloadUrl: 'https://docs.google.com/presentation/d/19C251k7z0O7sbh66b9T3EUAtouufSpOY/edit?usp=sharing&ouid=108140212801946690894&rtpof=true&sd=true',
+            featured: true
+        },
+        {
+            category: 'ppt',
+            title: 'Lecture Slides for EEE',
+            description: 'All Slides.',
+            fileType: 'PPT',
+            meta: 'May 12, 2026',
+            previewUrl: 'https://drive.google.com/drive/folders/1OKAcYPJMx31R9KCJAf-0fis8pNRYOLse?usp=sharing',
+            downloadUrl: 'https://drive.google.com/drive/folders/1OKAcYPJMx31R9KCJAf-0fis8pNRYOLse?usp=sharing',
+            featured: true
+        },
+         {
+            category: 'assignment',
+            title: 'Assignment for EEE',
+            description: 'KSA-1',
+            fileType: 'PDF',
+            meta: 'May 12, 2026',
+            previewUrl: 'https://drive.google.com/file/d/1K7nUFGE9N606EokX2Qek-6VCTXqZ09fV/view?usp=sharing',
+            downloadUrl: 'https://drive.google.com/file/d/1K7nUFGE9N606EokX2Qek-6VCTXqZ09fV/view?usp=sharing',
+            featured: true
+        }
+        ],
+        '2-linear-algebra': [
+            {
+            category: 'assignment',
+            title: 'Assignment for Linear Algebra',
+            description: 'KSA-1',
+            fileType: 'PDF',
+            meta: 'May 12, 2026',
+            previewUrl: 'https://drive.google.com/drive/folders/15jgj_DcOjxCmRU0Q-AP42XICLzV03Hpo?usp=sharing',
+            downloadUrl: 'https://drive.google.com/drive/folders/15jgj_DcOjxCmRU0Q-AP42XICLzV03Hpo?usp=sharing',
+            featured: true
+        },
+        {
+            category: 'course-outline',
+            title: 'Linear Algebra Course Outline',
+            description: 'Outline for the Linear Algebra course.',
+            fileType: 'PDF',
+            meta: 'May 12, 2026',
+            previewUrl: 'https://drive.google.com/file/d/1PU57Y8LaG4Cs7vzhqRfB8OBoCOLfrRnx/view?usp=sharing',
+            downloadUrl: 'https://drive.google.com/file/d/1PU57Y8LaG4Cs7vzhqRfB8OBoCOLfrRnx/view?usp=sharing',
+            featured: true
+        },
+        {
+            category: 'ppt',
+            title: 'Presentation Slide for Linear Algebra',
+            description: 'KSA (Presentation)',
+            fileType: 'PPT',
+            meta: 'May 12, 2026',
+            previewUrl: 'https://docs.google.com/presentation/d/1DiO7wJE2HsIocrZmEOzTgkfu0i4cB5xF/edit?usp=sharing&ouid=108140212801946690894&rtpof=true&sd=true',
+            downloadUrl: 'https://docs.google.com/presentation/d/1DiO7wJE2HsIocrZmEOzTgkfu0i4cB5xF/edit?usp=sharing&ouid=108140212801946690894&rtpof=true&sd=true',
+            featured: true
+        },
+        ],
+        '2-physics-lab': [
+                {
+                    category: 'book',
+                    title: 'Physics Lab Book',
+                    description: 'Practice Book.',
+                    fileType: 'PDF',
+                    meta: 'May 12, 2026',
+                    previewUrl: 'https://drive.google.com/file/d/1lOYNivMBXSJ9nUmwOMOOmaRn31jQJam-/view?usp=sharing',
+                    downloadUrl: 'https://drive.google.com/file/d/1lOYNivMBXSJ9nUmwOMOOmaRn31jQJam-/view?usp=sharing',
+                    featured: true
+                },
+                {
+                    category: 'lab-manuals',
+                    title: 'Physics Lab Manuals',
+                    description: 'Collection of lab manuals for physics experiments .',
+                    fileType: 'PDF',
+                    meta: 'May 12, 2026',
+                    previewUrl: 'https://drive.google.com/drive/folders/1nsZP3k-vJWx7IQC9LQgmaw16bky2ihpf?usp=sharing',
+                    downloadUrl: 'https://drive.google.com/drive/folders/1nsZP3k-vJWx7IQC9LQgmaw16bky2ihpf?usp=sharing',
+                    featured: true
+                }
+        ],
+        '2-sp-lab': [
+             {
+                    category: 'lab-manuals',
+                    title: 'Structured Programming Lab Manuals',
+                    description: 'Collection of lab manuals for structured programming experiments .',
+                    fileType: 'PDF',
+                    meta: 'May 12, 2026',
+                    previewUrl: 'https://drive.google.com/drive/folders/1FSZwEzEl5I2A3Y18czrzkhCe_TlBM_oc?usp=sharing',
+                    downloadUrl: 'https://drive.google.com/drive/folders/1FSZwEzEl5I2A3Y18czrzkhCe_TlBM_oc?usp=sharing',
+                    featured: true
+                },
+                {
+                    category: 'course-outline',
+                    title: 'Structured Programming Lab Course Outline',
+                    description: 'Outline for the Structured Programming Lab course.',
+                    fileType: 'PDF',
+                    meta: 'May 12, 2026',
+                    previewUrl: 'https://drive.google.com/file/d/1UN2ArMe99wAO-Iya888kdnWPP-vOgihz/view?usp=sharing',
+                    downloadUrl: 'https://drive.google.com/file/d/1UN2ArMe99wAO-Iya888kdnWPP-vOgihz/view?usp=sharing',
+                    featured: true
+                },
+                {
+                    category: 'project-report',
+                    title: 'Structured Programming Lab Project Report',
+                    description: 'Project report for the Structured Programming Lab course.',
+                    fileType: 'PDF',
+                    meta: 'May 12, 2026',
+                    previewUrl: 'https://drive.google.com/file/d/1gtSmI_lJgRhwNGTR9kUyXEUV7z7RbzaJ/view?usp=sharing',
+                    downloadUrl: 'https://drive.google.com/file/d/1gtSmI_lJgRhwNGTR9kUyXEUV7z7RbzaJ/view?usp=sharing',
+                    featured: true
+                }
+
+
+        ],
+        '2-sp': [
+                {
+                    category: 'course-outline',
+                    title: 'Structured Programming Course Outline',
+                    description: 'Outline for the Structured Programming course.',
+                    fileType: 'PDF',
+                    meta: 'May 12, 2026',
+                    previewUrl: 'https://drive.google.com/file/d/1tlPF0ce4t3qOoz8h_5aXPfBzM7UKnLSp/view?usp=sharing',
+                    downloadUrl: 'https://drive.google.com/file/d/1tlPF0ce4t3qOoz8h_5aXPfBzM7UKnLSp/view?usp=sharing',
+                    featured: true
+                },
+                {
+                    category: 'assignment',
+                    title: 'Structured Programming Assignment',
+                    description: 'Assignment for the Structured Programming course.',
+                    fileType: 'PDF',
+                    meta: 'May 12, 2026',
+                    previewUrl: 'https://drive.google.com/drive/folders/1mmhB0fjcuovjD-CNRouiJC0UZS2-1LBw?usp=sharing',
+                    downloadUrl: 'https://drive.google.com/drive/folders/1mmhB0fjcuovjD-CNRouiJC0UZS2-1LBw?usp=sharing',
+                    featured: true
+                },
+                {
+                    category: 'book',
+                    title: 'Structured Programming Book',
+                    description: 'Textbook for the Structured Programming course.',
+                    fileType: 'PDF',
+                    meta: 'May 12, 2026',
+                    previewUrl: 'https://drive.google.com/drive/folders/1Oc1ONHPX5FcGDE3NVTH6RmFS3AiZqI8M?usp=sharing',
+                    downloadUrl: 'https://drive.google.com/drive/folders/1Oc1ONHPX5FcGDE3NVTH6RmFS3AiZqI8M?usp=sharing',
+                    featured: true
+                },
+                {
+                    category: 'PPT',
+                    title: 'Presentation Slide',
+                    description: 'Presentation Slides for the Structured Programming course.',
+                    fileType: 'PDF',
+                    meta: 'May 12, 2026',
+                    previewUrl: 'https://docs.google.com/presentation/d/1Ro331ed8sYfsXDVdFA_UYQW0q09Nh6rX/edit?usp=sharing&ouid=108140212801946690894&rtpof=true&sd=true',
+                    downloadUrl: 'https://docs.google.com/presentation/d/1Ro331ed8sYfsXDVdFA_UYQW0q09Nh6rX/edit?usp=sharing&ouid=108140212801946690894&rtpof=true&sd=true',
+                    featured: true
+                },
+                {
+                    category: 'ppt',
+                    title: 'Lecture Slide',
+                    description: 'Lecture Slides for the Structured Programming course.',
+                    fileType: 'PDF',
+                    meta: 'May 12, 2026',
+                    previewUrl: 'https://drive.google.com/drive/folders/1urlANdG4_hsbhYZIKf-BwYOP90Q-BlIC?usp=sharing',
+                    downloadUrl: 'https://drive.google.com/drive/folders/1urlANdG4_hsbhYZIKf-BwYOP90Q-BlIC?usp=sharing',
+                    featured: true
+                }
+        ],
+        '2-physics2': [
+                {
+                    category: 'assignment',
+                    title: 'Physics II Assignment',
+                    description: 'Assignment for the Physics II course.',
+                    fileType: 'PDF',
+                    meta: 'May 12, 2026',
+                    previewUrl: 'https://drive.google.com/drive/folders/102z3mwgYsHszGYXr_cSB-b8cNme-NPNv?usp=sharing',
+                    downloadUrl: 'https://drive.google.com/drive/folders/102z3mwgYsHszGYXr_cSB-b8cNme-NPNv?usp=sharing',
+                    featured: true
+                },
+                {
+                    category: 'ppt',
+                    title: 'Lecture Slide',
+                    description: 'Lecture Slides for the Physics II course.',
+                    fileType: 'PPT',
+                    meta: 'May 12, 2026',
+                    previewUrl: 'https://drive.google.com/drive/folders/1ahAahetxZoLws-UOxezR7beg382WGbE0?usp=sharing',
+                    downloadUrl: 'https://drive.google.com/drive/folders/1ahAahetxZoLws-UOxezR7beg382WGbE0?usp=sharing',
+                    featured: true
+                },
+               
+
+        ]
+};
+
+
+// ==========================================
+// HELPER FUNCTIONS
+// ==========================================
+
+/**
+ * Get resource counts for a specific course
+ * @param {number} semester - Semester number
+ * @param {string} courseKey - Course key (e.g., 'physics', 'programming')
+ * @returns {object} - Object with counts for each category
+ */
+function getResourceCounts(semester, courseKey) {
+    const key = `${semester}-${courseKey}`;
+    const resources = courseResources[key] || [];
+    
+    const counts = {
+        // Camel case format (for semester pages)
+        labReports: 0,
+        notes: 0,
+        ppt: 0,
+        assignments: 0,
+        projects: 0,
+        books: 0,
+        slides: 0,
+        questions: 0,
+        suggestions: 0,
+        courseOutlines: 0,
+        labManuals: 0,
+        others: 0,
+        total: resources.length,
+        // Hyphenated format (for course.html)
+        'lab-report': 0,
+        'assignment': 0,
+        'project': 0,
+        'project-report': 0,
+        'book': 0,
+        'slides': 0,
+        'question': 0,
+        'suggestion': 0,
+        'course-outline': 0,
+        'lab-manuals': 0,
+        'others': 0
+    };
+    
+    resources.forEach(resource => {
+        switch(resource.category) {
+            case 'lab-report':
+                counts.labReports++;
+                counts['lab-report']++;
+                break;
+            case 'notes':
+                counts.notes++;
+                break;
+            case 'ppt':
+                counts.ppt++;
+                break;
+            case 'assignment':
+                counts.assignments++;
+                counts['assignment']++;
+                break;
+            case 'project':
+                counts.projects++;
+                counts['project']++;
+                break;
+            case 'project-report':
+                counts['project-report']++;
+                break;
+            case 'book':
+                counts.books++;
+                counts['book']++;
+                break;
+            case 'slides':
+                counts.slides++;
+                counts['slides']++;
+                break;
+            case 'question':
+                counts.questions++;
+                counts['question']++;
+                break;
+            case 'suggestion':
+                counts.suggestions++;
+                counts['suggestion']++;
+                break;
+            case 'course-outline':
+                counts.courseOutlines++;
+                counts['course-outline']++;
+                break;
+            case 'lab-manuals':
+                counts.labManuals++;
+                counts['lab-manuals']++;
+                break;
+            case 'others':
+                counts.others++;
+                counts['others']++;
+                break;
+        }
+    });
+    
+    return counts;
+}
+
+/**
+ * Get course metadata by key
+ * @param {string} courseKey - Course key
+ * @returns {object|null} - Course metadata or null
+ */
+function getCourseMetadata(courseKey) {
+    return courseMetadata[courseKey] || null;
+}
+
+/**
+ * Get all courses for a specific semester
+ * @param {number} semester - Semester number
+ * @returns {array} - Array of course objects with their keys
+ */
+function getCoursesBySemester(semester) {
+    const courses = [];
+    for (const [key, course] of Object.entries(courseMetadata)) {
+        if (course.semester === semester) {
+            courses.push({ key, ...course });
+        }
+    }
+    return courses;
+}
+
+/**
+ * Get resources for a specific course
+ * @param {number} semester - Semester number
+ * @param {string} courseKey - Course key
+ * @returns {array} - Array of resources
+ */
+function getCourseResources(semester, courseKey) {
+    const key = `${semester}-${courseKey}`;
+    return courseResources[key] || [];
+}
+
+/**
+ * Get all valid course keys
+ * @returns {array} - Array of all course keys
+ */
+function getAllCourseKeys() {
+    return Object.keys(courseMetadata);
+}
+
+/**
+ * Get semester statistics (course count and total files)
+ * @param {number} semester - Semester number
+ * @returns {object} - Object with courseCount and totalResources
+ */
+function getSemesterStats(semester) {
+    const courses = getCoursesBySemester(semester);
+    let totalResources = 0;
+    
+    courses.forEach(course => {
+        const key = `${semester}-${course.key}`;
+        const resources = courseResources[key] || [];
+        totalResources += resources.length;
+    });
+    
+    return {
+        courseCount: courses.length,
+        totalResources: totalResources
+    };
+}
+
+/**
+ * Get overall stats for all semesters
+ * @returns {object} - Object with total semesters, lab reports, notes, projects
+ */
+function getOverallStats() {
+    let totalLabReports = 0;
+    let totalNotes = 0;
+    let totalProjects = 0;
+    let totalPPT = 0;
+    let totalFiles = 0;
+    
+    for (const [key, resources] of Object.entries(courseResources)) {
+        resources.forEach(resource => {
+            totalFiles++;
+            if (resource.category === 'lab-report') totalLabReports++;
+            if (resource.category === 'notes') totalNotes++;
+            if (resource.category === 'project' || resource.category === 'project-report') totalProjects++;
+            if (resource.category === 'ppt' || resource.category === 'slides') totalPPT++;
+        });
+    }
+    
+    return {
+        semesters: 8,
+        labReports: totalLabReports,
+        notes: totalNotes,
+        projects: totalProjects,
+        ppt: totalPPT,
+        totalFiles: totalFiles
+    };
+}
+
+// Export for use in other files (if using modules)
+if (typeof module !== 'undefined' && module.exports) {
+    module.exports = {
+        courseMetadata,
+        courseResources,
+        getResourceCounts,
+        getCourseMetadata,
+        getCoursesBySemester,
+        getCourseResources,
+        getAllCourseKeys,
+        getSemesterStats,
+        getOverallStats
+    };
+}
+
+// ==========================================
+// GLOBAL ALIASES (for compatibility with existing code)
+// ==========================================
+// course.html uses 'courseData' variable name
+const courseData = courseMetadata;

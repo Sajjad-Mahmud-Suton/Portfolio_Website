@@ -1,6 +1,6 @@
 /**
- * Simple HTTP Server for Portfolio Website
- * Serves files correctly from src folder
+ * Universal Portfolio Server
+ * Serves Modern, Classic, Admin, and Legacy assets
  */
 
 const http = require('http');
@@ -20,39 +20,56 @@ const mimeTypes = {
     '.png': 'image/png',
     '.jpg': 'image/jpeg',
     '.jpeg': 'image/jpeg',
+    '.jfif': 'image/jpeg',
+    '.webp': 'image/webp',
     '.gif': 'image/gif',
     '.svg': 'image/svg+xml',
     '.ico': 'image/x-icon',
-    '.pdf': 'application/pdf'
+    '.pdf': 'application/pdf',
+    '.woff': 'font/woff',
+    '.woff2': 'font/woff2',
+    '.ttf': 'font/ttf'
 };
 
 const server = http.createServer((req, res) => {
-    // Parse URL
     const parsedUrl = url.parse(req.url, true);
-    let pathname = parsedUrl.pathname;
+    let pathname = decodeURIComponent(parsedUrl.pathname);
 
-    // Remove leading slash
+    // Routing shortcuts
     if (pathname === '/') {
-        pathname = '/src/index.html';
-    } else if (pathname.startsWith('/src/')) {
-        // Path already has /src/, keep it
-    } else if (!pathname.startsWith('/assets') && !pathname.startsWith('/css') && !pathname.startsWith('/js')) {
-        // If path doesn't start with special directories, assume it's in src/
-        if (!pathname.includes('.')) {
-            pathname = `/src${pathname}.html`;
-        } else {
-            pathname = `/src${pathname}`;
+        pathname = '/index.html';
+    } else if (pathname === '/classic') {
+        pathname = '/classic.html';
+    } else if (pathname === '/modern') {
+        pathname = '/modern.html';
+    } else if (pathname === '/admin') {
+        pathname = '/admin.html';
+    }
+
+    let filePath = path.join(BASE_DIR, pathname);
+
+    // If file doesn't exist directly, check fallback in src/ for legacy links
+    if (!fs.existsSync(filePath)) {
+        const srcPath = path.join(BASE_DIR, 'src', pathname);
+        const srcHtmlPath = path.join(BASE_DIR, 'src', pathname + '.html');
+        if (fs.existsSync(srcPath)) {
+            filePath = srcPath;
+        } else if (fs.existsSync(srcHtmlPath)) {
+            filePath = srcHtmlPath;
         }
     }
 
-    // Build full file path
-    let filePath = path.join(BASE_DIR, pathname);
-
     // Security check - prevent directory traversal
-    const realPath = fs.realpathSync(BASE_DIR);
-    if (!fs.realpathSync(filePath).startsWith(realPath)) {
-        res.writeHead(403, { 'Content-Type': 'text/plain' });
-        res.end('Access denied');
+    try {
+        const resolvedPath = path.resolve(filePath);
+        if (!resolvedPath.startsWith(path.resolve(BASE_DIR))) {
+            res.writeHead(403, { 'Content-Type': 'text/plain' });
+            res.end('Access denied');
+            return;
+        }
+    } catch (e) {
+        res.writeHead(400, { 'Content-Type': 'text/plain' });
+        res.end('Bad Request');
         return;
     }
 
@@ -61,17 +78,14 @@ const server = http.createServer((req, res) => {
         if (err) {
             if (err.code === 'ENOENT') {
                 res.writeHead(404, { 'Content-Type': 'text/html' });
-                res.end(`<h1>404 - File Not Found</h1><p>Requested: ${pathname}</p><p>Full path: ${filePath}</p>`);
+                res.end(`<h1>404 - Not Found</h1><p>Requested: ${pathname}</p>`);
             } else {
                 res.writeHead(500, { 'Content-Type': 'text/plain' });
                 res.end('Server Error: ' + err);
             }
         } else {
-            // Determine content type
             const ext = path.extname(filePath).toLowerCase();
             const contentType = mimeTypes[ext] || 'application/octet-stream';
-
-            // Set response headers
             res.writeHead(200, { 'Content-Type': contentType });
             res.end(content);
         }
@@ -79,7 +93,8 @@ const server = http.createServer((req, res) => {
 });
 
 server.listen(PORT, () => {
-    console.log(`✅ Portfolio Server running at http://localhost:${PORT}`);
-    console.log(`📁 Serving files from: ${BASE_DIR}`);
-    console.log(`🌐 Open http://localhost:${PORT} in your browser`);
+    console.log(`✅ Modern Creative Developer Portfolio Server running at: http://localhost:${PORT}`);
+    console.log(`🌐 Modern:  http://localhost:${PORT}/modern`);
+    console.log(`📜 Classic: http://localhost:${PORT}/classic`);
+    console.log(`🔒 Admin:   http://localhost:${PORT}/admin`);
 });

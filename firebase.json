@@ -4,12 +4,21 @@
     "ignore": [
       "firebase.json",
       "**/.*",
-      "**/node_modules/**"
+      "**/node_modules/**",
+      "backup_classic/**"
     ],
     "rewrites": [
       {
-        "source": "**",
-        "destination": "/index.html"
+        "source": "/classic",
+        "destination": "/classic.html"
+      },
+      {
+        "source": "/modern",
+        "destination": "/modern.html"
+      },
+      {
+        "source": "/admin",
+        "destination": "/admin.html"
       }
     ]
   }
