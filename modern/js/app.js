@@ -1,32 +1,32 @@
 /**
- * SAJJAD MAHMUD® - MODERN CREATIVE DEVELOPER PORTFOLIO
- * Main Application Orchestration (GSAP, Magnetic, Cursor, Preloader, Form, Time)
+ * SAJJAD MAHMUD® - ULTRA-MODERN PORTFOLIO ORCHESTRATION
+ * Lenis Smooth Scroll, GSAP Motion, 3D Tilt, Web Audio Sound, Preloader, Form
  */
 
 document.addEventListener('DOMContentLoaded', () => {
-  // 1. PRELOADER COUNTDOWN
+  // 1. PRELOADER COUNTDOWN & REVEAL
   const preloader = document.getElementById('preloader');
   const counterEl = document.getElementById('preloader-counter');
   const barEl = document.getElementById('preloader-bar');
 
   let count = 0;
-  const loadInterval = setInterval(() => {
-    count += Math.floor(Math.random() * 8) + 4;
+  const loadTimer = setInterval(() => {
+    count += Math.floor(Math.random() * 9) + 4;
     if (count > 100) count = 100;
 
     if (counterEl) counterEl.textContent = `${count.toString().padStart(2, '0')}%`;
     if (barEl) barEl.style.width = `${count}%`;
 
     if (count === 100) {
-      clearInterval(loadInterval);
+      clearInterval(loadTimer);
       setTimeout(() => {
         if (preloader) preloader.classList.add('loaded');
         initScrollAnimations();
       }, 350);
     }
-  }, 40);
+  }, 35);
 
-  // 2. CUSTOM CURSOR WITH SPRING PHYSICS
+  // 2. CUSTOM CURSOR WITH DYNAMIC STATE
   const cursorDot = document.querySelector('.cursor-dot');
   const cursorFollower = document.querySelector('.cursor-follower');
 
@@ -45,8 +45,8 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   function renderCursor() {
-    followerX += (mouseX - followerX) * 0.18;
-    followerY += (mouseY - followerY) * 0.18;
+    followerX += (mouseX - followerX) * 0.16;
+    followerY += (mouseY - followerY) * 0.16;
     if (cursorFollower) {
       cursorFollower.style.left = `${followerX}px`;
       cursorFollower.style.top = `${followerY}px`;
@@ -55,50 +55,118 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   renderCursor();
 
-  // Hover states on interactables
-  const hoverables = document.querySelectorAll('a, button, .project-media-wrapper, .blog-card, .skill-card, input, textarea');
-  hoverables.forEach(el => {
+  // Hover states
+  document.querySelectorAll('a, button, input, textarea, .chat-chip').forEach(el => {
     el.addEventListener('mouseenter', () => cursorFollower && cursorFollower.classList.add('hovered'));
     el.addEventListener('mouseleave', () => cursorFollower && cursorFollower.classList.remove('hovered'));
+  });
+
+  // Project hover state with dynamic label
+  document.querySelectorAll('.project-media-box').forEach(box => {
+    box.addEventListener('mouseenter', () => {
+      if (cursorFollower) {
+        cursorFollower.classList.add('project-view');
+        cursorFollower.textContent = 'EXPLORE';
+      }
+    });
+    box.addEventListener('mouseleave', () => {
+      if (cursorFollower) {
+        cursorFollower.classList.remove('project-view');
+        cursorFollower.textContent = '';
+      }
+    });
   });
 
   window.addEventListener('mousedown', () => cursorFollower && cursorFollower.classList.add('clicking'));
   window.addEventListener('mouseup', () => cursorFollower && cursorFollower.classList.remove('clicking'));
 
-  // 3. MAGNETIC BUTTONS (PHYSICAL PULL)
-  const magneticElements = document.querySelectorAll('[data-magnetic]');
-  magneticElements.forEach(elem => {
-    elem.addEventListener('mousemove', (e) => {
-      const rect = elem.getBoundingClientRect();
-      const x = e.clientX - rect.left - rect.width / 2;
-      const y = e.clientY - rect.top - rect.height / 2;
-      elem.style.transform = `translate(${x * 0.3}px, ${y * 0.3}px)`;
+  // 3. LENIS SMOOTH MOMENTUM SCROLLING
+  let lenisInstance = null;
+  if (typeof Lenis !== 'undefined') {
+    lenisInstance = new Lenis({
+      duration: 1.25,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      orientation: 'vertical',
+      gestureOrientation: 'vertical',
+      smoothWheel: true,
+      wheelMultiplier: 1.05
     });
 
-    elem.addEventListener('mouseleave', () => {
-      elem.style.transform = 'translate(0px, 0px)';
-      elem.style.transition = 'transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1)';
-    });
+    function raf(time) {
+      lenisInstance.raf(time);
+      requestAnimationFrame(raf);
+    }
+    requestAnimationFrame(raf);
 
-    elem.addEventListener('mouseenter', () => {
-      elem.style.transition = 'none';
+    if (typeof ScrollTrigger !== 'undefined') {
+      lenisInstance.on('scroll', ScrollTrigger.update);
+      gsap.ticker.add((time) => {
+        lenisInstance.raf(time * 1000);
+      });
+      gsap.ticker.lagSmoothing(0);
+    }
+  }
+
+  // 4. PURE WEB AUDIO SYNTHESIZER SOUND DESIGN (100% Free)
+  let audioCtx = null;
+  let soundEnabled = localStorage.getItem('sm_portfolio_sound') === 'true';
+
+  function playSynthTone(freq = 850, type = 'sine', duration = 0.045) {
+    if (!soundEnabled) return;
+    try {
+      if (!audioCtx) {
+        audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+      }
+      if (audioCtx.state === 'suspended') {
+        audioCtx.resume();
+      }
+      const osc = audioCtx.createOscillator();
+      const gain = audioCtx.createGain();
+      osc.type = type;
+      osc.frequency.setValueAtTime(freq, audioCtx.currentTime);
+      gain.gain.setValueAtTime(0.035, audioCtx.currentTime);
+      gain.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime + duration);
+      osc.connect(gain);
+      gain.connect(audioCtx.destination);
+      osc.start();
+      osc.stop(audioCtx.currentTime + duration);
+    } catch (e) {}
+  }
+
+  const soundBtn = document.getElementById('sound-toggle-btn');
+  if (soundBtn) {
+    function refreshSoundUI() {
+      soundBtn.innerHTML = soundEnabled ? '<i class="fas fa-volume-high"></i>' : '<i class="fas fa-volume-xmark"></i>';
+      soundBtn.setAttribute('title', soundEnabled ? 'Sound FX Enabled' : 'Sound FX Muted');
+    }
+    refreshSoundUI();
+
+    soundBtn.addEventListener('click', () => {
+      soundEnabled = !soundEnabled;
+      localStorage.setItem('sm_portfolio_sound', soundEnabled);
+      refreshSoundUI();
+      if (soundEnabled) playSynthTone(980, 'sine', 0.08);
     });
+  }
+
+  document.querySelectorAll('a, button, .chat-chip').forEach(el => {
+    el.addEventListener('click', () => playSynthTone(750, 'sine', 0.035));
   });
 
-  // 4. NAVBAR SCROLL EFFECT
-  const navbar = document.querySelector('.modern-nav');
+  // 5. NAVBAR SCROLL GLASSMORPHISM
+  const nav = document.querySelector('.modern-nav');
   window.addEventListener('scroll', () => {
-    if (!navbar) return;
-    if (window.scrollY > 50) {
-      navbar.classList.add('scrolled');
+    if (!nav) return;
+    if (window.scrollY > 40) {
+      nav.classList.add('scrolled');
     } else {
-      navbar.classList.remove('scrolled');
+      nav.classList.remove('scrolled');
     }
   });
 
-  // 5. 3D TILT EFFECT ON PROJECT CARDS
-  const tiltCards = document.querySelectorAll('[data-tilt]');
-  tiltCards.forEach(card => {
+  // 6. 3D CARD TILT ON HERO CARD & PROJECT MEDIA
+  const tiltItems = document.querySelectorAll('[data-tilt]');
+  tiltItems.forEach(card => {
     card.addEventListener('mousemove', (e) => {
       const rect = card.getBoundingClientRect();
       const x = e.clientX - rect.left;
@@ -106,8 +174,8 @@ document.addEventListener('DOMContentLoaded', () => {
       const centerX = rect.width / 2;
       const centerY = rect.height / 2;
 
-      const rotateX = ((y - centerY) / centerY) * -8;
-      const rotateY = ((x - centerX) / centerX) * 8;
+      const rotateX = ((y - centerY) / centerY) * -9;
+      const rotateY = ((x - centerX) / centerX) * 9;
 
       card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
     });
@@ -122,28 +190,28 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // 6. DHAKA LIVE TIME (UTC+6)
-  function updateDhakaTime() {
-    const timeEl = document.getElementById('live-dhaka-time');
-    if (!timeEl) return;
+  // 7. DHAKA REALTIME CLOCK (UTC+6)
+  function syncDhakaClock() {
+    const clockEl = document.getElementById('live-dhaka-clock');
+    if (!clockEl) return;
 
-    const options = {
+    const opts = {
       timeZone: 'Asia/Dhaka',
       hour: '2-digit',
       minute: '2-digit',
       second: '2-digit',
       hour12: true
     };
-    const now = new Intl.DateTimeFormat('en-US', options).format(new Date());
-    timeEl.textContent = `${now} (GMT+6)`;
+    const formatted = new Intl.DateTimeFormat('en-US', opts).format(new Date());
+    clockEl.textContent = `${formatted} (GMT+6)`;
   }
-  updateDhakaTime();
-  setInterval(updateDhakaTime, 1000);
+  syncDhakaClock();
+  setInterval(syncDhakaClock, 1000);
 
-  // 7. COPY EMAIL TO CLIPBOARD WITH TOAST
-  const copyEmailBtn = document.getElementById('copy-email-trigger');
-  if (copyEmailBtn) {
-    copyEmailBtn.addEventListener('click', () => {
+  // 8. CLIPBOARD EMAIL WITH TOAST
+  const copyBtn = document.getElementById('copy-email-btn');
+  if (copyBtn) {
+    copyBtn.addEventListener('click', () => {
       const email = 'sajjadmahmudsuton@gmail.com';
       navigator.clipboard.writeText(email).then(() => {
         showToast('✓ Email copied to clipboard: ' + email);
@@ -153,63 +221,58 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  function showToast(message) {
-    const existing = document.querySelector('.custom-toast');
-    if (existing) existing.remove();
+  function showToast(msg) {
+    const old = document.querySelector('.custom-toast');
+    if (old) old.remove();
 
-    const toast = document.createElement('div');
-    toast.className = 'custom-toast';
-    toast.style.cssText = `
+    const t = document.createElement('div');
+    t.className = 'custom-toast';
+    t.style.cssText = `
       position: fixed;
       bottom: 30px;
       left: 50%;
       transform: translateX(-50%) translateY(20px);
       background: #B7FF5A;
-      color: #08090B;
-      padding: 12px 24px;
+      color: #050608;
+      padding: 12px 26px;
       border-radius: 9999px;
       font-family: 'Space Grotesk', monospace;
       font-size: 13px;
       font-weight: 700;
-      z-index: 100000;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.8), 0 0 20px rgba(183, 255, 90, 0.4);
-      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      z-index: 1000000;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.9), 0 0 25px rgba(183, 255, 90, 0.5);
+      transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
     `;
-    toast.textContent = message;
-    document.body.appendChild(toast);
+    t.textContent = msg;
+    document.body.appendChild(t);
 
+    setTimeout(() => { t.style.transform = 'translateX(-50%) translateY(0)'; }, 10);
     setTimeout(() => {
-      toast.style.transform = 'translateX(-50%) translateY(0)';
-    }, 10);
-
-    setTimeout(() => {
-      toast.style.transform = 'translateX(-50%) translateY(20px)';
-      toast.style.opacity = '0';
-      setTimeout(() => toast.remove(), 300);
+      t.style.transform = 'translateX(-50%) translateY(20px)';
+      t.style.opacity = '0';
+      setTimeout(() => t.remove(), 350);
     }, 3200);
   }
 
-  // 8. CONTACT FORM WITH GENUINELY FREE EMAILJS INTEGRATION
+  // 9. EMAILJS FUNCTIONAL CONTACT FORM
   const contactForm = document.getElementById('modern-contact-form');
   if (contactForm && typeof emailjs !== 'undefined') {
-    const EMAILJS_PUBLIC_KEY = 'jt_E_2wOZ0XhwSTyF';
-    const EMAILJS_SERVICE_ID = 'service_sajjad';
-    const EMAILJS_TEMPLATE_ID = 'template_wwymg5f';
-    const EMAILJS_AUTO_REPLY_TEMPLATE_ID = 'template_891ymr7';
+    const PUBLIC_KEY = 'jt_E_2wOZ0XhwSTyF';
+    const SERVICE_ID = 'service_sajjad';
+    const TEMPLATE_ID = 'template_wwymg5f';
+    const AUTO_REPLY_ID = 'template_891ymr7';
 
-    try {
-      emailjs.init(EMAILJS_PUBLIC_KEY);
-    } catch (e) {}
+    try { emailjs.init(PUBLIC_KEY); } catch (e) {}
 
     contactForm.addEventListener('submit', (e) => {
       e.preventDefault();
       const submitBtn = contactForm.querySelector('button[type="submit"]');
-      const originalText = submitBtn.innerHTML;
+      const prevHtml = submitBtn.innerHTML;
 
       submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Transmitting...';
       submitBtn.disabled = true;
 
-      const templateParams = {
+      const params = {
         from_name: document.getElementById('form-name').value,
         from_email: document.getElementById('form-email').value,
         subject: document.getElementById('form-subject').value || 'Portfolio Contact Inquiry',
@@ -218,12 +281,12 @@ document.addEventListener('DOMContentLoaded', () => {
         time: new Date().toLocaleString()
       };
 
-      emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, templateParams)
+      emailjs.send(SERVICE_ID, TEMPLATE_ID, params)
         .then(() => {
-          emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_AUTO_REPLY_TEMPLATE_ID, templateParams).catch(() => {});
+          emailjs.send(SERVICE_ID, AUTO_REPLY_ID, params).catch(() => {});
           if (window.SajjadAnalytics) window.SajjadAnalytics.logContactSubmission();
 
-          showToast('✓ Message transmitted successfully! Sajjad will respond shortly.');
+          showToast('✓ Message transmitted! Sajjad will respond shortly.');
           contactForm.reset();
         })
         .catch((err) => {
@@ -231,132 +294,68 @@ document.addEventListener('DOMContentLoaded', () => {
           showToast('Notice: Direct transmission failed. Please email sajjadmahmudsuton@gmail.com');
         })
         .finally(() => {
-          submitBtn.innerHTML = originalText;
+          submitBtn.innerHTML = prevHtml;
           submitBtn.disabled = false;
         });
     });
   }
 
-  // 9. MOBILE MENU DRAWER TOGGLE
-  const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+  // 10. MOBILE MENU TOGGLE
+  const mobileBtn = document.querySelector('.mobile-menu-btn');
   const mobileDrawer = document.querySelector('.mobile-nav-drawer');
   const mobileLinks = document.querySelectorAll('.mobile-nav-link');
 
-  if (mobileMenuBtn && mobileDrawer) {
-    mobileMenuBtn.addEventListener('click', () => {
+  if (mobileBtn && mobileDrawer) {
+    mobileBtn.addEventListener('click', () => {
       mobileDrawer.classList.toggle('open');
-      const isOpen = mobileDrawer.classList.contains('open');
-      mobileMenuBtn.innerHTML = isOpen ? '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+      const open = mobileDrawer.classList.contains('open');
+      mobileBtn.innerHTML = open ? '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
     });
 
     mobileLinks.forEach(link => {
       link.addEventListener('click', () => {
         mobileDrawer.classList.remove('open');
-        mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+        mobileBtn.innerHTML = '<i class="fas fa-bars"></i>';
       });
     });
   }
 
-  // 10. GSAP SCROLL ANIMATIONS
+  // 11. GSAP SCROLLTRIGGER ANIMATIONS
   function initScrollAnimations() {
     if (typeof gsap === 'undefined') return;
+    if (typeof ScrollTrigger !== 'undefined') gsap.registerPlugin(ScrollTrigger);
 
-    if (typeof ScrollTrigger !== 'undefined') {
-      gsap.registerPlugin(ScrollTrigger);
-    }
-
-    // Hero content reveal
-    gsap.from('.hero-content > *', {
+    // Hero title & content
+    gsap.from('.hero-left-editorial > *', {
       y: 40,
       opacity: 0,
       duration: 1,
-      stagger: 0.15,
+      stagger: 0.14,
       ease: 'power3.out'
     });
 
-    // Reveal on scroll sections
-    gsap.utils.toArray('.section').forEach(sec => {
-      gsap.from(sec.querySelectorAll('.section-head, .about-grid, .projects-container, .skills-grid, .timeline-grid, .blog-grid, .contact-wrapper'), {
+    gsap.from('.holo-card-3d', {
+      scale: 0.9,
+      opacity: 0,
+      duration: 1.2,
+      ease: 'power3.out',
+      delay: 0.2
+    });
+
+    // Reveal sections on scroll
+    gsap.utils.toArray('.section-wrapper').forEach(sec => {
+      gsap.from(sec.querySelectorAll('.section-editorial-header, .bento-card, .project-feature-row, .skill-matrix-card, .honor-item, .blog-editorial-card, .contact-dual-grid'), {
         scrollTrigger: {
           trigger: sec,
-          start: 'top 80%',
+          start: 'top 82%',
           toggleActions: 'play none none none'
         },
-        y: 50,
+        y: 45,
         opacity: 0,
-        duration: 0.9,
-        stagger: 0.2,
+        duration: 0.85,
+        stagger: 0.15,
         ease: 'power3.out'
       });
     });
   }
-
-  // 11. LENIS SMOOTH SCROLLING
-  if (typeof Lenis !== 'undefined') {
-    const lenis = new Lenis({
-      duration: 1.2,
-      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-      orientation: 'vertical',
-      gestureOrientation: 'vertical',
-      smoothWheel: true
-    });
-
-    function raf(time) {
-      lenis.raf(time);
-      requestAnimationFrame(raf);
-    }
-    requestAnimationFrame(raf);
-
-    if (typeof ScrollTrigger !== 'undefined') {
-      lenis.on('scroll', ScrollTrigger.update);
-    }
-  }
-
-  // 12. PURE WEB AUDIO SYNTHESIZED SOUND DESIGN (100% Free & Zero External Assets)
-  let audioCtx = null;
-  let soundEnabled = localStorage.getItem('sm_portfolio_sound') === 'true';
-
-  function playUiClick(freq = 800, type = 'sine', duration = 0.04) {
-    if (!soundEnabled) return;
-    try {
-      if (!audioCtx) {
-        audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-      }
-      if (audioCtx.state === 'suspended') {
-        audioCtx.resume();
-      }
-      const osc = audioCtx.createOscillator();
-      const gain = audioCtx.createGain();
-      osc.type = type;
-      osc.frequency.setValueAtTime(freq, audioCtx.currentTime);
-      gain.gain.setValueAtTime(0.04, audioCtx.currentTime);
-      gain.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime + duration);
-      osc.connect(gain);
-      gain.connect(audioCtx.destination);
-      osc.start();
-      osc.stop(audioCtx.currentTime + duration);
-    } catch (e) {}
-  }
-
-  const soundToggleBtn = document.getElementById('sound-toggle-btn');
-  if (soundToggleBtn) {
-    function updateSoundUi() {
-      soundToggleBtn.innerHTML = soundEnabled ? '<i class="fas fa-volume-high"></i>' : '<i class="fas fa-volume-xmark"></i>';
-      soundToggleBtn.setAttribute('title', soundEnabled ? 'Sound FX Enabled' : 'Sound FX Disabled');
-    }
-    updateSoundUi();
-
-    soundToggleBtn.addEventListener('click', () => {
-      soundEnabled = !soundEnabled;
-      localStorage.setItem('sm_portfolio_sound', soundEnabled);
-      updateSoundUi();
-      if (soundEnabled) playUiClick(950, 'sine', 0.06);
-    });
-  }
-
-  // Bind subtle tactile click to buttons and links
-  document.querySelectorAll('a, button, .chat-chip').forEach(el => {
-    el.addEventListener('click', () => playUiClick(700, 'sine', 0.035));
-  });
 });
-
