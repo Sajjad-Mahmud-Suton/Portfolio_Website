@@ -184,6 +184,9 @@
       <div class="manage-card">
         <div class="manage-head">
           <h3 style="font-family: var(--font-display); font-size: 1.3rem;">Editorial Articles</h3>
+          <button class="btn-admin-primary" id="open-add-blog-modal" style="padding: 8px 16px; font-size: 11px;">
+            <i class="fas fa-plus"></i> Add New Blog Post
+          </button>
         </div>
 
         <table class="data-table">
@@ -265,6 +268,11 @@
         </div>
 
         <div>
+          <label style="font-family: var(--font-mono); font-size: 11px; color: var(--admin-muted); display: block; margin-bottom: 6px;">PROJECT DESCRIPTION</label>
+          <textarea id="modal-proj-desc" class="auth-input" style="min-height: 80px; resize: vertical;" placeholder="Detailed overview of features, architecture, and purpose..." required></textarea>
+        </div>
+
+        <div>
           <label style="font-family: var(--font-mono); font-size: 11px; color: var(--admin-muted); display: block; margin-bottom: 6px;">LIVE DEMO LINK</label>
           <input type="url" id="modal-proj-link" class="auth-input" placeholder="https://...">
         </div>
@@ -277,6 +285,51 @@
         <div style="display: flex; justify-content: flex-end; gap: 12px; margin-top: 10px;">
           <button type="button" class="btn-sm-action" id="proj-modal-close">Cancel</button>
           <button type="submit" class="btn-admin-primary" style="padding: 8px 20px;">Save Project</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Add Blog Modal -->
+  <div class="admin-modal" id="blog-modal">
+    <div class="admin-modal-card">
+      <h3 style="font-family: var(--font-display); font-size: 1.4rem; margin-bottom: 20px;">Publish New Editorial Article</h3>
+
+      <form id="add-blog-form" style="display: flex; flex-direction: column; gap: 16px;">
+        <div>
+          <label style="font-family: var(--font-mono); font-size: 11px; color: var(--admin-muted); display: block; margin-bottom: 6px;">ARTICLE TITLE</label>
+          <input type="text" id="modal-blog-title" class="auth-input" placeholder="e.g. Modern Frontend Architecture" required>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px;">
+          <div>
+            <label style="font-family: var(--font-mono); font-size: 11px; color: var(--admin-muted); display: block; margin-bottom: 6px;">CATEGORY</label>
+            <input type="text" id="modal-blog-cat" class="auth-input" placeholder="Web Development, Research, EV" required>
+          </div>
+          <div>
+            <label style="font-family: var(--font-mono); font-size: 11px; color: var(--admin-muted); display: block; margin-bottom: 6px;">READING TIME</label>
+            <input type="text" id="modal-blog-time" class="auth-input" placeholder="e.g. 5 min read" required>
+          </div>
+        </div>
+
+        <div>
+          <label style="font-family: var(--font-mono); font-size: 11px; color: var(--admin-muted); display: block; margin-bottom: 6px;">COVER IMAGE URL</label>
+          <input type="url" id="modal-blog-cover" class="auth-input" placeholder="https://..." value="https://images.unsplash.com/photo-1507721999472-8ed4421c4af2?w=800&fit=crop">
+        </div>
+
+        <div>
+          <label style="font-family: var(--font-mono); font-size: 11px; color: var(--admin-muted); display: block; margin-bottom: 6px;">SHORT EXCERPT</label>
+          <input type="text" id="modal-blog-excerpt" class="auth-input" placeholder="Brief 1-2 sentence preview..." required>
+        </div>
+
+        <div>
+          <label style="font-family: var(--font-mono); font-size: 11px; color: var(--admin-muted); display: block; margin-bottom: 6px;">FULL CONTENT (HTML / MARKDOWN)</label>
+          <textarea id="modal-blog-content" class="auth-input" style="min-height: 120px; resize: vertical;" placeholder="Detailed article paragraphs, code snippets, and takeaways..." required></textarea>
+        </div>
+
+        <div style="display: flex; justify-content: flex-end; gap: 12px; margin-top: 10px;">
+          <button type="button" class="btn-sm-action" id="blog-modal-close">Cancel</button>
+          <button type="submit" class="btn-admin-primary" style="padding: 8px 20px;">Publish Article</button>
         </div>
       </form>
     </div>

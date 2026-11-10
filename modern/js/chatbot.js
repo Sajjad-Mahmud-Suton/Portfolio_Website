@@ -32,7 +32,19 @@
     },
     {
       keywords: ['green guardian', 'exam', 'monitoring'],
-      response: `**Green Guardian** is an online exam monitoring and academic platform engineered with TypeScript, React JSX, and Firebase. It is designed to ensure academic integrity during remote assessments. Live demo: https://green--guardian.web.app/`
+      response: `**Green Guardian** is an online exam monitoring and academic platform engineered with TypeScript, React JSX, and Firebase. It is designed to ensure academic integrity during remote assessments. Live demo: https://green.bakul.codes/`
+    },
+    {
+      keywords: ['synthex', 'compiler', 'bangla', 'english compiler'],
+      response: `**Synthex** is a custom dual-language English & Bangla compiler developed in C. It implements tokenization, lexical parsing, and syntax evaluation for multi-language constructs. Repository: https://github.com/Sajjad-Mahmud-Suton/Synthex`
+    },
+    {
+      keywords: ['codeaid', 'ml', 'machine learning', 'python'],
+      response: `**CodeAid** is a machine learning and NLP lab research project engineered in Python and TeX, focusing on code intelligence and developer assistance. Repository: https://github.com/Sajjad-Mahmud-Suton/CodeAid`
+    },
+    {
+      keywords: ['eshop', 'e-shop', 'shop', 'ecommerce', 'store'],
+      response: `**E-Shop** is a complete electronic commerce store platform built in PHP, MySQL, JavaScript, and Bootstrap, featuring cataloging and cart checkout. Repository: https://github.com/Sajjad-Mahmud-Suton/E-Shop`
     },
     {
       keywords: ['education', 'university', 'college', 'degree', 'study', 'school'],

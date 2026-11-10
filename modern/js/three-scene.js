@@ -32,18 +32,18 @@
   renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 
   // Dynamic Lighting Setup
-  const ambientLight = new THREE.AmbientLight(0x0a0c12, 1.2);
+  const ambientLight = new THREE.AmbientLight(0x0f172a, 1.4);
   scene.add(ambientLight);
 
-  const lightLime = new THREE.PointLight(0xB7FF5A, 4.5, 25);
-  lightLime.position.set(5, 4, 5);
-  scene.add(lightLime);
-
-  const lightCyan = new THREE.PointLight(0x2EE6D6, 3.5, 25);
-  lightCyan.position.set(-5, -4, 4);
+  const lightCyan = new THREE.PointLight(0x38BDF8, 4.5, 25);
+  lightCyan.position.set(5, 4, 5);
   scene.add(lightCyan);
 
-  const lightViolet = new THREE.PointLight(0xA855F7, 2.5, 20);
+  const lightTeal = new THREE.PointLight(0x10B981, 3.5, 25);
+  lightTeal.position.set(-5, -4, 4);
+  scene.add(lightTeal);
+
+  const lightViolet = new THREE.PointLight(0x818CF8, 2.5, 20);
   lightViolet.position.set(0, 5, -3);
   scene.add(lightViolet);
 
@@ -54,13 +54,13 @@
   // 1. Core Geometric Crystal (Icosahedron)
   const coreGeo = new THREE.IcosahedronGeometry(1.7, 2);
   const coreMat = new THREE.MeshPhysicalMaterial({
-    color: 0x090b10,
-    emissive: 0x05070a,
+    color: 0x0f172a,
+    emissive: 0x070d1a,
     roughness: 0.15,
     metalness: 0.85,
     clearcoat: 1.0,
     clearcoatRoughness: 0.1,
-    reflectivity: 0.9,
+    reflectivity: 0.95,
     wireframe: false
   });
   const coreMesh = new THREE.Mesh(coreGeo, coreMat);
@@ -69,10 +69,10 @@
   // 2. Futuristic Wireframe Hologram Overlay
   const wireGeo = new THREE.IcosahedronGeometry(1.715, 2);
   const wireMat = new THREE.MeshBasicMaterial({
-    color: 0xB7FF5A,
+    color: 0x38BDF8,
     wireframe: true,
     transparent: true,
-    opacity: 0.22
+    opacity: 0.25
   });
   const wireMesh = new THREE.Mesh(wireGeo, wireMat);
   masterGroup.add(wireMesh);
@@ -80,9 +80,9 @@
   // 3. Dual Outer Orbit Rings
   const ringGeo1 = new THREE.TorusGeometry(2.35, 0.015, 16, 100);
   const ringMat1 = new THREE.MeshBasicMaterial({
-    color: 0x2EE6D6,
+    color: 0x38BDF8,
     transparent: true,
-    opacity: 0.35
+    opacity: 0.4
   });
   const ringMesh1 = new THREE.Mesh(ringGeo1, ringMat1);
   ringMesh1.rotation.x = Math.PI * 0.35;
@@ -90,9 +90,9 @@
 
   const ringGeo2 = new THREE.TorusGeometry(2.55, 0.015, 16, 100);
   const ringMat2 = new THREE.MeshBasicMaterial({
-    color: 0xB7FF5A,
+    color: 0x10B981,
     transparent: true,
-    opacity: 0.25
+    opacity: 0.3
   });
   const ringMesh2 = new THREE.Mesh(ringGeo2, ringMat2);
   ringMesh2.rotation.y = Math.PI * 0.45;
@@ -115,9 +115,12 @@
 
   particleGeo.setAttribute('position', new THREE.BufferAttribute(particlePositions, 3));
   const particleMat = new THREE.PointsMaterial({
-    color: 0xB7FF5A,
+    color: 0x38BDF8,
     size: 0.045,
     transparent: true,
+    opacity: 0.75,
+    blending: THREE.AdditiveBlending
+  });
     opacity: 0.7,
     blending: THREE.AdditiveBlending
   });
@@ -138,8 +141,8 @@
     targetY = -mouseY * 0.85;
 
     // Shift point lights dynamically with mouse
-    lightLime.position.x = 4 + mouseX * 3;
-    lightLime.position.y = 3 + mouseY * 3;
+    lightTeal.position.x = 4 + mouseX * 3;
+    lightTeal.position.y = 3 + mouseY * 3;
     lightCyan.position.x = -4 - mouseX * 3;
     lightCyan.position.y = -3 - mouseY * 3;
   });

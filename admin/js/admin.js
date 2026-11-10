@@ -16,11 +16,14 @@
 
   // Default Initial Data if none exists
   const DEFAULT_PROJECTS = [
-    { id: '1', title: 'Green Bites', tech: 'PHP, MySQL, JavaScript', link: 'https://greenbites.free.nf/', repo: 'https://github.com/Sajjad-Mahmud-Suton/Green-Bites' },
-    { id: '2', title: 'Green Guardian', tech: 'TypeScript, React JSX, Firebase', link: 'https://green--guardian.web.app/', repo: 'https://github.com/Sajjad-Mahmud-Suton/Green-Guardian' },
-    { id: '3', title: 'Creative Developer Portfolio', tech: 'Three.js, GSAP, WebGL, Firestore', link: '#', repo: 'https://github.com/Sajjad-Mahmud-Suton/Portfolio_Website' },
-    { id: '4', title: 'Student Management System', tech: 'C Language, File I/O, Algorithms', link: '#', repo: 'https://github.com/Sajjad-Mahmud-Suton' },
-    { id: '5', title: 'Mini ATM System', tech: 'x86 Assembly, Microprocessors', link: '#', repo: 'https://github.com/Sajjad-Mahmud-Suton' }
+    { id: '1', title: 'Green Bites', tech: 'PHP, MySQL, JavaScript', desc: 'Campus online food ordering canteen platform with cart & checkout', link: 'https://greenbites.free.nf/', repo: 'https://github.com/Sajjad-Mahmud-Suton/Green-Bites' },
+    { id: '2', title: 'GreenGuardian', tech: 'TypeScript, React JSX, Firebase', desc: 'Online exam monitoring and academic platform', link: 'https://green.bakul.codes/', repo: 'https://github.com/Sajjad-Mahmud-Suton/GreenGuardian' },
+    { id: '3', title: 'Synthex Compiler', tech: 'C, Compiler Design, Parsing', desc: 'English & Bangla custom dual-language compiler', link: '#', repo: 'https://github.com/Sajjad-Mahmud-Suton/Synthex' },
+    { id: '4', title: 'CodeAid', tech: 'Python, Machine Learning, Data Science', desc: 'Machine learning lab project for code intelligence', link: '#', repo: 'https://github.com/Sajjad-Mahmud-Suton/CodeAid' },
+    { id: '5', title: 'E-Shop Platform', tech: 'PHP, MySQL, JavaScript, Bootstrap', desc: 'Full-featured online electronic commerce store', link: '#', repo: 'https://github.com/Sajjad-Mahmud-Suton/E-Shop' },
+    { id: '6', title: 'Student Management System', tech: 'C Language, File I/O, Algorithms', desc: 'High-performance console data engine in C', link: '#', repo: 'https://github.com/Sajjad-Mahmud-Suton/Student-Management-System-Using-C' },
+    { id: '7', title: 'Mini ATM System', tech: 'x86 Assembly, Microprocessors', desc: 'Microprocessor banking assembly simulation', link: '#', repo: 'https://github.com/Sajjad-Mahmud-Suton/Mini-ATM-Microprocessor-' },
+    { id: '8', title: 'Competitive Programming Archives', tech: 'C++, Data Structures, Algorithms', desc: '100+ problem solutions on Codeforces and CodeChef', link: '#', repo: 'https://github.com/Sajjad-Mahmud-Suton/Codeforces-Problem-Solve' }
   ];
 
   const DEFAULT_BLOGS = [
@@ -209,14 +212,55 @@
         e.preventDefault();
         const title = document.getElementById('modal-proj-title').value.trim();
         const tech = document.getElementById('modal-proj-tech').value.trim();
+        const desc = document.getElementById('modal-proj-desc') ? document.getElementById('modal-proj-desc').value.trim() : '';
         const link = document.getElementById('modal-proj-link').value.trim() || '#';
         const repo = document.getElementById('modal-proj-repo').value.trim() || '#';
 
         if (title && tech) {
-          projects.push({ id: Date.now().toString(), title, tech, link, repo });
+          projects.push({ id: Date.now().toString(), title, tech, desc, link, repo });
           saveProjects();
           addProjForm.reset();
           projModal.classList.remove('open');
+        }
+      });
+    }
+  }
+
+  // Add Blog Modal Handling
+  const addBlogBtn = document.getElementById('open-add-blog-modal');
+  const blogModal = document.getElementById('blog-modal');
+  const blogModalClose = document.getElementById('blog-modal-close');
+  const addBlogForm = document.getElementById('add-blog-form');
+
+  if (addBlogBtn && blogModal) {
+    addBlogBtn.addEventListener('click', () => blogModal.classList.add('open'));
+    if (blogModalClose) blogModalClose.addEventListener('click', () => blogModal.classList.remove('open'));
+
+    if (addBlogForm) {
+      addBlogForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const title = document.getElementById('modal-blog-title').value.trim();
+        const category = document.getElementById('modal-blog-cat').value.trim();
+        const readTime = document.getElementById('modal-blog-time').value.trim() || '5 min read';
+        const cover = document.getElementById('modal-blog-cover').value.trim() || 'https://images.unsplash.com/photo-1507721999472-8ed4421c4af2?w=800&fit=crop';
+        const excerpt = document.getElementById('modal-blog-excerpt').value.trim();
+        const content = document.getElementById('modal-blog-content').value.trim();
+
+        if (title && category) {
+          const newBlog = {
+            id: Date.now().toString(),
+            title,
+            category,
+            readTime,
+            cover,
+            excerpt,
+            content,
+            date: new Date().toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })
+          };
+          blogs.push(newBlog);
+          saveBlogs();
+          addBlogForm.reset();
+          blogModal.classList.remove('open');
         }
       });
     }
