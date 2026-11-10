@@ -190,139 +190,9 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // 7. BANGLADESH TIME-OF-DAY ATMOSPHERIC ENGINE (Asia/Dhaka UTC+6)
-  const ATMOSPHERE_MODES = {
-    dawn: {
-      key: 'dawn',
-      title: '🌅 সকাল (Sunrise Dawn)',
-      desc: 'Soft golden morning aura and fresh dawn light.'
-    },
-    noon: {
-      key: 'noon',
-      title: '☀️ দুপুর (Sunny High Noon)',
-      desc: 'High-energy radiant daylight and crisp cyan reflections.'
-    },
-    afternoon: {
-      key: 'afternoon',
-      title: '🌇 বিকেল (Golden Hour)',
-      desc: 'Warm molten amber glow and late afternoon light.'
-    },
-    dusk: {
-      key: 'dusk',
-      title: '🌆 সন্ধ্যা (Twilight Dusk)',
-      desc: 'Sunset magenta, dusk violet, and twilight silhouette.'
-    },
-    night: {
-      key: 'night',
-      title: '🌌 রাত (Cosmic Night)',
-      desc: 'Deep space midnight sapphire and sparkling starlight.'
-    },
-    spooky: {
-      key: 'spooky',
-      title: '👻 মাঝরাত (Spooky Witching Hour)',
-      desc: 'Eerie supernatural mist, phantom emerald wisps, and haunted gothic vibe.'
-    }
-  };
-
-  let currentAtmosphereMode = 'auto'; // 'auto' or explicit key
-
-  function getDhakaHour() {
-    const dhakaDate = new Date(new Date().toLocaleString('en-US', { timeZone: 'Asia/Dhaka' }));
-    return dhakaDate.getHours();
-  }
-
-  function detectBangladeshAtmosphere() {
-    const hour = getDhakaHour();
-    if (hour >= 5 && hour < 9) return 'dawn';         // 05:00 - 08:59 AM (সকাল - সূর্যোদয়)
-    if (hour >= 9 && hour < 16) return 'noon';        // 09:00 AM - 03:59 PM (দুপুর - রোদেলা দুপুর)
-    if (hour >= 16 && hour < 18) return 'afternoon';  // 04:00 - 05:59 PM (পড়ন্ত বিকেল)
-    if (hour >= 18 && hour < 20) return 'dusk';       // 06:00 - 07:59 PM (সন্ধ্যা - গোধূলি)
-    if (hour >= 20 && hour < 24) return 'night';      // 08:00 - 11:59 PM (শান্ত রাত)
-    return 'spooky';                                  // 00:00 - 04:59 AM (মাঝরাত - ভৌতিক পরিবেশ)
-  }
-
-  function applyAtmosphereTheme(atmoKey) {
-    const meta = ATMOSPHERE_MODES[atmoKey] || ATMOSPHERE_MODES.night;
-
-    // Remove existing theme classes from body
-    document.body.classList.remove(
-      'theme-dawn',
-      'theme-noon',
-      'theme-afternoon',
-      'theme-dusk',
-      'theme-night',
-      'theme-spooky'
-    );
-    document.body.classList.add(`theme-${atmoKey}`);
-
-    // Update HUD Badge Title
-    const titleBadge = document.getElementById('atmosphere-current-title');
-    if (titleBadge) {
-      titleBadge.textContent = meta.title;
-    }
-
-    // Sync Three.js Scene Lighting & Fog
-    if (window.updateThreeAtmosphere) {
-      window.updateThreeAtmosphere(atmoKey);
-    }
-  }
-
-  function syncAtmosphereEngine() {
-    // 1. Digital Clock Display in Bangladesh Time (Asia/Dhaka)
-    const clockEl = document.getElementById('atmosphere-clock-text');
-    const heroDhakaClock = document.getElementById('live-dhaka-clock');
-    const opts = {
-      timeZone: 'Asia/Dhaka',
-      hour: '2-digit',
-      minute: '2-digit',
-      second: '2-digit',
-      hour12: true
-    };
-    const nowDhaka = new Intl.DateTimeFormat('en-US', opts).format(new Date());
-
-    if (clockEl) clockEl.textContent = `${nowDhaka} (GMT+6)`;
-    if (heroDhakaClock) heroDhakaClock.textContent = `${nowDhaka} (GMT+6)`;
-
-    // 2. Resolve Active Theme
-    const effectiveAtmo = currentAtmosphereMode === 'auto'
-      ? detectBangladeshAtmosphere()
-      : currentAtmosphereMode;
-
-    // 3. Update Navbar Live Pill
-    const navAtmoText = document.getElementById('nav-atmo-text');
-    if (navAtmoText) {
-      const modeData = ATMOSPHERE_MODES[effectiveAtmo] || ATMOSPHERE_MODES.night;
-      const shortTitle = modeData.title.split(' ')[0] + ' ' + (modeData.title.split(' ')[1] || '');
-      navAtmoText.textContent = `Dhaka ${nowDhaka} • ${shortTitle}`;
-    }
-
-    applyAtmosphereTheme(effectiveAtmo);
-  }
-
-  // Atmosphere Selector Buttons
-  const atmoPills = document.querySelectorAll('.atmo-pill');
-  atmoPills.forEach(pill => {
-    pill.addEventListener('click', () => {
-      const target = pill.getAttribute('data-atmo');
-      currentAtmosphereMode = target;
-
-      atmoPills.forEach(p => p.classList.remove('active'));
-      pill.classList.add('active');
-
-      syncAtmosphereEngine();
-      playSynthTone(920, 'sine', 0.05);
-
-      if (target === 'spooky') {
-        showToast('👻 মাঝরাত Activated: Eerie phantom fog & witching hour atmosphere awakened.');
-      } else if (target === 'auto') {
-        showToast(`⚡ Auto Bangladesh Time Synchronized (${ATMOSPHERE_MODES[detectBangladeshAtmosphere()].title})`);
-      }
-    });
-  });
-
-  // Initialize and run Dhaka Clock & Engine
-  syncAtmosphereEngine();
-  setInterval(syncAtmosphereEngine, 1000);
+  // 7. BANGLADESH TIME-OF-DAY ATMOSPHERIC ENGINE (Delegated to celestial-sky.js)
+  // All 6 environmental stages (Sunrise, Sunny Day, Golden Hour, Sunset, Night Sky, Haunted Midnight)
+  // are orchestrated with physical sun, moon, stars, and cinematic ghosts in modern/js/celestial-sky.js
 
   // 8. INTERACTIVE PROJECT CAROUSEL SLIDER ENGINE
   const carouselViewport = document.getElementById('projects-carousel-viewport');
@@ -584,6 +454,7 @@ document.addEventListener('DOMContentLoaded', () => {
       setTimeout(() => t.remove(), 350);
     }, 3200);
   }
+  window.showToast = showToast;
 
   // 9. EMAILJS FUNCTIONAL CONTACT FORM
   const contactForm = document.getElementById('modern-contact-form');

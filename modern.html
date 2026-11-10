@@ -42,6 +42,47 @@
     <div class="ambient-orb orb-3"></div>
   </div>
 
+  <!-- Ultra-Realistic Dynamic Day & Night Celestial Sky Engine -->
+  <div id="celestial-sky" class="celestial-sky-stage" aria-hidden="true">
+    <!-- Twinkling Starfield & Shooting Stars Canvas -->
+    <canvas id="sky-stars-canvas"></canvas>
+
+    <!-- Physically Visible Sun with Corona & Solar Rays -->
+    <div id="celestial-sun" class="celestial-sun-body">
+      <div class="sun-corona"></div>
+      <div class="sun-atmospheric-beam"></div>
+    </div>
+
+    <!-- Ultra-Realistic Glowing Moon with Lunar Craters -->
+    <div id="celestial-moon" class="celestial-moon-body">
+      <div class="moon-crater c1"></div>
+      <div class="moon-crater c2"></div>
+      <div class="moon-crater c3"></div>
+      <div class="moon-crater c4"></div>
+      <div class="moon-glow-halo"></div>
+    </div>
+
+    <!-- Realistic Moving Volumetric Clouds Layer -->
+    <div class="sky-clouds-layer">
+      <div class="cloud-drift cloud-1"></div>
+      <div class="cloud-drift cloud-2"></div>
+      <div class="cloud-drift cloud-3"></div>
+    </div>
+
+    <!-- Atmospheric Horizon Glow -->
+    <div id="sky-horizon-glow" class="sky-horizon-glow"></div>
+
+    <!-- Haunted Midnight Cinematic Horror Mist & Ghost Silhouettes (Active 12am - 5am) -->
+    <div id="haunted-ghost-layer" class="haunted-ghost-layer">
+      <div class="haunted-ground-mist mist-layer-1"></div>
+      <div class="haunted-ground-mist mist-layer-2"></div>
+      <!-- Persistent shadowy ghost wraiths drifting through the mist -->
+      <div class="cinematic-ghost ghost-patroller-1"></div>
+      <div class="cinematic-ghost ghost-patroller-2"></div>
+      <div class="cinematic-ghost ghost-stalker-3"></div>
+    </div>
+  </div>
+
   <!-- Spooky Supernatural Fog Layer (Active during Midnight Witching Hour) -->
   <div class="spooky-fog-layer" aria-hidden="true"></div>
 
@@ -147,23 +188,23 @@
         <button class="atmo-pill active" data-atmo="auto" title="Synchronize automatically with Bangladesh Standard Time">
           <i class="fas fa-bolt"></i> Auto
         </button>
-        <button class="atmo-pill" data-atmo="dawn" title="ভোর/সকাল - সূর্যোদয় (Sunrise Dawn)">
-          🌅 সকাল
+        <button class="atmo-pill" data-atmo="sunrise" title="Sunrise (5:00 AM – 8:00 AM) • সূর্যোদয়">
+          🌅 Sunrise
         </button>
-        <button class="atmo-pill" data-atmo="noon" title="দুপুর - রোদেলা দুপুর (Sunny High Noon / Day View)">
-          ☀️ দুপুর
+        <button class="atmo-pill" data-atmo="day" title="Sunny Day (8:00 AM – 3:00 PM) • রোদেলা দুপুর">
+          ☀️ Sunny Day
         </button>
-        <button class="atmo-pill" data-atmo="afternoon" title="পড়ন্ত বিকেল - সোনালী আভা (Golden Hour)">
-          🌇 বিকেল
+        <button class="atmo-pill" data-atmo="afternoon" title="Golden Hour (3:00 PM – 5:00 PM) • পড়ন্ত বিকেল">
+          🌇 Golden Hour
         </button>
-        <button class="atmo-pill" data-atmo="dusk" title="সন্ধ্যা - গোধূলি লগ্ন (Twilight Dusk)">
-          🌆 সন্ধ্যা
+        <button class="atmo-pill" data-atmo="sunset" title="Sunset (5:00 PM – 7:00 PM) • সূর্যাস্ত">
+          🌆 Sunset
         </button>
-        <button class="atmo-pill" data-atmo="night" title="রাত - শান্ত নিঝুম রাত (Cosmic Night)">
-          🌌 রাত
+        <button class="atmo-pill" data-atmo="night" title="Night Sky: Moon & Stars (7:00 PM – 12:00 AM) • শান্ত রাত">
+          🌌 Night Sky
         </button>
-        <button class="atmo-pill" data-atmo="spooky" title="মাঝরাত - রহস্যময় ভৌতিক পরিবেশ (Spooky Witching Hour)">
-          👻 মাঝরাত
+        <button class="atmo-pill" data-atmo="haunted" title="Haunted Midnight (12:00 AM – 5:00 AM) • ভৌতিক মাঝরাত">
+          👻 Haunted Midnight
         </button>
       </div>
     </div>
@@ -195,14 +236,41 @@
         </div>
       </div>
 
-      <!-- Hero 3D Portrait Visual -->
+      <!-- Atmospheric Celestial Orrery Visual (Strictly NO Personal Photo or Portrait) -->
       <div class="hero-right-visual">
-        <div class="holo-card-3d" data-tilt>
-          <div class="holo-card-inner">
-            <img src="/src/image/Sajjad_Mahmud.png" alt="Md. Sajjad Mahmud Suton" class="holo-portrait">
-            <div class="holo-overlay-info">
-              <h3 class="holo-name">Md. Sajjad Mahmud Suton</h3>
-              <p class="holo-role">Creative Developer &amp; CSE Engineer</p>
+        <div class="celestial-orrery-card" data-tilt>
+          <div class="orrery-card-inner">
+            <!-- Celestial Astrolabe / Orbit Radar -->
+            <div class="orrery-radar-viewport">
+              <div class="orrery-ambient-glow"></div>
+              <div class="orrery-grid-rings"></div>
+              <div class="orrery-solar-arc"></div>
+              <div class="orrery-compass-ring" id="orrery-celestial-ring"></div>
+              <div class="orrery-center-beacon">
+                <i id="orrery-celestial-icon" class="fas fa-sun orrery-sun-glow"></i>
+              </div>
+            </div>
+
+            <!-- Environmental Telemetry Feed -->
+            <div class="orrery-telemetry-feed">
+              <div class="orrery-meta-top">
+                <span class="orrery-tag">BANGLADESH SKY TELEMETRY</span>
+                <span class="orrery-live-pulse"><span class="pulse-beacon"></span> LIVE</span>
+              </div>
+              <div class="orrery-stage-headline">
+                <h3 id="orrery-stage-name" class="orrery-stage-name">Sunny Day</h3>
+                <span id="orrery-stage-bn" class="orrery-stage-bn">রোদেলা দুপুর</span>
+              </div>
+              <div class="orrery-metrics-strip">
+                <div class="orrery-metric-item">
+                  <span class="orrery-m-label"><i class="fas fa-clock"></i> DHAKA TIME</span>
+                  <span id="orrery-dhaka-time" class="orrery-m-val">Loading...</span>
+                </div>
+                <div class="orrery-metric-item">
+                  <span class="orrery-m-label"><i class="fas fa-compass"></i> CELESTIAL ALTITUDE</span>
+                  <span id="orrery-solar-angle" class="orrery-m-val">42° Altitude</span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -893,6 +961,7 @@
 
   <!-- Scripts -->
   <script src="/modern/js/analytics.js"></script>
+  <script src="/modern/js/celestial-sky.js"></script>
   <script src="/modern/js/three-scene.js"></script>
   <script src="/modern/js/chatbot.js"></script>
   <script src="/modern/js/blog.js"></script>

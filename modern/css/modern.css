@@ -103,117 +103,645 @@ button {
    6. Midnight / Spooky Witching Hour (মাঝরাত - রহস্যময় ভৌতিক পরিবেশ)
    ========================================================================== */
 
-/* 1. Dawn / Sunrise (সকাল - সূর্যোদয়) */
-body.theme-dawn {
-  background: linear-gradient(180deg, #831843 0%, #9d174d 25%, #c2410c 55%, #7c2d12 80%, #2a0808 100%) fixed !important;
+/* ==========================================================================
+   BANGLADESH REAL-TIME DAY & NIGHT ENVIRONMENTAL SYSTEM (Asia/Dhaka UTC+6)
+   6 Environmental Stages:
+   A. Sunrise (5:00 AM – 8:00 AM)
+   B. Sunny Day (8:00 AM – 3:00 PM)
+   C. Golden Hour & Afternoon (3:00 PM – 5:00 PM)
+   D. Sunset (5:00 PM – 7:00 PM)
+   E. Night Sky: Moon & Stars (7:00 PM – 12:00 AM)
+   F. Haunted Midnight (12:00 AM – 5:00 AM)
+   ========================================================================== */
+
+/* A. Sunrise (5:00 AM – 8:00 AM) */
+body.theme-sunrise, body.theme-dawn {
+  background: linear-gradient(180deg, #701a75 0%, #831843 25%, #9d174d 48%, #c2410c 72%, #7c2d12 88%, #2a0808 100%) fixed !important;
   --bg-deep: #2a0808;
   --bg-surface: #431407;
-  --bg-card: rgba(67, 20, 7, 0.65);
+  --bg-card: rgba(67, 20, 7, 0.68);
   --accent-cyan: #FBBF24;
   --accent-teal: #FB7185;
   --accent-emerald: #F59E0B;
   --accent-gradient: linear-gradient(135deg, #FBBF24 0%, #FB7185 100%);
-  --accent-glow: rgba(251, 191, 36, 0.5);
-  --border-glass: rgba(251, 191, 36, 0.3);
-  --border-glow: rgba(251, 191, 36, 0.7);
+  --accent-glow: rgba(251, 191, 36, 0.55);
+  --border-glass: rgba(251, 191, 36, 0.32);
+  --border-glow: rgba(251, 191, 36, 0.75);
 }
-body.theme-dawn .orb-1 { background: radial-gradient(circle, #FBBF24 0%, transparent 70%); opacity: 0.45; }
-body.theme-dawn .orb-2 { background: radial-gradient(circle, #FB7185 0%, transparent 70%); opacity: 0.4; }
-body.theme-dawn .orb-3 { background: radial-gradient(circle, #F59E0B 0%, transparent 70%); opacity: 0.3; }
+body.theme-sunrise .orb-1, body.theme-dawn .orb-1 { background: radial-gradient(circle, #FBBF24 0%, transparent 70%); opacity: 0.5; }
+body.theme-sunrise .orb-2, body.theme-dawn .orb-2 { background: radial-gradient(circle, #FB7185 0%, transparent 70%); opacity: 0.45; }
+body.theme-sunrise .orb-3, body.theme-dawn .orb-3 { background: radial-gradient(circle, #F59E0B 0%, transparent 70%); opacity: 0.35; }
 
-/* 2. Noon / Sunny Daylight (দুপুর - রোদেলা দুপুর / Day View) */
-body.theme-noon {
-  background: linear-gradient(180deg, #0284c7 0%, #0369a1 20%, #075985 45%, #0c4a6e 75%, #082f49 100%) fixed !important;
+/* B. Sunny Day (8:00 AM – 3:00 PM) */
+body.theme-day, body.theme-noon {
+  background: linear-gradient(180deg, #0284c7 0%, #0369a1 18%, #075985 45%, #0c4a6e 72%, #082f49 100%) fixed !important;
   --bg-deep: #082f49;
   --bg-surface: #0c4a6e;
-  --bg-card: rgba(12, 74, 110, 0.55);
+  --bg-card: rgba(12, 74, 110, 0.58);
   --accent-cyan: #00F2FE;
   --accent-teal: #38BDF8;
   --accent-emerald: #FDE047;
   --accent-gradient: linear-gradient(135deg, #FDE047 0%, #38BDF8 100%);
-  --accent-glow: rgba(0, 242, 254, 0.6);
+  --accent-glow: rgba(0, 242, 254, 0.65);
   --border-glass: rgba(255, 255, 255, 0.35);
-  --border-glow: rgba(56, 189, 248, 0.85);
+  --border-glow: rgba(56, 189, 248, 0.9);
   --text-pure: #FFFFFF;
   --text-main: #F0F9FF;
   --text-muted: #BAE6FD;
 }
-body.theme-noon .orb-1 { background: radial-gradient(circle, #FDE047 0%, transparent 70%); opacity: 0.55; }
-body.theme-noon .orb-2 { background: radial-gradient(circle, #38BDF8 0%, transparent 70%); opacity: 0.5; }
-body.theme-noon .orb-3 { background: radial-gradient(circle, #00F2FE 0%, transparent 70%); opacity: 0.35; }
+body.theme-day .orb-1, body.theme-noon .orb-1 { background: radial-gradient(circle, #FDE047 0%, transparent 70%); opacity: 0.6; }
+body.theme-day .orb-2, body.theme-noon .orb-2 { background: radial-gradient(circle, #38BDF8 0%, transparent 70%); opacity: 0.55; }
+body.theme-day .orb-3, body.theme-noon .orb-3 { background: radial-gradient(circle, #00F2FE 0%, transparent 70%); opacity: 0.4; }
 
-/* 3. Afternoon / Golden Hour (পড়ন্ত বিকেল - সোনালী আভা) */
+/* C. Golden Hour & Afternoon (3:00 PM – 5:00 PM) */
 body.theme-afternoon {
-  background: linear-gradient(180deg, #78350f 0%, #92400e 28%, #b45309 58%, #451a03 82%, #1c0a04 100%) fixed !important;
+  background: linear-gradient(180deg, #78350f 0%, #92400e 28%, #b45309 56%, #7c2d12 78%, #1c0a04 100%) fixed !important;
   --bg-deep: #1c0a04;
   --bg-surface: #451a03;
-  --bg-card: rgba(69, 26, 3, 0.65);
+  --bg-card: rgba(69, 26, 3, 0.68);
   --accent-cyan: #F59E0B;
   --accent-teal: #EA580C;
   --accent-emerald: #FBBF24;
   --accent-gradient: linear-gradient(135deg, #F59E0B 0%, #EA580C 100%);
-  --accent-glow: rgba(245, 158, 11, 0.55);
-  --border-glass: rgba(245, 158, 11, 0.3);
-  --border-glow: rgba(234, 88, 12, 0.7);
+  --accent-glow: rgba(245, 158, 11, 0.6);
+  --border-glass: rgba(245, 158, 11, 0.35);
+  --border-glow: rgba(234, 88, 12, 0.75);
 }
-body.theme-afternoon .orb-1 { background: radial-gradient(circle, #F59E0B 0%, transparent 70%); opacity: 0.5; }
-body.theme-afternoon .orb-2 { background: radial-gradient(circle, #EA580C 0%, transparent 70%); opacity: 0.45; }
+body.theme-afternoon .orb-1 { background: radial-gradient(circle, #F59E0B 0%, transparent 70%); opacity: 0.55; }
+body.theme-afternoon .orb-2 { background: radial-gradient(circle, #EA580C 0%, transparent 70%); opacity: 0.5; }
 body.theme-afternoon .orb-3 { background: radial-gradient(circle, #FBBF24 0%, transparent 70%); opacity: 0.35; }
 
-/* 4. Dusk / Sunset Twilight (সন্ধ্যা - গোধূলি লগ্ন) */
-body.theme-dusk {
-  background: linear-gradient(180deg, #581c87 0%, #701a75 28%, #831843 58%, #3b0764 82%, #120324 100%) fixed !important;
-  --bg-deep: #120324;
+/* D. Sunset (5:00 PM – 7:00 PM) */
+body.theme-sunset, body.theme-dusk {
+  background: linear-gradient(180deg, #4a044e 0%, #701a75 25%, #831843 50%, #be123c 72%, #7c2d12 88%, #180521 100%) fixed !important;
+  --bg-deep: #180521;
   --bg-surface: #3b0764;
-  --bg-card: rgba(59, 7, 100, 0.6);
+  --bg-card: rgba(59, 7, 100, 0.65);
   --accent-cyan: #EC4899;
   --accent-teal: #A855F7;
   --accent-emerald: #F43F5E;
   --accent-gradient: linear-gradient(135deg, #EC4899 0%, #A855F7 100%);
-  --accent-glow: rgba(236, 72, 153, 0.55);
-  --border-glass: rgba(236, 72, 153, 0.3);
-  --border-glow: rgba(168, 85, 247, 0.75);
+  --accent-glow: rgba(236, 72, 153, 0.65);
+  --border-glass: rgba(236, 72, 153, 0.35);
+  --border-glow: rgba(168, 85, 247, 0.85);
 }
-body.theme-dusk .orb-1 { background: radial-gradient(circle, #EC4899 0%, transparent 70%); opacity: 0.45; }
-body.theme-dusk .orb-2 { background: radial-gradient(circle, #A855F7 0%, transparent 70%); opacity: 0.4; }
-body.theme-dusk .orb-3 { background: radial-gradient(circle, #F43F5E 0%, transparent 70%); opacity: 0.3; }
+body.theme-sunset .orb-1, body.theme-dusk .orb-1 { background: radial-gradient(circle, #EC4899 0%, transparent 70%); opacity: 0.55; }
+body.theme-sunset .orb-2, body.theme-dusk .orb-2 { background: radial-gradient(circle, #A855F7 0%, transparent 70%); opacity: 0.5; }
+body.theme-sunset .orb-3, body.theme-dusk .orb-3 { background: radial-gradient(circle, #F43F5E 0%, transparent 70%); opacity: 0.4; }
 
-/* 5. Night / Cosmic Starlight (রাত - শান্ত নিঝুম রাত) */
+/* E. Night Sky: Moon & Stars (7:00 PM – 12:00 AM) */
 body.theme-night {
-  background: radial-gradient(circle at 50% 10%, #172554 0%, #0b1120 45%, #020617 100%) fixed !important;
+  background: radial-gradient(circle at 50% 12%, #172554 0%, #0b1120 45%, #020617 100%) fixed !important;
   --bg-deep: #020617;
   --bg-surface: #0b1120;
-  --bg-card: rgba(15, 23, 42, 0.72);
+  --bg-card: rgba(15, 23, 42, 0.75);
   --accent-cyan: #38BDF8;
   --accent-teal: #14B8A6;
   --accent-emerald: #10B981;
   --accent-gradient: linear-gradient(135deg, #38BDF8 0%, #14B8A6 100%);
-  --accent-glow: rgba(56, 189, 248, 0.35);
-  --border-glass: rgba(56, 189, 248, 0.2);
-  --border-glow: rgba(56, 189, 248, 0.55);
+  --accent-glow: rgba(56, 189, 248, 0.4);
+  --border-glass: rgba(56, 189, 248, 0.22);
+  --border-glow: rgba(56, 189, 248, 0.65);
 }
-body.theme-night .orb-1 { background: radial-gradient(circle, #38BDF8 0%, transparent 70%); opacity: 0.3; }
-body.theme-night .orb-2 { background: radial-gradient(circle, #10B981 0%, transparent 70%); opacity: 0.25; }
-body.theme-night .orb-3 { background: radial-gradient(circle, #818CF8 0%, transparent 70%); opacity: 0.2; }
+body.theme-night .orb-1 { background: radial-gradient(circle, #38BDF8 0%, transparent 70%); opacity: 0.35; }
+body.theme-night .orb-2 { background: radial-gradient(circle, #10B981 0%, transparent 70%); opacity: 0.3; }
+body.theme-night .orb-3 { background: radial-gradient(circle, #818CF8 0%, transparent 70%); opacity: 0.25; }
 
-/* 6. Midnight / Spooky Witching Hour (মাঝরাত - রহস্যময় ভৌতিক পরিবেশ) */
-body.theme-spooky {
+/* F. Haunted Midnight (12:00 AM – 5:00 AM) */
+body.theme-haunted, body.theme-spooky {
   background: radial-gradient(circle at 50% 15%, #064e3b 0%, #022c22 40%, #050b07 80%, #020617 100%) fixed !important;
   --bg-deep: #020617;
   --bg-surface: #050b07;
-  --bg-card: rgba(5, 11, 7, 0.75);
+  --bg-card: rgba(5, 11, 7, 0.78);
   --accent-cyan: #00FF87;
   --accent-teal: #22C55E;
   --accent-emerald: #10B981;
   --accent-indigo: #8B5CF6;
   --accent-gradient: linear-gradient(135deg, #00FF87 0%, #8B5CF6 100%);
-  --accent-glow: rgba(0, 255, 135, 0.6);
-  --border-glass: rgba(0, 255, 135, 0.3);
-  --border-glow: rgba(0, 255, 135, 0.75);
+  --accent-glow: rgba(0, 255, 135, 0.7);
+  --border-glass: rgba(0, 255, 135, 0.35);
+  --border-glow: rgba(0, 255, 135, 0.85);
 }
-body.theme-spooky .orb-1 { background: radial-gradient(circle, #00FF87 0%, transparent 70%); opacity: 0.55; }
-body.theme-spooky .orb-2 { background: radial-gradient(circle, #8B5CF6 0%, transparent 70%); opacity: 0.45; }
-body.theme-spooky .orb-3 { background: radial-gradient(circle, #22C55E 0%, transparent 70%); opacity: 0.35; }
+body.theme-haunted .orb-1, body.theme-spooky .orb-1 { background: radial-gradient(circle, #00FF87 0%, transparent 70%); opacity: 0.6; }
+body.theme-haunted .orb-2, body.theme-spooky .orb-2 { background: radial-gradient(circle, #8B5CF6 0%, transparent 70%); opacity: 0.5; }
+body.theme-haunted .orb-3, body.theme-spooky .orb-3 { background: radial-gradient(circle, #22C55E 0%, transparent 70%); opacity: 0.4; }
+
+/* ==========================================================================
+   ULTRA-REALISTIC CELESTIAL SKY STAGE (SUN, MOON, STARS & CINEMATIC GHOSTS)
+   ========================================================================== */
+
+.celestial-sky-stage {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: -1;
+  overflow: hidden;
+  transition: opacity 0.8s ease;
+}
+
+/* Twinkling Starfield Canvas */
+#sky-stars-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+/* Physically Visible Sun */
+.celestial-sun-body {
+  position: absolute;
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #FFF7ED 0%, #FEF08A 35%, #F59E0B 70%, transparent 100%);
+  box-shadow: 
+    0 0 45px rgba(254, 240, 138, 0.9),
+    0 0 100px rgba(245, 158, 11, 0.75),
+    0 0 180px rgba(245, 158, 11, 0.45);
+  pointer-events: none;
+  transform-origin: center;
+  transition: top 1s linear, left 1s linear, opacity 1s ease, transform 1s ease;
+}
+
+.sun-corona {
+  position: absolute;
+  inset: -25px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(253, 224, 71, 0.35) 0%, transparent 75%);
+  animation: sunCoronaPulse 4s infinite alternate ease-in-out;
+}
+
+@keyframes sunCoronaPulse {
+  0% { transform: scale(0.95); opacity: 0.7; }
+  100% { transform: scale(1.15); opacity: 1; }
+}
+
+.sun-atmospheric-beam {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 320px;
+  height: 320px;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(circle, rgba(254, 240, 138, 0.2) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+/* Ultra-Realistic Glowing Moon */
+.celestial-moon-body {
+  position: absolute;
+  width: 85px;
+  height: 85px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, #F8FAFC 0%, #E2E8F0 45%, #94A3B8 100%);
+  box-shadow: 
+    0 0 35px rgba(241, 245, 249, 0.85),
+    0 0 80px rgba(56, 189, 248, 0.35),
+    inset -8px -8px 20px rgba(15, 23, 42, 0.6);
+  pointer-events: none;
+  transition: top 1s linear, left 1s linear, opacity 1s ease;
+}
+
+.moon-crater {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(71, 85, 105, 0.35);
+  box-shadow: inset 1px 1px 2px rgba(15, 23, 42, 0.7);
+}
+
+.moon-crater.c1 { width: 14px; height: 14px; top: 22%; left: 32%; }
+.moon-crater.c2 { width: 18px; height: 18px; top: 48%; left: 52%; }
+.moon-crater.c3 { width: 10px; height: 10px; top: 62%; left: 28%; }
+.moon-crater.c4 { width: 12px; height: 12px; top: 32%; left: 66%; }
+
+.moon-glow-halo {
+  position: absolute;
+  inset: -30px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(226, 232, 240, 0.25) 0%, transparent 75%);
+  animation: moonHaloBreathe 5s infinite alternate ease-in-out;
+}
+
+@keyframes moonHaloBreathe {
+  0% { transform: scale(1); opacity: 0.6; }
+  100% { transform: scale(1.18); opacity: 0.95; }
+}
+
+/* Realistic Moving Clouds Layer */
+.sky-clouds-layer {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.cloud-drift {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(45px);
+  opacity: 0.35;
+  background: rgba(255, 255, 255, 0.6);
+}
+
+.cloud-1 {
+  width: 650px;
+  height: 180px;
+  top: 15%;
+  left: -20%;
+  animation: cloudDriftSlow 75s linear infinite;
+}
+
+.cloud-2 {
+  width: 800px;
+  height: 220px;
+  top: 35%;
+  left: -30%;
+  animation: cloudDriftSlow 105s linear infinite 25s;
+  opacity: 0.25;
+}
+
+.cloud-3 {
+  width: 500px;
+  height: 140px;
+  top: 60%;
+  left: -15%;
+  animation: cloudDriftSlow 90s linear infinite 10s;
+  opacity: 0.2;
+}
+
+@keyframes cloudDriftSlow {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(calc(100vw + 900px)); }
+}
+
+/* Atmospheric Horizon Glow */
+.sky-horizon-glow {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 40vh;
+  pointer-events: none;
+  background: radial-gradient(ellipse at 50% 100%, rgba(245, 158, 11, 0.35) 0%, transparent 75%);
+  transition: opacity 1.5s ease;
+}
+
+/* ==========================================================================
+   HAUNTED MIDNIGHT CINEMATIC HORROR SILHOUETTES & ROLLING MIST
+   Strictly Non-Cartoonish: Shadowy Wraith Silhouettes & Ethereal Mist
+   ========================================================================== */
+
+.haunted-ghost-layer {
+  display: none;
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 2;
+}
+
+body.theme-haunted .haunted-ghost-layer,
+body.theme-spooky .haunted-ghost-layer {
+  display: block;
+}
+
+/* Dual-layer Creeping Ground Mist */
+.haunted-ground-mist {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 55vh;
+  pointer-events: none;
+}
+
+.mist-layer-1 {
+  background: 
+    radial-gradient(ellipse at 30% 90%, rgba(0, 255, 135, 0.12) 0%, transparent 60%),
+    radial-gradient(ellipse at 70% 95%, rgba(139, 92, 246, 0.14) 0%, transparent 65%),
+    linear-gradient(to top, rgba(2, 6, 23, 0.85) 0%, transparent 100%);
+  animation: mistRoll 18s ease-in-out infinite alternate;
+}
+
+.mist-layer-2 {
+  background: 
+    radial-gradient(ellipse at 60% 85%, rgba(0, 255, 135, 0.09) 0%, transparent 60%),
+    radial-gradient(ellipse at 20% 95%, rgba(168, 85, 247, 0.1) 0%, transparent 65%);
+  animation: mistRollReverse 24s ease-in-out infinite alternate;
+}
+
+@keyframes mistRoll {
+  0% { transform: scaleX(1) translateX(0); opacity: 0.7; }
+  100% { transform: scaleX(1.1) translateX(40px); opacity: 0.95; }
+}
+
+@keyframes mistRollReverse {
+  0% { transform: scaleX(1.05) translateX(0); opacity: 0.6; }
+  100% { transform: scaleX(1) translateX(-50px); opacity: 0.9; }
+}
+
+/* Cinematic Horror Ghost Silhouette Wraiths */
+.cinematic-ghost {
+  position: absolute;
+  pointer-events: none;
+  filter: blur(2px) drop-shadow(0 0 15px rgba(0, 255, 135, 0.35));
+  opacity: 0;
+}
+
+/* Ghost 1: Shadow wraith running/sweeping across the mist */
+.ghost-patroller-1 {
+  width: 90px;
+  height: 160px;
+  bottom: 12%;
+  left: -120px;
+  background: 
+    radial-gradient(ellipse at 50% 20%, rgba(5, 15, 10, 0.95) 0%, rgba(2, 6, 4, 0.8) 50%, transparent 75%),
+    linear-gradient(180deg, rgba(0, 255, 135, 0.4) 0%, rgba(2, 6, 4, 0.9) 30%, transparent 100%);
+  clip-path: polygon(50% 0%, 80% 18%, 95% 45%, 75% 75%, 90% 100%, 50% 88%, 10% 100%, 25% 75%, 5% 45%, 20% 18%);
+  animation: ghostSweepAcross 22s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+@keyframes ghostSweepAcross {
+  0% { transform: translateX(0) scale(0.85); opacity: 0; }
+  8% { opacity: 0.65; }
+  50% { transform: translateX(calc(55vw)) scale(1); opacity: 0.75; }
+  90% { opacity: 0.5; }
+  100% { transform: translateX(calc(105vw + 150px)) scale(0.9); opacity: 0; }
+}
+
+/* Ghost 2: Distant specter hovering and ascending out of ground fog */
+.ghost-patroller-2 {
+  width: 70px;
+  height: 130px;
+  bottom: 18%;
+  right: 18%;
+  background: 
+    radial-gradient(ellipse at 50% 25%, rgba(139, 92, 246, 0.4) 0%, rgba(4, 8, 12, 0.85) 60%, transparent 80%),
+    linear-gradient(180deg, rgba(168, 85, 247, 0.3) 0%, rgba(2, 6, 10, 0.9) 40%, transparent 100%);
+  clip-path: polygon(50% 0%, 85% 25%, 90% 55%, 70% 85%, 85% 100%, 50% 90%, 15% 100%, 30% 85%, 10% 55%, 15% 25%);
+  animation: ghostHoverDisappear 15s ease-in-out infinite alternate;
+}
+
+@keyframes ghostHoverDisappear {
+  0% { transform: translateY(35px) scale(0.75); opacity: 0; filter: blur(4px); }
+  35% { opacity: 0.6; filter: blur(2px); }
+  65% { transform: translateY(-20px) scale(0.9); opacity: 0.75; }
+  100% { transform: translateY(-50px) scale(0.8); opacity: 0; filter: blur(6px); }
+}
+
+/* Ghost 3: Mysterious flickering apparition lurking in the mist */
+.ghost-stalker-3 {
+  width: 60px;
+  height: 110px;
+  bottom: 25%;
+  left: 22%;
+  background: 
+    radial-gradient(circle at 50% 30%, rgba(0, 255, 135, 0.5) 0%, rgba(2, 8, 5, 0.9) 65%, transparent 85%);
+  clip-path: polygon(50% 0%, 75% 20%, 85% 50%, 65% 80%, 75% 100%, 50% 92%, 25% 100%, 35% 80%, 15% 50%, 25% 20%);
+  animation: ghostFlickerStalker 12s ease-in-out infinite;
+}
+
+@keyframes ghostFlickerStalker {
+  0%, 100% { opacity: 0; transform: scale(0.7); }
+  20%, 35% { opacity: 0.55; transform: scale(0.85); }
+  38% { opacity: 0.2; }
+  45%, 65% { opacity: 0.7; transform: scale(0.9); }
+  75% { opacity: 0; transform: scale(0.75); }
+}
+
+/* Dynamic Spawned Apparitions */
+.cinematic-ghost.ghost-runner {
+  width: 80px;
+  height: 150px;
+  background: radial-gradient(ellipse at 50% 20%, rgba(0, 255, 135, 0.45) 0%, rgba(2, 6, 4, 0.9) 60%, transparent 80%);
+  clip-path: polygon(50% 0%, 80% 20%, 90% 50%, 70% 80%, 85% 100%, 50% 88%, 15% 100%, 30% 80%, 10% 50%, 20% 20%);
+  animation: dynamicGhostRun 8s linear forwards;
+}
+
+@keyframes dynamicGhostRun {
+  0% { left: -100px; opacity: 0; transform: translateX(0) scale(0.8); }
+  15% { opacity: 0.7; }
+  85% { opacity: 0.65; }
+  100% { left: 105vw; opacity: 0; transform: translateX(0) scale(0.95); }
+}
+
+.cinematic-ghost.ghost-hover {
+  width: 65px;
+  height: 120px;
+  right: 30%;
+  background: radial-gradient(ellipse at 50% 20%, rgba(139, 92, 246, 0.45) 0%, rgba(2, 6, 12, 0.9) 60%, transparent 80%);
+  clip-path: polygon(50% 0%, 80% 20%, 90% 50%, 70% 80%, 85% 100%, 50% 88%, 15% 100%, 30% 80%, 10% 50%, 20% 20%);
+  animation: dynamicGhostHover 8s ease-in-out forwards;
+}
+
+@keyframes dynamicGhostHover {
+  0% { opacity: 0; transform: translateY(40px) scale(0.7); }
+  30% { opacity: 0.65; }
+  70% { opacity: 0.6; transform: translateY(-30px) scale(0.85); }
+  100% { opacity: 0; transform: translateY(-70px) scale(0.7); }
+}
+
+/* ==========================================================================
+   ATMOSPHERIC CELESTIAL ORRERY & TELEMETRY CARD (HERO RIGHT VISUAL)
+   Strictly NO Personal Photo or Portrait — Ultra-Futuristic Celestial Radar
+   ========================================================================== */
+
+.celestial-orrery-card {
+  width: 100%;
+  max-width: 380px;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: var(--bg-card);
+  border: 1px solid var(--border-glass);
+  box-shadow: var(--shadow-card);
+  backdrop-filter: blur(20px);
+  position: relative;
+  transition: transform 0.4s var(--ease-spring), border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.celestial-orrery-card:hover {
+  border-color: var(--accent-cyan);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.7), 0 0 30px var(--accent-glow);
+}
+
+.orrery-card-inner {
+  padding: 32px 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* Radar Viewport */
+.orrery-radar-viewport {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  max-height: 240px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(15, 23, 42, 0.9) 0%, rgba(2, 6, 23, 0.95) 100%);
+  border: 1.5px solid var(--border-glass);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  box-shadow: inset 0 0 35px rgba(0, 0, 0, 0.8), 0 0 20px var(--border-glass);
+}
+
+.orrery-grid-rings {
+  position: absolute;
+  inset: 15px;
+  border-radius: 50%;
+  border: 1px dashed rgba(255, 255, 255, 0.12);
+}
+
+.orrery-grid-rings::after {
+  content: '';
+  position: absolute;
+  inset: 22px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.orrery-solar-arc {
+  position: absolute;
+  inset: 5px;
+  border-radius: 50%;
+  border-top: 2px solid var(--accent-cyan);
+  border-right: 2px solid transparent;
+  border-bottom: 2px solid transparent;
+  border-left: 2px solid transparent;
+  opacity: 0.7;
+}
+
+.orrery-compass-ring {
+  position: absolute;
+  inset: 2px;
+  border-radius: 50%;
+  border: 1px dotted var(--accent-cyan);
+  opacity: 0.35;
+  transition: transform 1s ease-out;
+}
+
+.orrery-center-beacon {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: rgba(15, 23, 42, 0.85);
+  border: 1.5px solid var(--accent-cyan);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  box-shadow: 0 0 25px var(--accent-glow);
+  z-index: 2;
+}
+
+.orrery-sun-glow {
+  color: #FDE047;
+  filter: drop-shadow(0 0 10px #F59E0B);
+  animation: orrerySunSpin 20s linear infinite;
+}
+
+.orrery-moon-glow {
+  color: #E2E8F0;
+  filter: drop-shadow(0 0 10px #38BDF8);
+}
+
+.orrery-ghost-glow {
+  color: #00FF87;
+  filter: drop-shadow(0 0 12px #00FF87);
+  animation: orreryGhostPulse 2.5s infinite alternate ease-in-out;
+}
+
+@keyframes orrerySunSpin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes orreryGhostPulse {
+  0% { transform: scale(1); filter: drop-shadow(0 0 8px #00FF87); }
+  100% { transform: scale(1.18); filter: drop-shadow(0 0 16px #8B5CF6); }
+}
+
+/* Telemetry Feed Text */
+.orrery-telemetry-feed {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.orrery-meta-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  color: var(--text-dim);
+}
+
+.orrery-tag {
+  color: var(--accent-cyan);
+  font-weight: 700;
+}
+
+.orrery-live-pulse {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--accent-emerald);
+  font-weight: 700;
+}
+
+.orrery-stage-headline {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+}
+
+.orrery-stage-name {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--text-pure);
+  line-height: 1.2;
+}
+
+.orrery-stage-bn {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--accent-cyan);
+  font-weight: 700;
+}
+
+.orrery-metrics-strip {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border-subtle);
+}
+
+.orrery-metric-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.orrery-m-label {
+  font-family: var(--font-mono);
+  font-size: 9.5px;
+  color: var(--text-dim);
+  text-transform: uppercase;
+}
+
+.orrery-m-val {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--text-pure);
+}
 
 /* Atmospheric Top Navigation Indicator Pill */
 .nav-atmo-indicator {

@@ -145,10 +145,10 @@
   const ghostParticles = new THREE.Points(ghostGeo, ghostMat);
   scene.add(ghostParticles);
 
-  // ATMOSPHERIC PALETTES MAP
+  // ATMOSPHERIC PALETTES MAP (6 Realistic Bangladesh Stages)
   const atmosphereThemes = {
-    // 1. Sokal / Sunrise (সকাল - সূর্যোদয়)
-    dawn: {
+    // A. Sunrise (5:00 AM – 8:00 AM)
+    sunrise: {
       primary: 0xf59e0b,
       secondary: 0xfb7185,
       tertiary: 0xfde047,
@@ -156,24 +156,28 @@
       ring1: 0xf59e0b,
       ring2: 0xf43f5e,
       particle: 0xfef08a,
-      emissive: 0x271406,
-      fog: 0x1c121e,
-      ghostOpacity: 0
+      emissive: 0x3d1305,
+      fog: 0x240e1b,
+      ghostOpacity: 0,
+      ambient: 1.6,
+      pIntensity: 5.2
     },
-    // 2. Dupur / High Noon (দুপুর - রোদেলা দুপুর)
-    noon: {
+    // B. Sunny Day (8:00 AM – 3:00 PM)
+    day: {
       primary: 0x00f2fe,
       secondary: 0x38bdf8,
-      tertiary: 0x38ef7d,
+      tertiary: 0xfde047,
       wire: 0x00f2fe,
       ring1: 0x38bdf8,
       ring2: 0x10b981,
       particle: 0xbae6fd,
-      emissive: 0x04192d,
-      fog: 0x081b33,
-      ghostOpacity: 0
+      emissive: 0x052847,
+      fog: 0x082f49,
+      ghostOpacity: 0,
+      ambient: 2.2,
+      pIntensity: 6.2
     },
-    // 3. Poronto Bikel / Golden Hour (পড়ন্ত বিকেল - সোনালী আভা)
+    // C. Golden Hour & Afternoon (3:00 PM – 5:00 PM)
     afternoon: {
       primary: 0xf59e0b,
       secondary: 0xea580c,
@@ -182,24 +186,28 @@
       ring1: 0xf59e0b,
       ring2: 0xd97706,
       particle: 0xfde68a,
-      emissive: 0x231005,
-      fog: 0x1c100a,
-      ghostOpacity: 0
+      emissive: 0x331404,
+      fog: 0x261005,
+      ghostOpacity: 0,
+      ambient: 1.7,
+      pIntensity: 5.4
     },
-    // 4. Sondha / Twilight (সন্ধ্যা - গোধূলি লগ্ন)
-    dusk: {
+    // D. Sunset (5:00 PM – 7:00 PM)
+    sunset: {
       primary: 0xec4899,
       secondary: 0xa855f7,
-      tertiary: 0x8b5cf6,
+      tertiary: 0xf43f5e,
       wire: 0xd946ef,
       ring1: 0xa855f7,
       ring2: 0xf43f5e,
       particle: 0xf5d0fe,
-      emissive: 0x1e0b29,
-      fog: 0x150921,
-      ghostOpacity: 0
+      emissive: 0x2e0b38,
+      fog: 0x21082c,
+      ghostOpacity: 0,
+      ambient: 1.4,
+      pIntensity: 4.8
     },
-    // 5. Raat / Deep Night (রাত - শান্ত নিঝুম রাত)
+    // E. Night Sky: Moon & Stars (7:00 PM – 12:00 AM)
     night: {
       primary: 0x38bdf8,
       secondary: 0x6366f1,
@@ -209,11 +217,13 @@
       ring2: 0x818cf8,
       particle: 0xe0f2fe,
       emissive: 0x070d1a,
-      fog: 0x060b14,
-      ghostOpacity: 0
+      fog: 0x020617,
+      ghostOpacity: 0,
+      ambient: 1.2,
+      pIntensity: 4.2
     },
-    // 6. Majh Raat / Spooky Witching Hour (মাঝরাত - রহস্যময় ভৌতিক পরিবেশ)
-    spooky: {
+    // F. Haunted Midnight (12:00 AM – 5:00 AM)
+    haunted: {
       primary: 0x00ff87,
       secondary: 0x8b5cf6,
       tertiary: 0x10b981,
@@ -222,14 +232,22 @@
       ring2: 0xa855f7,
       particle: 0x6ee7b7,
       emissive: 0x04190c,
-      fog: 0x040d08,
-      ghostOpacity: 0.85
+      fog: 0x020b06,
+      ghostOpacity: 0.85,
+      ambient: 0.9,
+      pIntensity: 4.6
     }
   };
 
+  // Backwards compatibility aliases
+  atmosphereThemes.dawn = atmosphereThemes.sunrise;
+  atmosphereThemes.noon = atmosphereThemes.day;
+  atmosphereThemes.dusk = atmosphereThemes.sunset;
+  atmosphereThemes.spooky = atmosphereThemes.haunted;
+
   // Switch Atmosphere Function
   function applyAtmosphereToThree(themeKey) {
-    const t = atmosphereThemes[themeKey] || atmosphereThemes.night;
+    const t = atmosphereThemes[themeKey] || atmosphereThemes.day;
 
     lightPrimary.color.setHex(t.primary);
     lightSecondary.color.setHex(t.secondary);
@@ -244,19 +262,9 @@
     scene.fog.color.setHex(t.fog);
     ghostMat.opacity = t.ghostOpacity;
 
-    if (themeKey === 'noon') {
-      ambientLight.intensity = 2.2;
-      lightPrimary.intensity = 6.0;
-      lightSecondary.intensity = 4.5;
-    } else if (themeKey === 'spooky') {
-      ambientLight.intensity = 0.9;
-      lightPrimary.intensity = 4.5;
-      lightSecondary.intensity = 3.5;
-    } else {
-      ambientLight.intensity = 1.4;
-      lightPrimary.intensity = 4.5;
-      lightSecondary.intensity = 3.5;
-    }
+    ambientLight.intensity = t.ambient || 1.4;
+    lightPrimary.intensity = t.pIntensity || 4.5;
+    lightSecondary.intensity = (t.pIntensity || 4.5) * 0.75;
   }
 
   // Expose globally for app.js
