@@ -85,6 +85,12 @@
     </nav>
 
     <div class="nav-actions">
+      <!-- Live Bangladesh Time & Atmosphere Indicator Pill -->
+      <a href="#atmosphere-hud" class="nav-atmo-indicator" id="nav-atmo-indicator" title="Current Bangladesh Atmosphere (Click to view controls)">
+        <span class="hud-pulse-dot"></span>
+        <span id="nav-atmo-text">Dhaka Time</span>
+      </a>
+
       <!-- Sound FX Toggle -->
       <button class="sound-toggle-btn" id="sound-toggle-btn" aria-label="Toggle Sound FX" title="Toggle Sound FX">
         <i class="fas fa-volume-high"></i>
@@ -128,6 +134,40 @@
       <canvas id="three-canvas"></canvas>
     </div>
 
+    <!-- Atmospheric Time-of-Day Engine (Based on Bangladesh Time - Asia/Dhaka) -->
+    <div class="atmosphere-hud-bar" id="atmosphere-hud">
+      <div class="atmosphere-hud-info">
+        <span class="hud-pulse-dot"></span>
+        <span class="hud-dhaka-label"><i class="fas fa-clock"></i> Dhaka Time:</span>
+        <span id="atmosphere-clock-text" class="hud-clock-mono">Loading...</span>
+        <span class="hud-divider">•</span>
+        <span id="atmosphere-current-title" class="hud-badge-active">Loading...</span>
+      </div>
+      <div class="atmosphere-selector-pills">
+        <button class="atmo-pill active" data-atmo="auto" title="Synchronize automatically with Bangladesh Standard Time">
+          <i class="fas fa-bolt"></i> Auto
+        </button>
+        <button class="atmo-pill" data-atmo="dawn" title="ভোর/সকাল - সূর্যোদয় (Sunrise Dawn)">
+          🌅 সকাল
+        </button>
+        <button class="atmo-pill" data-atmo="noon" title="দুপুর - রোদেলা দুপুর (Sunny High Noon / Day View)">
+          ☀️ দুপুর
+        </button>
+        <button class="atmo-pill" data-atmo="afternoon" title="পড়ন্ত বিকেল - সোনালী আভা (Golden Hour)">
+          🌇 বিকেল
+        </button>
+        <button class="atmo-pill" data-atmo="dusk" title="সন্ধ্যা - গোধূলি লগ্ন (Twilight Dusk)">
+          🌆 সন্ধ্যা
+        </button>
+        <button class="atmo-pill" data-atmo="night" title="রাত - শান্ত নিঝুম রাত (Cosmic Night)">
+          🌌 রাত
+        </button>
+        <button class="atmo-pill" data-atmo="spooky" title="মাঝরাত - রহস্যময় ভৌতিক পরিবেশ (Spooky Witching Hour)">
+          👻 মাঝরাত
+        </button>
+      </div>
+    </div>
+
     <div class="hero-main-grid">
       <div class="hero-left-editorial">
         <div class="hero-status-pill">
@@ -152,40 +192,6 @@
             <span>Get in Touch</span>
             <i class="fas fa-paper-plane"></i>
           </a>
-        </div>
-
-        <!-- Atmospheric Time-of-Day Engine (Based on Bangladesh Time - Asia/Dhaka) -->
-        <div class="atmosphere-hud-bar" id="atmosphere-hud">
-          <div class="atmosphere-hud-info">
-            <span class="hud-pulse-dot"></span>
-            <span class="hud-dhaka-label"><i class="fas fa-clock"></i> Dhaka:</span>
-            <span id="atmosphere-clock-text" class="hud-clock-mono">Loading...</span>
-            <span class="hud-divider">•</span>
-            <span id="atmosphere-current-title" class="hud-badge-active">Loading...</span>
-          </div>
-          <div class="atmosphere-selector-pills">
-            <button class="atmo-pill active" data-atmo="auto" title="Synchronize automatically with Bangladesh Standard Time">
-              <i class="fas fa-bolt"></i> Auto
-            </button>
-            <button class="atmo-pill" data-atmo="dawn" title="সকাল - সূর্যোদয় (Sunrise Dawn)">
-              🌅 সকাল
-            </button>
-            <button class="atmo-pill" data-atmo="noon" title="দুপুর - রোদেলা দুপুর (Sunny High Noon)">
-              ☀️ দুপুর
-            </button>
-            <button class="atmo-pill" data-atmo="afternoon" title="পড়ন্ত বিকেল - সোনালী আভা (Golden Hour)">
-              🌇 বিকেল
-            </button>
-            <button class="atmo-pill" data-atmo="dusk" title="সন্ধ্যা - গোধূলি লগ্ন (Twilight Dusk)">
-              🌆 সন্ধ্যা
-            </button>
-            <button class="atmo-pill" data-atmo="night" title="রাত - শান্ত নিঝুম রাত (Cosmic Night)">
-              🌌 রাত
-            </button>
-            <button class="atmo-pill" data-atmo="spooky" title="মাঝরাত - রহস্যময় ভৌতিক পরিবেশ (Spooky Witching Hour)">
-              👻 মাঝরাত
-            </button>
-          </div>
         </div>
       </div>
 
@@ -722,7 +728,7 @@
       </div>
     </div>
 
-    <div class="projects-editorial-stack" id="blog-grid" style="grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));">
+    <div class="blog-editorial-grid" id="blog-grid">
       <!-- Populated via modern/js/blog.js -->
     </div>
   </section>

@@ -288,6 +288,14 @@ document.addEventListener('DOMContentLoaded', () => {
       ? detectBangladeshAtmosphere()
       : currentAtmosphereMode;
 
+    // 3. Update Navbar Live Pill
+    const navAtmoText = document.getElementById('nav-atmo-text');
+    if (navAtmoText) {
+      const modeData = ATMOSPHERE_MODES[effectiveAtmo] || ATMOSPHERE_MODES.night;
+      const shortTitle = modeData.title.split(' ')[0] + ' ' + (modeData.title.split(' ')[1] || '');
+      navAtmoText.textContent = `Dhaka ${nowDhaka} • ${shortTitle}`;
+    }
+
     applyAtmosphereTheme(effectiveAtmo);
   }
 

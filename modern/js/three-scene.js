@@ -243,6 +243,20 @@
     coreMat.emissive.setHex(t.emissive);
     scene.fog.color.setHex(t.fog);
     ghostMat.opacity = t.ghostOpacity;
+
+    if (themeKey === 'noon') {
+      ambientLight.intensity = 2.2;
+      lightPrimary.intensity = 6.0;
+      lightSecondary.intensity = 4.5;
+    } else if (themeKey === 'spooky') {
+      ambientLight.intensity = 0.9;
+      lightPrimary.intensity = 4.5;
+      lightSecondary.intensity = 3.5;
+    } else {
+      ambientLight.intensity = 1.4;
+      lightPrimary.intensity = 4.5;
+      lightSecondary.intensity = 3.5;
+    }
   }
 
   // Expose globally for app.js
