@@ -190,11 +190,87 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // 7. DHAKA REALTIME CLOCK (UTC+6)
-  function syncDhakaClock() {
-    const clockEl = document.getElementById('live-dhaka-clock');
-    if (!clockEl) return;
+  // 7. BANGLADESH TIME-OF-DAY ATMOSPHERIC ENGINE (Asia/Dhaka UTC+6)
+  const ATMOSPHERE_MODES = {
+    dawn: {
+      key: 'dawn',
+      title: '🌅 সকাল (Sunrise Dawn)',
+      desc: 'Soft golden morning aura and fresh dawn light.'
+    },
+    noon: {
+      key: 'noon',
+      title: '☀️ দুপুর (Sunny High Noon)',
+      desc: 'High-energy radiant daylight and crisp cyan reflections.'
+    },
+    afternoon: {
+      key: 'afternoon',
+      title: '🌇 বিকেল (Golden Hour)',
+      desc: 'Warm molten amber glow and late afternoon light.'
+    },
+    dusk: {
+      key: 'dusk',
+      title: '🌆 সন্ধ্যা (Twilight Dusk)',
+      desc: 'Sunset magenta, dusk violet, and twilight silhouette.'
+    },
+    night: {
+      key: 'night',
+      title: '🌌 রাত (Cosmic Night)',
+      desc: 'Deep space midnight sapphire and sparkling starlight.'
+    },
+    spooky: {
+      key: 'spooky',
+      title: '👻 মাঝরাত (Spooky Witching Hour)',
+      desc: 'Eerie supernatural mist, phantom emerald wisps, and haunted gothic vibe.'
+    }
+  };
 
+  let currentAtmosphereMode = 'auto'; // 'auto' or explicit key
+
+  function getDhakaHour() {
+    const dhakaDate = new Date(new Date().toLocaleString('en-US', { timeZone: 'Asia/Dhaka' }));
+    return dhakaDate.getHours();
+  }
+
+  function detectBangladeshAtmosphere() {
+    const hour = getDhakaHour();
+    if (hour >= 5 && hour < 9) return 'dawn';         // 05:00 - 08:59 AM (সকাল - সূর্যোদয়)
+    if (hour >= 9 && hour < 16) return 'noon';        // 09:00 AM - 03:59 PM (দুপুর - রোদেলা দুপুর)
+    if (hour >= 16 && hour < 18) return 'afternoon';  // 04:00 - 05:59 PM (পড়ন্ত বিকেল)
+    if (hour >= 18 && hour < 20) return 'dusk';       // 06:00 - 07:59 PM (সন্ধ্যা - গোধূলি)
+    if (hour >= 20 && hour < 24) return 'night';      // 08:00 - 11:59 PM (শান্ত রাত)
+    return 'spooky';                                  // 00:00 - 04:59 AM (মাঝরাত - ভৌতিক পরিবেশ)
+  }
+
+  function applyAtmosphereTheme(atmoKey) {
+    const meta = ATMOSPHERE_MODES[atmoKey] || ATMOSPHERE_MODES.night;
+
+    // Remove existing theme classes from body
+    document.body.classList.remove(
+      'theme-dawn',
+      'theme-noon',
+      'theme-afternoon',
+      'theme-dusk',
+      'theme-night',
+      'theme-spooky'
+    );
+    document.body.classList.add(`theme-${atmoKey}`);
+
+    // Update HUD Badge Title
+    const titleBadge = document.getElementById('atmosphere-current-title');
+    if (titleBadge) {
+      titleBadge.textContent = meta.title;
+    }
+
+    // Sync Three.js Scene Lighting & Fog
+    if (window.updateThreeAtmosphere) {
+      window.updateThreeAtmosphere(atmoKey);
+    }
+  }
+
+  function syncAtmosphereEngine() {
+    // 1. Digital Clock Display in Bangladesh Time (Asia/Dhaka)
+    const clockEl = document.getElementById('atmosphere-clock-text');
+    const heroDhakaClock = document.getElementById('live-dhaka-clock');
     const opts = {
       timeZone: 'Asia/Dhaka',
       hour: '2-digit',
@@ -202,11 +278,258 @@ document.addEventListener('DOMContentLoaded', () => {
       second: '2-digit',
       hour12: true
     };
-    const formatted = new Intl.DateTimeFormat('en-US', opts).format(new Date());
-    clockEl.textContent = `${formatted} (GMT+6)`;
+    const nowDhaka = new Intl.DateTimeFormat('en-US', opts).format(new Date());
+
+    if (clockEl) clockEl.textContent = `${nowDhaka} (GMT+6)`;
+    if (heroDhakaClock) heroDhakaClock.textContent = `${nowDhaka} (GMT+6)`;
+
+    // 2. Resolve Active Theme
+    const effectiveAtmo = currentAtmosphereMode === 'auto'
+      ? detectBangladeshAtmosphere()
+      : currentAtmosphereMode;
+
+    applyAtmosphereTheme(effectiveAtmo);
   }
-  syncDhakaClock();
-  setInterval(syncDhakaClock, 1000);
+
+  // Atmosphere Selector Buttons
+  const atmoPills = document.querySelectorAll('.atmo-pill');
+  atmoPills.forEach(pill => {
+    pill.addEventListener('click', () => {
+      const target = pill.getAttribute('data-atmo');
+      currentAtmosphereMode = target;
+
+      atmoPills.forEach(p => p.classList.remove('active'));
+      pill.classList.add('active');
+
+      syncAtmosphereEngine();
+      playSynthTone(920, 'sine', 0.05);
+
+      if (target === 'spooky') {
+        showToast('👻 মাঝরাত Activated: Eerie phantom fog & witching hour atmosphere awakened.');
+      } else if (target === 'auto') {
+        showToast(`⚡ Auto Bangladesh Time Synchronized (${ATMOSPHERE_MODES[detectBangladeshAtmosphere()].title})`);
+      }
+    });
+  });
+
+  // Initialize and run Dhaka Clock & Engine
+  syncAtmosphereEngine();
+  setInterval(syncAtmosphereEngine, 1000);
+
+  // 8. INTERACTIVE PROJECT CAROUSEL SLIDER ENGINE
+  const carouselViewport = document.getElementById('projects-carousel-viewport');
+  const carouselTrack = document.getElementById('projects-carousel-track');
+  const prevBtn = document.getElementById('carousel-prev-btn');
+  const nextBtn = document.getElementById('carousel-next-btn');
+  const counterBadge = document.getElementById('carousel-counter-badge');
+  const dotsContainer = document.getElementById('carousel-dots-pagination');
+  const filterPills = document.querySelectorAll('.proj-filter-pill');
+  const viewSliderBtn = document.getElementById('view-mode-slider');
+  const viewGridBtn = document.getElementById('view-mode-grid');
+
+  if (carouselTrack && carouselViewport) {
+    let allSlides = Array.from(carouselTrack.querySelectorAll('.project-carousel-slide'));
+    let activeCategory = 'all';
+    let currentSlide = 0;
+    let isGridMode = false;
+
+    function getFilteredSlides() {
+      if (activeCategory === 'all') return allSlides;
+      return allSlides.filter(s => s.getAttribute('data-category') === activeCategory);
+    }
+
+    function renderPaginationDots() {
+      if (!dotsContainer) return;
+      dotsContainer.innerHTML = '';
+      const visible = getFilteredSlides();
+
+      visible.forEach((_, idx) => {
+        const dot = document.createElement('button');
+        dot.className = `carousel-dot ${idx === currentSlide ? 'active' : ''}`;
+        dot.setAttribute('aria-label', `Go to project ${idx + 1}`);
+        dot.addEventListener('click', () => {
+          goToSlide(idx);
+          playSynthTone(800, 'sine', 0.03);
+        });
+        dotsContainer.appendChild(dot);
+      });
+    }
+
+    function updateCarouselState() {
+      const visible = getFilteredSlides();
+      if (visible.length === 0) return;
+
+      if (currentSlide >= visible.length) currentSlide = visible.length - 1;
+      if (currentSlide < 0) currentSlide = 0;
+
+      // Update counter
+      if (counterBadge) {
+        const curStr = (currentSlide + 1).toString().padStart(2, '0');
+        const totStr = visible.length.toString().padStart(2, '0');
+        counterBadge.textContent = `${curStr} / ${totStr}`;
+      }
+
+      // Mark active slide
+      allSlides.forEach(s => s.classList.remove('is-active-slide'));
+      if (visible[currentSlide]) {
+        visible[currentSlide].classList.add('is-active-slide');
+      }
+
+      // Update Dots
+      if (dotsContainer) {
+        const dots = dotsContainer.querySelectorAll('.carousel-dot');
+        dots.forEach((d, i) => {
+          if (i === currentSlide) d.classList.add('active');
+          else d.classList.remove('active');
+        });
+      }
+
+      // Slide Position (if not in grid mode)
+      if (!isGridMode) {
+        const targetSlide = visible[currentSlide];
+        if (targetSlide) {
+          const slideRect = targetSlide.getBoundingClientRect();
+          const slideWidth = targetSlide.offsetWidth;
+          const gap = 26;
+          const offset = currentSlide * (slideWidth + gap);
+          carouselTrack.style.transform = `translateX(-${offset}px)`;
+        }
+      } else {
+        carouselTrack.style.transform = 'none';
+      }
+    }
+
+    function goToSlide(index) {
+      const visible = getFilteredSlides();
+      currentSlide = Math.max(0, Math.min(index, visible.length - 1));
+      updateCarouselState();
+    }
+
+    if (prevBtn) {
+      prevBtn.addEventListener('click', () => {
+        const visible = getFilteredSlides();
+        const nextIdx = currentSlide > 0 ? currentSlide - 1 : visible.length - 1;
+        goToSlide(nextIdx);
+        playSynthTone(700, 'sine', 0.04);
+      });
+    }
+
+    if (nextBtn) {
+      nextBtn.addEventListener('click', () => {
+        const visible = getFilteredSlides();
+        const nextIdx = currentSlide < visible.length - 1 ? currentSlide + 1 : 0;
+        goToSlide(nextIdx);
+        playSynthTone(850, 'sine', 0.04);
+      });
+    }
+
+    // Category Filter Handling
+    filterPills.forEach(pill => {
+      pill.addEventListener('click', () => {
+        filterPills.forEach(p => p.classList.remove('active'));
+        pill.classList.add('active');
+
+        activeCategory = pill.getAttribute('data-filter');
+        currentSlide = 0;
+
+        // Hide non-matching slides, show matching
+        allSlides.forEach(slide => {
+          const cat = slide.getAttribute('data-category');
+          if (activeCategory === 'all' || cat === activeCategory) {
+            slide.style.display = 'flex';
+          } else {
+            slide.style.display = 'none';
+          }
+        });
+
+        renderPaginationDots();
+        updateCarouselState();
+        playSynthTone(900, 'sine', 0.04);
+      });
+    });
+
+    // View Mode Switcher: Slider vs Grid
+    if (viewSliderBtn && viewGridBtn) {
+      viewSliderBtn.addEventListener('click', () => {
+        isGridMode = false;
+        viewSliderBtn.classList.add('active');
+        viewGridBtn.classList.remove('active');
+        carouselViewport.classList.remove('is-grid-layout');
+        if (prevBtn) prevBtn.style.display = 'flex';
+        if (nextBtn) nextBtn.style.display = 'flex';
+        if (counterBadge) counterBadge.style.display = 'block';
+        updateCarouselState();
+        playSynthTone(800, 'sine', 0.04);
+      });
+
+      viewGridBtn.addEventListener('click', () => {
+        isGridMode = true;
+        viewGridBtn.classList.add('active');
+        viewSliderBtn.classList.remove('active');
+        carouselViewport.classList.add('is-grid-layout');
+        if (prevBtn) prevBtn.style.display = 'none';
+        if (nextBtn) nextBtn.style.display = 'none';
+        if (counterBadge) counterBadge.style.display = 'none';
+        carouselTrack.style.transform = 'none';
+        playSynthTone(820, 'sine', 0.04);
+      });
+    }
+
+    // Touch & Mouse Drag Gestures
+    let startX = 0;
+    let isDragging = false;
+
+    carouselViewport.addEventListener('mousedown', (e) => {
+      if (isGridMode) return;
+      isDragging = true;
+      startX = e.pageX;
+    });
+
+    window.addEventListener('mouseup', (e) => {
+      if (!isDragging || isGridMode) return;
+      isDragging = false;
+      const endX = e.pageX;
+      const diff = startX - endX;
+      if (Math.abs(diff) > 45) {
+        if (diff > 0) nextBtn && nextBtn.click();
+        else prevBtn && prevBtn.click();
+      }
+    });
+
+    carouselViewport.addEventListener('touchstart', (e) => {
+      if (isGridMode) return;
+      startX = e.touches[0].clientX;
+    }, { passive: true });
+
+    carouselViewport.addEventListener('touchend', (e) => {
+      if (isGridMode) return;
+      const endX = e.changedTouches[0].clientX;
+      const diff = startX - endX;
+      if (Math.abs(diff) > 40) {
+        if (diff > 0) nextBtn && nextBtn.click();
+        else prevBtn && prevBtn.click();
+      }
+    }, { passive: true });
+
+    // Keyboard Arrow Keys when visible
+    window.addEventListener('keydown', (e) => {
+      if (isGridMode) return;
+      const rect = carouselViewport.getBoundingClientRect();
+      if (rect.top < window.innerHeight && rect.bottom > 0) {
+        if (e.key === 'ArrowRight') nextBtn && nextBtn.click();
+        if (e.key === 'ArrowLeft') prevBtn && prevBtn.click();
+      }
+    });
+
+    // Window Resize Handling
+    window.addEventListener('resize', () => {
+      if (!isGridMode) updateCarouselState();
+    });
+
+    // Initial setup
+    renderPaginationDots();
+    updateCarouselState();
+  }
 
   // 8. CLIPBOARD EMAIL WITH TOAST
   const copyBtn = document.getElementById('copy-email-btn');

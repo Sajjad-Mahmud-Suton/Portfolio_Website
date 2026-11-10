@@ -42,6 +42,9 @@
     <div class="ambient-orb orb-3"></div>
   </div>
 
+  <!-- Spooky Supernatural Fog Layer (Active during Midnight Witching Hour) -->
+  <div class="spooky-fog-layer" aria-hidden="true"></div>
+
   <!-- Custom Cursor -->
   <div class="cursor-dot"></div>
   <div class="cursor-follower"></div>
@@ -150,6 +153,40 @@
             <i class="fas fa-paper-plane"></i>
           </a>
         </div>
+
+        <!-- Atmospheric Time-of-Day Engine (Based on Bangladesh Time - Asia/Dhaka) -->
+        <div class="atmosphere-hud-bar" id="atmosphere-hud">
+          <div class="atmosphere-hud-info">
+            <span class="hud-pulse-dot"></span>
+            <span class="hud-dhaka-label"><i class="fas fa-clock"></i> Dhaka:</span>
+            <span id="atmosphere-clock-text" class="hud-clock-mono">Loading...</span>
+            <span class="hud-divider">•</span>
+            <span id="atmosphere-current-title" class="hud-badge-active">Loading...</span>
+          </div>
+          <div class="atmosphere-selector-pills">
+            <button class="atmo-pill active" data-atmo="auto" title="Synchronize automatically with Bangladesh Standard Time">
+              <i class="fas fa-bolt"></i> Auto
+            </button>
+            <button class="atmo-pill" data-atmo="dawn" title="সকাল - সূর্যোদয় (Sunrise Dawn)">
+              🌅 সকাল
+            </button>
+            <button class="atmo-pill" data-atmo="noon" title="দুপুর - রোদেলা দুপুর (Sunny High Noon)">
+              ☀️ দুপুর
+            </button>
+            <button class="atmo-pill" data-atmo="afternoon" title="পড়ন্ত বিকেল - সোনালী আভা (Golden Hour)">
+              🌇 বিকেল
+            </button>
+            <button class="atmo-pill" data-atmo="dusk" title="সন্ধ্যা - গোধূলি লগ্ন (Twilight Dusk)">
+              🌆 সন্ধ্যা
+            </button>
+            <button class="atmo-pill" data-atmo="night" title="রাত - শান্ত নিঝুম রাত (Cosmic Night)">
+              🌌 রাত
+            </button>
+            <button class="atmo-pill" data-atmo="spooky" title="মাঝরাত - রহস্যময় ভৌতিক পরিবেশ (Spooky Witching Hour)">
+              👻 মাঝরাত
+            </button>
+          </div>
+        </div>
       </div>
 
       <!-- Hero 3D Portrait Visual -->
@@ -250,236 +287,273 @@
       </p>
     </div>
 
-    <div class="projects-editorial-stack">
-      <!-- Project 1: Green Bites -->
-      <div class="project-card-vibrant">
-        <div class="project-thumb-wrap">
-          <img src="/src/image/Green_Bites.PNG" alt="Green Bites" class="project-thumb-img" loading="lazy">
-        </div>
-        <div class="project-body">
-          <div class="project-meta-strip">
-            <span>CANTEEN ORDERING PLATFORM</span>
-            <span>PHP / MYSQL</span>
-          </div>
-          <h3 class="project-heading">Green Bites</h3>
-          <p class="project-desc-text">
-            A full-featured online canteen ordering web platform with menu navigation, reactive cart calculation, order management, and database checkout persistence.
-          </p>
-          <div class="project-pill-group">
-            <span class="tech-tag-modern">PHP</span>
-            <span class="tech-tag-modern">MySQL</span>
-            <span class="tech-tag-modern">JavaScript</span>
-            <span class="tech-tag-modern">CSS3</span>
-          </div>
-          <div class="project-actions">
-            <a href="https://greenbites.free.nf/" target="_blank" rel="noopener noreferrer" class="btn-luxury-primary" style="padding: 10px 20px; font-size: 12px;" onclick="SajjadAnalytics.logProjectClick('green-bites')">
-              <span>Live Demo</span> <i class="fas fa-external-link-alt"></i>
-            </a>
-            <a href="https://github.com/Sajjad-Mahmud-Suton/Green-Bites" target="_blank" rel="noopener noreferrer" class="project-btn-icon">
-              <i class="fab fa-github"></i> Code
-            </a>
-          </div>
-        </div>
+    <!-- Interactive Project Showcase Hub Controls -->
+    <div class="projects-hub-controls">
+      <div class="proj-filters-group">
+        <button class="proj-filter-pill active" data-filter="all">All Projects (8)</button>
+        <button class="proj-filter-pill" data-filter="fullstack">🌐 Full-Stack &amp; Web (3)</button>
+        <button class="proj-filter-pill" data-filter="systems">⚙️ Systems &amp; Core (3)</button>
+        <button class="proj-filter-pill" data-filter="research">🤖 AI &amp; Algorithms (2)</button>
       </div>
 
-      <!-- Project 2: GreenGuardian -->
-      <div class="project-card-vibrant">
-        <div class="project-thumb-wrap">
-          <img src="/src/image/GreenGuardian.png" alt="Green Guardian" class="project-thumb-img" loading="lazy">
+      <div class="proj-nav-actions">
+        <!-- View Mode Switcher -->
+        <div class="proj-view-mode-toggle">
+          <button class="view-mode-btn active" id="view-mode-slider" title="Interactive 3D Carousel View">
+            <i class="fas fa-sliders-h"></i> Slider
+          </button>
+          <button class="view-mode-btn" id="view-mode-grid" title="Multi-Card Grid View">
+            <i class="fas fa-th-large"></i> Grid
+          </button>
         </div>
-        <div class="project-body">
-          <div class="project-meta-strip">
-            <span>EXAM MONITORING &amp; ACADEMICS</span>
-            <span>REACT / FIREBASE</span>
-          </div>
-          <h3 class="project-heading">GreenGuardian</h3>
-          <p class="project-desc-text">
-            An online examination monitoring system and academic resource repository engineered to support remote assessments and verify examination integrity.
-          </p>
-          <div class="project-pill-group">
-            <span class="tech-tag-modern">TypeScript</span>
-            <span class="tech-tag-modern">React JSX</span>
-            <span class="tech-tag-modern">Firebase</span>
-            <span class="tech-tag-modern">Cloud Firestore</span>
-          </div>
-          <div class="project-actions">
-            <a href="https://green.bakul.codes/" target="_blank" rel="noopener noreferrer" class="btn-luxury-primary" style="padding: 10px 20px; font-size: 12px;" onclick="SajjadAnalytics.logProjectClick('green-guardian')">
-              <span>Live Demo</span> <i class="fas fa-external-link-alt"></i>
-            </a>
-            <a href="https://github.com/Sajjad-Mahmud-Suton/GreenGuardian" target="_blank" rel="noopener noreferrer" class="project-btn-icon">
-              <i class="fab fa-github"></i> Code
-            </a>
-          </div>
-        </div>
-      </div>
 
-      <!-- Project 3: Synthex Compiler -->
-      <div class="project-card-vibrant">
-        <div class="project-thumb-wrap">
-          <img src="/src/image/student-management-system.png" alt="Synthex Compiler" class="project-thumb-img" loading="lazy">
-        </div>
-        <div class="project-body">
-          <div class="project-meta-strip">
-            <span>COMPILER DESIGN</span>
-            <span>C LANGUAGE</span>
-          </div>
-          <h3 class="project-heading">Synthex Compiler</h3>
-          <p class="project-desc-text">
-            A custom compiler developed in C supporting both English and Bangla language constructs, featuring lexical tokenization, semantic analysis, and syntax validation.
-          </p>
-          <div class="project-pill-group">
-            <span class="tech-tag-modern">C</span>
-            <span class="tech-tag-modern">Compiler Design</span>
-            <span class="tech-tag-modern">Lexical Analysis</span>
-            <span class="tech-tag-modern">Parsing</span>
-          </div>
-          <div class="project-actions">
-            <a href="https://github.com/Sajjad-Mahmud-Suton/Synthex" target="_blank" rel="noopener noreferrer" class="btn-luxury-primary" style="padding: 10px 20px; font-size: 12px;">
-              <span>GitHub Repo</span> <i class="fab fa-github"></i>
-            </a>
-          </div>
-        </div>
+        <!-- Carousel Nav Buttons -->
+        <button class="slider-arrow-btn" id="carousel-prev-btn" aria-label="Previous Project Slide">
+          <i class="fas fa-chevron-left"></i>
+        </button>
+        <div class="slider-counter-badge" id="carousel-counter-badge">01 / 08</div>
+        <button class="slider-arrow-btn" id="carousel-next-btn" aria-label="Next Project Slide">
+          <i class="fas fa-chevron-right"></i>
+        </button>
       </div>
+    </div>
 
-      <!-- Project 4: CodeAid (ML Lab Project) -->
-      <div class="project-card-vibrant">
-        <div class="project-thumb-wrap">
-          <img src="/src/image/Carrer_Development.png" alt="CodeAid ML" class="project-thumb-img" loading="lazy">
+    <!-- Carousel Viewport -->
+    <div class="projects-carousel-viewport" id="projects-carousel-viewport">
+      <div class="projects-carousel-track" id="projects-carousel-track">
+        <!-- Project 1: Green Bites -->
+        <div class="project-carousel-slide is-active-slide" data-category="fullstack" data-tilt>
+          <div class="project-thumb-wrap">
+            <img src="/src/image/Green_Bites.PNG" alt="Green Bites" class="project-thumb-img" loading="lazy">
+          </div>
+          <div class="project-body">
+            <div class="project-meta-strip">
+              <span>CANTEEN ORDERING PLATFORM</span>
+              <span>PHP / MYSQL</span>
+            </div>
+            <h3 class="project-heading">Green Bites</h3>
+            <p class="project-desc-text">
+              A full-featured online canteen ordering web platform with menu navigation, reactive cart calculation, order management, and database checkout persistence.
+            </p>
+            <div class="project-pill-group">
+              <span class="tech-tag-modern">PHP</span>
+              <span class="tech-tag-modern">MySQL</span>
+              <span class="tech-tag-modern">JavaScript</span>
+              <span class="tech-tag-modern">CSS3</span>
+            </div>
+            <div class="project-actions">
+              <a href="https://greenbites.free.nf/" target="_blank" rel="noopener noreferrer" class="btn-luxury-primary" style="padding: 10px 20px; font-size: 12px;" onclick="SajjadAnalytics.logProjectClick('green-bites')">
+                <span>Live Demo</span> <i class="fas fa-external-link-alt"></i>
+              </a>
+              <a href="https://github.com/Sajjad-Mahmud-Suton/Green-Bites" target="_blank" rel="noopener noreferrer" class="project-btn-icon">
+                <i class="fab fa-github"></i> Code
+              </a>
+            </div>
+          </div>
         </div>
-        <div class="project-body">
-          <div class="project-meta-strip">
-            <span>MACHINE LEARNING</span>
-            <span>PYTHON / ML</span>
-          </div>
-          <h3 class="project-heading">CodeAid</h3>
-          <p class="project-desc-text">
-            A machine learning lab research project focused on code intelligence, developer assistance, and natural language code synthesis.
-          </p>
-          <div class="project-pill-group">
-            <span class="tech-tag-modern">Python</span>
-            <span class="tech-tag-modern">Machine Learning</span>
-            <span class="tech-tag-modern">Data Analysis</span>
-            <span class="tech-tag-modern">TeX</span>
-          </div>
-          <div class="project-actions">
-            <a href="https://github.com/Sajjad-Mahmud-Suton/CodeAid" target="_blank" rel="noopener noreferrer" class="btn-luxury-primary" style="padding: 10px 20px; font-size: 12px;">
-              <span>GitHub Repo</span> <i class="fab fa-github"></i>
-            </a>
-          </div>
-        </div>
-      </div>
 
-      <!-- Project 5: E-Shop E-Commerce System -->
-      <div class="project-card-vibrant">
-        <div class="project-thumb-wrap">
-          <img src="/src/image/Green_Bites.PNG" alt="E-Shop" class="project-thumb-img" loading="lazy">
+        <!-- Project 2: GreenGuardian -->
+        <div class="project-carousel-slide" data-category="fullstack" data-tilt>
+          <div class="project-thumb-wrap">
+            <img src="/src/image/GreenGuardian.png" alt="Green Guardian" class="project-thumb-img" loading="lazy">
+          </div>
+          <div class="project-body">
+            <div class="project-meta-strip">
+              <span>EXAM MONITORING &amp; ACADEMICS</span>
+              <span>REACT / FIREBASE</span>
+            </div>
+            <h3 class="project-heading">GreenGuardian</h3>
+            <p class="project-desc-text">
+              An online examination monitoring system and academic resource repository engineered to support remote assessments and verify examination integrity.
+            </p>
+            <div class="project-pill-group">
+              <span class="tech-tag-modern">TypeScript</span>
+              <span class="tech-tag-modern">React JSX</span>
+              <span class="tech-tag-modern">Firebase</span>
+              <span class="tech-tag-modern">Firestore</span>
+            </div>
+            <div class="project-actions">
+              <a href="https://green.bakul.codes/" target="_blank" rel="noopener noreferrer" class="btn-luxury-primary" style="padding: 10px 20px; font-size: 12px;" onclick="SajjadAnalytics.logProjectClick('green-guardian')">
+                <span>Live Demo</span> <i class="fas fa-external-link-alt"></i>
+              </a>
+              <a href="https://github.com/Sajjad-Mahmud-Suton/GreenGuardian" target="_blank" rel="noopener noreferrer" class="project-btn-icon">
+                <i class="fab fa-github"></i> Code
+              </a>
+            </div>
+          </div>
         </div>
-        <div class="project-body">
-          <div class="project-meta-strip">
-            <span>E-COMMERCE STORE</span>
-            <span>PHP / MYSQL</span>
-          </div>
-          <h3 class="project-heading">E-Shop Platform</h3>
-          <p class="project-desc-text">
-            A complete electronic commerce store with product cataloging, cart checkout workflow, user authentication, and relational database inventory tracking.
-          </p>
-          <div class="project-pill-group">
-            <span class="tech-tag-modern">PHP</span>
-            <span class="tech-tag-modern">MySQL</span>
-            <span class="tech-tag-modern">JavaScript</span>
-            <span class="tech-tag-modern">Bootstrap</span>
-          </div>
-          <div class="project-actions">
-            <a href="https://github.com/Sajjad-Mahmud-Suton/E-Shop" target="_blank" rel="noopener noreferrer" class="btn-luxury-primary" style="padding: 10px 20px; font-size: 12px;">
-              <span>GitHub Repo</span> <i class="fab fa-github"></i>
-            </a>
-          </div>
-        </div>
-      </div>
 
-      <!-- Project 6: Student Management System -->
-      <div class="project-card-vibrant">
-        <div class="project-thumb-wrap">
-          <img src="/src/image/student-management-system.png" alt="Student Management" class="project-thumb-img" loading="lazy">
+        <!-- Project 3: Synthex Compiler -->
+        <div class="project-carousel-slide" data-category="systems" data-tilt>
+          <div class="project-thumb-wrap">
+            <img src="/src/image/student-management-system.png" alt="Synthex Compiler" class="project-thumb-img" loading="lazy">
+          </div>
+          <div class="project-body">
+            <div class="project-meta-strip">
+              <span>COMPILER DESIGN</span>
+              <span>C LANGUAGE</span>
+            </div>
+            <h3 class="project-heading">Synthex Compiler</h3>
+            <p class="project-desc-text">
+              A custom compiler developed in C supporting both English and Bangla language constructs, featuring lexical tokenization, semantic analysis, and syntax validation.
+            </p>
+            <div class="project-pill-group">
+              <span class="tech-tag-modern">C</span>
+              <span class="tech-tag-modern">Compiler Design</span>
+              <span class="tech-tag-modern">Lexical Analysis</span>
+              <span class="tech-tag-modern">Parsing</span>
+            </div>
+            <div class="project-actions">
+              <a href="https://github.com/Sajjad-Mahmud-Suton/Synthex-" target="_blank" rel="noopener noreferrer" class="btn-luxury-primary" style="padding: 10px 20px; font-size: 12px;">
+                <span>GitHub Repo</span> <i class="fab fa-github"></i>
+              </a>
+            </div>
+          </div>
         </div>
-        <div class="project-body">
-          <div class="project-meta-strip">
-            <span>DATA ENGINE IN C</span>
-            <span>FILE I/O</span>
-          </div>
-          <h3 class="project-heading">Student Management System</h3>
-          <p class="project-desc-text">
-            High-performance console application built in C. Provides structured record storage with persistent file handling, student search, and fast sorting algorithms.
-          </p>
-          <div class="project-pill-group">
-            <span class="tech-tag-modern">C</span>
-            <span class="tech-tag-modern">File Handling</span>
-            <span class="tech-tag-modern">Data Structures</span>
-            <span class="tech-tag-modern">Algorithms</span>
-          </div>
-          <div class="project-actions">
-            <a href="https://github.com/Sajjad-Mahmud-Suton/Student-Management-System-Using-C" target="_blank" rel="noopener noreferrer" class="btn-luxury-primary" style="padding: 10px 20px; font-size: 12px;">
-              <span>GitHub Repo</span> <i class="fab fa-github"></i>
-            </a>
-          </div>
-        </div>
-      </div>
 
-      <!-- Project 7: Mini ATM Assembly System -->
-      <div class="project-card-vibrant">
-        <div class="project-thumb-wrap">
-          <img src="/src/image/mini-atm.jfif" alt="Mini ATM Assembly" class="project-thumb-img" loading="lazy">
+        <!-- Project 4: CodeAid (ML Lab Project) -->
+        <div class="project-carousel-slide" data-category="research" data-tilt>
+          <div class="project-thumb-wrap">
+            <img src="/src/image/Carrer_Development.png" alt="CodeAid ML" class="project-thumb-img" loading="lazy">
+          </div>
+          <div class="project-body">
+            <div class="project-meta-strip">
+              <span>MACHINE LEARNING</span>
+              <span>PYTHON / ML</span>
+            </div>
+            <h3 class="project-heading">CodeAid</h3>
+            <p class="project-desc-text">
+              A machine learning lab research project focused on code intelligence, developer assistance, and natural language code synthesis.
+            </p>
+            <div class="project-pill-group">
+              <span class="tech-tag-modern">Python</span>
+              <span class="tech-tag-modern">Machine Learning</span>
+              <span class="tech-tag-modern">Data Analysis</span>
+              <span class="tech-tag-modern">TeX</span>
+            </div>
+            <div class="project-actions">
+              <a href="https://github.com/Sajjad-Mahmud-Suton/CodeAid" target="_blank" rel="noopener noreferrer" class="btn-luxury-primary" style="padding: 10px 20px; font-size: 12px;">
+                <span>GitHub Repo</span> <i class="fab fa-github"></i>
+              </a>
+            </div>
+          </div>
         </div>
-        <div class="project-body">
-          <div class="project-meta-strip">
-            <span>LOW-LEVEL SIMULATION</span>
-            <span>x86 ASSEMBLY</span>
-          </div>
-          <h3 class="project-heading">Mini ATM System</h3>
-          <p class="project-desc-text">
-            Microprocessor simulation developed in x86 Assembly. Implements low-level PIN verification interrupts, register operations, balance computation, and cash withdrawals.
-          </p>
-          <div class="project-pill-group">
-            <span class="tech-tag-modern">Assembly</span>
-            <span class="tech-tag-modern">Microprocessors</span>
-            <span class="tech-tag-modern">Hardware Logic</span>
-          </div>
-          <div class="project-actions">
-            <a href="https://github.com/Sajjad-Mahmud-Suton/Mini-ATM-Microprocessor-" target="_blank" rel="noopener noreferrer" class="btn-luxury-primary" style="padding: 10px 20px; font-size: 12px;">
-              <span>GitHub Repo</span> <i class="fab fa-github"></i>
-            </a>
-          </div>
-        </div>
-      </div>
 
-      <!-- Project 8: Competitive Programming -->
-      <div class="project-card-vibrant">
-        <div class="project-thumb-wrap">
-          <img src="/src/image/fitness.jpg" alt="Competitive Programming" class="project-thumb-img" loading="lazy">
+        <!-- Project 5: E-Shop E-Commerce System -->
+        <div class="project-carousel-slide" data-category="fullstack" data-tilt>
+          <div class="project-thumb-wrap">
+            <img src="/src/image/Green_Bites.PNG" alt="E-Shop" class="project-thumb-img" loading="lazy">
+          </div>
+          <div class="project-body">
+            <div class="project-meta-strip">
+              <span>E-COMMERCE STORE</span>
+              <span>PHP / MYSQL</span>
+            </div>
+            <h3 class="project-heading">E-Shop Platform</h3>
+            <p class="project-desc-text">
+              A complete electronic commerce store with product cataloging, cart checkout workflow, user authentication, and relational database inventory tracking.
+            </p>
+            <div class="project-pill-group">
+              <span class="tech-tag-modern">PHP</span>
+              <span class="tech-tag-modern">MySQL</span>
+              <span class="tech-tag-modern">JavaScript</span>
+              <span class="tech-tag-modern">Bootstrap</span>
+            </div>
+            <div class="project-actions">
+              <a href="https://github.com/Sajjad-Mahmud-Suton/E-Shop" target="_blank" rel="noopener noreferrer" class="btn-luxury-primary" style="padding: 10px 20px; font-size: 12px;">
+                <span>GitHub Repo</span> <i class="fab fa-github"></i>
+              </a>
+            </div>
+          </div>
         </div>
-        <div class="project-body">
-          <div class="project-meta-strip">
-            <span>PROBLEM SOLVING</span>
-            <span>C++ / ALGORITHMS</span>
+
+        <!-- Project 6: Student Management System -->
+        <div class="project-carousel-slide" data-category="systems" data-tilt>
+          <div class="project-thumb-wrap">
+            <img src="/src/image/student-management-system.png" alt="Student Management" class="project-thumb-img" loading="lazy">
           </div>
-          <h3 class="project-heading">Problem Solving Archives</h3>
-          <p class="project-desc-text">
-            Repository of competitive programming contest solutions on Codeforces, CodeChef, and HackerRank covering greedy algorithms, dynamic programming, and graph theory.
-          </p>
-          <div class="project-pill-group">
-            <span class="tech-tag-modern">C++</span>
-            <span class="tech-tag-modern">Codeforces</span>
-            <span class="tech-tag-modern">CodeChef</span>
-            <span class="tech-tag-modern">HackerRank</span>
+          <div class="project-body">
+            <div class="project-meta-strip">
+              <span>DATA ENGINE IN C</span>
+              <span>FILE I/O</span>
+            </div>
+            <h3 class="project-heading">Student Management System</h3>
+            <p class="project-desc-text">
+              High-performance console application built in C. Provides structured record storage with persistent file handling, student search, and fast sorting algorithms.
+            </p>
+            <div class="project-pill-group">
+              <span class="tech-tag-modern">C</span>
+              <span class="tech-tag-modern">File Handling</span>
+              <span class="tech-tag-modern">Data Structures</span>
+              <span class="tech-tag-modern">Algorithms</span>
+            </div>
+            <div class="project-actions">
+              <a href="https://github.com/Sajjad-Mahmud-Suton/Student-Management-System-Using-C" target="_blank" rel="noopener noreferrer" class="btn-luxury-primary" style="padding: 10px 20px; font-size: 12px;">
+                <span>GitHub Repo</span> <i class="fab fa-github"></i>
+              </a>
+            </div>
           </div>
-          <div class="project-actions">
-            <a href="https://github.com/Sajjad-Mahmud-Suton/Codeforces-Problem-Solve" target="_blank" rel="noopener noreferrer" class="btn-luxury-primary" style="padding: 10px 20px; font-size: 12px;">
-              <span>GitHub Repo</span> <i class="fab fa-github"></i>
-            </a>
+        </div>
+
+        <!-- Project 7: Mini ATM Assembly System -->
+        <div class="project-carousel-slide" data-category="systems" data-tilt>
+          <div class="project-thumb-wrap">
+            <img src="/src/image/mini-atm.jfif" alt="Mini ATM Assembly" class="project-thumb-img" loading="lazy">
+          </div>
+          <div class="project-body">
+            <div class="project-meta-strip">
+              <span>LOW-LEVEL SIMULATION</span>
+              <span>x86 ASSEMBLY</span>
+            </div>
+            <h3 class="project-heading">Mini ATM System</h3>
+            <p class="project-desc-text">
+              Microprocessor simulation developed in x86 Assembly. Implements low-level PIN verification interrupts, register operations, balance computation, and cash withdrawals.
+            </p>
+            <div class="project-pill-group">
+              <span class="tech-tag-modern">Assembly</span>
+              <span class="tech-tag-modern">Microprocessors</span>
+              <span class="tech-tag-modern">Hardware Logic</span>
+            </div>
+            <div class="project-actions">
+              <a href="https://github.com/Sajjad-Mahmud-Suton/Mini-ATM-Microprocessor-" target="_blank" rel="noopener noreferrer" class="btn-luxury-primary" style="padding: 10px 20px; font-size: 12px;">
+                <span>GitHub Repo</span> <i class="fab fa-github"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 8: Competitive Programming Archives -->
+        <div class="project-carousel-slide" data-category="research" data-tilt>
+          <div class="project-thumb-wrap">
+            <img src="/src/image/fitness.jpg" alt="Competitive Programming" class="project-thumb-img" loading="lazy">
+          </div>
+          <div class="project-body">
+            <div class="project-meta-strip">
+              <span>PROBLEM SOLVING</span>
+              <span>C++ / ALGORITHMS</span>
+            </div>
+            <h3 class="project-heading">Problem Solving Archives</h3>
+            <p class="project-desc-text">
+              Repository of competitive programming contest solutions on Codeforces, CodeChef, and HackerRank covering greedy algorithms, dynamic programming, and graph theory.
+            </p>
+            <div class="project-pill-group">
+              <span class="tech-tag-modern">C++</span>
+              <span class="tech-tag-modern">Codeforces</span>
+              <span class="tech-tag-modern">CodeChef</span>
+              <span class="tech-tag-modern">HackerRank</span>
+            </div>
+            <div class="project-actions">
+              <a href="https://github.com/Sajjad-Mahmud-Suton/Codeforces-Problem-Solve" target="_blank" rel="noopener noreferrer" class="btn-luxury-primary" style="padding: 10px 20px; font-size: 12px;">
+                <span>GitHub Repo</span> <i class="fab fa-github"></i>
+              </a>
+            </div>
           </div>
         </div>
       </div>
     </div>
+
+    <!-- Carousel Dots Pagination -->
+    <div class="carousel-dots-pagination" id="carousel-dots-pagination"></div>
   </section>
 
   <!-- Section 3: Skills Matrix -->

@@ -23,9 +23,7 @@
       (function() {
         const urlParams = new URLSearchParams(window.location.search);
         const requested = urlParams.get('version');
-        const saved = localStorage.getItem('sm_portfolio_version');
-
-        if (requested === 'modern' || (saved === 'modern' && requested !== 'classic')) {
+        if (requested === 'modern') {
           localStorage.setItem('sm_portfolio_version', 'modern');
           window.location.replace('/modern.html');
         } else {
@@ -460,6 +458,9 @@
         <span>✨ Switch to Modern Portfolio</span>
         <i class="fas fa-arrow-right" style="font-size: 11px;"></i>
     </a>
+
+    <!-- Telemetry & Analytics -->
+    <script src="/modern/js/analytics.js"></script>
 
     <!-- Main JavaScript -->
     <script src="/js/script.js"></script>

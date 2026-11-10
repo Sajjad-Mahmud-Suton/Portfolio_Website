@@ -93,6 +93,233 @@ button {
   cursor: pointer;
 }
 
+/* ==========================================================================
+   DYNAMIC BANGLADESH TIME-OF-DAY ATMOSPHERIC THEMES (Asia/Dhaka UTC+6)
+   1. Dawn / Sunrise (সকাল - সূর্যোদয়)
+   2. Noon / Sunny Daylight (দুপুর - রোদেলা দুপুর)
+   3. Afternoon / Golden Hour (পড়ন্ত বিকেল - সোনালী আভা)
+   4. Dusk / Sunset Twilight (সন্ধ্যা - গোধূলি লগ্ন)
+   5. Night / Cosmic Starlight (রাত - শান্ত নিঝুম রাত)
+   6. Midnight / Spooky Witching Hour (মাঝরাত - রহস্যময় ভৌতিক পরিবেশ)
+   ========================================================================== */
+
+/* 1. Dawn / Sunrise (সকাল - সূর্যোদয়) */
+body.theme-dawn {
+  background: radial-gradient(circle at 50% 0%, #3a1c28 0%, #1e1322 45%, #0d0a14 100%);
+  --accent-cyan: #F59E0B;
+  --accent-teal: #FB7185;
+  --accent-emerald: #FBBF24;
+  --accent-gradient: linear-gradient(135deg, #F59E0B 0%, #FB7185 100%);
+  --accent-glow: rgba(245, 158, 11, 0.4);
+  --border-glass: rgba(245, 158, 11, 0.22);
+  --border-glow: rgba(245, 158, 11, 0.5);
+}
+body.theme-dawn .orb-1 { background: radial-gradient(circle, #F59E0B 0%, transparent 70%); }
+body.theme-dawn .orb-2 { background: radial-gradient(circle, #FB7185 0%, transparent 70%); }
+body.theme-dawn .orb-3 { background: radial-gradient(circle, #FBBF24 0%, transparent 70%); }
+
+/* 2. Noon / Sunny Daylight (দুপুর - রোদেলা দুপুর) */
+body.theme-noon {
+  background: radial-gradient(circle at 50% 0%, #0c356a 0%, #091e3a 45%, #050e1c 100%);
+  --accent-cyan: #00F2FE;
+  --accent-teal: #38BDF8;
+  --accent-emerald: #10B981;
+  --accent-gradient: linear-gradient(135deg, #00F2FE 0%, #38BDF8 100%);
+  --accent-glow: rgba(0, 242, 254, 0.45);
+  --border-glass: rgba(0, 242, 254, 0.22);
+  --border-glow: rgba(0, 242, 254, 0.5);
+}
+body.theme-noon .orb-1 { background: radial-gradient(circle, #00F2FE 0%, transparent 70%); }
+body.theme-noon .orb-2 { background: radial-gradient(circle, #38BDF8 0%, transparent 70%); }
+body.theme-noon .orb-3 { background: radial-gradient(circle, #10B981 0%, transparent 70%); }
+
+/* 3. Afternoon / Golden Hour (পড়ন্ত বিকেল - সোনালী আভা) */
+body.theme-afternoon {
+  background: radial-gradient(circle at 50% 0%, #381a08 0%, #201108 45%, #0d0805 100%);
+  --accent-cyan: #F59E0B;
+  --accent-teal: #EA580C;
+  --accent-emerald: #D97706;
+  --accent-gradient: linear-gradient(135deg, #F59E0B 0%, #EA580C 100%);
+  --accent-glow: rgba(245, 158, 11, 0.45);
+  --border-glass: rgba(245, 158, 11, 0.25);
+  --border-glow: rgba(234, 88, 12, 0.5);
+}
+body.theme-afternoon .orb-1 { background: radial-gradient(circle, #F59E0B 0%, transparent 70%); }
+body.theme-afternoon .orb-2 { background: radial-gradient(circle, #EA580C 0%, transparent 70%); }
+body.theme-afternoon .orb-3 { background: radial-gradient(circle, #D97706 0%, transparent 70%); }
+
+/* 4. Dusk / Sunset Twilight (সন্ধ্যা - গোধূলি লগ্ন) */
+body.theme-dusk {
+  background: radial-gradient(circle at 50% 0%, #3b0730 0%, #210a2d 45%, #0d0614 100%);
+  --accent-cyan: #EC4899;
+  --accent-teal: #A855F7;
+  --accent-emerald: #F43F5E;
+  --accent-gradient: linear-gradient(135deg, #EC4899 0%, #A855F7 100%);
+  --accent-glow: rgba(236, 72, 153, 0.45);
+  --border-glass: rgba(236, 72, 153, 0.25);
+  --border-glow: rgba(168, 85, 247, 0.5);
+}
+body.theme-dusk .orb-1 { background: radial-gradient(circle, #EC4899 0%, transparent 70%); }
+body.theme-dusk .orb-2 { background: radial-gradient(circle, #A855F7 0%, transparent 70%); }
+body.theme-dusk .orb-3 { background: radial-gradient(circle, #F43F5E 0%, transparent 70%); }
+
+/* 5. Night / Cosmic Starlight (রাত - শান্ত নিঝুম রাত) */
+body.theme-night {
+  background: radial-gradient(circle at 50% 0%, #172554 0%, #0B1120 45%, #070B14 100%);
+  --accent-cyan: #38BDF8;
+  --accent-teal: #14B8A6;
+  --accent-emerald: #10B981;
+  --accent-gradient: linear-gradient(135deg, #38BDF8 0%, #14B8A6 100%);
+  --accent-glow: rgba(56, 189, 248, 0.35);
+  --border-glass: rgba(56, 189, 248, 0.18);
+  --border-glow: rgba(56, 189, 248, 0.45);
+}
+body.theme-night .orb-1 { background: radial-gradient(circle, #38BDF8 0%, transparent 70%); }
+body.theme-night .orb-2 { background: radial-gradient(circle, #10B981 0%, transparent 70%); }
+body.theme-night .orb-3 { background: radial-gradient(circle, #818CF8 0%, transparent 70%); }
+
+/* 6. Midnight / Spooky Witching Hour (মাঝরাত - রহস্যময় ভৌতিক পরিবেশ) */
+body.theme-spooky {
+  background: radial-gradient(circle at 50% 0%, #0c2016 0%, #08140e 45%, #040806 100%);
+  --accent-cyan: #00FF87;
+  --accent-teal: #22C55E;
+  --accent-emerald: #10B981;
+  --accent-indigo: #8B5CF6;
+  --accent-gradient: linear-gradient(135deg, #00FF87 0%, #8B5CF6 100%);
+  --accent-glow: rgba(0, 255, 135, 0.5);
+  --border-glass: rgba(0, 255, 135, 0.25);
+  --border-glow: rgba(0, 255, 135, 0.6);
+}
+body.theme-spooky .orb-1 { background: radial-gradient(circle, #00FF87 0%, transparent 70%); }
+body.theme-spooky .orb-2 { background: radial-gradient(circle, #8B5CF6 0%, transparent 70%); }
+body.theme-spooky .orb-3 { background: radial-gradient(circle, #22C55E 0%, transparent 70%); }
+
+/* Spooky Supernatural Fog Layer */
+.spooky-fog-layer {
+  display: none;
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0;
+  background: 
+    radial-gradient(ellipse at 20% 80%, rgba(0, 255, 135, 0.08) 0%, transparent 55%),
+    radial-gradient(ellipse at 80% 20%, rgba(139, 92, 246, 0.08) 0%, transparent 55%),
+    radial-gradient(ellipse at 50% 50%, rgba(0, 255, 135, 0.05) 0%, transparent 70%);
+  animation: eerieFogDrift 16s ease-in-out infinite alternate;
+  transition: opacity 1.2s ease;
+}
+
+body.theme-spooky .spooky-fog-layer {
+  display: block;
+  opacity: 1;
+}
+
+@keyframes eerieFogDrift {
+  0% { transform: scale(1) translate(0, 0); }
+  50% { transform: scale(1.08) translate(-15px, 10px); }
+  100% { transform: scale(1.03) translate(12px, -8px); }
+}
+
+/* Atmospheric HUD Bar Component */
+.atmosphere-hud-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  background: rgba(15, 23, 42, 0.75);
+  border: 1px solid var(--border-glass);
+  backdrop-filter: blur(20px);
+  padding: 10px 18px;
+  border-radius: var(--radius-full);
+  margin-top: 24px;
+  max-width: 680px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4), 0 0 15px var(--border-glass);
+  flex-wrap: wrap;
+}
+
+.atmosphere-hud-info {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+}
+
+.hud-pulse-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--accent-cyan);
+  box-shadow: 0 0 8px var(--accent-cyan);
+  animation: hudPulse 2s infinite ease-in-out;
+}
+
+@keyframes hudPulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.35); opacity: 0.6; }
+}
+
+.hud-dhaka-label {
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.hud-clock-mono {
+  font-family: var(--font-mono);
+  font-weight: 700;
+  color: var(--text-pure);
+}
+
+.hud-divider {
+  color: var(--text-dim);
+}
+
+.hud-badge-active {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--accent-cyan);
+  background: rgba(56, 189, 248, 0.12);
+  padding: 2px 8px;
+  border-radius: 999px;
+  border: 1px solid var(--border-glass);
+}
+
+.atmosphere-selector-pills {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  overflow-x: auto;
+}
+
+.atmo-pill {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 600;
+  padding: 5px 11px;
+  border-radius: var(--radius-full);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--text-muted);
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.25s var(--ease-smooth);
+}
+
+.atmo-pill:hover {
+  color: var(--text-pure);
+  background: rgba(255, 255, 255, 0.1);
+  border-color: var(--border-glow);
+}
+
+.atmo-pill.active {
+  background: var(--accent-gradient);
+  color: #070B14;
+  border-color: transparent;
+  font-weight: 700;
+  box-shadow: 0 0 14px var(--accent-glow);
+}
+
 /* Ambient Radial Glows */
 .ambient-lighting {
   position: fixed;
@@ -743,7 +970,220 @@ button {
   margin-top: 6px;
 }
 
-/* Projects Editorial Stack */
+/* ==========================================================================
+   INTERACTIVE PROJECT CAROUSEL SLIDER & SHOWCASE
+   Fluid 3D Slider • Touch / Drag Support • Mode Switcher • Animated Filters
+   ========================================================================== */
+
+.projects-hub-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 30px;
+  padding: 14px 22px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-glass);
+  border-radius: var(--radius-full);
+  backdrop-filter: blur(16px);
+}
+
+.proj-filters-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  overflow-x: auto;
+}
+
+.proj-filter-pill {
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  font-weight: 600;
+  padding: 6px 14px;
+  border-radius: var(--radius-full);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: all 0.25s ease;
+  white-space: nowrap;
+}
+
+.proj-filter-pill:hover {
+  color: var(--text-pure);
+  border-color: var(--border-glass);
+}
+
+.proj-filter-pill.active {
+  background: var(--accent-gradient);
+  color: #070B14;
+  border-color: transparent;
+  font-weight: 700;
+  box-shadow: 0 0 14px var(--accent-glow);
+}
+
+.proj-nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* View Mode Switcher */
+.proj-view-mode-toggle {
+  display: flex;
+  align-items: center;
+  background: rgba(11, 17, 32, 0.85);
+  border: 1px solid var(--border-glass);
+  border-radius: var(--radius-full);
+  padding: 3px;
+}
+
+.view-mode-btn {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 600;
+  padding: 5px 12px;
+  border-radius: var(--radius-full);
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.view-mode-btn.active {
+  background: rgba(56, 189, 248, 0.15);
+  color: var(--accent-cyan);
+  border: 1px solid var(--border-glow);
+}
+
+/* Carousel Prev/Next Buttons */
+.slider-arrow-btn {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(15, 23, 42, 0.8);
+  border: 1px solid var(--border-glass);
+  color: var(--text-pure);
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.slider-arrow-btn:hover {
+  background: var(--accent-cyan);
+  color: #070B14;
+  box-shadow: 0 0 16px var(--accent-glow);
+  transform: scale(1.06);
+}
+
+.slider-counter-badge {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--accent-cyan);
+  background: rgba(56, 189, 248, 0.1);
+  padding: 6px 14px;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--border-glass);
+  min-width: 65px;
+  text-align: center;
+}
+
+/* Carousel Viewport */
+.projects-carousel-viewport {
+  position: relative;
+  overflow: hidden;
+  padding: 10px 4px 25px 4px;
+  cursor: grab;
+  user-select: none;
+}
+
+.projects-carousel-viewport:active {
+  cursor: grabbing;
+}
+
+.projects-carousel-track {
+  display: flex;
+  gap: 26px;
+  transition: transform 0.55s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform;
+}
+
+/* Slide Card */
+.project-carousel-slide {
+  width: clamp(320px, 36vw, 460px);
+  flex-shrink: 0;
+  background: var(--bg-card);
+  border: 1px solid var(--border-glass);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.4s var(--ease-spring), border-color 0.4s ease, box-shadow 0.4s ease, opacity 0.4s ease;
+  backdrop-filter: blur(16px);
+  box-shadow: var(--shadow-card);
+}
+
+.project-carousel-slide:hover {
+  transform: translateY(-8px) scale(1.02);
+  border-color: var(--accent-cyan);
+  box-shadow: 0 25px 60px -10px rgba(0, 0, 0, 0.75), 0 0 25px var(--accent-glow);
+}
+
+.project-carousel-slide.is-active-slide {
+  border-color: var(--accent-cyan);
+  box-shadow: 0 20px 50px -10px rgba(0, 0, 0, 0.6), 0 0 25px var(--accent-glow);
+}
+
+/* Grid Mode Toggle State */
+.projects-carousel-viewport.is-grid-layout .projects-carousel-track {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+  gap: 28px;
+  transform: none !important;
+  width: 100% !important;
+}
+
+.projects-carousel-viewport.is-grid-layout .project-carousel-slide {
+  width: 100%;
+}
+
+.projects-carousel-viewport.is-grid-layout + .carousel-dots-pagination {
+  display: none;
+}
+
+/* Dots Pagination */
+.carousel-dots-pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin-top: 15px;
+}
+
+.carousel-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.carousel-dot:hover {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.carousel-dot.active {
+  width: 28px;
+  border-radius: 999px;
+  background: var(--accent-gradient);
+  box-shadow: 0 0 10px var(--accent-glow);
+}
+
+/* Projects Editorial Stack (Fallback/Compat) */
 .projects-editorial-stack {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));

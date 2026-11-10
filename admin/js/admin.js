@@ -276,12 +276,13 @@
 
     if (!telemetry) {
       telemetry = {
-        totalViews: 42,
-        modernViews: 34,
-        classicViews: 8,
+        totalViews: 12,
+        modernViews: 8,
+        classicViews: 4,
         contactSubmissions: 3,
-        devices: { desktop: 28, mobile: 12, tablet: 2 }
+        devices: { desktop: 8, mobile: 3, tablet: 1 }
       };
+      localStorage.setItem('sm_portfolio_telemetry', JSON.stringify(telemetry));
     }
 
     const totalViewsEl = document.getElementById('stat-total-views');
@@ -289,11 +290,14 @@
     const classicViewsEl = document.getElementById('stat-classic-views');
     const contactsEl = document.getElementById('stat-contact-count');
 
-    if (totalViewsEl) totalViewsEl.textContent = telemetry.totalViews;
-    if (modernViewsEl) modernViewsEl.textContent = telemetry.modernViews;
-    if (classicViewsEl) classicViewsEl.textContent = telemetry.classicViews;
-    if (contactsEl) contactsEl.textContent = telemetry.contactSubmissions || messages.length;
+    if (totalViewsEl) totalViewsEl.textContent = telemetry.totalViews || 0;
+    if (modernViewsEl) modernViewsEl.textContent = telemetry.modernViews || 0;
+    if (classicViewsEl) classicViewsEl.textContent = telemetry.classicViews || 0;
+    if (contactsEl) contactsEl.textContent = (telemetry.contactSubmissions || messages.length || 0);
   }
+
+  // Auto-refresh telemetry stats every 5 seconds
+  setInterval(updateAnalyticsStats, 5000);
 
   function initDashboardViews() {
     loadData();
