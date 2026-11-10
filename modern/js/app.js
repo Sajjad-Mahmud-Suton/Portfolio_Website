@@ -290,5 +290,73 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
   }
+
+  // 11. LENIS SMOOTH SCROLLING
+  if (typeof Lenis !== 'undefined') {
+    const lenis = new Lenis({
+      duration: 1.2,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      orientation: 'vertical',
+      gestureOrientation: 'vertical',
+      smoothWheel: true
+    });
+
+    function raf(time) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+    requestAnimationFrame(raf);
+
+    if (typeof ScrollTrigger !== 'undefined') {
+      lenis.on('scroll', ScrollTrigger.update);
+    }
+  }
+
+  // 12. PURE WEB AUDIO SYNTHESIZED SOUND DESIGN (100% Free & Zero External Assets)
+  let audioCtx = null;
+  let soundEnabled = localStorage.getItem('sm_portfolio_sound') === 'true';
+
+  function playUiClick(freq = 800, type = 'sine', duration = 0.04) {
+    if (!soundEnabled) return;
+    try {
+      if (!audioCtx) {
+        audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+      }
+      if (audioCtx.state === 'suspended') {
+        audioCtx.resume();
+      }
+      const osc = audioCtx.createOscillator();
+      const gain = audioCtx.createGain();
+      osc.type = type;
+      osc.frequency.setValueAtTime(freq, audioCtx.currentTime);
+      gain.gain.setValueAtTime(0.04, audioCtx.currentTime);
+      gain.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime + duration);
+      osc.connect(gain);
+      gain.connect(audioCtx.destination);
+      osc.start();
+      osc.stop(audioCtx.currentTime + duration);
+    } catch (e) {}
+  }
+
+  const soundToggleBtn = document.getElementById('sound-toggle-btn');
+  if (soundToggleBtn) {
+    function updateSoundUi() {
+      soundToggleBtn.innerHTML = soundEnabled ? '<i class="fas fa-volume-high"></i>' : '<i class="fas fa-volume-xmark"></i>';
+      soundToggleBtn.setAttribute('title', soundEnabled ? 'Sound FX Enabled' : 'Sound FX Disabled');
+    }
+    updateSoundUi();
+
+    soundToggleBtn.addEventListener('click', () => {
+      soundEnabled = !soundEnabled;
+      localStorage.setItem('sm_portfolio_sound', soundEnabled);
+      updateSoundUi();
+      if (soundEnabled) playUiClick(950, 'sine', 0.06);
+    });
+  }
+
+  // Bind subtle tactile click to buttons and links
+  document.querySelectorAll('a, button, .chat-chip').forEach(el => {
+    el.addEventListener('click', () => playUiClick(700, 'sine', 0.035));
+  });
 });
 

@@ -1,0 +1,25 @@
+# This file was auto-configured for Firebase Hosting GitHub Actions
+# Whenever you push to master or main, it automatically deploys to live Firebase Hosting!
+name: Deploy to Firebase Hosting on push
+
+on:
+  push:
+    branches:
+      - master
+      - main
+
+jobs:
+  build_and_deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Deploy to Firebase Hosting
+        uses: FirebaseExtended/action-hosting-deploy@v0
+        with:
+          repoToken: '${{ secrets.GITHUB_TOKEN }}'
+          firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_SAJJAD_MAHMUD }}'
+          channelId: live
+          projectId: sajjad-mahmud
+
